@@ -4,6 +4,7 @@ import './globals.css';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CookieConsent from '@/components/layout/CookieConsent';
+import { GoogleAnalytics } from '@/components/GoogleAnalytics';
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, SITE_TAGLINE } from '@/lib/constants';
 
 const inter = Inter({
@@ -98,6 +99,7 @@ export default function RootLayout({
         />
       </head>
       <body className="flex min-h-full flex-col overflow-x-hidden bg-white font-sans text-slate-900">
+        <GoogleAnalytics />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-[#0066FF] focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"

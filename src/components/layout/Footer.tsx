@@ -137,6 +137,34 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Valitse-verkosto */}
+        <div className="mt-12 pt-8 border-t border-slate-700">
+          <div className="mb-4">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Osa Valitse-verkostoa</p>
+          </div>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {[
+              { name: 'Lainavertailu', url: 'https://lainavertailu.vercel.app', desc: 'Lainojen vertailu' },
+              { name: 'Vakuutusvertailu', url: 'https://vakuutusvertailu.vercel.app', desc: 'Vakuutusten vertailu' },
+              { name: 'Puhelinvertailu', url: 'https://puhelinvertailu.vercel.app', desc: 'Liittymien vertailu' },
+              { name: 'Asuntomaatti', url: 'https://asuntomaatti.fi', desc: 'Asuntojen vertailu' },
+              { name: 'Alennuskartta', url: 'https://alennuskartta.fi', desc: 'Tarjoukset kartalla' },
+              { name: 'Valitse', url: 'https://valitse.fi', desc: 'Kaikki vertailupalvelut' },
+            ].map((site) => (
+              <a
+                key={site.name}
+                href={site.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+                title={site.desc}
+              >
+                {site.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
           <p className="text-sm text-slate-500">
