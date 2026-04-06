@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   description:
     'Ilmaiset oppaat sähkösopimuksen valintaan, sähkön kilpailuttamiseen, energiansäästöön ja pörssisähkön hyödyntämiseen. Puolueettomia ja kattavia.',
   openGraph: {
-    title: 'Sähköoppaat — Kattavat oppaat sähkön säästämiseen | Energiavertailu',
+    title: 'Sähköoppaat — Kattavat oppaat sähkön säästämiseen | Valitse Sähkö',
     description:
       'Ilmaiset oppaat sähkösopimuksen valintaan, sähkön kilpailuttamiseen, energiansäästöön ja pörssisähkön hyödyntämiseen.',
     url: `${SITE_URL}/oppaat`,
@@ -41,7 +41,7 @@ export default function OppaatPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Sähköoppaat — Energiavertailu',
+    name: 'Sähköoppaat — Valitse Sähkö',
     description:
       'Kattavat oppaat sähkösopimuksen valintaan, sähkön säästämiseen ja sähkömarkkinoiden ymmärtämiseen.',
     url: `${SITE_URL}/oppaat`,

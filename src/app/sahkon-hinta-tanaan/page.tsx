@@ -44,7 +44,7 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     openGraph: {
-      title: `${title} | Energiavertailu`,
+      title: `${title} | Valitse Sähkö`,
       description,
       url: `${SITE_URL}/sahkon-hinta-tanaan`,
       type: 'website',
@@ -217,7 +217,7 @@ export default async function SahkonHintaTanaanPage() {
     inLanguage: 'fi',
     isPartOf: {
       '@type': 'WebSite',
-      name: 'Energiavertailu',
+      name: 'Valitse Sähkö',
       url: SITE_URL,
     },
   };

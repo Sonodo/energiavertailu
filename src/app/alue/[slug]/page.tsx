@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: `${content.title} — Siirtohinta, sähköyhtiöt ja sopimukset`,
     description: content.description,
     openGraph: {
-      title: `${content.title} — Siirtohinta, sähköyhtiöt ja sopimukset | Energiavertailu`,
+      title: `${content.title} — Siirtohinta, sähköyhtiöt ja sopimukset | Valitse Sähkö`,
       description: content.description,
       url: `${SITE_URL}/alue/${slug}`,
     },

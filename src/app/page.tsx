@@ -24,7 +24,7 @@ import AnimatedCounter from '@/components/home/AnimatedCounter';
 import FadeIn from '@/components/ui/FadeIn';
 
 export const metadata: Metadata = {
-  title: 'Sähkövertailu — Vertaa sähkösopimuksia ja löydä halvin sähkö | Energiavertailu',
+  title: 'Sähkövertailu — Vertaa sähkösopimuksia ja löydä halvin sähkö | Valitse Sähkö',
   description:
     'Vertaa 37 sähköyhtiön sopimuksia, seuraa pörssisähkön hintaa reaaliajassa ja säästä sähkölaskussa. Ilmainen ja puolueeton sähkövertailu Suomessa.',
   openGraph: {

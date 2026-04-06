@@ -10,7 +10,7 @@ export const guides: Guide[] = [
     publishedAt: '2025-09-15',
     updatedAt: '2026-03-01',
     readTime: 10,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['sähkösopimus', 'pörssisähkö', 'kiinteä hinta', 'sopimustyypit'],
     relatedGuides: ['sahkon-kilpailutus', 'porssisahko-opas', 'sahkon-hinnan-muodostuminen'],
     tableOfContents: [
@@ -170,7 +170,7 @@ Suosittelemme vertailemaan sopimuksia säännöllisesti ja vaihtamaan aina, kun 
     publishedAt: '2025-10-01',
     updatedAt: '2026-03-10',
     readTime: 8,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['kilpailutus', 'sähkönvaihto', 'sähkösopimus', 'säästäminen'],
     relatedGuides: ['sahkosopimustyypit', 'sahkon-hinnan-muodostuminen', 'energiansaastovinkit'],
     tableOfContents: [
@@ -223,7 +223,7 @@ Vuosikulutus on tärkein luku vertailussa. Löydät sen:
 
 Kun tiedät nykyisen sopimuksesi tiedot ja vuosikulutuksesi, voit aloittaa vertailun:
 
-1. **Käytä vertailupalvelua** — esimerkiksi Energiavertailu.fi:n vertailulaskuria
+1. **Käytä vertailupalvelua** — esimerkiksi Valitse Sähkön vertailulaskuria (valitsesahko.fi)
 2. **Syötä vuosikulutuksesi** — näin saat vertailukelpoisia vuosikustannuksia
 3. **Vertaile kokonaiskustannusta** — älä katso pelkkää c/kWh-hintaa, vaan huomioi myös kuukausimaksu
 4. **Huomioi sopimustyyppi** — päätä haluatko kiinteän, pörssin vai yhdistelmän
@@ -313,7 +313,7 @@ Sähkösi ei katkea. Sähkönsiirtäjäsi toimittaa sähkön toimitusvelvollisuu
     publishedAt: '2025-11-01',
     updatedAt: '2026-03-15',
     readTime: 12,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['energiansäästö', 'sähkönkulutus', 'vinkit', 'älykoti'],
     relatedGuides: ['porssisahko-opas', 'sahkosopimustyypit', 'aurinkopaneeli-opas'],
     tableOfContents: [
@@ -481,7 +481,7 @@ Investointien kannattavuus riippuu asunnon koosta, nykyisestä kunnosta ja sähk
     publishedAt: '2025-08-15',
     updatedAt: '2026-03-20',
     readTime: 11,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['pörssisähkö', 'Nord Pool', 'spot-hinta', 'sähköpörssi'],
     relatedGuides: ['sahkosopimustyypit', 'sahkon-hinnan-muodostuminen', 'energiansaastovinkit'],
     tableOfContents: [
@@ -627,7 +627,7 @@ Useimmat sähköyhtiöt tarjoavat sovelluksen, jossa näet:
 - Hintahälytyksiä
 - Kulutusennakoita
 
-### Energiavertailu.fi
+### Valitse Sähkö (valitsesahko.fi)
 Meidän oma palvelumme tarjoaa:
 - Reaaliaikaisen pörssisähkön hinnan
 - Seuraavan päivän tuntihinnat
@@ -659,7 +659,7 @@ Tärkeimmät muistisäännöt:
     publishedAt: '2025-09-01',
     updatedAt: '2026-02-15',
     readTime: 9,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['sähkön hinta', 'siirtomaksu', 'sähkövero', 'ALV', 'jakeluverkko'],
     relatedGuides: ['sahkosopimustyypit', 'porssisahko-opas', 'sahkon-kilpailutus'],
     tableOfContents: [
@@ -815,7 +815,7 @@ Sähkön hinta Suomessa koostuu energiamaksusta (~35%), siirtomaksusta (~30%) ja
     publishedAt: '2025-12-01',
     updatedAt: '2026-03-20',
     readTime: 11,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['aurinkopaneelit', 'prosumer', 'uusiutuva energia', 'nettolaskutus', 'akkuvarastointi'],
     relatedGuides: ['sahkosopimustyypit', 'porssisahko-opas', 'sahkon-hinnan-muodostuminen'],
     tableOfContents: [
@@ -983,7 +983,7 @@ Investoinnin kannattavuus on parantunut merkittävästi: tyypillinen takaisinmak
     publishedAt: '2026-02-10',
     updatedAt: '2026-03-18',
     readTime: 18,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['lämpöpumppu', 'ilmalämpöpumppu', 'maalämpö', 'lämmitys', 'energiansäästö', 'COP'],
     relatedGuides: ['energiansaastovinkit', 'sahkon-hinnan-muodostuminen', 'aurinkopaneeli-opas'],
     tableOfContents: [
@@ -1326,7 +1326,7 @@ Suomen olosuhteissa maalämpö on tehokkain vaihtoehto, mutta ilmalämpöpumppu 
     publishedAt: '2026-02-20',
     updatedAt: '2026-03-15',
     readTime: 20,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['aurinkopaneelit', 'aurinkoenergia', 'uusiutuva energia', 'investointi', 'akkuvarasto', 'mitoitus'],
     relatedGuides: ['aurinkopaneeli-opas', 'energiansaastovinkit', 'sahkon-hinnan-muodostuminen'],
     tableOfContents: [
@@ -1657,7 +1657,7 @@ Tyypillinen takaisinmaksuaika on **6–12 vuotta**, ja paneelien elinikä on **2
     publishedAt: '2026-03-01',
     updatedAt: '2026-03-20',
     readTime: 15,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['sähköauto', 'lataus', 'kotilataus', 'wallbox', 'julkinen lataus', 'pörssisähkö'],
     relatedGuides: ['porssisahko-opas', 'sahkosopimustyypit', 'energiansaastovinkit'],
     tableOfContents: [
@@ -1973,7 +1973,7 @@ Julkinen latausverkosto Suomessa on kattava ja kasvaa jatkuvasti, mutta hinnat o
     publishedAt: '2026-02-15',
     updatedAt: '2026-03-12',
     readTime: 12,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['kerrostalo', 'sähkönkulutus', 'sähkösopimus', 'säästäminen', 'asuminen'],
     relatedGuides: ['sahkosopimustyypit', 'sahkon-kilpailutus', 'energiansaastovinkit'],
     tableOfContents: [
@@ -2237,7 +2237,7 @@ Kerrostaloasujan sähkölaskussa ei ole kyse suurista summista, mutta oikeat val
     publishedAt: '2026-03-05',
     updatedAt: '2026-03-20',
     readTime: 18,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['omakotitalo', 'sähkökustannukset', 'lämmitys', 'energiansäästö', 'älykoti', 'aurinkopaneelit'],
     relatedGuides: ['lampopumppuopas', 'energiansaastovinkit', 'aurinkopaneelit-opas'],
     tableOfContents: [
@@ -2606,7 +2606,7 @@ Omakotitalon energiatalouteen voi vaikuttaa enemmän kuin mihinkään muuhun asu
     publishedAt: '2026-02-01',
     updatedAt: '2026-03-10',
     readTime: 14,
-    author: 'Energiavertailu-toimitus',
+    author: 'Valitse Sähkö -toimitus',
     tags: ['talvi', 'sähkönkulutus', 'lämmitys', 'pörssisähkö', 'energiansäästö', 'varautuminen'],
     relatedGuides: ['lampopumppuopas', 'omakotitalon-sahko-opas', 'porssisahko-opas'],
     tableOfContents: [

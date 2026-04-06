@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Energiavertailu — Suomen kattavin sähkövertailu';
+export const alt = 'Valitse Sähkö — Vertaa ja valitse paras sähkösopimus';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -29,7 +29,7 @@ export default function Image() {
             marginBottom: '24px',
           }}
         >
-          Energiavertailu
+          Valitse Sähkö
         </span>
         <span
           style={{
@@ -38,7 +38,7 @@ export default function Image() {
             fontWeight: 500,
           }}
         >
-          Suomen kattavin sähkövertailu
+          Vertaa ja valitse paras sähkösopimus
         </span>
         <div
           style={{

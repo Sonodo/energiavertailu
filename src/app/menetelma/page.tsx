@@ -16,11 +16,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Menetelm\u00e4 \u2014 N\u00e4in vertailemme s\u00e4hk\u00f6sopimuksia',
   description:
-    'Tutustu Energiavertailun laskentamenetelm\u00e4\u00e4n, vastapuoliriskiarvioon, suositusalgoritmiin ja tietol\u00e4hteisiin. L\u00e4pin\u00e4kyv\u00e4 ja puolueeton s\u00e4hk\u00f6vertailu.',
+    'Tutustu Valitse Sähkön laskentamenetelmään, vastapuoliriskiarvioon, suositusalgoritmiin ja tietolähteisiin. Läpinäkyvä ja puolueeton sähkövertailu.',
   openGraph: {
     title: `Menetelm\u00e4 \u2014 N\u00e4in vertailemme s\u00e4hk\u00f6sopimuksia | ${SITE_NAME}`,
     description:
-      'Tutustu Energiavertailun laskentamenetelm\u00e4\u00e4n, vastapuoliriskiarvioon, suositusalgoritmiin ja tietol\u00e4hteisiin.',
+      'Tutustu Valitse Sähkön laskentamenetelmään, vastapuoliriskiarvioon, suositusalgoritmiin ja tietolähteisiin.',
     url: `${SITE_URL}/menetelma`,
   },
   alternates: {

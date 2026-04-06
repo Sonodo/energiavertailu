@@ -1,4 +1,4 @@
-// Core domain types for Energiavertailu
+// Core domain types for Valitse Sähkö
 
 export interface SpotPrice {
   timestamp: string;

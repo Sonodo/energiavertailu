@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     'Vertaa Suomen sähköyhtiöitä: hinnat, arvostelut, sopimukset ja yhteystiedot. Löydä luotettava sähköyhtiö ja paras sähkösopimus.',
   openGraph: {
-    title: 'Sähköyhtiöt Suomessa — Kattava hakemisto | Energiavertailu',
+    title: 'Sähköyhtiöt Suomessa — Kattava hakemisto | Valitse Sähkö',
     description:
       'Vertaa Suomen sähköyhtiöitä: hinnat, arvostelut, sopimukset ja yhteystiedot. Löydä luotettava sähköyhtiö ja paras sähkösopimus.',
   },

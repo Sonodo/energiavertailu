@@ -12,7 +12,7 @@ interface ShareButtonProps {
 }
 
 export default function ShareButton({
-  title = 'Energiavertailu',
+  title = 'Valitse Sähkö',
   text = 'Katso sähkösopimuksien vertailu',
   url,
   className,

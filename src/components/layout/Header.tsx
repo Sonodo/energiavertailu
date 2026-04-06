@@ -58,13 +58,13 @@ export default function Header() {
           <Link
             href="/"
             className="flex items-center gap-2 transition-opacity hover:opacity-80"
-            aria-label="Energiavertailu — Etusivu"
+            aria-label="Valitse Sähkö — Etusivu"
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0066FF]">
               <Zap className="h-5 w-5 text-white" />
             </div>
             <span className="text-xl font-bold text-slate-900">
-              Energia<span className="text-[#0066FF]">vertailu</span>
+              Valitse<span className="text-[#0066FF]"> Sähkö</span>
             </span>
           </Link>
 
@@ -151,13 +151,13 @@ export default function Header() {
             href="/"
             className="flex items-center gap-2"
             onClick={closeMobileMenu}
-            aria-label="Energiavertailu — Etusivu"
+            aria-label="Valitse Sähkö — Etusivu"
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0066FF]">
               <Zap className="h-5 w-5 text-white" />
             </div>
             <span className="text-lg font-bold text-slate-900">
-              Energia<span className="text-[#0066FF]">vertailu</span>
+              Valitse<span className="text-[#0066FF]"> Sähkö</span>
             </span>
           </Link>
           <button

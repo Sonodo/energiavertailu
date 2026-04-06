@@ -5,11 +5,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Evästekäytäntö',
   description:
-    'Energiavertailun evästekäytäntö. Lue, miten käytämme evästeitä ja miten voit hallita evästeasetuksiasi.',
+    'Valitse Sähkön evästekäytäntö. Lue, miten käytämme evästeitä ja miten voit hallita evästeasetuksiasi.',
   openGraph: {
     title: `Evästekäytäntö | ${SITE_NAME}`,
     description:
-      'Energiavertailun evästekäytäntö. Lue, miten käytämme evästeitä palvelussamme.',
+      'Valitse Sähkön evästekäytäntö. Lue, miten käytämme evästeitä palvelussamme.',
     url: `${SITE_URL}/evasteet`,
   },
   alternates: {
@@ -33,7 +33,7 @@ export default function EvasteetPage() {
             Evästekäytäntö
           </h1>
           <p className="mt-4 text-lg text-slate-600">
-            Tämä evästekäytäntö kuvaa, miten Energiavertailu käyttää evästeitä ja
+            Tämä evästekäytäntö kuvaa, miten Valitse Sähkö käyttää evästeitä ja
             vastaavia teknologioita palvelussaan. Käytämme evästeitä parantaaksemme
             käyttäjäkokemusta ja analysoidaksemme palvelun käyttöä.
           </p>
@@ -161,10 +161,10 @@ export default function EvasteetPage() {
             <br />
             Sähköposti:{' '}
             <a
-              href="mailto:info@energiavertailu.fi"
+              href="mailto:info@valitse.fi"
               className="text-[#0066FF] hover:underline"
             >
-              info@energiavertailu.fi
+              info@valitse.fi
             </a>
           </p>
           <p>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     'Vertaa sähkösopimuksia ja siirtohintoja kaikissa Suomen 19 maakunnassa. Löydä edullisin sähkö omalla alueellasi. Siirtohinta, paikalliset sähköyhtiöt ja säästövinkit.',
   openGraph: {
-    title: 'Sähkö alueittain — Vertaa sähkösopimuksia maakunnittain | Energiavertailu',
+    title: 'Sähkö alueittain — Vertaa sähkösopimuksia maakunnittain | Valitse Sähkö',
     description:
       'Vertaa sähkösopimuksia ja siirtohintoja kaikissa Suomen 19 maakunnassa. Löydä edullisin sähkö omalla alueellasi.',
     url: `${SITE_URL}/alue`,

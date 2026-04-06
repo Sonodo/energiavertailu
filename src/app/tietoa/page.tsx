@@ -5,11 +5,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Tietoa palvelusta',
   description:
-    'Energiavertailu on Suomen kattavin ja puolueettomin sähkövertailupalvelu. Lue lisää palvelustamme, menetelmistämme ja tavoitteistamme.',
+    'Valitse Sähkö on Suomen kattavin ja puolueettomin sähkövertailupalvelu. Lue lisää palvelustamme, menetelmistämme ja tavoitteistamme.',
   openGraph: {
     title: `Tietoa palvelusta | ${SITE_NAME}`,
     description:
-      'Energiavertailu on Suomen kattavin ja puolueettomin sähkövertailupalvelu. Lue lisää palvelustamme.',
+      'Valitse Sähkö on Suomen kattavin ja puolueettomin sähkövertailupalvelu. Lue lisää palvelustamme.',
     url: `${SITE_URL}/tietoa`,
   },
   alternates: {
@@ -57,10 +57,10 @@ export default function TietoaPage() {
             <span className="text-sm font-medium text-[#0066FF]">Tietoa meistä</span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Tietoa Energiavertailusta
+            Tietoa Valitse Sähköstä
           </h1>
           <p className="mt-4 text-lg text-slate-600">
-            Energiavertailu on suomalainen, riippumaton verkkopalvelu, joka auttaa kuluttajia
+            Valitse Sähkö on suomalainen, riippumaton verkkopalvelu, joka auttaa kuluttajia
             vertailemaan sähkösopimuksia ja tekemään tietoon perustuvia päätöksiä
             sähkömarkkinoilla.
           </p>
@@ -75,7 +75,7 @@ export default function TietoaPage() {
           <p>
             Sähkömarkkinoiden vapauttaminen on antanut kuluttajille mahdollisuuden valita
             sähkösopimuksensa vapaasti — mutta valinnanvapaus edellyttää vertailukelpoista
-            tietoa. Energiavertailu syntyi tarpeesta tarjota suomalaisille selkeä,
+            tietoa. Valitse Sähkö syntyi tarpeesta tarjota suomalaisille selkeä,
             puolueeton ja helposti ymmärrettävä tapa vertailla sähkösopimuksia.
           </p>
           <p>
@@ -87,7 +87,7 @@ export default function TietoaPage() {
           {/* What we offer */}
           <h2>Mitä tarjoamme</h2>
           <p>
-            Energiavertailu tarjoaa kattavan valikoiman työkaluja ja tietoa
+            Valitse Sähkö tarjoaa kattavan valikoiman työkaluja ja tietoa
             sähkömarkkinoista:
           </p>
           <ul>
@@ -133,7 +133,7 @@ export default function TietoaPage() {
           {/* Revenue model */}
           <h2>Rahoitusmalli</h2>
           <p>
-            Energiavertailu on käyttäjille täysin ilmainen. Palvelun toiminta
+            Valitse Sähkö on käyttäjille täysin ilmainen. Palvelun toiminta
             rahoitetaan pääasiassa kahdella tavalla:
           </p>
           <ul>

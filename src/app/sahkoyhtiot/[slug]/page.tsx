@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     openGraph: {
-      title: `${title} | Energiavertailu`,
+      title: `${title} | Valitse Sähkö`,
       description,
       url: `${SITE_URL}/sahkoyhtiot/${slug}`,
     },

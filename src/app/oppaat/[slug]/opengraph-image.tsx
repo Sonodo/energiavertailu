@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 import { guides } from '@/data/guides';
 
-export const alt = 'Energiavertailu — Opas';
+export const alt = 'Valitse Sähkö — Opas';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -163,7 +163,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
                 display: 'flex',
               }}
             >
-              Energiavertailu
+              Valitse Sähkö
             </div>
           </div>
           <div
@@ -174,7 +174,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
               display: 'flex',
             }}
           >
-            energiavertailu.fi
+            valitsesahko.fi
           </div>
         </div>
       </div>

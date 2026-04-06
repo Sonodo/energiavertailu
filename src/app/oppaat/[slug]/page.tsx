@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: guide.title,
     description: guide.description,
     openGraph: {
-      title: `${guide.title} | Energiavertailu`,
+      title: `${guide.title} | Valitse Sähkö`,
       description: guide.description,
       url: `${SITE_URL}/oppaat/${slug}`,
       type: 'article',
@@ -241,7 +241,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Energiavertailu',
+      name: 'Valitse Sähkö',
       url: SITE_URL,
     },
     mainEntityOfPage: `${SITE_URL}/oppaat/${guide.slug}`,

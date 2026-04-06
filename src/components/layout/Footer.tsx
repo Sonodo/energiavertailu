@@ -50,13 +50,13 @@ export default function Footer() {
             <Link
               href="/"
               className="inline-flex items-center gap-2"
-              aria-label="Energiavertailu — Etusivu"
+              aria-label="Valitse Sähkö — Etusivu"
             >
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0066FF]">
                 <Zap className="h-5 w-5 text-white" />
               </div>
               <span className="text-lg font-bold text-white">
-                Energia<span className="text-[#0066FF]">vertailu</span>
+                Valitse<span className="text-[#0066FF]"> Sähkö</span>
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-6 text-slate-400">
@@ -144,9 +144,9 @@ export default function Footer() {
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
             {[
-              { name: 'Lainavertailu', url: 'https://lainavertailu.vercel.app', desc: 'Lainojen vertailu' },
-              { name: 'Vakuutusvertailu', url: 'https://vakuutusvertailu.vercel.app', desc: 'Vakuutusten vertailu' },
-              { name: 'Puhelinvertailu', url: 'https://puhelinvertailu.vercel.app', desc: 'Liittymien vertailu' },
+              { name: 'Valitse Laina', url: 'https://valitselaina.fi', desc: 'Lainojen vertailu' },
+              { name: 'Valitse Vakuutus', url: 'https://valitsevakuutus.fi', desc: 'Vakuutusten vertailu' },
+              { name: 'Valitse Puhelin', url: 'https://valitsepuhelin.fi', desc: 'Liittymien vertailu' },
               { name: 'Asuntomaatti', url: 'https://asuntomaatti.fi', desc: 'Asuntojen vertailu' },
               { name: 'Alennuskartta', url: 'https://alennuskartta.fi', desc: 'Tarjoukset kartalla' },
               { name: 'Valitse', url: 'https://valitse.fi', desc: 'Kaikki vertailupalvelut' },
@@ -168,7 +168,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
           <p className="text-sm text-slate-500">
-            &copy; {new Date().getFullYear()} Energiavertailu. Kaikki oikeudet pidätetään.
+            &copy; {new Date().getFullYear()} Valitse Sähkö. Kaikki oikeudet pidätetään.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             {legalLinks.map((link) => (

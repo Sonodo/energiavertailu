@@ -7,7 +7,7 @@ import { computeStats } from '@/lib/price-utils';
 import type { HourlyPrice } from '@/types';
 
 export const metadata: Metadata = {
-  title: 'Pörssisähkön hinta nyt — Reaaliaikainen sähkön hinta | Energiavertailu',
+  title: 'Pörssisähkön hinta nyt — Reaaliaikainen sähkön hinta | Valitse Sähkö',
   description:
     'Seuraa pörssisähkön hintaa reaaliajassa. Tänään ja huomisen tuntihinnat, hintahistoria ja ennusteet. Löydä halvimmat tunnit sähkönkäytölle.',
   openGraph: {
@@ -91,7 +91,7 @@ export default async function PorssisahkoPage() {
             name: 'Pörssisähkön hinta nyt',
             description:
               'Seuraa pörssisähkön hintaa reaaliajassa. Tänään ja huomisen tuntihinnat, hintahistoria ja ennusteet.',
-            url: 'https://energiavertailu.fi/porssisahko',
+            url: 'https://valitsesahko.fi/porssisahko',
             mainEntity: {
               '@type': 'Dataset',
               name: 'Sähkön spot-hinnat Suomessa',

@@ -3,16 +3,16 @@ import { Suspense } from 'react';
 import ComparisonCalculator from '@/components/calculator/ComparisonCalculator';
 
 export const metadata: Metadata = {
-  title: 'Vertaa sähkösopimuksia — Löydä halvin sähkö | Energiavertailu',
+  title: 'Vertaa sähkösopimuksia — Löydä halvin sähkö | Valitse Sähkö',
   description:
     'Vertaa yli 90 sähkösopimusta 37 sähköyhtiöltä. Syötä kulutuksesi ja löydä halvin sähkösopimus. Ilmainen ja puolueeton vertailu.',
   openGraph: {
-    title: 'Vertaa sähkösopimuksia — Löydä halvin sähkö | Energiavertailu',
+    title: 'Vertaa sähkösopimuksia — Löydä halvin sähkö | Valitse Sähkö',
     description:
       'Vertaa yli 90 sähkösopimusta 37 sähköyhtiöltä. Syötä kulutuksesi ja löydä halvin sähkösopimus.',
   },
   alternates: {
-    canonical: 'https://energiavertailu.fi/vertailu',
+    canonical: 'https://valitsesahko.fi/vertailu',
   },
 };
 

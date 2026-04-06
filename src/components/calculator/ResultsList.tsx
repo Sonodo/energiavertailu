@@ -406,7 +406,7 @@ export default function ResultsList({
             Tulosta
           </button>
           <ShareButton
-            title="Energiavertailu — Sähkösopimuksien vertailu"
+            title="Valitse Sähkö — Sähkösopimuksien vertailu"
             text="Katso sähkösopimuksien vertailutulokset"
           />
         </div>
