@@ -12,13 +12,15 @@ interface TickerData {
 }
 
 function getSimulatedData(): TickerData {
+  // Deterministic fallback data based on time of day (no randomness to avoid hydration issues)
   const hour = new Date().getHours();
-  let price: number;
-  if (hour >= 0 && hour < 6) price = 2.5 + Math.random() * 2;
-  else if (hour >= 6 && hour < 9) price = 5.0 + Math.random() * 3;
-  else if (hour >= 9 && hour < 17) price = 4.0 + Math.random() * 3;
-  else if (hour >= 17 && hour < 21) price = 6.0 + Math.random() * 4;
-  else price = 3.0 + Math.random() * 2;
+  const typicalPrices: Record<number, number> = {
+    0: 3.2, 1: 2.8, 2: 2.5, 3: 2.3, 4: 2.4, 5: 2.9,
+    6: 5.1, 7: 6.5, 8: 7.2, 9: 5.8, 10: 5.2, 11: 4.9,
+    12: 4.6, 13: 4.4, 14: 4.5, 15: 4.8, 16: 5.5, 17: 7.0,
+    18: 8.2, 19: 7.5, 20: 6.1, 21: 4.8, 22: 3.9, 23: 3.5,
+  };
+  const price = typicalPrices[hour] ?? 5.0;
 
   const level: TickerData['level'] = price < 4 ? 'cheap' : price < 8 ? 'moderate' : 'expensive';
   const direction: TickerData['direction'] = hour >= 6 && hour < 10 ? 'up' : hour >= 20 ? 'down' : 'stable';

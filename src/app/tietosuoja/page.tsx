@@ -5,11 +5,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Tietosuojaseloste',
   description:
-    'Valitse Sähkön tietosuojaseloste. Lue, miten keräämme, käsittelemme ja suojaamme henkilötietojasi EU:n tietosuoja-asetuksen (GDPR) mukaisesti.',
+    'Energiavertailun tietosuojaseloste. Lue, miten keräämme, käsittelemme ja suojaamme henkilötietojasi EU:n tietosuoja-asetuksen (GDPR) mukaisesti.',
   openGraph: {
     title: `Tietosuojaseloste | ${SITE_NAME}`,
     description:
-      'Valitse Sähkön tietosuojaseloste. Lue, miten keräämme, käsittelemme ja suojaamme henkilötietojasi.',
+      'Energiavertailun tietosuojaseloste. Lue, miten keräämme, käsittelemme ja suojaamme henkilötietojasi.',
     url: `${SITE_URL}/tietosuoja`,
   },
   alternates: {
@@ -33,7 +33,7 @@ export default function TietosuojaPage() {
             Tietosuojaseloste
           </h1>
           <p className="mt-4 text-lg text-slate-600">
-            Tämä tietosuojaseloste kuvaa, miten Valitse Sähkö kerää, käyttää ja suojaa
+            Tämä tietosuojaseloste kuvaa, miten Energiavertailu kerää, käyttää ja suojaa
             henkilötietojasi EU:n yleisen tietosuoja-asetuksen (GDPR) mukaisesti.
           </p>
           <p className="mt-2 text-sm text-slate-500">
@@ -54,10 +54,10 @@ export default function TietosuojaPage() {
             <br />
             Verkkopalvelu: valitsesahko.fi
             <br />
-            Sähköposti: info@valitse.fi
+            Sähköposti: info@valitsesahko.fi
           </p>
           <p>
-            Valitse Sähkö on suomalainen verkkopalvelu, joka tarjoaa sähkösopimusten
+            Energiavertailu on suomalainen verkkopalvelu, joka tarjoaa sähkösopimusten
             vertailupalvelun kuluttajille. Toimimme rekisterinpitäjänä kaikille palvelumme
             kautta kerätyille henkilötiedoille.
           </p>
@@ -253,7 +253,7 @@ export default function TietosuojaPage() {
           <p>
             <strong>Sonodo — Henri Linnainmaa</strong>
             <br />
-            Sähköposti: info@valitse.fi
+            Sähköposti: info@valitsesahko.fi
           </p>
           <p>
             Pyrimme vastaamaan kaikkiin tietosuojaa koskeviin yhteydenottoihin

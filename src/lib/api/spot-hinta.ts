@@ -10,13 +10,29 @@ const SPOT_HINTA_BASE = 'https://api.spot-hinta.fi';
  * Transform raw API data to our internal format.
  * Uses Finnish timezone for hour extraction since spot-hinta.fi
  * timestamps represent Finnish local time.
+ *
+ * spot-hinta.fi returns prices in c/kWh. If the API format ever
+ * changes to EUR/kWh (values typically 0.01–0.50), we detect and
+ * convert automatically.
  */
 function transformPrice(entry: SpotPriceRaw): HourlyPrice {
   const date = new Date(entry.DateTime);
+
+  let price = entry.PriceWithTax;
+  let priceNoTax = entry.PriceNoTax;
+
+  // Sanity check: if both values look like EUR/kWh instead of c/kWh,
+  // convert (EUR/kWh * 100 = c/kWh). Finnish c/kWh prices are
+  // typically 1–30, while EUR/kWh would be 0.01–0.30.
+  if (price >= 0 && price < 0.5 && priceNoTax >= 0 && priceNoTax < 0.5 && price > 0) {
+    price = Math.round(price * 100 * 100) / 100;
+    priceNoTax = Math.round(priceNoTax * 100 * 100) / 100;
+  }
+
   return {
     hour: getFinnishHour(date),
-    price: entry.PriceWithTax,
-    priceNoTax: entry.PriceNoTax,
+    price,
+    priceNoTax,
     timestamp: entry.DateTime,
     rank: entry.Rank,
   };
@@ -147,6 +163,7 @@ export async function fetchCurrentSpotPrice(): Promise<HourlyPrice | null> {
     const entry: SpotPriceRaw = Array.isArray(data) ? data[0] : data;
     if (!entry || !entry.DateTime) return null;
 
+    // transformPrice already includes EUR/kWh → c/kWh sanity check
     return transformPrice(entry);
   } catch {
     return null;
@@ -239,7 +256,8 @@ export function interpolateToQuarterHour(hourlyPrices: HourlyPrice[]): QuarterHo
 
       // Add small intra-hour noise (±5% max)
       const noise = Math.sin(current.hour * 17 + q * 7.3) * 0.05 * current.price;
-      const price = Math.max(0.01, Math.round((basePrice + noise) * 100) / 100);
+      // Floor at -1 c/kWh (negative prices can occur, but not extremely negative)
+      const price = Math.max(-1, Math.round((basePrice + noise) * 100) / 100);
       const priceNoTax = Math.round((price / 1.255) * 100) / 100;
 
       const ts = new Date(current.timestamp);

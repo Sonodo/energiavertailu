@@ -5,11 +5,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Yhteystiedot',
   description:
-    'Ota yhteyttä Valitse Sähköön. Autamme mielellämme kaikissa sähkövertailuun ja palveluumme liittyvissä kysymyksissä.',
+    'Ota yhteyttä Energiavertailuun. Autamme mielellämme kaikissa sähkövertailuun ja palveluumme liittyvissä kysymyksissä.',
   openGraph: {
     title: `Yhteystiedot | ${SITE_NAME}`,
     description:
-      'Ota yhteyttä Valitse Sähköön. Autamme mielellämme kaikissa sähkövertailuun liittyvissä kysymyksissä.',
+      'Ota yhteyttä Energiavertailuun. Autamme mielellämme kaikissa sähkövertailuun liittyvissä kysymyksissä.',
     url: `${SITE_URL}/yhteystiedot`,
   },
   alternates: {
@@ -22,22 +22,22 @@ const contactChannels = [
     icon: Mail,
     title: 'Yleinen yhteydenotto',
     description: 'Kysymykset palvelusta, yhteistyöehdotukset ja palaute.',
-    contact: 'info@valitse.fi',
-    href: 'mailto:info@valitse.fi',
+    contact: 'info@valitsesahko.fi',
+    href: 'mailto:info@valitsesahko.fi',
   },
   {
     icon: MessageSquare,
     title: 'Media ja lehdistö',
     description: 'Haastattelupyynnöt, tiedotteet ja mediatiedustelut.',
-    contact: 'media@valitse.fi',
-    href: 'mailto:media@valitse.fi',
+    contact: 'media@valitsesahko.fi',
+    href: 'mailto:media@valitsesahko.fi',
   },
   {
     icon: Clock,
     title: 'Tietosuoja-asiat',
     description: 'GDPR-pyynnöt, tietojen poisto ja tietosuojaan liittyvät kysymykset.',
-    contact: 'info@valitse.fi',
-    href: 'mailto:info@valitse.fi',
+    contact: 'info@valitsesahko.fi',
+    href: 'mailto:info@valitsesahko.fi',
   },
 ];
 
@@ -90,7 +90,7 @@ export default function YhteystiedotPage() {
 
           <h3>Sähkösopimukseen liittyvät kysymykset</h3>
           <p>
-            Valitse Sähkö on vertailupalvelu — emme myy sähköä emmekä tee
+            Energiavertailu on vertailupalvelu — emme myy sähköä emmekä tee
             sähkösopimuksia. Jos sinulla on kysyttävää olemassa olevasta
             sähkösopimuksestasi, ota yhteyttä suoraan sähköyhtiöösi.
           </p>
@@ -100,10 +100,10 @@ export default function YhteystiedotPage() {
             Jos huomaat palvelussamme virheellisen hinnan tai muun tiedon, ilmoita
             siitä osoitteeseen{' '}
             <a
-              href="mailto:info@valitse.fi"
+              href="mailto:info@valitsesahko.fi"
               className="text-[#0066FF] hover:underline"
             >
-              info@valitse.fi
+              info@valitsesahko.fi
             </a>
             . Korjaamme virheet mahdollisimman nopeasti.
           </p>

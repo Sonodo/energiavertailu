@@ -34,6 +34,13 @@ const footerSections = {
   },
 };
 
+const valitseNetwork = [
+  { label: 'Valitse.fi', description: 'Vertaa ja valitse', href: 'https://valitse.fi' },
+  { label: 'Valitse Laina', description: 'Lainavertailu', href: 'https://valitselaina.fi' },
+  { label: 'Valitse Vakuutus', description: 'Vakuutusvertailu', href: 'https://valitsevakuutus.fi' },
+  { label: 'Valitse Puhelin', description: 'Puhelinliittymät', href: 'https://valitsepuhelin.fi' },
+];
+
 const legalLinks = [
   { label: 'Tietosuoja', href: '/tietosuoja' },
   { label: 'Käyttöehdot', href: '/kayttoehdot' },
@@ -44,7 +51,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-slate-900" role="contentinfo">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link
@@ -131,6 +138,28 @@ export default function Footer() {
                   >
                     {link.label}
                   </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Valitse-verkosto */}
+          <div>
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-200">
+              Valitse-verkosto
+            </h3>
+            <ul className="mt-4 space-y-2.5">
+              {valitseNetwork.map((site) => (
+                <li key={site.href}>
+                  <a
+                    href={site.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
+                  >
+                    {site.label}
+                    <span className="block text-xs text-slate-500">{site.description}</span>
+                  </a>
                 </li>
               ))}
             </ul>

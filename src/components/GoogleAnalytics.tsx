@@ -1,11 +1,10 @@
-'use client';
+'use client'
 
-import Script from 'next/script';
+import Script from 'next/script'
 
-const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GA_ID = 'G-JT1SCYMPW2'
 
-export function GoogleAnalytics() {
-  if (!GA_ID) return null;
+export default function GoogleAnalytics() {
 
   return (
     <>
@@ -18,11 +17,15 @@ export function GoogleAnalytics() {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_ID}', {
-            page_path: window.location.pathname,
+          gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied'
           });
+          gtag('config', '${GA_ID}');
         `}
       </Script>
     </>
-  );
+  )
 }

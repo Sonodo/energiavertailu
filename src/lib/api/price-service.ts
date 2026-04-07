@@ -80,7 +80,9 @@ export async function getTodayPrices(): Promise<SourcedResult<HourlyPrice[]>> {
   // Try spot-hinta.fi first
   try {
     const prices = await fetchTodaySpotPrices();
-    if (prices.length > 0 && prices.some((p) => p.price > 0)) {
+    // Validate that we have reasonable data: at least some prices should be
+    // above 0.5 c/kWh (Finnish spot rarely stays below that for the whole day).
+    if (prices.length > 0 && prices.some((p) => p.price > 0.5)) {
       return { data: prices, source: 'spot-hinta' };
     }
   } catch (error) {
@@ -164,7 +166,11 @@ export async function getCurrentPrice(): Promise<SourcedResult<HourlyPrice | nul
     console.warn('[price-service] ENTSO-E failed for current price:', error);
   }
 
-  return { data: null, source: 'sample' };
+  // Fall back to sample data for the current hour so the UI never shows 0
+  const samplePrices = generateSamplePrices();
+  const currentHour = getFinnishHour();
+  const currentEntry = samplePrices.find((p) => p.hour === currentHour) || samplePrices[0];
+  return { data: currentEntry, source: 'sample' };
 }
 
 /**

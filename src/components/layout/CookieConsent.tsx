@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const CONSENT_KEY = 'energiavertailu-cookie-consent';
+const CONSENT_KEY = 'valitsesahko-cookie-consent';
 
 type ConsentState = 'pending' | 'accepted' | 'rejected';
 
@@ -22,6 +22,12 @@ export default function CookieConsent() {
   function handleAccept() {
     localStorage.setItem(CONSENT_KEY, 'accepted');
     setConsent('accepted');
+    // Update GA4 consent when user accepts cookies
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('consent', 'update', {
+        analytics_storage: 'granted',
+      });
+    }
   }
 
   if (consent !== 'pending') return null;
