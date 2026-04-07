@@ -1,60 +1,70 @@
 # Energiavertailu — Status
 
 **Project**: Energiavertailu — Finnish Electricity Price Comparison
-**Status**: ACTIVE — Publication-ready — all fixes applied, awaiting deployment
-**Created**: 2026-03-26
-**Last Updated**: 2026-04-01 (Session #075)
+**Status**: LIVE at valitsesahko.fi
+**Health**: GREEN
+**Domain**: valitsesahko.fi (custom domain)
+**GA4**: G-JT1SCYMPW2 (hardcoded fallback active)
+**Last Updated**: Session #079 — 2026-04-07
 
 ## Overview
-Finland's most comprehensive electricity price comparison site. Compare contracts from 42 providers with risk scoring, real-time spot price tracking, interactive calculators, educational content. Built to be the #1 Finnish energy comparison site.
+Finland's most comprehensive electricity price comparison site. Compare contracts from 37 providers (91 contracts verified accurate) with risk scoring, real-time spot price tracking, interactive calculators, educational content.
 
-## Current State — Waves 1-6 Complete
+## Current State — LIVE
 
-- **155 pages** generated (static + SSG)
-- **42 providers** with risk scoring and detailed profiles
+- **37 providers** with risk scoring and detailed profiles, **91 contracts** verified accurate
+- **Custom domain**: valitsesahko.fi (Valitse brand)
+- **GA4**: G-JT1SCYMPW2 active (hardcoded fallback)
+- **GSC**: Verification tag added
+- **Cross-links**: Links to other Valitse sites (valitselaina.fi, valitsevakuutus.fi, valitsepuhelin.fi)
 - **Homepage**: Hero, live spot price banner, quick comparison, how it works, features grid, provider logos, FAQ, CTA
-- **Spot Price Dashboard** (/porssisahko): Real-time prices from spot-hinta.fi API, hourly charts, price history, best hours, educational content
-- **Comparison Calculator** (/vertailu): 3-step flow, contracts from 42 providers, housing type presets, filtering, sorting
-- **Provider Directory** (/sahkoyhtiot): 42 provider pages with detailed profiles, contracts, pros/cons, FAQ
+- **Spot Price Dashboard** (/porssisahko): Real-time prices from spot-hinta.fi API, hourly charts, price history, best hours
+- **Comparison Calculator** (/vertailu): 3-step flow, contracts from 37 providers, housing type presets, filtering, sorting
+- **Provider Directory** (/sahkoyhtiot): Provider pages with detailed profiles, contracts, pros/cons, FAQ
 - **Blog** (/blogi): 10 Finnish articles targeting key SEO keywords
-- **Educational Guides** (/oppaat): 6 comprehensive guides (contract types, switching, saving, spot electricity, pricing, solar)
-- **Tools** (/tyokalut): 6 interactive calculators (consumption, solar ROI, EV charging, heating comparison + 2 more)
+- **Educational Guides** (/oppaat): 6 comprehensive guides
+- **Tools** (/tyokalut): 6 interactive calculators
 - **SEO pages**: Regional pages, provider comparison pairs, "sähkön hinta tänään" page
-- **Accessibility**: WCAG compliance pass
 - **SEO**: Sitemap, robots.txt, llms.txt, JSON-LD structured data, per-page metadata
-- **Legal**: Privacy policy, terms of service
-- **Design**: Mobile-first, responsive, modern UI with Tailwind CSS
+
+## Recent Changes
+
+### Session #079 — Live Deployment + Valitse Rebrand (2026-04-07)
+- **LIVE at valitsesahko.fi**: Custom domain configured and working
+- **GA4 G-JT1SCYMPW2 active**: Hardcoded fallback ensures tracking works without env var
+- **GSC verification tag added**: Google Search Console ready
+- **Spot price 0.01 bug fixed**: API unit mismatch — EUR/kWh vs c/kWh conversion corrected
+- **11 old domain references updated**: Migrated from old domain references to valitsesahko.fi
+- **Cross-links to Valitse sites added**: Linking to sibling comparison sites
+- **37 providers and 91 contracts verified accurate**: Full data audit completed
+
+### Session #075 — Pre-deploy Fixes (2026-04-01)
+- Publication-ready — all fixes applied
 
 ## Tech Stack
 - Next.js 16 (App Router) + TypeScript + Tailwind CSS v4
 - Recharts for data visualization
 - lucide-react for icons
 - date-fns for date formatting
-- APIs: spot-hinta.fi (real-time prices), ENTSO-E (pending), Fingrid Open Data (pending)
-- Deploy: Vercel (pending)
+- APIs: spot-hinta.fi (real-time prices)
+- Deploy: Vercel
+
+## Next Steps
+
+1. **Monitor GA4 data** — verify events flowing correctly
+2. **Submit sitemap to Google Search Console** — accelerate indexing
+3. **Apply for AdSense** — organic traffic monetization
+4. **Apply for Adtraction energy affiliate programs** — partnership revenue
+5. **Configure ENTSO-E API key** for enhanced data
+6. **Configure Fingrid API key** for enhanced data
+7. **Price alerts feature** — user notifications for price changes
+8. **Newsletter system** — email marketing
+
+## Blockers
+
+- None — site is live and operational
 
 ## Monetization Plan
 - Phase 1: AdSense (organic traffic monetization)
 - Phase 2: Affiliate partnerships with electricity retailers (€10-30/contract)
 - Phase 3: Lead generation, premium features
-
-## Next Steps
-- [ ] Commit all changes and push to deploy repo
-- [ ] Create deploy repo on GitHub (Sonodo/energiavertailu)
-- [ ] Deploy to Vercel
-- [ ] Expand provider-details for 22 new providers (added in Waves but need full detail pages)
-- [ ] Configure ENTSO-E API key for production
-- [ ] Configure Fingrid API key for production
-- [ ] Set up GA4 tracking
-- [ ] Register domain (energiavertailu.fi or sahkovertaa.fi)
-- [ ] DNS setup
-- [ ] Apply for AdSense
-- [ ] Apply for Adtraction energy affiliate programs
-- [ ] Submit sitemap to Google Search Console
-- [ ] Verify real-time spot price API works in production
-- [ ] Price alerts feature
-- [ ] Newsletter system
-
-## Blockers
-- All changes currently uncommitted (local in empire repo only)
-- ENTSO-E and Fingrid API keys not yet configured
