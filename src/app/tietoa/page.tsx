@@ -5,11 +5,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Tietoa palvelusta',
   description:
-    'Valitse Sähkö on Suomen kattavin ja puolueettomin sähkövertailupalvelu. Lue lisää palvelustamme, menetelmistämme ja tavoitteistamme.',
+    'Valitse Sähkö on Suomen monipuolinen ja puolueeton sähkövertailupalvelu. Lue lisää palvelustamme, menetelmistämme ja tavoitteistamme.',
   openGraph: {
     title: `Tietoa palvelusta | ${SITE_NAME}`,
     description:
-      'Valitse Sähkö on Suomen kattavin ja puolueettomin sähkövertailupalvelu. Lue lisää palvelustamme.',
+      'Valitse Sähkö on Suomen monipuolinen ja puolueeton sähkövertailupalvelu. Lue lisää palvelustamme.',
     url: `${SITE_URL}/tietoa`,
   },
   alternates: {

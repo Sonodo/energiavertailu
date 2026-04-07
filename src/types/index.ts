@@ -72,8 +72,6 @@ export interface ElectricityProvider {
   website: string;
   logo?: string;
   contracts: ElectricityContract[];
-  rating?: number;
-  reviewCount?: number;
   founded?: number;
   headquarters?: string;
   customerCount?: string;

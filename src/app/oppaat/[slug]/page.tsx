@@ -428,7 +428,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
               <div className="rounded-2xl bg-gradient-to-r from-[#0A1628] to-[#162540] p-8 text-center">
                 <BookOpen className="mx-auto h-8 w-8 text-[#0066FF]/60 mb-3" />
                 <h2 className="text-xl font-bold text-white sm:text-2xl">
-                  Löydä paras sähkösopimus
+                  Löydä sopiva sähkösopimus
                 </h2>
                 <p className="mx-auto mt-2 max-w-md text-sm text-white/70">
                   Nyt kun olet oppinut aiheesta lisää, hyödynnä tietoa ja vertaa sähkösopimuksia.

@@ -4,7 +4,6 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import {
   Search,
-  Star,
   Leaf,
   Building2,
   FileText,
@@ -36,25 +35,6 @@ function getCheapestPrice(contracts: { pricePerKwh: number; type: string }[]): n
     return Math.min(...spotContracts.map((c) => c.pricePerKwh));
   }
   return Math.min(...contracts.map((c) => c.pricePerKwh));
-}
-
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex items-center gap-0.5">
-      {[1, 2, 3, 4, 5].map((star) => (
-        <Star
-          key={star}
-          className={cn(
-            'h-4 w-4',
-            star <= Math.round(rating)
-              ? 'fill-amber-400 text-amber-400'
-              : 'fill-slate-200 text-slate-200'
-          )}
-        />
-      ))}
-      <span className="ml-1.5 text-sm font-medium text-slate-700">{rating.toFixed(1)}</span>
-    </div>
-  );
 }
 
 function RiskBadge({ risk }: { risk: number }) {
@@ -331,14 +311,6 @@ export default function SahkoyhtiotPage() {
                               {provider.name}
                             </h3>
                           </div>
-
-                          {/* Editorial score */}
-                          {provider.rating && (
-                            <div className="mt-2 flex items-center gap-2">
-                              <StarRating rating={provider.rating} />
-                              <span className="text-xs text-slate-400">(arvio)</span>
-                            </div>
-                          )}
 
                           {/* Description */}
                           <p className="mt-2 line-clamp-2 text-sm text-slate-500">

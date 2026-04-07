@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
-  Star,
   Leaf,
   ChevronRight,
   ExternalLink,
@@ -58,25 +57,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       canonical: `${SITE_URL}/sahkoyhtiot/${slug}`,
     },
   };
-}
-
-function StarRating({ rating, size = 'md' }: { rating: number; size?: 'sm' | 'md' | 'lg' }) {
-  const sizes = { sm: 'h-4 w-4', md: 'h-5 w-5', lg: 'h-6 w-6' };
-  return (
-    <div className="flex items-center gap-0.5">
-      {[1, 2, 3, 4, 5].map((star) => (
-        <Star
-          key={star}
-          className={cn(
-            sizes[size],
-            star <= Math.round(rating)
-              ? 'fill-amber-400 text-amber-400'
-              : 'fill-slate-200 text-slate-200'
-          )}
-        />
-      ))}
-    </div>
-  );
 }
 
 const TYPE_LABELS: Record<string, string> = {
@@ -183,18 +163,6 @@ export default async function ProviderDetailPage({ params }: PageProps) {
               </h1>
               <p className="mt-3 max-w-2xl text-lg text-white/70">{provider.description}</p>
 
-              {/* Rating */}
-              {provider.rating && (
-                <div className="mt-4 flex items-center gap-3">
-                  <StarRating rating={provider.rating} size="lg" />
-                  <span className="text-xl font-bold text-white">
-                    {provider.rating.toFixed(1)}
-                  </span>
-                  <span className="text-sm text-white/50">
-                    (toimittajan arvio)
-                  </span>
-                </div>
-              )}
             </div>
 
             {/* Key facts card */}
@@ -504,14 +472,6 @@ export default async function ProviderDetailPage({ params }: PageProps) {
                       {provider.greenOptions ? 'Kyllä' : 'Ei'}
                     </span>
                   </div>
-                  {details?.satisfactionRating && (
-                    <div className="flex justify-between text-sm">
-                      <span className="text-slate-500">Arvio (toimituksellinen)</span>
-                      <span className="font-semibold text-slate-900">
-                        {details.satisfactionRating.toFixed(1)}/5
-                      </span>
-                    </div>
-                  )}
                 </div>
               </div>
 

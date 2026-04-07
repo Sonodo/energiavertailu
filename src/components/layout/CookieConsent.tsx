@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const CONSENT_KEY = 'valitsesahko-cookie-consent';
+const ANALYTICS_CONSENT_KEY = 'analytics_consent';
 
 type ConsentState = 'pending' | 'accepted' | 'rejected';
 
@@ -21,6 +22,7 @@ export default function CookieConsent() {
 
   function handleAccept() {
     localStorage.setItem(CONSENT_KEY, 'accepted');
+    localStorage.setItem(ANALYTICS_CONSENT_KEY, 'granted');
     setConsent('accepted');
     // Update GA4 consent when user accepts cookies
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
@@ -28,6 +30,12 @@ export default function CookieConsent() {
         analytics_storage: 'granted',
       });
     }
+  }
+
+  function handleReject() {
+    localStorage.setItem(CONSENT_KEY, 'rejected');
+    localStorage.setItem(ANALYTICS_CONSENT_KEY, 'denied');
+    setConsent('rejected');
   }
 
   if (consent !== 'pending') return null;
@@ -44,8 +52,8 @@ export default function CookieConsent() {
             Evästekäytäntö
           </p>
           <p className="mt-1 text-sm text-slate-600">
-            Käytämme teknisesti välttämättömiä evästeitä palvelun toiminnan
-            varmistamiseksi.{' '}
+            Käytämme teknisesti välttämättömiä evästeitä sekä analytiikkaevästeitä
+            (Google Analytics) palvelun kehittämiseksi suostumuksellasi.{' '}
             <Link
               href="/evasteet"
               className="font-medium text-[#0066FF] hover:text-[#0052CC]"
@@ -56,10 +64,16 @@ export default function CookieConsent() {
         </div>
         <div className="flex flex-shrink-0 gap-3">
           <button
+            onClick={handleReject}
+            className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
+          >
+            Hylkää
+          </button>
+          <button
             onClick={handleAccept}
             className="rounded-lg bg-[#0066FF] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#0052CC]"
           >
-            Selvä
+            Hyväksy
           </button>
         </div>
       </div>

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
-  Star,
   Shield,
   Leaf,
   Zap,
@@ -187,17 +186,15 @@ export default async function ComparisonPairPage({ params }: PageProps) {
   const risk1 = getRiskLabel(p1.counterpartyRisk);
   const risk2 = getRiskLabel(p2.counterpartyRisk);
 
-  // Determine overall winner (weighted: price 40%, rating 30%, risk 20%, variety 10%)
+  // Determine overall winner (weighted: price 50%, risk 30%, variety 20%)
   const score1 =
-    (cost2 / cost1) * 40 +
-    ((p1.rating ?? 3) / 5) * 30 +
-    ((100 - p1.counterpartyRisk) / 100) * 20 +
-    (p1.contracts.length / 10) * 10;
+    (cost2 / cost1) * 50 +
+    ((100 - p1.counterpartyRisk) / 100) * 30 +
+    (p1.contracts.length / 10) * 20;
   const score2 =
-    (cost1 / cost2) * 40 +
-    ((p2.rating ?? 3) / 5) * 30 +
-    ((100 - p2.counterpartyRisk) / 100) * 20 +
-    (p2.contracts.length / 10) * 10;
+    (cost1 / cost2) * 50 +
+    ((100 - p2.counterpartyRisk) / 100) * 30 +
+    (p2.contracts.length / 10) * 20;
 
   const winner = score1 >= score2 ? p1 : p2;
   const loser = winner === p1 ? p2 : p1;
@@ -288,13 +285,6 @@ export default async function ComparisonPairPage({ params }: PageProps) {
               {getTypeLabel(d1?.type ?? p1.type ?? 'national')}
             </div>
             <h2 className="text-3xl font-bold sm:text-4xl">{p1.name}</h2>
-            <div className="mt-2 flex items-center justify-center gap-2 sm:justify-end">
-              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-              <span className="text-lg font-semibold">{p1.rating?.toFixed(1) ?? '—'}</span>
-              <span className="text-sm text-slate-400">
-                ({p1.reviewCount?.toLocaleString('fi-FI')} arvostelua)
-              </span>
-            </div>
           </div>
 
           {/* VS badge */}
@@ -310,13 +300,6 @@ export default async function ComparisonPairPage({ params }: PageProps) {
               {getTypeLabel(d2?.type ?? p2.type ?? 'national')}
             </div>
             <h2 className="text-3xl font-bold sm:text-4xl">{p2.name}</h2>
-            <div className="mt-2 flex items-center justify-center gap-2 sm:justify-start">
-              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-              <span className="text-lg font-semibold">{p2.rating?.toFixed(1) ?? '—'}</span>
-              <span className="text-sm text-slate-400">
-                ({p2.reviewCount?.toLocaleString('fi-FI')} arvostelua)
-              </span>
-            </div>
           </div>
         </div>
 
@@ -368,29 +351,6 @@ export default async function ComparisonPairPage({ params }: PageProps) {
             icon={<Building2 className="h-4 w-4" />}
             value1={getTypeLabel(d1?.type ?? p1.type ?? 'national')}
             value2={getTypeLabel(d2?.type ?? p2.type ?? 'national')}
-          />
-          <ComparisonRow
-            label="Arvosana"
-            icon={<Star className="h-4 w-4" />}
-            value1={
-              <span className="flex items-center justify-center gap-1">
-                <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                {p1.rating?.toFixed(1) ?? '—'}
-              </span>
-            }
-            value2={
-              <span className="flex items-center justify-center gap-1">
-                <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                {p2.rating?.toFixed(1) ?? '—'}
-              </span>
-            }
-            highlight={
-              (p1.rating ?? 0) !== (p2.rating ?? 0)
-                ? (p1.rating ?? 0) > (p2.rating ?? 0)
-                  ? 'left'
-                  : 'right'
-                : undefined
-            }
           />
           <ComparisonRow
             label="Vastapuoliriski"
@@ -550,11 +510,6 @@ export default async function ComparisonPairPage({ params }: PageProps) {
                   <strong className="text-white">Luotettavuus:</strong>{' '}
                   {p1.counterpartyRisk <= p2.counterpartyRisk ? p1.name : p2.name} on vastapuoliriskiltään
                   matalampi.
-                </p>
-                <p>
-                  <strong className="text-white">Asiakastyytyväisyys:</strong>{' '}
-                  {(p1.rating ?? 0) >= (p2.rating ?? 0) ? p1.name : p2.name} saa paremmat arvosanat
-                  asiakkailta ({Math.max(p1.rating ?? 0, p2.rating ?? 0).toFixed(1)}/5).
                 </p>
                 <p className="mt-4 text-sm text-blue-200">
                   Huomioithan, että paras sähköyhtiö riippuu aina henkilökohtaisista tarpeistasi.

@@ -1,6 +1,6 @@
 'use client';
 
-import { TrendingDown, Search, Trophy, ArrowDownUp, Award, ExternalLink, Shield, Star } from 'lucide-react';
+import { TrendingDown, Search, Trophy, ArrowDownUp, Award, ExternalLink, Shield } from 'lucide-react';
 import { formatEuros, formatNumber } from '@/lib/utils';
 import { ComparisonResult, Region } from '@/types';
 
@@ -60,13 +60,6 @@ export default function ComparisonSummary({ results, consumption, region, recomm
                   <span className="text-slate-600">Riski:</span>
                   <span className="font-semibold text-slate-900">{recommendedResult.provider.counterpartyRisk}%</span>
                 </div>
-                {recommendedResult.provider.rating && (
-                  <div className="flex items-center gap-1.5 rounded-lg bg-white/80 px-3 py-1.5 text-sm shadow-sm">
-                    <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                    <span className="text-slate-600">Arvio:</span>
-                    <span className="font-semibold text-slate-900">{recommendedResult.provider.rating.toFixed(1)}</span>
-                  </div>
-                )}
                 {recommendedResult.scoreBreakdown && (
                   <div className="flex items-center gap-1.5 rounded-lg bg-blue-100/80 px-3 py-1.5 text-sm shadow-sm">
                     <Award className="h-3.5 w-3.5 text-blue-700" />

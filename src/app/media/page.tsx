@@ -18,11 +18,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Medialle \u2014 Lehdist\u00f6materiaali ja yhteydenotot',
   description:
-    'Energiavertailun mediasivut: br\u00e4nditiedot, avainluvut, k\u00e4ytt\u00f6ohjeet medialle ja lehdist\u00f6yhteydenotot.',
+    'Valitse Sähkön mediasivut: br\u00e4nditiedot, avainluvut, k\u00e4ytt\u00f6ohjeet medialle ja lehdist\u00f6yhteydenotot.',
   openGraph: {
     title: `Medialle | ${SITE_NAME}`,
     description:
-      'Energiavertailun mediasivut: br\u00e4nditiedot, avainluvut ja yhteydenotot.',
+      'Valitse Sähkön mediasivut: br\u00e4nditiedot, avainluvut ja yhteydenotot.',
     url: `${SITE_URL}/media`,
   },
   alternates: {
@@ -72,7 +72,7 @@ export default function MediaPage() {
             Medialle
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/70">
-            T\u00e4lt\u00e4 sivulta l\u00f6yd\u00e4t Energiavertailun br\u00e4nditiedot,
+            T\u00e4lt\u00e4 sivulta l\u00f6yd\u00e4t Valitse S\u00e4hk\u00f6n br\u00e4nditiedot,
             avainluvut sek\u00e4 ohjeet medialle. Jos tarvitset lis\u00e4tietoja tai haluat
             haastatella asiantuntijoitamme, ota yhteytt\u00e4.
           </p>
@@ -109,13 +109,13 @@ export default function MediaPage() {
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0066FF]/10">
                 <Info className="h-5 w-5 text-[#0066FF]" />
               </div>
-              Tietoa Energiavertailusta
+              Tietoa Valitse S\u00e4hk\u00f6st\u00e4
             </h2>
             <div className="prose prose-slate max-w-none prose-p:text-slate-600">
               <p>
-                Energiavertailu on Suomen kattavin ilmainen s\u00e4hk\u00f6sopimusten
+                Valitse S\u00e4hk\u00f6 on Suomen monipuolinen ilmainen s\u00e4hk\u00f6sopimusten
                 vertailupalvelu. Autamme suomalaisia kuluttajia l\u00f6yt\u00e4m\u00e4\u00e4n
-                edullisimman ja luotettavimman s\u00e4hk\u00f6sopimuksen vertailemalla
+                edullisen ja luotettavan s\u00e4hk\u00f6sopimuksen vertailemalla
                 92 sopimusta 37 s\u00e4hk\u00f6yhti\u00f6lt\u00e4 kaikissa 19 alueessa.
               </p>
               <p>
@@ -146,9 +146,9 @@ export default function MediaPage() {
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-3">
                   Nimi ja slogan
                 </h3>
-                <p className="text-2xl font-bold text-slate-900">Energiavertailu</p>
+                <p className="text-2xl font-bold text-slate-900">Valitse S\u00e4hk\u00f6</p>
                 <p className="mt-1 text-lg text-slate-500">
-                  Suomen kattavin s\u00e4hk\u00f6vertailu
+                  Suomen monipuolinen s\u00e4hk\u00f6vertailu
                 </p>
               </div>
 
@@ -184,19 +184,19 @@ export default function MediaPage() {
             <div className="prose prose-slate max-w-none prose-p:text-slate-600 prose-li:text-slate-600">
               <ul>
                 <li>
-                  K\u00e4yt\u00e4 nime\u00e4 <strong>&ldquo;Energiavertailu&rdquo;</strong> yhten\u00e4
+                  K\u00e4yt\u00e4 nime\u00e4 <strong>&ldquo;Valitse S\u00e4hk\u00f6&rdquo;</strong> kahtena
                   sanana, isolla alkukirjaimella.
                 </li>
                 <li>
-                  Viittaa palveluun seuraavasti: &ldquo;Energiavertailu, Suomen kattavin
+                  Viittaa palveluun seuraavasti: &ldquo;Valitse S\u00e4hk\u00f6, Suomen monipuolinen
                   s\u00e4hk\u00f6vertailu&rdquo; tai &ldquo;s\u00e4hk\u00f6sopimusten
-                  vertailupalvelu Energiavertailu&rdquo;.
+                  vertailupalvelu Valitse S\u00e4hk\u00f6&rdquo;.
                 </li>
                 <li>
                   Sivustolinkki: <strong>valitsesahko.fi</strong>
                 </li>
                 <li>
-                  Kun viitataan vertailudataan, mainitse l\u00e4hteeksi &ldquo;Energiavertailu
+                  Kun viitataan vertailudataan, mainitse l\u00e4hteeksi &ldquo;Valitse S\u00e4hk\u00f6
                   (valitsesahko.fi)&rdquo;.
                 </li>
                 <li>

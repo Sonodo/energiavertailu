@@ -23,6 +23,15 @@ export default function GoogleAnalytics() {
             'ad_user_data': 'denied',
             'ad_personalization': 'denied'
           });
+          // Only grant analytics if user previously accepted
+          try {
+            var storedConsent = localStorage.getItem('analytics_consent');
+            if (storedConsent === 'granted') {
+              gtag('consent', 'update', {
+                'analytics_storage': 'granted'
+              });
+            }
+          } catch(e) {}
           gtag('config', '${GA_ID}');
         `}
       </Script>

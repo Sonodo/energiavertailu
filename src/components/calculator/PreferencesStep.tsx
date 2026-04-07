@@ -6,7 +6,7 @@ import { Leaf, ArrowLeft, ChevronDown, ChevronUp } from 'lucide-react';
 
 export type ContractTypeFilter = 'all' | 'spot' | 'fixed' | 'open-ended';
 export type DurationOption = 'all' | '6' | '12' | '24' | '36';
-export type SortOption = 'cheapest' | 'monthly' | 'rating' | 'risk';
+export type SortOption = 'cheapest' | 'monthly' | 'risk';
 export type ProviderTypeOption = 'national' | 'regional' | 'challenger';
 
 export interface AdvancedFilters {
@@ -56,7 +56,6 @@ const durationOptions: { id: DurationOption; label: string }[] = [
 const sortOptions: { id: SortOption; label: string }[] = [
   { id: 'cheapest', label: 'Halvin ensin' },
   { id: 'monthly', label: 'Kuukausihinta' },
-  { id: 'rating', label: 'Yhtiön arvosana' },
   { id: 'risk', label: 'Luotettavin ensin' },
 ];
 
@@ -71,7 +70,6 @@ function countActiveAdvancedFilters(filters: AdvancedFilters): number {
   if (filters.maxMonthlyFee < 10) count++;
   if (filters.providerTypes.length > 0) count++;
   if (filters.maxRisk < 100) count++;
-  if (filters.minRating > 1) count++;
   return count;
 }
 
@@ -361,36 +359,6 @@ export default function PreferencesStep({
                 <div className="mt-1 flex justify-between text-xs text-slate-400">
                   <span>0 (ei riskiä)</span>
                   <span>100 (korkea riski)</span>
-                </div>
-              </div>
-
-              {/* Min rating slider */}
-              <div>
-                <label className="mb-2 block text-sm font-medium text-slate-700">
-                  Vähimmäisarvosana:{' '}
-                  <span className="font-semibold text-[#0066FF]">
-                    {advancedFilters.minRating > 1
-                      ? `${advancedFilters.minRating.toFixed(1)}`
-                      : 'Ei rajaa'}
-                  </span>
-                </label>
-                <input
-                  type="range"
-                  min={1}
-                  max={5}
-                  step={0.5}
-                  value={advancedFilters.minRating}
-                  onChange={(e) =>
-                    onAdvancedFiltersChange({
-                      ...advancedFilters,
-                      minRating: parseFloat(e.target.value),
-                    })
-                  }
-                  className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-slate-200 accent-[#0066FF]"
-                />
-                <div className="mt-1 flex justify-between text-xs text-slate-400">
-                  <span>1</span>
-                  <span>5</span>
                 </div>
               </div>
 

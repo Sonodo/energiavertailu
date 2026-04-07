@@ -5,11 +5,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Evästekäytäntö',
   description:
-    'Energiavertailun evästekäytäntö. Lue, miten käytämme evästeitä ja miten voit hallita evästeasetuksiasi.',
+    'Valitse Sähkön evästekäytäntö. Lue, miten käytämme evästeitä ja miten voit hallita evästeasetuksiasi.',
   openGraph: {
     title: `Evästekäytäntö | ${SITE_NAME}`,
     description:
-      'Energiavertailun evästekäytäntö. Lue, miten käytämme evästeitä palvelussamme.',
+      'Valitse Sähkön evästekäytäntö. Lue, miten käytämme evästeitä palvelussamme.',
     url: `${SITE_URL}/evasteet`,
   },
   alternates: {
@@ -33,12 +33,12 @@ export default function EvasteetPage() {
             Evästekäytäntö
           </h1>
           <p className="mt-4 text-lg text-slate-600">
-            Tämä evästekäytäntö kuvaa, miten Energiavertailu käyttää evästeitä ja
+            Tämä evästekäytäntö kuvaa, miten Valitse Sähkö käyttää evästeitä ja
             vastaavia teknologioita palvelussaan. Käytämme evästeitä parantaaksemme
             käyttäjäkokemusta ja analysoidaksemme palvelun käyttöä.
           </p>
           <p className="mt-2 text-sm text-slate-500">
-            Päivitetty viimeksi: 27.3.2026
+            Päivitetty viimeksi: 7.4.2026
           </p>
         </div>
       </div>
@@ -95,12 +95,42 @@ export default function EvasteetPage() {
 
           <h3>2.2 Analytiikkaevästeet</h3>
           <p>
-            Saatamme tulevaisuudessa ottaa käyttöön analytiikkaevästeitä, jotka
-            auttavat meitä ymmärtämään, miten kävijät käyttävät palveluamme.
-            Tällä hetkellä emme käytä analytiikkaevästeitä. Mikäli
-            analytiikkapalveluita otetaan käyttöön, päivitämme tämän sivun ja
-            pyydämme suostumuksen ennen evästeiden asettamista.
+            Käytämme Google Analytics 4 (GA4) -palvelua verkkosivuston käytön
+            analysointiin. GA4 kerää anonymisoitua tietoa siitä, miten kävijät
+            käyttävät sivustoamme, kuten sivulataukset, vierailuajat ja
+            käytetyt laitteet. Tämän tarkoituksena on parantaa palvelumme
+            laatua ja käyttäjäkokemusta.
           </p>
+          <p>
+            Analytiikkaevästeet asetetaan vain, jos annat niihin suostumuksen
+            evästebannerin kautta. Oletuksena analytiikkatietojen kerääminen on
+            estetty. Voit muuttaa valintaasi milloin tahansa tyhjentämällä selaimen
+            evästeet ja paikallisen tallennustilan, jolloin evästebanneri näytetään
+            uudelleen.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="min-w-full">
+              <thead>
+                <tr>
+                  <th className="text-left font-semibold">Eväste</th>
+                  <th className="text-left font-semibold">Tarkoitus</th>
+                  <th className="text-left font-semibold">Kesto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>_ga</td>
+                  <td>Google Analytics — kävijän tunnistus</td>
+                  <td>2 vuotta</td>
+                </tr>
+                <tr>
+                  <td>_ga_*</td>
+                  <td>Google Analytics — istunnon seuranta</td>
+                  <td>2 vuotta</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <h3>2.3 Kolmannen osapuolen evästeet</h3>
           <p>

@@ -5,11 +5,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Käyttöehdot',
   description:
-    'Energiavertailun käyttöehdot. Lue palvelun käyttöä koskevat ehdot, vastuunrajoitukset ja tietoa affiliate-yhteistyöstä.',
+    'Valitse Sähkön käyttöehdot. Lue palvelun käyttöä koskevat ehdot, vastuunrajoitukset ja tietoa affiliate-yhteistyöstä.',
   openGraph: {
     title: `Käyttöehdot | ${SITE_NAME}`,
     description:
-      'Energiavertailun käyttöehdot. Lue palvelun käyttöä koskevat ehdot ja vastuunrajoitukset.',
+      'Valitse Sähkön käyttöehdot. Lue palvelun käyttöä koskevat ehdot ja vastuunrajoitukset.',
     url: `${SITE_URL}/kayttoehdot`,
   },
   alternates: {
@@ -33,7 +33,7 @@ export default function KayttoehdotPage() {
             Käyttöehdot
           </h1>
           <p className="mt-4 text-lg text-slate-600">
-            Nämä käyttöehdot koskevat Energiavertailu-verkkopalvelun (valitsesahko.fi)
+            Nämä käyttöehdot koskevat Valitse Sähkö -verkkopalvelun (valitsesahko.fi)
             käyttöä. Käyttämällä palvelua hyväksyt nämä ehdot.
           </p>
           <p className="mt-2 text-sm text-slate-500">
@@ -48,7 +48,7 @@ export default function KayttoehdotPage() {
           {/* 1. Palvelun kuvaus */}
           <h2>1. Palvelun kuvaus</h2>
           <p>
-            Energiavertailu on ilmainen verkkopalvelu, joka auttaa suomalaisia kuluttajia
+            Valitse Sähkö on ilmainen verkkopalvelu, joka auttaa suomalaisia kuluttajia
             vertailemaan sähkösopimuksia ja sähköyhtiöitä. Palvelu tarjoaa:
           </p>
           <ul>
@@ -89,7 +89,7 @@ export default function KayttoehdotPage() {
             </strong>
           </p>
           <p>
-            Energiavertailu pyrkii tarjoamaan mahdollisimman tarkkaa ja ajantasaista tietoa
+            Valitse Sähkö pyrkii tarjoamaan mahdollisimman tarkkaa ja ajantasaista tietoa
             sähkösopimuksista ja -hinnoista. On kuitenkin tärkeää ymmärtää seuraavat
             rajoitukset:
           </p>
@@ -100,7 +100,7 @@ export default function KayttoehdotPage() {
               muuttuvat jatkuvasti, ja tietoja päivitetään säännöllisesti mutta viiveellä.
             </li>
             <li>
-              <strong>Emme ole sähköyhtiö.</strong> Energiavertailu on vertailupalvelu,
+              <strong>Emme ole sähköyhtiö.</strong> Valitse Sähkö on vertailupalvelu,
               ei sähkönmyyjä. Sähkösopimus tehdään aina suoraan sähköyhtiön kanssa.
             </li>
             <li>
@@ -114,7 +114,7 @@ export default function KayttoehdotPage() {
             </li>
           </ul>
           <p>
-            Energiavertailu ei ole vastuussa mistään suorista tai epäsuorista vahingoista,
+            Valitse Sähkö ei ole vastuussa mistään suorista tai epäsuorista vahingoista,
             jotka aiheutuvat palvelun käytöstä tai palvelussa esitettyjen tietojen perusteella
             tehdyistä päätöksistä. Käyttäjän tulee aina varmistaa hintatiedot suoraan
             sähköyhtiöltä ennen sopimuksen tekemistä.
@@ -173,7 +173,7 @@ export default function KayttoehdotPage() {
           {/* 6. Immateriaalioikeudet */}
           <h2>6. Immateriaalioikeudet</h2>
           <p>
-            Energiavertailun palvelussa oleva sisältö, mukaan lukien tekstit, kuvat,
+            Valitse Sähkön palvelussa oleva sisältö, mukaan lukien tekstit, kuvat,
             grafiikat, logot, ohjelmistokoodi ja muu materiaali, on suojattu
             tekijänoikeudella ja muilla immateriaalioikeuksilla.
           </p>
@@ -187,7 +187,7 @@ export default function KayttoehdotPage() {
               ilman kirjallista lupaa on kielletty.
             </li>
             <li>
-              &ldquo;Energiavertailu&rdquo;-nimi ja -logo ovat palvelun tavaramerkkejä.
+              &ldquo;Valitse Sähkö&rdquo;-nimi ja -logo ovat palvelun tavaramerkkejä.
             </li>
           </ul>
 

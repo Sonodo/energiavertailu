@@ -5,11 +5,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Tietosuojaseloste',
   description:
-    'Energiavertailun tietosuojaseloste. Lue, miten keräämme, käsittelemme ja suojaamme henkilötietojasi EU:n tietosuoja-asetuksen (GDPR) mukaisesti.',
+    'Valitse Sähkön tietosuojaseloste. Lue, miten keräämme, käsittelemme ja suojaamme henkilötietojasi EU:n tietosuoja-asetuksen (GDPR) mukaisesti.',
   openGraph: {
     title: `Tietosuojaseloste | ${SITE_NAME}`,
     description:
-      'Energiavertailun tietosuojaseloste. Lue, miten keräämme, käsittelemme ja suojaamme henkilötietojasi.',
+      'Valitse Sähkön tietosuojaseloste. Lue, miten keräämme, käsittelemme ja suojaamme henkilötietojasi.',
     url: `${SITE_URL}/tietosuoja`,
   },
   alternates: {
@@ -33,11 +33,11 @@ export default function TietosuojaPage() {
             Tietosuojaseloste
           </h1>
           <p className="mt-4 text-lg text-slate-600">
-            Tämä tietosuojaseloste kuvaa, miten Energiavertailu kerää, käyttää ja suojaa
+            Tämä tietosuojaseloste kuvaa, miten Valitse Sähkö kerää, käyttää ja suojaa
             henkilötietojasi EU:n yleisen tietosuoja-asetuksen (GDPR) mukaisesti.
           </p>
           <p className="mt-2 text-sm text-slate-500">
-            Päivitetty viimeksi: 26.3.2026
+            Päivitetty viimeksi: 7.4.2026
           </p>
         </div>
       </div>
@@ -57,7 +57,7 @@ export default function TietosuojaPage() {
             Sähköposti: info@valitsesahko.fi
           </p>
           <p>
-            Energiavertailu on suomalainen verkkopalvelu, joka tarjoaa sähkösopimusten
+            Valitse Sähkö on suomalainen verkkopalvelu, joka tarjoaa sähkösopimusten
             vertailupalvelun kuluttajille. Toimimme rekisterinpitäjänä kaikille palvelumme
             kautta kerätyille henkilötiedoille.
           </p>
@@ -106,15 +106,17 @@ export default function TietosuojaPage() {
 
           <h3>3.2 Analytiikkaevästeet</h3>
           <p>
-            Saatamme tulevaisuudessa ottaa käyttöön analytiikkapalveluita (kuten
-            Google Analytics) verkkosivuston käytön analysointiin. Mahdolliset
-            analytiikkapalvelut keräävät anonymisoitua tietoa siitä, miten kävijät
-            käyttävät sivustoamme. Tämän tarkoituksena on parantaa palvelumme laatua
-            ja käyttäjäkokemusta.
+            Käytämme Google Analytics 4 (GA4) -palvelua verkkosivuston käytön
+            analysointiin. GA4 kerää anonymisoitua tietoa siitä, miten kävijät
+            käyttävät sivustoamme, kuten sivulataukset, vierailuajat ja
+            käytetyt laitteet. Analytiikkatietoja käsittelee Google Ireland
+            Limited tietosuoja-asetuksen mukaisesti.
           </p>
           <p>
-            Mikäli analytiikkapalveluita otetaan käyttöön, päivitämme tämän
-            tietosuojaselosteen vastaamaan käytössä olevia palveluita.
+            Analytiikkaevästeet asetetaan vain käyttäjän suostumuksella.
+            Oletuksena analytiikkatietojen kerääminen on estetty (consent mode).
+            Voit muuttaa valintaasi milloin tahansa tyhjentämällä selaimen
+            evästeet ja paikallisen tallennustilan.
           </p>
 
           <h3>3.3 Evästeiden hallinta</h3>
@@ -148,7 +150,7 @@ export default function TietosuojaPage() {
             kuvattujen käyttötarkoitusten toteuttamiseksi:
           </p>
           <ul>
-            <li>Analytiikkatiedot: enintään 26 kuukautta (mikäli analytiikkapalvelu otetaan käyttöön)</li>
+            <li>Analytiikkatiedot: enintään 26 kuukautta (Google Analytics 4)</li>
             <li>Uutiskirjeen tilaajatiedot: kunnes tilaus peruutetaan</li>
             <li>Yhteydenottopyynnöt: enintään 12 kuukautta</li>
           </ul>

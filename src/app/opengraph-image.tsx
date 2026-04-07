@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Valitse Sähkö — Vertaa ja valitse paras sähkösopimus';
+export const alt = 'Valitse Sähkö — Vertaa ja valitse sopiva sähkösopimus';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -38,7 +38,7 @@ export default function Image() {
             fontWeight: 500,
           }}
         >
-          Vertaa ja valitse paras sähkösopimus
+          Vertaa ja valitse sopiva sähkösopimus
         </span>
         <div
           style={{

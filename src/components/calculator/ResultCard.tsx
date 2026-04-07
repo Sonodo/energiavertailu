@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Leaf, Star, ExternalLink, TrendingDown, Shield, GitCompareArrows, Check, Award, ChevronDown, Calculator } from 'lucide-react';
+import { Leaf, ExternalLink, TrendingDown, Shield, GitCompareArrows, Check, Award, ChevronDown, Calculator } from 'lucide-react';
 import { cn, formatEuros, formatPrice, formatNumber } from '@/lib/utils';
 import { ComparisonResult } from '@/types';
 import { ELECTRICITY_VAT, ELECTRICITY_TAX } from '@/lib/constants';
@@ -184,12 +184,6 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
                 <Shield className={cn('h-3 w-3', riskBadge.iconColor)} />
                 Riski: {provider.counterpartyRisk}%
               </span>
-              {provider.rating && (
-                <span className="inline-flex items-center gap-1 text-xs text-slate-500" title="Toimittajan arvio">
-                  <Star className="h-3 w-3 fill-amber-400 text-amber-400" />
-                  {provider.rating.toFixed(1)}
-                </span>
-              )}
             </div>
 
             {/* Recommendation score breakdown (expandable) */}
@@ -212,10 +206,6 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
                     <div className="flex items-center justify-between">
                       <span className="text-slate-600">Luotettavuus:</span>
                       <span className="font-semibold text-slate-900">{result.scoreBreakdown.riskScore}/100 pistettä</span>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-slate-600">Asiakastyytyväisyys:</span>
-                      <span className="font-semibold text-slate-900">{result.scoreBreakdown.ratingScore}/100 pistettä</span>
                     </div>
                     <div className="flex items-center justify-between border-t border-blue-200 pt-1">
                       <span className="font-semibold text-blue-800">Kokonaispisteet:</span>

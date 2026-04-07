@@ -50,7 +50,7 @@ function parseDurations(value: string | null): DurationOption[] {
 }
 
 function parseSortBy(value: string | null): SortOption {
-  if (value === 'cheapest' || value === 'monthly' || value === 'rating' || value === 'risk') return value;
+  if (value === 'cheapest' || value === 'monthly' || value === 'risk') return value;
   return 'cheapest';
 }
 

@@ -277,7 +277,6 @@ function MobileComparisonCard({
     { label: 'Sopimuksen kesto', value: getDurationLabel(contract.contractLength) },
     { label: 'Vihreä sähkö', value: contract.greenEnergy ? 'Kyllä' : 'Ei' },
     { label: 'Vastapuoliriski', value: `${riskBadge.label} (${provider.counterpartyRisk}%)` },
-    { label: 'Arvio (toimituksellinen)', value: provider.rating ? `${provider.rating.toFixed(1)} / 5` : '-' },
     ...consumptionLevels.map((kwh, i) => {
       const cost = calculateAnnualCost(contract.pricePerKwh, contract.monthlyFee, kwh, contract.type);
       return {
@@ -437,14 +436,6 @@ export default function RinnakkainPage() {
         }),
         rawValues: selectedContracts.map((fc) => fc.provider.counterpartyRisk),
         bestMode: 'lowest',
-      },
-      {
-        label: 'Arvio (toimituksellinen)',
-        values: selectedContracts.map((fc) =>
-          fc.provider.rating ? `${fc.provider.rating.toFixed(1)} / 5` : '-'
-        ),
-        rawValues: selectedContracts.map((fc) => fc.provider.rating ?? 0),
-        bestMode: 'highest',
       },
       ...consumptionLevels.map((kwh) => ({
         label: `Vuosikustannus @ ${kwh.toLocaleString('fi-FI')} kWh`,

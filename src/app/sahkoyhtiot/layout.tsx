@@ -3,11 +3,11 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Sähköyhtiöt Suomessa — Kattava hakemisto',
   description:
-    'Vertaa Suomen sähköyhtiöitä: hinnat, arvostelut, sopimukset ja yhteystiedot. Löydä luotettava sähköyhtiö ja paras sähkösopimus.',
+    'Vertaa Suomen sähköyhtiöitä: hinnat, sopimukset ja yhteystiedot. Löydä luotettava sähköyhtiö ja sopiva sähkösopimus.',
   openGraph: {
     title: 'Sähköyhtiöt Suomessa — Kattava hakemisto | Valitse Sähkö',
     description:
-      'Vertaa Suomen sähköyhtiöitä: hinnat, arvostelut, sopimukset ja yhteystiedot. Löydä luotettava sähköyhtiö ja paras sähkösopimus.',
+      'Vertaa Suomen sähköyhtiöitä: hinnat, sopimukset ja yhteystiedot. Löydä luotettava sähköyhtiö ja sopiva sähkösopimus.',
   },
 };
 

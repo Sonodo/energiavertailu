@@ -262,12 +262,6 @@ export default function ResultsList({
         if (provider.counterpartyRisk > advancedFilters.maxRisk) continue;
       }
 
-      // Advanced filter: min rating
-      if (advancedFilters.minRating > 1) {
-        const rating = provider.rating ?? 0;
-        if (rating < advancedFilters.minRating) continue;
-      }
-
       for (const contract of provider.contracts) {
         // Filter by contract type
         if (contractType !== 'all' && contract.type !== contractType) continue;
@@ -311,8 +305,6 @@ export default function ResultsList({
       allResults.sort((a, b) => a.annualCost - b.annualCost);
     } else if (sortBy === 'monthly') {
       allResults.sort((a, b) => a.monthlyCost - b.monthlyCost);
-    } else if (sortBy === 'rating') {
-      allResults.sort((a, b) => (b.provider.rating ?? 0) - (a.provider.rating ?? 0));
     } else if (sortBy === 'risk') {
       allResults.sort((a, b) => a.provider.counterpartyRisk - b.provider.counterpartyRisk);
     }
@@ -340,11 +332,10 @@ export default function ResultsList({
 
         const priceScore = Math.round(((maxCost - r.annualCost) / costRange) * 100);
         const riskScore = Math.round(100 - r.provider.counterpartyRisk);
-        const rating = r.provider.rating ?? 3.0;
-        const ratingScore = Math.round(((rating - 1) / 4) * 100);
+        const ratingScore = 0; // Rating data removed
 
         const totalScore = Math.round(
-          priceScore * 0.5 + riskScore * 0.3 + ratingScore * 0.2
+          priceScore * 0.6 + riskScore * 0.4
         );
 
         r.recommendationScore = totalScore;

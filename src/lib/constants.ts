@@ -5,7 +5,7 @@ export const SITE_NAME = 'Energiavertailu';
 export const SITE_URL = 'https://valitsesahko.fi';
 export const SITE_DESCRIPTION =
   'Vertaa sähkösopimuksia, seuraa pörssisähkön hintaa reaaliajassa ja löydä halvin sähkö. Ilmainen ja puolueeton sähkövertailu.';
-export const SITE_TAGLINE = 'Suomen kattavin sähkövertailu';
+export const SITE_TAGLINE = 'Suomen monipuolinen sähkövertailu';
 
 // Colors — electric blue theme
 export const COLORS = {

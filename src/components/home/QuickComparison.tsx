@@ -107,6 +107,10 @@ export default function QuickComparison() {
             Vertaa hintoja
             <ArrowRight className="h-5 w-5" />
           </button>
+
+          <p className="mt-4 text-sm text-gray-500">
+            Hinnat ovat toimituksellisia arvioita ja voivat poiketa palveluntarjoajan verkkosivuilla olevista hinnoista. Tarkista aina ajantasainen hinta palveluntarjoajan sivuilta.
+          </p>
         </div>
       </div>
     </section>

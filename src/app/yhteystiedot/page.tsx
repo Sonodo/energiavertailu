@@ -5,11 +5,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Yhteystiedot',
   description:
-    'Ota yhteyttä Energiavertailuun. Autamme mielellämme kaikissa sähkövertailuun ja palveluumme liittyvissä kysymyksissä.',
+    'Ota yhteyttä Valitse Sähköön. Autamme mielellämme kaikissa sähkövertailuun ja palveluumme liittyvissä kysymyksissä.',
   openGraph: {
     title: `Yhteystiedot | ${SITE_NAME}`,
     description:
-      'Ota yhteyttä Energiavertailuun. Autamme mielellämme kaikissa sähkövertailuun liittyvissä kysymyksissä.',
+      'Ota yhteyttä Valitse Sähköön. Autamme mielellämme kaikissa sähkövertailuun liittyvissä kysymyksissä.',
     url: `${SITE_URL}/yhteystiedot`,
   },
   alternates: {
@@ -90,7 +90,7 @@ export default function YhteystiedotPage() {
 
           <h3>Sähkösopimukseen liittyvät kysymykset</h3>
           <p>
-            Energiavertailu on vertailupalvelu — emme myy sähköä emmekä tee
+            Valitse Sähkö on vertailupalvelu — emme myy sähköä emmekä tee
             sähkösopimuksia. Jos sinulla on kysyttävää olemassa olevasta
             sähkösopimuksestasi, ota yhteyttä suoraan sähköyhtiöösi.
           </p>

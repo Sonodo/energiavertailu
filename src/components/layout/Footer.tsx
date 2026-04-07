@@ -67,7 +67,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-6 text-slate-400">
-              Suomen kattavin ja puolueettomin sähkövertailupalvelu. Vertaa
+              Suomen monipuolinen ja puolueeton sähkövertailupalvelu. Vertaa
               sähkösopimuksia, seuraa pörssisähkön hintaa ja löydä edullisin
               sähkösopimus kotitaloudellesi.
             </p>
