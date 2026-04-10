@@ -85,8 +85,8 @@ export async function getTodayPrices(): Promise<SourcedResult<HourlyPrice[]>> {
     if (prices.length > 0 && prices.some((p) => p.price > 0.5)) {
       return { data: prices, source: 'spot-hinta' };
     }
-  } catch (error) {
-    console.warn('[price-service] spot-hinta.fi failed for today:', error);
+  } catch {
+    // spot-hinta.fi unavailable, try next source
   }
 
   // Try ENTSO-E
@@ -96,8 +96,8 @@ export async function getTodayPrices(): Promise<SourcedResult<HourlyPrice[]>> {
     if (entsoePrices.length > 0) {
       return { data: entsoeToHourlyPrices(entsoePrices), source: 'entsoe' };
     }
-  } catch (error) {
-    console.warn('[price-service] ENTSO-E failed for today:', error);
+  } catch {
+    // ENTSO-E unavailable, fall back to sample data
   }
 
   // Fall back to sample data
@@ -115,8 +115,8 @@ export async function getTomorrowPrices(): Promise<SourcedResult<HourlyPrice[] |
     if (prices && prices.length > 0) {
       return { data: prices, source: 'spot-hinta' };
     }
-  } catch (error) {
-    console.warn('[price-service] spot-hinta.fi failed for tomorrow:', error);
+  } catch {
+    // spot-hinta.fi unavailable, try next source
   }
 
   // Try ENTSO-E
@@ -128,8 +128,8 @@ export async function getTomorrowPrices(): Promise<SourcedResult<HourlyPrice[] |
     if (entsoePrices.length > 0) {
       return { data: entsoeToHourlyPrices(entsoePrices), source: 'entsoe' };
     }
-  } catch (error) {
-    console.warn('[price-service] ENTSO-E failed for tomorrow:', error);
+  } catch {
+    // ENTSO-E unavailable
   }
 
   // Tomorrow's prices not yet available — this is normal
@@ -146,8 +146,8 @@ export async function getCurrentPrice(): Promise<SourcedResult<HourlyPrice | nul
     if (price) {
       return { data: price, source: 'spot-hinta' };
     }
-  } catch (error) {
-    console.warn('[price-service] spot-hinta.fi failed for current price:', error);
+  } catch {
+    // spot-hinta.fi unavailable, try next source
   }
 
   // Try to derive from today's ENTSO-E data
@@ -162,8 +162,8 @@ export async function getCurrentPrice(): Promise<SourcedResult<HourlyPrice | nul
         return { data: currentEntry, source: 'entsoe' };
       }
     }
-  } catch (error) {
-    console.warn('[price-service] ENTSO-E failed for current price:', error);
+  } catch {
+    // ENTSO-E unavailable, fall back to sample data
   }
 
   // Fall back to sample data for the current hour so the UI never shows 0
@@ -191,8 +191,8 @@ export async function getPriceHistory(
     if (history.length > 0) {
       return { data: history, source: 'spot-hinta' };
     }
-  } catch (error) {
-    console.warn(`[price-service] spot-hinta.fi failed for ${days}d history:`, error);
+  } catch {
+    // spot-hinta.fi unavailable, try next source
   }
 
   // Try ENTSO-E
@@ -226,8 +226,8 @@ export async function getPriceHistory(
 
       return { data: history, source: 'entsoe' };
     }
-  } catch (error) {
-    console.warn(`[price-service] ENTSO-E failed for ${days}d history:`, error);
+  } catch {
+    // ENTSO-E unavailable, fall back to sample data
   }
 
   // Fall back to sample data

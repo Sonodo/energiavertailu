@@ -8,6 +8,15 @@ const ANALYTICS_CONSENT_KEY = 'analytics_consent';
 
 type ConsentState = 'pending' | 'accepted' | 'rejected';
 
+function updateClarityConsent(granted: boolean) {
+  const w = window as unknown as { clarity?: (...args: unknown[]) => void };
+  if (!w.clarity) return;
+  w.clarity('consentv2', {
+    analytics_storage: granted ? 'granted' : 'denied',
+    ad_storage: 'denied',
+  });
+}
+
 export default function CookieConsent() {
   const [consent, setConsent] = useState<ConsentState>('accepted'); // default to hide banner
 
@@ -30,12 +39,14 @@ export default function CookieConsent() {
         analytics_storage: 'granted',
       });
     }
+    updateClarityConsent(true);
   }
 
   function handleReject() {
     localStorage.setItem(CONSENT_KEY, 'rejected');
     localStorage.setItem(ANALYTICS_CONSENT_KEY, 'denied');
     setConsent('rejected');
+    updateClarityConsent(false);
   }
 
   if (consent !== 'pending') return null;

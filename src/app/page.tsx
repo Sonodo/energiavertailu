@@ -66,7 +66,7 @@ export default function HomePage() {
                 <span className="flex h-2 w-2 rounded-full bg-emerald-400">
                   <span className="h-2 w-2 animate-ping rounded-full bg-emerald-400" />
                 </span>
-                Päivitetty reaaliajassa
+                Tuorein saatavilla oleva data
               </div>
 
               {/* Headline */}
@@ -150,7 +150,7 @@ export default function HomePage() {
             <HeroStat value="37" label="Sähköyhtiötä" />
             <HeroStatAnimated count={totalContracts} suffix="+" label="Sopimusta" />
             <HeroStat value="0 €" label="Vertailun hinta" />
-            <HeroStat value="24/7" label="Reaaliaikainen data" />
+            <HeroStat value="24/7" label="Tuorein saatavilla oleva data" />
           </div>
         </div>
       </section>

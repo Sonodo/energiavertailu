@@ -5,7 +5,7 @@
 **Health**: GREEN
 **Domain**: valitsesahko.fi (custom domain)
 **GA4**: G-JT1SCYMPW2 (hardcoded fallback active)
-**Last Updated**: Session #079 — 2026-04-07
+**Last Updated**: Session #080 — 2026-04-07
 
 ## Overview
 Finland's most comprehensive electricity price comparison site. Compare contracts from 37 providers (91 contracts verified accurate) with risk scoring, real-time spot price tracking, interactive calculators, educational content.
@@ -28,6 +28,12 @@ Finland's most comprehensive electricity price comparison site. Compare contract
 - **SEO**: Sitemap, robots.txt, llms.txt, JSON-LD structured data, per-page metadata
 
 ## Recent Changes
+
+### Session #080 — Compliance Audit (2026-04-07)
+- **Cookie consent added**: GDPR-compliant cookie banner implemented
+- **Fake reviews removed**: Non-genuine user testimonials cleaned out
+- **Brand unified to Valitse**: Consistent branding across all pages
+- **Deployed**: Changes pushed to production at valitsesahko.fi
 
 ### Session #079 — Live Deployment + Valitse Rebrand (2026-04-07)
 - **LIVE at valitsesahko.fi**: Custom domain configured and working

@@ -62,7 +62,15 @@ export function generateSamplePrices(dateStr?: string): HourlyPrice[] {
     const priceNoTax = price / 1.255;
 
     const timestamp = new Date(year, month, day, hour, 0, 0);
-    const offset = '+03:00'; // Finland EET/EEST
+    // Determine Finnish timezone offset dynamically (handles EET/EEST)
+    const finnishFormatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'Europe/Helsinki',
+      timeZoneName: 'shortOffset',
+    });
+    const parts = finnishFormatter.formatToParts(timestamp);
+    const tzPart = parts.find((p) => p.type === 'timeZoneName');
+    const offsetStr = tzPart?.value?.replace('GMT', '') || '+03:00';
+    const offset = offsetStr.includes(':') ? offsetStr : `${offsetStr}:00`;
     const isoStr = timestamp.toISOString().replace('Z', '').slice(0, 19) + offset;
 
     return {
@@ -104,8 +112,7 @@ export async function fetchTodaySpotPrices(): Promise<HourlyPrice[]> {
     }
 
     return data.map(transformPrice).sort((a, b) => a.hour - b.hour);
-  } catch (error) {
-    console.warn('Failed to fetch today prices, using sample data:', error);
+  } catch {
     return generateSamplePrices();
   }
 }
@@ -189,8 +196,7 @@ export async function fetchDatePrices(date: string): Promise<HourlyPrice[]> {
     }
 
     return data.map(transformPrice).sort((a, b) => a.hour - b.hour);
-  } catch (error) {
-    console.warn(`Failed to fetch prices for ${date}:`, error);
+  } catch {
     return generateSamplePrices(date);
   }
 }
@@ -335,8 +341,7 @@ export async function fetchTodayQuarterHourPrices(): Promise<QuarterHourPrice[]>
 
     // Otherwise interpolate from hourly data
     return interpolateToQuarterHour(hourlyPrices);
-  } catch (error) {
-    console.warn('Failed to fetch 15-min prices, using sample data:', error);
+  } catch {
     return generateSample15MinPrices();
   }
 }

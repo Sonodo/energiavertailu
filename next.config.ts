@@ -4,6 +4,20 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: process.cwd(),
   },
+  async redirects() {
+    return [
+      {
+        source: '/sahkosopimukset',
+        destination: '/vertailu',
+        permanent: true,
+      },
+      {
+        source: '/vertaa',
+        destination: '/vertailu',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

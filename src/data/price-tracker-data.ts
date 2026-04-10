@@ -23,7 +23,7 @@ export const TRACKED_PROVIDERS: ProviderInfo[] = [
   { slug: 'helen', name: 'Helen', color: '#FF6B35' },
   { slug: 'vattenfall', name: 'Vattenfall', color: '#FFB800' },
   { slug: 'oomi', name: 'Oomi', color: '#10B981' },
-  { slug: 'lumme', name: 'Lumme Energia', color: '#8B5CF6' },
+  { slug: 'lumme-energia', name: 'Lumme Energia', color: '#8B5CF6' },
 ];
 
 // Last 12 months of price data
@@ -36,7 +36,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 9.2, spot: 0.45 },
       vattenfall: { fixed12: 9.0, spot: 0.42 },
       oomi: { fixed12: 8.7, spot: 0.35 },
-      lumme: { fixed12: 9.1, spot: 0.38 },
+      'lumme-energia': { fixed12: 9.1, spot: 0.38 },
     },
   },
   {
@@ -47,7 +47,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 8.8, spot: 0.45 },
       vattenfall: { fixed12: 8.6, spot: 0.42 },
       oomi: { fixed12: 8.4, spot: 0.35 },
-      lumme: { fixed12: 8.7, spot: 0.38 },
+      'lumme-energia': { fixed12: 8.7, spot: 0.38 },
     },
   },
   {
@@ -58,7 +58,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 8.5, spot: 0.44 },
       vattenfall: { fixed12: 8.3, spot: 0.41 },
       oomi: { fixed12: 8.0, spot: 0.35 },
-      lumme: { fixed12: 8.4, spot: 0.37 },
+      'lumme-energia': { fixed12: 8.4, spot: 0.37 },
     },
   },
   {
@@ -69,7 +69,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 8.2, spot: 0.43 },
       vattenfall: { fixed12: 8.0, spot: 0.40 },
       oomi: { fixed12: 7.8, spot: 0.34 },
-      lumme: { fixed12: 8.1, spot: 0.36 },
+      'lumme-energia': { fixed12: 8.1, spot: 0.36 },
     },
   },
   {
@@ -80,7 +80,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 8.1, spot: 0.43 },
       vattenfall: { fixed12: 7.9, spot: 0.40 },
       oomi: { fixed12: 7.7, spot: 0.34 },
-      lumme: { fixed12: 8.0, spot: 0.36 },
+      'lumme-energia': { fixed12: 8.0, spot: 0.36 },
     },
   },
   {
@@ -91,7 +91,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 8.2, spot: 0.44 },
       vattenfall: { fixed12: 8.0, spot: 0.41 },
       oomi: { fixed12: 7.8, spot: 0.35 },
-      lumme: { fixed12: 8.1, spot: 0.37 },
+      'lumme-energia': { fixed12: 8.1, spot: 0.37 },
     },
   },
   {
@@ -102,7 +102,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 8.4, spot: 0.44 },
       vattenfall: { fixed12: 8.2, spot: 0.41 },
       oomi: { fixed12: 8.0, spot: 0.35 },
-      lumme: { fixed12: 8.3, spot: 0.37 },
+      'lumme-energia': { fixed12: 8.3, spot: 0.37 },
     },
   },
   {
@@ -113,7 +113,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 8.8, spot: 0.45 },
       vattenfall: { fixed12: 8.6, spot: 0.42 },
       oomi: { fixed12: 8.3, spot: 0.36 },
-      lumme: { fixed12: 8.7, spot: 0.38 },
+      'lumme-energia': { fixed12: 8.7, spot: 0.38 },
     },
   },
   {
@@ -124,7 +124,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 9.1, spot: 0.46 },
       vattenfall: { fixed12: 8.9, spot: 0.43 },
       oomi: { fixed12: 8.6, spot: 0.37 },
-      lumme: { fixed12: 9.0, spot: 0.39 },
+      'lumme-energia': { fixed12: 9.0, spot: 0.39 },
     },
   },
   {
@@ -135,7 +135,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 8.9, spot: 0.45 },
       vattenfall: { fixed12: 8.7, spot: 0.42 },
       oomi: { fixed12: 8.4, spot: 0.36 },
-      lumme: { fixed12: 8.8, spot: 0.38 },
+      'lumme-energia': { fixed12: 8.8, spot: 0.38 },
     },
   },
   {
@@ -146,7 +146,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 8.6, spot: 0.44 },
       vattenfall: { fixed12: 8.4, spot: 0.41 },
       oomi: { fixed12: 8.1, spot: 0.35 },
-      lumme: { fixed12: 8.5, spot: 0.37 },
+      'lumme-energia': { fixed12: 8.5, spot: 0.37 },
     },
   },
   {
@@ -157,7 +157,7 @@ export const PRICE_HISTORY: MonthlyPriceData[] = [
       helen: { fixed12: 8.2, spot: 0.43 },
       vattenfall: { fixed12: 8.0, spot: 0.40 },
       oomi: { fixed12: 7.7, spot: 0.34 },
-      lumme: { fixed12: 8.1, spot: 0.36 },
+      'lumme-energia': { fixed12: 8.1, spot: 0.36 },
     },
   },
 ];

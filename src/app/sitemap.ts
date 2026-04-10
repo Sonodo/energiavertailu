@@ -9,131 +9,135 @@ import { regions } from '@/data/regions';
 import { regionContent } from '@/data/region-content';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Use a fixed build date for static pages instead of new Date()
+  // to avoid unnecessary sitemap churn on every build
+  const BUILD_DATE = new Date('2026-04-10');
+
   // Static pages
   const staticPages: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'daily',
       priority: 1,
     },
     {
       url: `${SITE_URL}/porssisahko`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'hourly',
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/vertailu`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/sahkoyhtiot`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/tyokalut`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/tyokalut/hintaseuranta`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/blogi`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'daily',
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/oppaat`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${SITE_URL}/tietosuoja`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${SITE_URL}/kayttoehdot`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${SITE_URL}/sahkon-hinta-tanaan`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'hourly',
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/tietoa`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'monthly',
       priority: 0.5,
     },
     {
       url: `${SITE_URL}/yhteystiedot`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'yearly',
       priority: 0.4,
     },
     {
       url: `${SITE_URL}/media`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'monthly',
       priority: 0.4,
     },
     {
       url: `${SITE_URL}/evasteet`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'yearly',
       priority: 0.3,
     },
     {
       url: `${SITE_URL}/menetelma`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'yearly',
       priority: 0.4,
     },
     {
       url: `${SITE_URL}/tyokalut/kulutus`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/tyokalut/aurinkopaneelit`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/tyokalut/lammitys`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/tyokalut/sahkoauto`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${SITE_URL}/vertailu/rinnakkain`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
@@ -150,7 +154,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Provider pages
   const providerPages: MetadataRoute.Sitemap = providers.map((provider) => ({
     url: `${SITE_URL}/sahkoyhtiot/${provider.slug}`,
-    lastModified: new Date(),
+    lastModified: BUILD_DATE,
     changeFrequency: 'weekly' as const,
     priority: 0.6,
   }));
@@ -167,7 +171,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const reportPages: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/raportit`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
@@ -182,7 +186,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Provider comparison pages
   const comparisonPages: MetadataRoute.Sitemap = providerComparisons.map((comp) => ({
     url: `${SITE_URL}/vertailu/${comp.slugPair}`,
-    lastModified: new Date(),
+    lastModified: BUILD_DATE,
     changeFrequency: 'weekly' as const,
     priority: 0.7,
   }));
@@ -191,7 +195,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const regionPages: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/alue`,
-      lastModified: new Date(),
+      lastModified: BUILD_DATE,
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     },
@@ -199,7 +203,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .filter((region) => regionContent[region.id])
       .map((region) => ({
         url: `${SITE_URL}/alue/${region.id}`,
-        lastModified: new Date(),
+        lastModified: BUILD_DATE,
         changeFrequency: 'monthly' as const,
         priority: 0.7,
       })),

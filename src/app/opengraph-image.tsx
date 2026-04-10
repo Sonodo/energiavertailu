@@ -1,9 +1,13 @@
 import { ImageResponse } from 'next/og';
+import { providers } from '@/data/providers';
 
 export const runtime = 'edge';
 export const alt = 'Valitse Sähkö — Vertaa ja valitse sopiva sähkösopimus';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
+
+const providerCount = providers.length;
+const contractCount = providers.reduce((sum, p) => sum + p.contracts.length, 0);
 
 export default function Image() {
   return new ImageResponse(
@@ -55,7 +59,7 @@ export default function Image() {
               color: '#FFFFFF',
             }}
           >
-            <span style={{ fontSize: '40px', fontWeight: 700 }}>37</span>
+            <span style={{ fontSize: '40px', fontWeight: 700 }}>{providerCount}</span>
             <span style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)' }}>
               Sähköyhtiötä
             </span>
@@ -68,7 +72,7 @@ export default function Image() {
               color: '#FFFFFF',
             }}
           >
-            <span style={{ fontSize: '40px', fontWeight: 700 }}>92</span>
+            <span style={{ fontSize: '40px', fontWeight: 700 }}>{contractCount}</span>
             <span style={{ fontSize: '16px', color: 'rgba(255,255,255,0.6)' }}>
               Sopimusta
             </span>
