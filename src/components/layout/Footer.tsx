@@ -38,7 +38,7 @@ const valitseNetwork = [
   { label: 'Valitse.fi', description: 'Vertaa ja valitse', href: 'https://valitse.fi' },
   { label: 'Valitse Laina', description: 'Lainavertailu', href: 'https://valitselaina.fi' },
   { label: 'Valitse Vakuutus', description: 'Vakuutusvertailu', href: 'https://valitsevakuutus.fi' },
-  { label: 'Valitse Puhelin', description: 'Puhelinliittymät', href: 'https://valitsepuhelin.fi' },
+  { label: 'Valitse Liittymä', description: 'Liittymävertailu', href: 'https://valitseliittyma.fi' },
 ];
 
 const legalLinks = [
@@ -175,7 +175,7 @@ export default function Footer() {
             {[
               { name: 'Valitse Laina', url: 'https://valitselaina.fi', desc: 'Lainojen vertailu' },
               { name: 'Valitse Vakuutus', url: 'https://valitsevakuutus.fi', desc: 'Vakuutusten vertailu' },
-              { name: 'Valitse Puhelin', url: 'https://valitsepuhelin.fi', desc: 'Liittymien vertailu' },
+              { name: 'Valitse Liittymä', url: 'https://valitseliittyma.fi', desc: 'Liittymien vertailu' },
               { name: 'Asuntomaatti', url: 'https://asuntomaatti.fi', desc: 'Asuntojen vertailu' },
               { name: 'Alennuskartta', url: 'https://alennuskartta.fi', desc: 'Tarjoukset kartalla' },
               { name: 'Valitse', url: 'https://valitse.fi', desc: 'Kaikki vertailupalvelut' },
