@@ -8,7 +8,7 @@ import CookieConsent from '@/components/layout/CookieConsent';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import { SITE_NAME, SITE_DESCRIPTION, SITE_URL, SITE_TAGLINE } from '@/lib/constants';
 
-const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID || '';
+const CLARITY_ID = process.env.NODE_ENV === 'production' ? 'w9nbmr6tjp' : '';
 
 const inter = Inter({
   variable: '--font-inter',
