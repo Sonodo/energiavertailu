@@ -6,13 +6,13 @@ import { useState, useEffect, useCallback } from 'react';
 import { Menu, X, Zap, ChevronRight } from 'lucide-react';
 import { NAVIGATION } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import { UserMenu } from '@/components/auth/UserMenu';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  // Track scroll for header shadow
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -21,12 +21,10 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -46,8 +44,10 @@ export default function Header() {
     <>
       <header
         className={cn(
-          'sticky top-0 z-50 border-b bg-white/95 backdrop-blur-md transition-shadow duration-200 supports-[backdrop-filter]:bg-white/80',
-          scrolled ? 'border-slate-200 shadow-sm' : 'border-transparent'
+          'sticky top-0 z-50 transition-all duration-300',
+          scrolled
+            ? 'glass-dark shadow-lg shadow-black/10'
+            : 'bg-navy/80 backdrop-blur-md border-b border-white/5'
         )}
       >
         <nav
@@ -57,19 +57,19 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 transition-opacity hover:opacity-80"
+            className="flex items-center gap-2.5 transition-opacity hover:opacity-80"
             aria-label="Valitse Sähkö — Etusivu"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0066FF]">
+            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 shadow-lg shadow-accent/25">
               <Zap className="h-5 w-5 text-white" />
             </div>
-            <span className="text-xl font-bold text-slate-900">
-              Valitse<span className="text-[#0066FF]"> Sähkö</span>
+            <span className="text-xl font-bold text-white">
+              Valitse<span className="text-accent-400"> Sähkö</span>
             </span>
           </Link>
 
           {/* Desktop navigation */}
-          <div className="hidden items-center gap-0.5 md:flex">
+          <div className="hidden items-center gap-0.5 lg:flex">
             {NAVIGATION.map((item) => {
               const isActive =
                 pathname === item.href || pathname.startsWith(`${item.href}/`);
@@ -80,8 +80,8 @@ export default function Header() {
                   className={cn(
                     'rounded-lg px-3 py-2 text-sm font-medium transition-colors',
                     isActive
-                      ? 'bg-blue-50 text-[#0066FF]'
-                      : 'text-slate-700 hover:bg-slate-50 hover:text-[#0066FF]'
+                      ? 'bg-white/10 text-accent-400'
+                      : 'text-white/70 hover:bg-white/5 hover:text-white'
                   )}
                 >
                   {item.label}
@@ -90,34 +90,38 @@ export default function Header() {
             })}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:block">
+          {/* Desktop CTA + UserMenu */}
+          <div className="hidden items-center gap-3 lg:flex">
             <Link
               href="/vertailu"
-              className="inline-flex items-center gap-1.5 rounded-lg bg-[#0066FF] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#0052CC]"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-600 hover:shadow-accent/30"
             >
-              Vertaa nyt
+              Vertaa sähkösopimuksia
             </Link>
+            <UserMenu />
           </div>
 
-          {/* Mobile menu button */}
-          <button
-            type="button"
-            className="relative min-h-[44px] min-w-[44px] rounded-lg p-2 text-slate-600 transition-colors hover:bg-slate-100 md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-expanded={mobileMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label={mobileMenuOpen ? 'Sulje valikko' : 'Avaa valikko'}
-          >
-            <span className="sr-only">
-              {mobileMenuOpen ? 'Sulje valikko' : 'Avaa valikko'}
-            </span>
-            {mobileMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
+          {/* Mobile: UserMenu + menu button */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <UserMenu />
+            <button
+              type="button"
+              className="relative min-h-[44px] min-w-[44px] rounded-lg p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={mobileMenuOpen ? 'Sulje valikko' : 'Avaa valikko'}
+            >
+              <span className="sr-only">
+                {mobileMenuOpen ? 'Sulje valikko' : 'Avaa valikko'}
+              </span>
+              {mobileMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
+          </div>
         </nav>
       </header>
 
@@ -125,7 +129,7 @@ export default function Header() {
       {/* Backdrop */}
       <div
         className={cn(
-          'fixed inset-0 z-40 bg-black/30 backdrop-blur-sm transition-opacity duration-300 md:hidden',
+          'fixed inset-0 z-40 bg-black/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden',
           mobileMenuOpen
             ? 'opacity-100'
             : 'pointer-events-none opacity-0'
@@ -138,7 +142,7 @@ export default function Header() {
       <div
         id="mobile-menu"
         className={cn(
-          'fixed inset-y-0 right-0 z-50 w-full max-w-sm transform bg-white shadow-2xl transition-transform duration-300 ease-out md:hidden',
+          'fixed inset-y-0 right-0 z-50 w-full max-w-sm transform bg-navy shadow-2xl transition-transform duration-300 ease-out lg:hidden',
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
         role="dialog"
@@ -146,23 +150,23 @@ export default function Header() {
         aria-label="Mobiilivalikko"
       >
         {/* Panel header */}
-        <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+        <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
           <Link
             href="/"
             className="flex items-center gap-2"
             onClick={closeMobileMenu}
             aria-label="Valitse Sähkö — Etusivu"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0066FF]">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-400 to-accent-600">
               <Zap className="h-5 w-5 text-white" />
             </div>
-            <span className="text-lg font-bold text-slate-900">
-              Valitse<span className="text-[#0066FF]"> Sähkö</span>
+            <span className="text-lg font-bold text-white">
+              Valitse<span className="text-accent-400"> Sähkö</span>
             </span>
           </Link>
           <button
             type="button"
-            className="rounded-lg p-2 text-slate-500 hover:bg-slate-100"
+            className="rounded-lg p-2 text-white/60 hover:bg-white/10 hover:text-white"
             onClick={closeMobileMenu}
             aria-label="Sulje valikko"
           >
@@ -183,30 +187,30 @@ export default function Header() {
                 className={cn(
                   'flex items-center justify-between rounded-xl px-4 py-3.5 transition-colors',
                   isActive
-                    ? 'bg-blue-50 text-[#0066FF]'
-                    : 'text-slate-700 hover:bg-slate-50'
+                    ? 'bg-accent/10 text-accent-400'
+                    : 'text-white/70 hover:bg-white/5 hover:text-white'
                 )}
               >
                 <div>
                   <span className="text-base font-semibold">{item.label}</span>
                   {item.description && (
-                    <span className="block text-sm font-normal text-slate-500">
+                    <span className="block text-sm font-normal text-white/40">
                       {item.description}
                     </span>
                   )}
                 </div>
-                <ChevronRight className="h-5 w-5 text-slate-400" />
+                <ChevronRight className="h-5 w-5 text-white/30" />
               </Link>
             );
           })}
         </nav>
 
         {/* Mobile CTA */}
-        <div className="absolute inset-x-0 bottom-0 border-t border-slate-200 bg-slate-50 p-5">
+        <div className="absolute inset-x-0 bottom-0 border-t border-white/10 bg-navy-dark p-5">
           <Link
             href="/vertailu"
             onClick={closeMobileMenu}
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-[#0066FF] px-6 py-3.5 text-base font-semibold text-white transition-colors hover:bg-[#0052CC]"
+            className="flex w-full items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-base font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-600"
           >
             Vertaa sähkösopimuksia
           </Link>

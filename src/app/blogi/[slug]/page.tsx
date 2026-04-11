@@ -114,7 +114,7 @@ export default async function BlogPostPage({
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Blogi',
+        name: 'Artikkelit',
         item: `${SITE_URL}/blogi`,
       },
       {
@@ -155,7 +155,7 @@ export default async function BlogPostPage({
             </li>
             <li>
               <Link href="/blogi" className="hover:text-[#0066FF]">
-                Blogi
+                Artikkelit
               </Link>
             </li>
             <li>
@@ -186,29 +186,6 @@ export default async function BlogPostPage({
 
           <div className="mt-6 flex items-center gap-4 text-sm text-slate-500">
             <span>{post.author}</span>
-            <span aria-hidden="true">&middot;</span>
-            <time dateTime={post.publishedAt}>
-              {new Date(post.publishedAt).toLocaleDateString('fi-FI', {
-                day: 'numeric',
-                month: 'long',
-                year: 'numeric',
-              })}
-            </time>
-            {post.updatedAt !== post.publishedAt && (
-              <>
-                <span aria-hidden="true">&middot;</span>
-                <span>
-                  Päivitetty{' '}
-                  <time dateTime={post.updatedAt}>
-                    {new Date(post.updatedAt).toLocaleDateString('fi-FI', {
-                      day: 'numeric',
-                      month: 'long',
-                      year: 'numeric',
-                    })}
-                  </time>
-                </span>
-              </>
-            )}
           </div>
         </header>
 
@@ -238,7 +215,7 @@ export default async function BlogPostPage({
           <h2 className="text-2xl font-bold">Vertaa sähkösopimuksia nyt</h2>
           <p className="mt-2 text-blue-100">
             Löydä halvin sähkösopimus omalle kulutuksellesi. Vertailu on
-            ilmaista ja puolueetonta.
+            ilmaista ja kattavaa.
           </p>
           <Link
             href="/vertailu"

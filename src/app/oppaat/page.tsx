@@ -14,7 +14,7 @@ import { SITE_URL } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Sähköoppaat — Kattavat oppaat sähkön säästämiseen',
   description:
-    'Ilmaiset oppaat sähkösopimuksen valintaan, sähkön kilpailuttamiseen, energiansäästöön ja pörssisähkön hyödyntämiseen. Puolueettomia ja kattavia.',
+    'Ilmaiset oppaat sähkösopimuksen valintaan, sähkön kilpailuttamiseen, energiansäästöön ja pörssisähkön hyödyntämiseen. Selkeitä ja kattavia.',
   openGraph: {
     title: 'Sähköoppaat — Kattavat oppaat sähkön säästämiseen | Valitse Sähkö',
     description:
@@ -82,7 +82,7 @@ export default function OppaatPage() {
             </h1>
           </div>
           <p className="mt-4 max-w-2xl text-lg text-white/70">
-            Kattavat ja puolueettomat oppaat sähkösopimuksen valintaan, sähkön säästämiseen ja
+            Kattavat oppaat sähkösopimuksen valintaan, sähkön säästämiseen ja
             sähkömarkkinoiden ymmärtämiseen. Kaikki oppaat ovat ilmaisia.
           </p>
           <div className="mt-6 flex flex-wrap gap-4 text-sm text-white/60">

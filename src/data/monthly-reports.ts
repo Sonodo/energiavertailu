@@ -35,14 +35,14 @@ export const monthlyReports: MonthlyReport[] = [
     expensiveHour: 17,
     priceDirection: 'up',
     keyEvents: [
-      'Kovat pakkasjaksot (alle -25 \u00b0C) nostivat kulutusta ja hintoja tammikuun puolivälissä',
+      'Kovat pakkasjaksot (alle -25 °C) nostivat kulutusta ja hintoja tammikuun puolivälissä',
       'Tuulivoimatuotanto oli keskimääräistä heikompaa, mikä vähensi edullista tarjontaa',
       'Olkiluoto 3 toimi täydellä kapasiteetilla koko kuukauden, mikä hillitsi pahimpia hintapiikkejä',
     ],
     consumerAdvice:
-      'Tammikuun kaltaisina kalliina kuukausina pörssisähköasiakkaiden kannattaa erityisesti ajoittaa pesukoneita, kuivausrumpu ja sähkökiukaan käyttöä yöajan halvimmille tunneille (klo 1\u20135). Automaattinen ohjaus älytermostaatilla tai sähköyhtiön sovelluksella voi tuoda 20\u201330 % säästöjä verrattuna tasaiseen kulutukseen.\n\nKiinteän sopimuksen asiakkaat hyötyivät tammikuussa selvästi, sillä kiinteä hinta (n. 7,5\u20138,5 c/kWh) oli edullisempi kuin spot-keskihinta. Jos kulutuksesi on suuri eikä sinulla ole mahdollisuutta ajoittaa sitä, kiinteä sopimus tarjoaa mielenrauhaa talvikuukausina.',
+      'Tammikuun kaltaisina kalliina kuukausina pörssisähköasiakkaiden kannattaa erityisesti ajoittaa pesukoneita, kuivausrumpu ja sähkökiukaan käyttöä yöajan halvimmille tunneille (klo 1–5). Automaattinen ohjaus älytermostaatilla tai sähköyhtiön sovelluksella voi tuoda 20–30 % säästöjä verrattuna tasaiseen kulutukseen.\n\nKiinteän sopimuksen asiakkaat hyötyivät tammikuussa selvästi, sillä kiinteä hinta (n. 7,5–8,5 c/kWh) oli edullisempi kuin spot-keskihinta. Jos kulutuksesi on suuri eikä sinulla ole mahdollisuutta ajoittaa sitä, kiinteä sopimus tarjoaa mielenrauhaa talvikuukausina.',
     comparisonNote:
-      'Kiinteähintaiset sopimukset (7,49\u20138,89 c/kWh) olivat tammikuussa edullisempia kuin pörssisähkön keskihinta (8,42 c/kWh). Aktiiviset pörssisähköasiakkaat, jotka optimoivat kulutustaan halvimmille tunneille, pystyivät kuitenkin pääsemään 6\u20137 c/kWh tasolle painotetulla keskihinnalla.',
+      'Kiinteähintaiset sopimukset (7,49–8,89 c/kWh) olivat tammikuussa edullisempia kuin pörssisähkön keskihinta (8,42 c/kWh). Aktiiviset pörssisähköasiakkaat, jotka optimoivat kulutustaan halvimmille tunneille, pystyivät kuitenkin pääsemään 6–7 c/kWh tasolle painotetulla keskihinnalla.',
     publishedAt: '2026-02-03',
     updatedAt: '2026-02-03',
   },
@@ -65,9 +65,9 @@ export const monthlyReports: MonthlyReport[] = [
       'Negatiivisia spot-hintoja nähtiin 12 tunnin ajan helmikuun viimeisellä viikonlopulla tuulivoiman ylitarjonnan vuoksi',
     ],
     consumerAdvice:
-      'Helmikuun tyyppinen kuukausi, jossa hintavaihtelut ovat suuria, palkitsee aktiivisia pörssisähköasiakkaita. Tuulisina päivinä hinnat voivat olla lähellä nollaa tai jopa negatiivisia \u2014 nämä ovat erinomaisia hetkiä varata lämminvesivaraajan täyteen, ladata sähköautoa tai käyttää pesukoneita.\n\nKuluttajien, jotka harkitsevat kiinteää sopimusta, kannattaa seurata tilannetta keväällä: hinnat tyypillisesti laskevat maaliskuusta eteenpäin, ja kiinteiden sopimusten hinnat saattavat seurata perässä.',
+      'Helmikuun tyyppinen kuukausi, jossa hintavaihtelut ovat suuria, palkitsee aktiivisia pörssisähköasiakkaita. Tuulisina päivinä hinnat voivat olla lähellä nollaa tai jopa negatiivisia — nämä ovat erinomaisia hetkiä varata lämminvesivaraajan täyteen, ladata sähköautoa tai käyttää pesukoneita.\n\nKuluttajien, jotka harkitsevat kiinteää sopimusta, kannattaa seurata tilannetta keväällä: hinnat tyypillisesti laskevat maaliskuusta eteenpäin, ja kiinteiden sopimusten hinnat saattavat seurata perässä.',
     comparisonNote:
-      'Pörssisähkö voitti helmikuussa niukasti kiinteät sopimukset. Keskimääräinen spot-hinta (7,18 c/kWh) alitti useimmat kiinteät sopimukset (7,49\u20138,89 c/kWh). Aktiivisimmat kuluttajat pääsivät painotettuun hintaan 5,5\u20136,5 c/kWh hyödyntämällä halpoja tunteja.',
+      'Pörssisähkö voitti helmikuussa niukasti kiinteät sopimukset. Keskimääräinen spot-hinta (7,18 c/kWh) alitti useimmat kiinteät sopimukset (7,49–8,89 c/kWh). Aktiivisimmat kuluttajat pääsivät painotettuun hintaan 5,5–6,5 c/kWh hyödyntämällä halpoja tunteja.',
     publishedAt: '2026-03-03',
     updatedAt: '2026-03-03',
   },
@@ -90,9 +90,9 @@ export const monthlyReports: MonthlyReport[] = [
       'Lämmityskauden päättyminen kerrostaloissa vähensi sähkön kulutusta, mikä laski kysyntäpiikkejä aamulla ja illalla',
     ],
     consumerAdvice:
-      'Maaliskuun edulliset hinnat osoittavat, miksi pörssisähkö on pitkällä aikavälillä usein edullisempi vaihtoehto. Talven korkeiden hintojen jälkeen kevät ja kesä tuovat merkittäviä säästöjä. Kannattaa tarkistaa, onko nykyinen sopimuksesi edelleen kilpailukykyinen \u2014 jos maksat kiinteää hintaa yli 7 c/kWh, pörssisähköön vaihtaminen voi olla nyt houkuttelevaa.\n\nKevät on myös hyvä aika investoida aurinkopaneeleihin. Huhtikuusta alkaen aurinkosähkön tuotanto alkaa olla merkittävää, ja yhdistettynä edulliseen pörssisähköön kokonaiskustannus pysyy matalana koko kesän.',
+      'Maaliskuun edulliset hinnat osoittavat, miksi pörssisähkö on pitkällä aikavälillä usein edullisempi vaihtoehto. Talven korkeiden hintojen jälkeen kevät ja kesä tuovat merkittäviä säästöjä. Kannattaa tarkistaa, onko nykyinen sopimuksesi edelleen kilpailukykyinen — jos maksat kiinteää hintaa yli 7 c/kWh, pörssisähköön vaihtaminen voi olla nyt houkuttelevaa.\n\nKevät on myös hyvä aika investoida aurinkopaneeleihin. Huhtikuusta alkaen aurinkosähkön tuotanto alkaa olla merkittävää, ja yhdistettynä edulliseen pörssisähköön kokonaiskustannus pysyy matalana koko kesän.',
     comparisonNote:
-      'Maaliskuussa pörssisähkö oli selkeästi kiinteää sopimusta edullisempi. Spot-keskihinta (4,85 c/kWh) jäi reilusti alle kiinteiden sopimusten (7,49\u20138,89 c/kWh). Ero oli jopa 2\u20134 c/kWh kiinteiden sopimusten tappioksi. Pörssisähkön asiakkaat säästivät maaliskuussa keskimäärin 50\u201370 euroa omakotitalon kokoisella kulutuksella.',
+      'Maaliskuussa pörssisähkö oli selkeästi kiinteää sopimusta edullisempi. Spot-keskihinta (4,85 c/kWh) jäi reilusti alle kiinteiden sopimusten (7,49–8,89 c/kWh). Ero oli jopa 2–4 c/kWh kiinteiden sopimusten tappioksi. Pörssisähkön asiakkaat säästivät maaliskuussa keskimäärin 50–70 euroa omakotitalon kokoisella kulutuksella.',
     publishedAt: '2026-03-27',
     updatedAt: '2026-03-27',
   },

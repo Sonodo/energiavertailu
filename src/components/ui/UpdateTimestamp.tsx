@@ -28,7 +28,7 @@ function getRelativeTime(date: Date): string {
     date.getFullYear() === now.getFullYear();
 
   if (isToday) {
-    return `t\u00e4n\u00e4\u00e4n klo ${date.toLocaleTimeString('fi-FI', { hour: '2-digit', minute: '2-digit' })}`;
+    return `tänään klo ${date.toLocaleTimeString('fi-FI', { hour: '2-digit', minute: '2-digit' })}`;
   }
 
   // Check if yesterday
@@ -47,7 +47,7 @@ function getRelativeTime(date: Date): string {
 
 export default function UpdateTimestamp({
   date,
-  label = 'Hinnat p\u00e4ivitetty',
+  label = 'Hinnat päivitetty',
   className,
 }: UpdateTimestampProps) {
   const [relativeTime, setRelativeTime] = useState<string | null>(null);

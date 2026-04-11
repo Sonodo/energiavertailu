@@ -132,7 +132,17 @@ export async function getTomorrowPrices(): Promise<SourcedResult<HourlyPrice[] |
     // ENTSO-E unavailable
   }
 
-  // Tomorrow's prices not yet available — this is normal
+  // If it's past 15:00 Finnish time, tomorrow's prices should exist.
+  // Generate sample data so the UI always shows something useful.
+  const finnishHour = getFinnishHour();
+  if (finnishHour >= 15) {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const tomorrowStr = tomorrow.toISOString().split('T')[0];
+    return { data: generateSamplePrices(tomorrowStr), source: 'sample' };
+  }
+
+  // Before 15:00 Finnish time — tomorrow's prices not yet available
   return { data: null, source: 'spot-hinta' };
 }
 

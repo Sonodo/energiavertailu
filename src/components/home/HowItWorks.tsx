@@ -26,13 +26,13 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="border-b border-slate-200 bg-slate-50 py-16 sm:py-20">
+    <section className="bg-accent-50/50 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="section-title">
             Näin helppoa sähkön vaihto on
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="section-subtitle">
             Sähkösopimuksen vertailu ja vaihto onnistuu kolmessa helpossa vaiheessa.
           </p>
         </div>
@@ -44,16 +44,16 @@ export default function HowItWorks() {
               <div key={step.number} className="relative text-center">
                 {/* Connector line for desktop */}
                 {index < steps.length - 1 && (
-                  <div className="absolute left-[calc(50%+3rem)] top-10 hidden h-0.5 w-[calc(100%-6rem)] bg-gradient-to-r from-[#0066FF]/30 to-[#0066FF]/10 md:block" />
+                  <div className="absolute left-[calc(50%+3rem)] top-10 hidden h-0.5 w-[calc(100%-6rem)] bg-gradient-to-r from-accent/30 to-accent/10 md:block" />
                 )}
 
                 {/* Step icon */}
                 <div className="relative mx-auto mb-6 flex h-20 w-20 items-center justify-center">
-                  <div className="absolute inset-0 rounded-2xl bg-[#0066FF]/10" />
-                  <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-[#0066FF] shadow-lg shadow-blue-200">
+                  <div className="absolute inset-0 rounded-2xl bg-accent/10" />
+                  <div className="relative flex h-14 w-14 items-center justify-center rounded-xl bg-accent shadow-lg shadow-accent/25">
                     <Icon className="h-7 w-7 text-white" />
                   </div>
-                  <span className="absolute -right-1 -top-1 flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-xs font-bold text-white shadow-sm">
+                  <span className="absolute -right-1 -top-1 flex h-7 w-7 items-center justify-center rounded-full bg-navy text-xs font-bold text-white shadow-sm">
                     {step.number}
                   </span>
                 </div>

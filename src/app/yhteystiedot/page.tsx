@@ -22,22 +22,22 @@ const contactChannels = [
     icon: Mail,
     title: 'Yleinen yhteydenotto',
     description: 'Kysymykset palvelusta, yhteistyöehdotukset ja palaute.',
-    contact: 'info@valitsesahko.fi',
-    href: 'mailto:info@valitsesahko.fi',
+    contact: 'Yhteydenottolomake tulossa pian',
+    href: '#',
   },
   {
     icon: MessageSquare,
     title: 'Media ja lehdistö',
     description: 'Haastattelupyynnöt, tiedotteet ja mediatiedustelut.',
-    contact: 'media@valitsesahko.fi',
-    href: 'mailto:media@valitsesahko.fi',
+    contact: 'Yhteydenottolomake tulossa pian',
+    href: '#',
   },
   {
     icon: Clock,
     title: 'Tietosuoja-asiat',
     description: 'GDPR-pyynnöt, tietojen poisto ja tietosuojaan liittyvät kysymykset.',
-    contact: 'info@valitsesahko.fi',
-    href: 'mailto:info@valitsesahko.fi',
+    contact: 'Yhteydenottolomake tulossa pian',
+    href: '#',
   },
 ];
 
@@ -97,15 +97,9 @@ export default function YhteystiedotPage() {
 
           <h3>Virheellinen tieto palvelussa</h3>
           <p>
-            Jos huomaat palvelussamme virheellisen hinnan tai muun tiedon, ilmoita
-            siitä osoitteeseen{' '}
-            <a
-              href="mailto:info@valitsesahko.fi"
-              className="text-[#0066FF] hover:underline"
-            >
-              info@valitsesahko.fi
-            </a>
-            . Korjaamme virheet mahdollisimman nopeasti.
+            Jos huomaat palvelussamme virheellisen hinnan tai muun tiedon, ilmoitathan
+            siitä meille. Yhteydenottolomake on tulossa pian.
+            Korjaamme virheet mahdollisimman nopeasti.
           </p>
 
           <h3>Yhteistyö ja medialle</h3>

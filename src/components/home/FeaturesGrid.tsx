@@ -13,34 +13,30 @@ const features = [
     title: 'Reaaliaikainen pörssisähkö',
     description:
       'Seuraa pörssisähkön hintaa tunneittain. Näe tämän päivän ja huomisen hinnat, hintahistoria ja ennusteet.',
-    color: 'bg-blue-500',
-    lightColor: 'bg-blue-50',
-    textColor: 'text-blue-600',
+    lightColor: 'bg-accent-50',
+    textColor: 'text-accent-600',
   },
   {
     icon: Building2,
     title: 'Vertaa 37 sähköyhtiötä',
     description:
       'Kaikki Suomen sähköyhtiöt ja niiden sopimukset yhdessä paikassa. Löydä edullisin vaihtoehto sinun kulutuksellesi.',
-    color: 'bg-emerald-500',
-    lightColor: 'bg-emerald-50',
-    textColor: 'text-emerald-600',
+    lightColor: 'bg-sky-50',
+    textColor: 'text-sky-600',
   },
   {
     icon: Calculator,
     title: 'Älykkäät laskurit',
     description:
       'Sähkönkulutuslaskuri, säästölaskuri, aurinkopaneelilaskuri ja muut työkalut auttavat sinua tekemään parempia päätöksiä.',
-    color: 'bg-violet-500',
     lightColor: 'bg-violet-50',
     textColor: 'text-violet-600',
   },
   {
     icon: Shield,
-    title: 'Puolueeton vertailu',
+    title: 'Kattava vertailu',
     description:
       'Emme suosi mitään sähköyhtiötä. Kaikki sopimukset näytetään samalla tavalla, jotta voit tehdä parhaan valinnan.',
-    color: 'bg-amber-500',
     lightColor: 'bg-amber-50',
     textColor: 'text-amber-600',
   },
@@ -49,7 +45,6 @@ const features = [
     title: 'Sähkönkulutusarvio',
     description:
       'Arvioi sähkönkulutuksesi asumismuodon, pinta-alan ja asukkaiden perusteella. Tarkka arvio ilman mittarilukemia.',
-    color: 'bg-rose-500',
     lightColor: 'bg-rose-50',
     textColor: 'text-rose-600',
   },
@@ -58,7 +53,6 @@ const features = [
     title: 'Säästövinkit',
     description:
       'Käytännön vinkit sähkönkulutuksen vähentämiseen. Pienetkin muutokset voivat tuoda isoja säästöjä vuositasolla.',
-    color: 'bg-cyan-500',
     lightColor: 'bg-cyan-50',
     textColor: 'text-cyan-600',
   },
@@ -66,13 +60,13 @@ const features = [
 
 export default function FeaturesGrid() {
   return (
-    <section className="border-b border-slate-200 bg-white py-16 sm:py-20">
+    <section className="bg-background py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="section-title">
             Kaikki mitä tarvitset sähkön vertailuun
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="section-subtitle">
             Monipuoliset työkalut ja ajantasaiset tiedot auttavat sinua löytämään parhaan
             sähkösopimuksen.
           </p>
@@ -84,7 +78,7 @@ export default function FeaturesGrid() {
             return (
               <div
                 key={feature.title}
-                className="group relative rounded-2xl border border-slate-200 bg-white p-7 transition-all duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100"
+                className="card-hover"
               >
                 {/* Icon */}
                 <div

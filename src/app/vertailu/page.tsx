@@ -5,7 +5,7 @@ import ComparisonCalculator from '@/components/calculator/ComparisonCalculator';
 export const metadata: Metadata = {
   title: 'Vertaa sähkösopimuksia — Löydä halvin sähkö | Valitse Sähkö',
   description:
-    'Vertaa yli 90 sähkösopimusta 37 sähköyhtiöltä. Syötä kulutuksesi ja löydä halvin sähkösopimus. Ilmainen ja puolueeton vertailu.',
+    'Vertaa yli 90 sähkösopimusta 37 sähköyhtiöltä. Syötä kulutuksesi ja löydä halvin sähkösopimus. Ilmainen ja kattava vertailu.',
   openGraph: {
     title: 'Vertaa sähkösopimuksia — Löydä halvin sähkö | Valitse Sähkö',
     description:

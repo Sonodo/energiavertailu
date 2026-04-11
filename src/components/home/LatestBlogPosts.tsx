@@ -2,18 +2,15 @@ import Link from 'next/link';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { blogPosts, BLOG_CATEGORIES } from '@/data/blog-posts';
 
-// Get the latest 3 posts sorted by publishedAt descending
 const latestPosts = [...blogPosts]
   .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
   .slice(0, 3);
 
-// Format ISO date (YYYY-MM-DD) to Finnish format (D.M.YYYY)
 function formatDate(isoDate: string): string {
   const [year, month, day] = isoDate.split('-');
   return `${parseInt(day)}.${parseInt(month)}.${year}`;
 }
 
-// Look up the Finnish display label for a category ID
 function getCategoryLabel(categoryId: string): string {
   const cat = BLOG_CATEGORIES.find((c) => c.id === categoryId);
   return cat ? cat.label : categoryId;
@@ -21,20 +18,20 @@ function getCategoryLabel(categoryId: string): string {
 
 export default function LatestBlogPosts() {
   return (
-    <section className="border-b border-slate-200 bg-white py-16 sm:py-20">
+    <section className="bg-background py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-end justify-between">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            <h2 className="section-title">
               Ajankohtaista
             </h2>
-            <p className="mt-4 text-lg text-slate-600">
+            <p className="section-subtitle">
               Uusimmat artikkelit sähkömarkkinoilta ja säästövinkit.
             </p>
           </div>
           <Link
             href="/blogi"
-            className="hidden items-center gap-1 text-sm font-semibold text-[#0066FF] hover:text-[#0052CC] sm:flex"
+            className="hidden items-center gap-1 text-sm font-semibold text-accent-600 hover:text-accent-700 sm:flex"
           >
             Kaikki artikkelit
             <ArrowRight className="h-4 w-4" />
@@ -46,21 +43,21 @@ export default function LatestBlogPosts() {
             <Link
               key={post.slug}
               href={`/blogi/${post.slug}`}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white transition-all duration-200 hover:-translate-y-1 hover:border-slate-300 hover:shadow-lg hover:shadow-slate-100"
+              className="card-hover group flex flex-col overflow-hidden !p-0"
             >
               {/* Image placeholder */}
-              <div className="relative h-48 bg-gradient-to-br from-[#0A1628] to-[#1A2940]">
+              <div className="relative h-48 bg-gradient-to-br from-navy to-navy-light">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="h-16 w-16 rounded-2xl bg-white/10 backdrop-blur-sm" />
                 </div>
-                <span className="absolute left-4 top-4 rounded-full bg-[#0066FF] px-3 py-1 text-xs font-semibold text-white">
+                <span className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white">
                   {getCategoryLabel(post.category)}
                 </span>
               </div>
 
               {/* Content */}
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-bold leading-snug text-slate-900 transition-colors group-hover:text-[#0066FF]">
+                <h3 className="text-lg font-bold leading-snug text-slate-900 transition-colors group-hover:text-accent-600">
                   {post.title}
                 </h3>
                 <p className="mt-2 flex-1 text-sm leading-6 text-slate-600">
@@ -86,7 +83,7 @@ export default function LatestBlogPosts() {
         <div className="mt-8 text-center sm:hidden">
           <Link
             href="/blogi"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-[#0066FF] hover:text-[#0052CC]"
+            className="inline-flex items-center gap-1 text-sm font-semibold text-accent-600 hover:text-accent-700"
           >
             Kaikki artikkelit
             <ArrowRight className="h-4 w-4" />

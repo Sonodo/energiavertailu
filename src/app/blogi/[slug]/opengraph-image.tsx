@@ -12,7 +12,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   const title = post?.title ?? 'Artikkeli';
   const categoryId = post?.category ?? '';
   const categoryLabel =
-    BLOG_CATEGORIES.find((c) => c.id === categoryId)?.label ?? 'Blogi';
+    BLOG_CATEGORIES.find((c) => c.id === categoryId)?.label ?? 'Artikkelit';
 
   // Truncate title if too long
   const displayTitle = title.length > 80 ? title.slice(0, 77) + '...' : title;

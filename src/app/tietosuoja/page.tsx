@@ -53,8 +53,6 @@ export default function TietosuojaPage() {
             Helsinki, Suomi
             <br />
             Verkkopalvelu: valitsesahko.fi
-            <br />
-            Sähköposti: info@valitsesahko.fi
           </p>
           <p>
             Valitse Sähkö on suomalainen verkkopalvelu, joka tarjoaa sähkösopimusten
@@ -255,7 +253,7 @@ export default function TietosuojaPage() {
           <p>
             <strong>Sonodo — Henri Linnainmaa</strong>
             <br />
-            Sähköposti: info@valitsesahko.fi
+            <a href="/yhteystiedot" className="text-[#0066FF] hover:underline">Ota yhteyttä</a>
           </p>
           <p>
             Pyrimme vastaamaan kaikkiin tietosuojaa koskeviin yhteydenottoihin

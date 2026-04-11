@@ -12,7 +12,6 @@ interface TickerData {
 }
 
 function getSimulatedData(): TickerData {
-  // Deterministic fallback data based on time of day (no randomness to avoid hydration issues)
   const hour = new Date().getHours();
   const typicalPrices: Record<number, number> = {
     0: 3.2, 1: 2.8, 2: 2.5, 3: 2.3, 4: 2.4, 5: 2.9,
@@ -21,10 +20,8 @@ function getSimulatedData(): TickerData {
     18: 8.2, 19: 7.5, 20: 6.1, 21: 4.8, 22: 3.9, 23: 3.5,
   };
   const price = typicalPrices[hour] ?? 5.0;
-
   const level: TickerData['level'] = price < 4 ? 'cheap' : price < 8 ? 'moderate' : 'expensive';
   const direction: TickerData['direction'] = hour >= 6 && hour < 10 ? 'up' : hour >= 20 ? 'down' : 'stable';
-
   return { price, direction, level };
 }
 
@@ -51,7 +48,6 @@ export default function HeroSpotTicker() {
           setSource('api');
         }
       } catch {
-        // Fallback to simulated data
         if (!cancelled) {
           setData(getSimulatedData());
           setSource('simulated');
@@ -75,13 +71,13 @@ export default function HeroSpotTicker() {
 
   const levelConfig = {
     cheap: {
-      dotColor: 'bg-emerald-400',
-      textColor: 'text-emerald-400',
+      dotColor: 'bg-accent-400',
+      textColor: 'text-accent-400',
       label: 'Edullinen',
     },
     moderate: {
-      dotColor: 'bg-amber-400',
-      textColor: 'text-amber-400',
+      dotColor: 'bg-secondary-400',
+      textColor: 'text-secondary-400',
       label: 'Normaali',
     },
     expensive: {
@@ -99,10 +95,10 @@ export default function HeroSpotTicker() {
   return (
     <Link
       href="/porssisahko"
-      className="group relative rounded-xl border border-white/10 bg-white/5 px-4 py-3 backdrop-blur-sm transition-all hover:border-white/20 hover:bg-white/10"
+      className="group relative rounded-xl border border-white/10 bg-white/5 px-5 py-4 backdrop-blur-sm transition-all hover:border-accent/30 hover:bg-white/10"
     >
       {/* Label */}
-      <div className="mb-1.5 flex items-center gap-1.5">
+      <div className="mb-2 flex items-center gap-1.5">
         <span className="relative flex h-2 w-2">
           <span className={cn('absolute inline-flex h-full w-full animate-ping rounded-full opacity-75', config.dotColor)} />
           <span className={cn('relative inline-flex h-2 w-2 rounded-full', config.dotColor)} />
@@ -114,7 +110,7 @@ export default function HeroSpotTicker() {
 
       {/* Price */}
       <div className="flex items-center gap-2">
-        <Zap className="h-4 w-4 text-[#0066FF]" />
+        <Zap className="h-4 w-4 text-accent-400" />
         <span className={cn('text-xl font-bold tabular-nums', config.textColor)}>
           {data.price.toFixed(2).replace('.', ',')}
         </span>

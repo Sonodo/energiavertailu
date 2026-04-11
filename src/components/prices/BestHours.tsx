@@ -19,7 +19,7 @@ function formatQuarterTimeSlot(hour: number, quarter: number): string {
   const startM = String(quarter * 15).padStart(2, '0');
   const endM = quarter === 3 ? '00' : String((quarter + 1) * 15).padStart(2, '0');
   const endH = quarter === 3 ? String((hour + 1) % 24).padStart(2, '0') : startH;
-  return `${startH}:${startM}\u2013${endH}:${endM}`;
+  return `${startH}:${startM}–${endH}:${endM}`;
 }
 
 export default function BestHours({ todayPrices, quarterHourPrices, mode = 'hourly' }: BestHoursProps) {

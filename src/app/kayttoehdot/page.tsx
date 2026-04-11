@@ -59,7 +59,7 @@ export default function KayttoehdotPage() {
             <li>Tietoa suomalaisista sähköyhtiöistä</li>
           </ul>
           <p>
-            Palvelun tavoitteena on tarjota puolueetonta ja ajantasaista tietoa
+            Palvelun tavoitteena on tarjota kattavaa ja ajantasaista tietoa
             sähkömarkkinoista, jotta kuluttajat voivat tehdä tietoon perustuvia
             päätöksiä sähkösopimuksen valinnassa.
           </p>
@@ -134,7 +134,7 @@ export default function KayttoehdotPage() {
             </li>
             <li>
               Affiliate-yhteistyö <strong>ei vaikuta vertailutuloksiin</strong>. Vertailumme
-              perustuu aina objektiivisiin hintatietoihin ja ominaisuuksiin.
+              perustuu aina avoimiin hintatietoihin ja ominaisuuksiin.
             </li>
             <li>
               Yhteistyökumppaneiden kanssa tehdyt kaupalliset järjestelyt merkitään
@@ -147,7 +147,7 @@ export default function KayttoehdotPage() {
           </ul>
           <p>
             Affiliate-tulot mahdollistavat palvelun tarjoamisen käyttäjille ilmaiseksi
-            ja puolueettomana.
+            ja laadukkaana.
           </p>
 
           {/* 5. Kolmannen osapuolen palvelut */}
@@ -259,9 +259,9 @@ export default function KayttoehdotPage() {
             <br />
             Helsinki, Suomi
             <br />
-            Sähköposti: info@valitsesahko.fi
-            <br />
             Verkkosivu: valitsesahko.fi
+            <br />
+            <a href="/yhteystiedot" className="text-[#0066FF] hover:underline">Ota yhteyttä</a>
           </p>
         </div>
       </div>

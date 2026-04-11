@@ -36,16 +36,23 @@ export async function GET(request: NextRequest) {
         const days = period === '7d' ? 7 : 30;
         const { data: liveHistory, source } = await getPriceHistory(days);
 
-        if (liveHistory.length > 0) {
-          // Convert live history to DailyPriceHistory format
-          daily = liveHistory.map((entry) => ({
-            date: entry.date,
-            avgPrice: entry.avgPrice,
-            minPrice: entry.minPrice,
-            maxPrice: entry.maxPrice,
-            avgPriceNoTax: Math.round((entry.avgPrice / 1.255) * 100) / 100,
-          }));
-          dataSource = source === 'sample' ? 'sample' : 'live';
+        if (liveHistory.length > 0 && source !== 'sample') {
+          // Merge live data into static data — replace matching dates
+          const liveMap = new Map(
+            liveHistory.map((entry) => [
+              entry.date,
+              {
+                date: entry.date,
+                avgPrice: entry.avgPrice,
+                minPrice: entry.minPrice,
+                maxPrice: entry.maxPrice,
+                avgPriceNoTax: Math.round((entry.avgPrice / 1.255) * 100) / 100,
+              },
+            ])
+          );
+
+          daily = daily.map((d) => liveMap.get(d.date) || d);
+          dataSource = 'live';
         }
       } catch (error) {
         console.warn('[history] Failed to fetch live data, using static:', error);

@@ -34,7 +34,7 @@ export default function BlogiPage() {
           <li>
             <span className="mx-1">/</span>
           </li>
-          <li className="text-slate-900 font-medium">Blogi</li>
+          <li className="text-slate-900 font-medium">Artikkelit</li>
         </ol>
       </nav>
 

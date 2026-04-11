@@ -13,14 +13,14 @@ const footerSections = {
       { label: 'Kaikki työkalut', href: '/tyokalut' },
     ],
   },
-  oppaat: {
-    title: 'Oppaat',
+  sopimustyypit: {
+    title: 'Sopimustyypit',
     links: [
-      { label: 'Sähkön kilpailutus', href: '/oppaat/sahkon-kilpailutus' },
+      { label: 'Kiinteähintainen sähkö', href: '/oppaat/sahkosopimustyypit' },
       { label: 'Pörssisähkö-opas', href: '/oppaat/porssisahko-opas' },
+      { label: 'Sähkön kilpailutus', href: '/oppaat/sahkon-kilpailutus' },
       { label: 'Energiansäästövinkit', href: '/oppaat/energiansaastovinkit' },
-      { label: 'Sähkösopimustyypit', href: '/oppaat/sahkosopimustyypit' },
-      { label: 'Blogi', href: '/blogi' },
+      { label: 'Artikkelit', href: '/blogi' },
     ],
   },
   tietoa: {
@@ -35,10 +35,12 @@ const footerSections = {
 };
 
 const valitseNetwork = [
-  { label: 'Valitse.fi', description: 'Vertaa ja valitse', href: 'https://valitse.fi' },
-  { label: 'Valitse Laina', description: 'Lainavertailu', href: 'https://valitselaina.fi' },
-  { label: 'Valitse Vakuutus', description: 'Vakuutusvertailu', href: 'https://valitsevakuutus.fi' },
-  { label: 'Valitse Liittymä', description: 'Liittymävertailu', href: 'https://valitseliittyma.fi' },
+  { name: 'Valitse.fi', url: 'https://valitse.fi', desc: 'Kaikki vertailupalvelut' },
+  { name: 'Valitse Laina', url: 'https://valitselaina.fi', desc: 'Lainojen vertailu' },
+  { name: 'Valitse Vakuutus', url: 'https://valitsevakuutus.fi', desc: 'Vakuutusten vertailu' },
+  { name: 'Valitse Liittymä', url: 'https://valitseliittyma.fi', desc: 'Liittymien vertailu' },
+  { name: 'Asuntomaatti', url: 'https://asuntomaatti.fi', desc: 'Asuntojen vertailu' },
+  { name: 'Alennuskartta', url: 'https://alennuskartta.fi', desc: 'Tarjoukset kartalla' },
 ];
 
 const legalLinks = [
@@ -49,38 +51,37 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-slate-900" role="contentinfo">
+    <footer className="bg-navy" role="contentinfo">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand column */}
-          <div className="sm:col-span-2 lg:col-span-1">
+          <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-2"
+              className="inline-flex items-center gap-2.5"
               aria-label="Valitse Sähkö — Etusivu"
             >
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0066FF]">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 shadow-lg shadow-accent/20">
                 <Zap className="h-5 w-5 text-white" />
               </div>
               <span className="text-lg font-bold text-white">
-                Valitse<span className="text-[#0066FF]"> Sähkö</span>
+                Valitse<span className="text-accent-400"> Sähkö</span>
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-6 text-slate-400">
-              Suomen monipuolinen ja puolueeton sähkövertailupalvelu. Vertaa
+              Suomen monipuolinen ja kattava sähkövertailupalvelu. Vertaa
               sähkösopimuksia, seuraa pörssisähkön hintaa ja löydä edullisin
               sähkösopimus kotitaloudellesi.
             </p>
 
-            {/* Trust badges */}
             <div className="mt-6 flex flex-wrap gap-2">
-              <span className="inline-flex items-center rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-slate-700">
-                Puolueeton
+              <span className="inline-flex items-center rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-accent-400 ring-1 ring-inset ring-accent/20">
+                Kattava
               </span>
-              <span className="inline-flex items-center rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-slate-700">
+              <span className="inline-flex items-center rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-accent-400 ring-1 ring-inset ring-accent/20">
                 Ilmainen
               </span>
-              <span className="inline-flex items-center rounded-full bg-slate-800 px-3 py-1 text-xs font-medium text-slate-300 ring-1 ring-inset ring-slate-700">
+              <span className="inline-flex items-center rounded-full bg-white/5 px-3 py-1 text-xs font-medium text-accent-400 ring-1 ring-inset ring-accent/20">
                 37 yhtiötä
               </span>
             </div>
@@ -88,7 +89,7 @@ export default function Footer() {
 
           {/* Palvelut */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-200">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               {footerSections.palvelut.title}
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -96,7 +97,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
+                    className="text-sm text-slate-400 transition-colors hover:text-accent-400"
                   >
                     {link.label}
                   </Link>
@@ -105,17 +106,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Oppaat */}
+          {/* Sopimustyypit */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-200">
-              {footerSections.oppaat.title}
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
+              {footerSections.sopimustyypit.title}
             </h3>
             <ul className="mt-4 space-y-2.5">
-              {footerSections.oppaat.links.map((link) => (
+              {footerSections.sopimustyypit.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
+                    className="text-sm text-slate-400 transition-colors hover:text-accent-400"
                   >
                     {link.label}
                   </Link>
@@ -126,7 +127,7 @@ export default function Footer() {
 
           {/* Tietoa */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-200">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-white">
               {footerSections.tietoa.title}
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -134,7 +135,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
+                    className="text-sm text-slate-400 transition-colors hover:text-accent-400"
                   >
                     {link.label}
                   </Link>
@@ -142,50 +143,21 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
-          {/* Valitse-verkosto */}
-          <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-200">
-              Valitse-verkosto
-            </h3>
-            <ul className="mt-4 space-y-2.5">
-              {valitseNetwork.map((site) => (
-                <li key={site.href}>
-                  <a
-                    href={site.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
-                  >
-                    {site.label}
-                    <span className="block text-xs text-slate-500">{site.description}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
-        {/* Valitse-verkosto */}
-        <div className="mt-12 pt-8 border-t border-slate-700">
-          <div className="mb-4">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Osa Valitse-verkostoa</p>
-          </div>
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
-            {[
-              { name: 'Valitse Laina', url: 'https://valitselaina.fi', desc: 'Lainojen vertailu' },
-              { name: 'Valitse Vakuutus', url: 'https://valitsevakuutus.fi', desc: 'Vakuutusten vertailu' },
-              { name: 'Valitse Liittymä', url: 'https://valitseliittyma.fi', desc: 'Liittymien vertailu' },
-              { name: 'Asuntomaatti', url: 'https://asuntomaatti.fi', desc: 'Asuntojen vertailu' },
-              { name: 'Alennuskartta', url: 'https://alennuskartta.fi', desc: 'Tarjoukset kartalla' },
-              { name: 'Valitse', url: 'https://valitse.fi', desc: 'Kaikki vertailupalvelut' },
-            ].map((site) => (
+        {/* Valitse Network */}
+        <div className="mt-12 border-t border-white/10 pt-8">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-white/50">
+            Osa Valitse-verkostoa
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {valitseNetwork.map((site) => (
               <a
                 key={site.name}
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+                className="inline-flex items-center rounded-full bg-white/5 px-3.5 py-1.5 text-sm text-slate-400 ring-1 ring-inset ring-white/10 transition-all hover:bg-white/10 hover:text-accent-400 hover:ring-accent/20"
                 title={site.desc}
               >
                 {site.name}
@@ -195,8 +167,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
-          <p className="text-sm text-slate-500">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <p className="text-sm text-white/40">
             &copy; {new Date().getFullYear()} Valitse Sähkö. Kaikki oikeudet pidätetään.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
@@ -204,7 +176,7 @@ export default function Footer() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm text-slate-500 transition-colors hover:text-slate-300"
+                className="text-sm text-white/40 transition-colors hover:text-white/70"
               >
                 {link.label}
               </Link>

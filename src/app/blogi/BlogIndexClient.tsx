@@ -74,14 +74,7 @@ export default function BlogIndexClient({
               </p>
 
               {/* Meta */}
-              <div className="flex items-center justify-between text-xs text-slate-400">
-                <time dateTime={post.publishedAt}>
-                  {new Date(post.publishedAt).toLocaleDateString('fi-FI', {
-                    day: 'numeric',
-                    month: 'long',
-                    year: 'numeric',
-                  })}
-                </time>
+              <div className="flex items-center justify-end text-xs text-slate-400">
                 <span>{post.readTime} min lukuaika</span>
               </div>
             </div>

@@ -202,8 +202,10 @@ export async function fetchDatePrices(date: string): Promise<HourlyPrice[]> {
 }
 
 /**
- * Fetch prices for a date range (for history charts)
- * Returns daily summaries
+ * Fetch prices for a date range (for history charts).
+ * Only fetches today and yesterday from the API (DayForward is unreliable
+ * for older dates). Returns whatever we can get — the caller should fall
+ * back to generated sample data for the remaining days.
  */
 export async function fetchPriceHistory(
   days: number
@@ -211,34 +213,32 @@ export async function fetchPriceHistory(
   const results: { date: string; avgPrice: number; minPrice: number; maxPrice: number }[] = [];
   const now = new Date();
 
-  // Fetch in parallel, batch of 7 at a time to avoid overwhelming the API
-  for (let batchStart = 0; batchStart < days; batchStart += 7) {
-    const batchEnd = Math.min(batchStart + 7, days);
-    const promises: Promise<void>[] = [];
+  // Only fetch today and yesterday — DayForward endpoint doesn't reliably
+  // serve older historical dates and may return today's data for all dates.
+  const fetchDays = Math.min(days, 2);
+  const promises: Promise<void>[] = [];
 
-    for (let i = batchStart; i < batchEnd; i++) {
-      const date = new Date(now);
-      date.setDate(date.getDate() - i);
-      const dateStr = date.toISOString().split('T')[0];
+  for (let i = 0; i < fetchDays; i++) {
+    const date = new Date(now);
+    date.setDate(date.getDate() - i);
+    const dateStr = date.toISOString().split('T')[0];
 
-      promises.push(
-        fetchDatePrices(dateStr).then((prices) => {
-          if (prices.length > 0) {
-            const priceValues = prices.map((p) => p.price);
-            results.push({
-              date: dateStr,
-              avgPrice: Math.round((priceValues.reduce((a, b) => a + b, 0) / priceValues.length) * 100) / 100,
-              minPrice: Math.round(Math.min(...priceValues) * 100) / 100,
-              maxPrice: Math.round(Math.max(...priceValues) * 100) / 100,
-            });
-          }
-        })
-      );
-    }
-
-    await Promise.all(promises);
+    promises.push(
+      fetchDatePrices(dateStr).then((prices) => {
+        if (prices.length > 0) {
+          const priceValues = prices.map((p) => p.price);
+          results.push({
+            date: dateStr,
+            avgPrice: Math.round((priceValues.reduce((a, b) => a + b, 0) / priceValues.length) * 100) / 100,
+            minPrice: Math.round(Math.min(...priceValues) * 100) / 100,
+            maxPrice: Math.round(Math.max(...priceValues) * 100) / 100,
+          });
+        }
+      })
+    );
   }
 
+  await Promise.all(promises);
   return results.sort((a, b) => a.date.localeCompare(b.date));
 }
 
@@ -356,7 +356,8 @@ export async function fetchTomorrowQuarterHourPrices(): Promise<QuarterHourPrice
 }
 
 /**
- * Generate sample history data for fallback
+ * Generate sample history data for fallback.
+ * Uses day-of-year based variation so each day has a distinct price.
  */
 export function generateSampleHistory(
   days: number
@@ -369,17 +370,28 @@ export function generateSampleHistory(
     date.setDate(date.getDate() - i);
     const dateStr = date.toISOString().split('T')[0];
 
-    // Simulate seasonal patterns
     const month = date.getMonth();
+    const dayOfYear = Math.floor(
+      (date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / (24 * 60 * 60 * 1000)
+    );
+    const dayOfWeek = date.getDay();
     const seasonalBase = month >= 10 || month <= 2 ? 8 : month >= 5 && month <= 8 ? 3 : 5;
-    const noise = Math.sin(i * 0.7) * 2 + Math.cos(i * 0.3) * 1;
-    const avgPrice = Math.max(0.5, seasonalBase + noise);
 
+    // Multi-frequency deterministic variation based on day-of-year
+    const noise =
+      Math.sin(dayOfYear * 0.15) * 1.5 +
+      Math.sin(dayOfYear * 0.4 + 2.1) * 0.8 +
+      Math.cos(dayOfYear * 0.7 + 0.5) * 0.5;
+    const weekendDiscount = (dayOfWeek === 0 || dayOfWeek === 6) ? -0.6 : 0;
+    const avgPrice = Math.max(0.5, seasonalBase + noise + weekendDiscount);
+
+    // Deterministic min/max spread based on day
+    const spread = 1.5 + Math.abs(Math.sin(dayOfYear * 0.3)) * 2;
     results.push({
       date: dateStr,
       avgPrice: Math.round(avgPrice * 100) / 100,
-      minPrice: Math.round(Math.max(0.1, avgPrice - 2 - Math.random() * 2) * 100) / 100,
-      maxPrice: Math.round((avgPrice + 3 + Math.random() * 5) * 100) / 100,
+      minPrice: Math.round(Math.max(0.1, avgPrice - spread) * 100) / 100,
+      maxPrice: Math.round((avgPrice + spread + 1) * 100) / 100,
     });
   }
 

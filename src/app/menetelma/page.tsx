@@ -14,11 +14,11 @@ import {
 import { SITE_URL, SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Menetelm\u00e4 \u2014 N\u00e4in vertailemme s\u00e4hk\u00f6sopimuksia',
+  title: 'Menetelmä — Näin vertailemme sähkösopimuksia',
   description:
-    'Tutustu Valitse Sähkön laskentamenetelmään, vastapuoliriskiarvioon, suositusalgoritmiin ja tietolähteisiin. Läpinäkyvä ja puolueeton sähkövertailu.',
+    'Tutustu Valitse Sähkön laskentamenetelmään, vastapuoliriskiarvioon, suositusalgoritmiin ja tietolähteisiin. Läpinäkyvä ja kattava sähkövertailu.',
   openGraph: {
-    title: `Menetelm\u00e4 \u2014 N\u00e4in vertailemme s\u00e4hk\u00f6sopimuksia | ${SITE_NAME}`,
+    title: `Menetelmä — Näin vertailemme sähkösopimuksia | ${SITE_NAME}`,
     description:
       'Tutustu Valitse Sähkön laskentamenetelmään, vastapuoliriskiarvioon, suositusalgoritmiin ja tietolähteisiin.',
     url: `${SITE_URL}/menetelma`,
@@ -42,7 +42,7 @@ const breadcrumbSchema = {
     {
       '@type': 'ListItem',
       position: 2,
-      name: 'Menetelm\u00e4',
+      name: 'Menetelmä',
       item: `${SITE_URL}/menetelma`,
     },
   ],
@@ -88,7 +88,7 @@ export default function MenetelmaPage() {
                 Etusivu
               </Link>
               <ChevronRight className="h-3.5 w-3.5" />
-              <span className="text-slate-700">Menetelm\u00e4</span>
+              <span className="text-slate-700">Menetelmä</span>
             </nav>
 
             <div className="flex items-center gap-3 mb-4">
@@ -96,17 +96,17 @@ export default function MenetelmaPage() {
                 <Calculator className="h-5 w-5 text-[#0066FF]" />
               </div>
               <span className="text-sm font-medium text-[#0066FF]">
-                L\u00e4pin\u00e4kyvyys ja luotettavuus
+                Läpinäkyvyys ja luotettavuus
               </span>
             </div>
             <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-              Menetelm\u00e4 ja laskentaperusteet
+              Menetelmä ja laskentaperusteet
             </h1>
             <p className="mt-4 text-lg text-slate-600">
-              Haluamme, ett\u00e4 ymm\u00e4rr\u00e4t tarkalleen, miten vertailemme
-              s\u00e4hk\u00f6sopimuksia ja miten tulokset lasketaan. T\u00e4ll\u00e4 sivulla
-              avaamme laskentamenetelm\u00e4mme, riskiarvion perusteet, suositusalgoritmin
-              sek\u00e4 k\u00e4ytt\u00e4m\u00e4mme tietol\u00e4hteet.
+              Haluamme, että ymmärrät tarkalleen, miten vertailemme
+              sähkösopimuksia ja miten tulokset lasketaan. Tällä sivulla
+              avaamme laskentamenetelmämme, riskiarvion perusteet, suositusalgoritmin
+              sekä käyttämämme tietolähteet.
             </p>
           </div>
         </div>
@@ -118,13 +118,13 @@ export default function MenetelmaPage() {
             <section>
               <SectionHeading
                 icon={Calculator}
-                title="N\u00e4in laskemme kokonaiskustannuksen"
+                title="Näin laskemme kokonaiskustannuksen"
                 id="kokonaiskustannus"
               />
               <div className="prose prose-slate max-w-none prose-p:text-slate-600 prose-li:text-slate-600">
                 <p>
-                  S\u00e4hk\u00f6lasku koostuu kolmesta p\u00e4\u00e4osasta: energiakustannuksesta,
-                  s\u00e4hk\u00f6n siirtomaksusta ja s\u00e4hk\u00f6verosta. Laskemme kaikki
+                  Sähkölasku koostuu kolmesta pääosasta: energiakustannuksesta,
+                  sähkön siirtomaksusta ja sähköverosta. Laskemme kaikki
                   osa-alueet vuositasolla, jotta sopimuksia on helppo vertailla.
                 </p>
 
@@ -132,50 +132,50 @@ export default function MenetelmaPage() {
                   1. Energiakustannus
                 </h3>
                 <p>
-                  <strong>Kiinte\u00e4t ja toistaiseksi voimassa olevat sopimukset:</strong>
+                  <strong>Kiinteät ja toistaiseksi voimassa olevat sopimukset:</strong>
                 </p>
                 <div className="my-4 rounded-lg bg-slate-50 px-4 py-3 font-mono text-sm text-slate-700">
-                  Energiakustannus = (hinta c/kWh \u00d7 kulutus kWh / 100 + perusmaksu \u20ac/kk
-                  \u00d7 12) \u00d7 1,255
+                  Energiakustannus = (hinta c/kWh × kulutus kWh / 100 + perusmaksu €/kk
+                  × 12) × 1,255
                 </div>
                 <p>
-                  <strong>Pörssisähkösopimukset:</strong> K\u00e4yt\u00e4mme toteutunutta
+                  <strong>Pörssisähkösopimukset:</strong> Käytämme toteutunutta
                   keskimääräistä spot-hintaa (tällä hetkellä 5,5 c/kWh alv 0 %), johon
                   lisätään yhtiön marginaali. Lopuksi lisätään ALV 25,5 %.
                 </p>
                 <div className="my-4 rounded-lg bg-slate-50 px-4 py-3 font-mono text-sm text-slate-700">
-                  Energiakustannus = ((spot-keskihinta + marginaali) c/kWh \u00d7 kulutus / 100 +
-                  perusmaksu \u00d7 12) \u00d7 1,255
+                  Energiakustannus = ((spot-keskihinta + marginaali) c/kWh × kulutus / 100 +
+                  perusmaksu × 12) × 1,255
                 </div>
 
                 <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-3">
                   2. Siirtomaksu
                 </h3>
                 <p>
-                  Siirtomaksu riippuu asuinalueesta ja paikallisesta verkkoyhti\u00f6st\u00e4.
-                  K\u00e4yt\u00e4mme aluekohtaista keskimääräistä siirtohintaa (sis. verot).
+                  Siirtomaksu riippuu asuinalueesta ja paikallisesta verkkoyhtiöstä.
+                  Käytämme aluekohtaista keskimääräistä siirtohintaa (sis. verot).
                 </p>
                 <div className="my-4 rounded-lg bg-slate-50 px-4 py-3 font-mono text-sm text-slate-700">
-                  Siirtomaksu = siirtohinta c/kWh \u00d7 kulutus kWh / 100
+                  Siirtomaksu = siirtohinta c/kWh × kulutus kWh / 100
                 </div>
 
                 <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-3">
-                  3. S\u00e4hk\u00f6vero
+                  3. Sähkövero
                 </h3>
                 <p>
-                  S\u00e4hk\u00f6vero on valtion asettama vero s\u00e4hk\u00f6n kulutukselle.
-                  Nykyinen verokanta on 2,79372 c/kWh (alv 0 %), johon lis\u00e4t\u00e4\u00e4n ALV
+                  Sähkövero on valtion asettama vero sähkön kulutukselle.
+                  Nykyinen verokanta on 2,79372 c/kWh (alv 0 %), johon lisätään ALV
                   25,5 %.
                 </p>
                 <div className="my-4 rounded-lg bg-slate-50 px-4 py-3 font-mono text-sm text-slate-700">
-                  S\u00e4hk\u00f6vero = 2,79372 c/kWh \u00d7 1,255 \u00d7 kulutus kWh / 100
+                  Sähkövero = 2,79372 c/kWh × 1,255 × kulutus kWh / 100
                 </div>
 
                 <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-3">
                   4. Kokonaiskustannus
                 </h3>
                 <div className="my-4 rounded-lg bg-[#0066FF]/5 border border-[#0066FF]/20 px-4 py-3 font-mono text-sm text-slate-700">
-                  Yhteens\u00e4 = Energiakustannus + Siirtomaksu + S\u00e4hk\u00f6vero
+                  Yhteensä = Energiakustannus + Siirtomaksu + Sähkövero
                 </div>
 
                 {/* Example calculation */}
@@ -184,35 +184,35 @@ export default function MenetelmaPage() {
                 </h3>
                 <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
                   <p className="mb-3 text-sm font-semibold text-slate-700">
-                    Rivitalo, 5 000 kWh/v, Uusimaa, kiinte\u00e4 sopimus 5,50 c/kWh, perusmaksu
-                    3,95 \u20ac/kk
+                    Rivitalo, 5 000 kWh/v, Uusimaa, kiinteä sopimus 5,50 c/kWh, perusmaksu
+                    3,95 €/kk
                   </p>
                   <div className="space-y-2 text-sm text-slate-600">
                     <div className="flex justify-between">
-                      <span>Energia: 5 000 \u00d7 5,50 / 100 = 275,00 \u20ac</span>
+                      <span>Energia: 5 000 × 5,50 / 100 = 275,00 €</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>+ Perusmaksu: 3,95 \u00d7 12 = 47,40 \u20ac</span>
+                      <span>+ Perusmaksu: 3,95 × 12 = 47,40 €</span>
                     </div>
                     <div className="flex justify-between">
-                      <span>+ ALV 25,5 %: (275,00 + 47,40) \u00d7 0,255 = 82,21 \u20ac</span>
+                      <span>+ ALV 25,5 %: (275,00 + 47,40) × 0,255 = 82,21 €</span>
                     </div>
                     <div className="flex justify-between font-semibold text-slate-800">
-                      <span>= Energiakustannus: 404,61 \u20ac</span>
+                      <span>= Energiakustannus: 404,61 €</span>
                     </div>
                     <div className="my-2 border-t border-slate-100" />
                     <div className="flex justify-between">
-                      <span>Siirtomaksu: 5 000 \u00d7 4,20 / 100 = 210,00 \u20ac</span>
+                      <span>Siirtomaksu: 5 000 × 4,20 / 100 = 210,00 €</span>
                     </div>
                     <div className="flex justify-between">
                       <span>
-                        S\u00e4hk\u00f6vero: 5 000 \u00d7 2,79372 / 100 \u00d7 1,255 = 175,33
-                        \u20ac
+                        Sähkövero: 5 000 × 2,79372 / 100 × 1,255 = 175,33
+                        €
                       </span>
                     </div>
                     <div className="my-2 border-t border-slate-200" />
                     <div className="flex justify-between text-base font-bold text-[#0066FF]">
-                      <span>YHTEENS\u00c4: 789,94 \u20ac/vuosi (65,83 \u20ac/kk)</span>
+                      <span>YHTEENSÄ: 789,94 €/vuosi (65,83 €/kk)</span>
                     </div>
                   </div>
                 </div>
@@ -228,9 +228,9 @@ export default function MenetelmaPage() {
               />
               <div className="prose prose-slate max-w-none prose-p:text-slate-600 prose-li:text-slate-600">
                 <p>
-                  Vastapuoliriski kertoo, kuinka todenn\u00e4k\u00f6ist\u00e4 on, ett\u00e4
-                  s\u00e4hk\u00f6yhti\u00f6 ei pysty t\u00e4ytt\u00e4m\u00e4\u00e4n
-                  sopimusvelvoitteitaan. K\u00e4yt\u00e4mme 0\u2013100 asteikkoa, jossa
+                  Vastapuoliriski kertoo, kuinka todennäköistä on, että
+                  sähköyhtiö ei pysty täyttämään
+                  sopimusvelvoitteitaan. Käytämme 0–100 asteikkoa, jossa
                   pienempi luku tarkoittaa pienempää riskiä.
                 </p>
               </div>
@@ -238,33 +238,33 @@ export default function MenetelmaPage() {
               <div className="mt-6 space-y-3">
                 {[
                   {
-                    range: '0\u201310',
+                    range: '0–10',
                     label: 'Erittäin vakaa',
                     desc: 'Valtion omistamat tai erittäin suuret yhtiöt (esim. Fortum, Helen)',
                     color: 'bg-emerald-100 text-emerald-800 border-emerald-200',
                   },
                   {
-                    range: '11\u201325',
+                    range: '11–25',
                     label: 'Vakaa',
                     desc: 'Suuret, vakiintuneet yhtiöt, joilla vahva talous',
                     color: 'bg-green-100 text-green-800 border-green-200',
                   },
                   {
-                    range: '26\u201350',
+                    range: '26–50',
                     label: 'Kohtalainen',
                     desc: 'Keskikokoiset yhtiöt, kohtuullinen riski',
                     color: 'bg-amber-100 text-amber-800 border-amber-200',
                   },
                   {
-                    range: '51\u201375',
+                    range: '51–75',
                     label: 'Kohonnut riski',
-                    desc: 'Kohonnut riski \u2014 tutkittava huolellisesti ennen sopimusta',
+                    desc: 'Kohonnut riski — tutkittava huolellisesti ennen sopimusta',
                     color: 'bg-orange-100 text-orange-800 border-orange-200',
                   },
                   {
-                    range: '76\u2013100',
+                    range: '76–100',
                     label: 'Korkea riski',
-                    desc: 'Taloudellisen vakauden huolenaiheita \u2014 sopimuksen toteutuminen epävarmaa',
+                    desc: 'Taloudellisen vakauden huolenaiheita — sopimuksen toteutuminen epävarmaa',
                     color: 'bg-red-100 text-red-800 border-red-200',
                   },
                 ].map((tier) => (
@@ -312,16 +312,16 @@ export default function MenetelmaPage() {
               <div className="prose prose-slate max-w-none prose-p:text-slate-600 prose-li:text-slate-600">
                 <p>
                   &ldquo;Paras valinta&rdquo; -suosituksemme perustuu kolmen tekijän painotettuun
-                  kokonaispisteeseen. Algoritmi on sama kaikille sopimuksille \u2014 mikään
+                  kokonaispisteeseen. Algoritmi on sama kaikille sopimuksille — mikään
                   yhteistyö ei vaikuta tulokseen.
                 </p>
               </div>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-3">
                 {[
-                  { weight: '50 %', label: 'Hintapisteet', desc: 'Edullisempi sopimus saa korkeammat pisteet (0\u2013100).' },
+                  { weight: '50 %', label: 'Hintapisteet', desc: 'Edullisempi sopimus saa korkeammat pisteet (0–100).' },
                   { weight: '30 %', label: 'Luotettavuuspisteet', desc: 'Pienempi vastapuoliriski = korkeammat pisteet.' },
-                  { weight: '20 %', label: 'Asiakastyytyväisyys', desc: 'Arvosana normalisoitu asteikolla 0\u2013100.' },
+                  { weight: '20 %', label: 'Asiakastyytyväisyys', desc: 'Arvosana normalisoitu asteikolla 0–100.' },
                 ].map((item) => (
                   <div
                     key={item.label}
@@ -340,21 +340,21 @@ export default function MenetelmaPage() {
                 </h3>
                 <div className="space-y-2 text-sm text-slate-600">
                   <div className="rounded-lg bg-slate-50 px-4 py-2 font-mono">
-                    Hintapisteet = (kallein - oma hinta) / (kallein - halvin) \u00d7 100
+                    Hintapisteet = (kallein - oma hinta) / (kallein - halvin) × 100
                   </div>
                   <div className="rounded-lg bg-slate-50 px-4 py-2 font-mono">
                     Luotettavuuspisteet = 100 - vastapuoliriski
                   </div>
                   <div className="rounded-lg bg-slate-50 px-4 py-2 font-mono">
-                    Tyytyv\u00e4isyyspisteet = (arvosana - 1) / 4 \u00d7 100
+                    Tyytyväisyyspisteet = (arvosana - 1) / 4 × 100
                   </div>
                   <div className="rounded-lg bg-[#0066FF]/5 border border-[#0066FF]/20 px-4 py-2 font-mono">
-                    Kokonaispisteet = hinta \u00d7 0,5 + luotettavuus \u00d7 0,3 +
-                    tyytyvaisyys \u00d7 0,2
+                    Kokonaispisteet = hinta × 0,5 + luotettavuus × 0,3 +
+                    tyytyvaisyys × 0,2
                   </div>
                 </div>
                 <p className="mt-4">
-                  Korkein kokonaispiste saa &ldquo;Paras valinta&rdquo; -merkinn\u00e4n.
+                  Korkein kokonaispiste saa &ldquo;Paras valinta&rdquo; -merkinnän.
                   Pisteytys lasketaan aina uudelleen valittujen suodattimien mukaan.
                 </p>
               </div>
@@ -364,32 +364,32 @@ export default function MenetelmaPage() {
             <section>
               <SectionHeading
                 icon={Database}
-                title="Tietol\u00e4hteet"
+                title="Tietolähteet"
                 id="tietolahteet"
               />
               <div className="space-y-4">
                 {[
                   {
                     title: 'Sopimustiedot',
-                    desc: 'Kerätään s\u00e4hk\u00f6yhti\u00f6iden verkkosivuilta ja p\u00e4ivitet\u00e4\u00e4n viikottain.',
+                    desc: 'Kerätään sähköyhtiöiden verkkosivuilta ja päivitetään viikottain.',
                   },
                   {
                     title: 'Spot-hinnat',
-                    desc: 'spot-hinta.fi API sek\u00e4 ENTSO-E Transparency Platform.',
+                    desc: 'spot-hinta.fi API sekä ENTSO-E Transparency Platform.',
                     link: { label: 'ENTSO-E', url: 'https://transparency.entsoe.eu/' },
                   },
                   {
                     title: 'Tuotantotiedot',
-                    desc: 'Fingrid Open Data \u2014 Suomen s\u00e4hk\u00f6j\u00e4rjestelm\u00e4n reaaliaikainen data.',
+                    desc: 'Fingrid Open Data — Suomen sähköjärjestelmän reaaliaikainen data.',
                     link: { label: 'Fingrid', url: 'https://data.fingrid.fi/' },
                   },
                   {
                     title: 'Siirtohinnat',
-                    desc: 'Alueellisten verkkoyhti\u00f6iden julkaisemat siirtohinnat.',
+                    desc: 'Alueellisten verkkoyhtiöiden julkaisemat siirtohinnat.',
                   },
                   {
                     title: 'Regulaattoriviittaus',
-                    desc: 'Energiavirasto valvoo s\u00e4hk\u00f6markkinoita ja asettaa s\u00e4\u00e4ntelykehyksen, johon nojaudumme.',
+                    desc: 'Energiavirasto valvoo sähkömarkkinoita ja asettaa sääntelykehyksen, johon nojaudumme.',
                     link: { label: 'Energiavirasto', url: 'https://energiavirasto.fi/' },
                   },
                 ].map((source) => (
@@ -432,36 +432,36 @@ export default function MenetelmaPage() {
                 </p>
                 <ul>
                   <li>
-                    <strong>L\u00e4pin\u00e4kyvyys:</strong> Kaikki laskentamenetelm\u00e4t ja
-                    tietol\u00e4hteet ovat avoimesti dokumentoitu t\u00e4ll\u00e4 sivulla.
+                    <strong>Läpinäkyvyys:</strong> Kaikki laskentamenetelmät ja
+                    tietolähteet ovat avoimesti dokumentoitu tällä sivulla.
                   </li>
                   <li>
-                    <strong>Puolueettomuus:</strong> Vertailutulokset perustuvat objektiivisiin
-                    kriteereihin. Kaupalliset yhteistyöt eivät vaikuta j\u00e4rjestykseen.
+                    <strong>Avoimuus:</strong> Vertailutulokset perustuvat avoimiin
+                    kriteereihin. Kaupalliset yhteistyöt eivät vaikuta järjestykseen.
                   </li>
                   <li>
-                    <strong>Kuluttajansuoja:</strong> Tarjoamme selke\u00e4n tiedon riskeist\u00e4,
+                    <strong>Kuluttajansuoja:</strong> Tarjoamme selkeän tiedon riskeistä,
                     hinnoittelusta ja sopimusehdoista ennen kuin kuluttaja siirtyy
-                    s\u00e4hk\u00f6yhti\u00f6n sivuille.
+                    sähköyhtiön sivuille.
                   </li>
                   <li>
                     <strong>Vertailtavuus:</strong> Kaikki hinnat lasketaan samalla menetelmällä,
                     jotta sopimukset ovat aidosti vertailukelpoisia.
                   </li>
                   <li>
-                    <strong>Ajantasaisuus:</strong> Tiedot pidet\u00e4\u00e4n ajan tasalla ja
-                    p\u00e4ivitysaikaleima n\u00e4ytet\u00e4\u00e4n selke\u00e4sti.
+                    <strong>Ajantasaisuus:</strong> Tiedot pidetään ajan tasalla ja
+                    päivitysaikaleima näytetään selkeästi.
                   </li>
                 </ul>
                 <p>
-                  Lis\u00e4tietoja kuluttaja-asiamiehen ohjeista:{' '}
+                  Lisätietoja kuluttaja-asiamiehen ohjeista:{' '}
                   <a
                     href="https://www.kkv.fi/kuluttaja-asiat/kuluttajaoikeus/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#0066FF] hover:underline"
                   >
-                    KKV \u2014 Kuluttajaoikeus
+                    KKV — Kuluttajaoikeus
                     <ExternalLink className="ml-1 inline h-3 w-3" />
                   </a>
                 </p>
@@ -472,14 +472,14 @@ export default function MenetelmaPage() {
             <section>
               <SectionHeading
                 icon={RefreshCw}
-                title="P\u00e4ivitystiheys"
+                title="Päivitystiheys"
                 id="paivitystiheys"
               />
               <div className="grid gap-4 sm:grid-cols-3">
                 {[
-                  { label: 'Spot-hinnat', freq: '5 minuutin v\u00e4lein', note: 'Reaaliaikainen p\u00f6rssihinta' },
-                  { label: 'Sopimustiedot', freq: 'Viikottain', note: 'Tarkistetaan ja p\u00e4ivitet\u00e4\u00e4n' },
-                  { label: 'Yhti\u00f6tiedot', freq: 'Muutosten yhteydess\u00e4', note: 'P\u00e4ivitet\u00e4\u00e4n havaittujen muutosten pohjalta' },
+                  { label: 'Spot-hinnat', freq: '5 minuutin välein', note: 'Reaaliaikainen pörssihinta' },
+                  { label: 'Sopimustiedot', freq: 'Viikottain', note: 'Tarkistetaan ja päivitetään' },
+                  { label: 'Yhtiötiedot', freq: 'Muutosten yhteydessä', note: 'Päivitetään havaittujen muutosten pohjalta' },
                 ].map((item) => (
                   <div
                     key={item.label}
@@ -499,13 +499,13 @@ export default function MenetelmaPage() {
           <div className="mt-16 rounded-2xl bg-gradient-to-r from-[#0066FF] to-[#0052CC] p-8 text-center text-white sm:p-12">
             <h2 className="text-2xl font-bold sm:text-3xl">Valmis vertailemaan?</h2>
             <p className="mx-auto mt-3 max-w-lg text-white/80">
-              Nyt kun tied\u00e4t miten laskelmat toimivat, kokeile vertailua itse \u2014 se on ilmaista.
+              Nyt kun tiedät miten laskelmat toimivat, kokeile vertailua itse — se on ilmaista.
             </p>
             <Link
               href="/vertailu"
               className="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3 text-sm font-semibold text-[#0066FF] shadow-lg transition-colors hover:bg-white/90"
             >
-              Vertaa s\u00e4hk\u00f6sopimuksia
+              Vertaa sähkösopimuksia
               <ChevronRight className="h-4 w-4" />
             </Link>
           </div>

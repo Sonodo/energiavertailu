@@ -45,23 +45,23 @@ export default function FAQ() {
   };
 
   return (
-    <section className="border-b border-slate-200 bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="bg-background py-16 sm:py-20">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="section-title">
             Usein kysytyt kysymykset
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="section-subtitle">
             Vastauksia yleisimpiin kysymyksiin sähkön vertailusta ja vaihtamisesta.
           </p>
         </div>
 
-        <div className="mx-auto mt-12 max-w-3xl divide-y divide-slate-200">
+        <div className="mt-12 divide-y divide-slate-200">
           {faqs.map((faq, index) => (
             <div key={index} className="py-0">
               <button
                 onClick={() => toggle(index)}
-                className="flex w-full items-start justify-between gap-4 py-5 text-left"
+                className="flex w-full min-h-[44px] items-start justify-between gap-4 py-5 text-left"
                 aria-expanded={openIndex === index}
               >
                 <span className="text-base font-semibold text-slate-900 sm:text-lg">
@@ -69,7 +69,7 @@ export default function FAQ() {
                 </span>
                 <ChevronDown
                   className={cn(
-                    'mt-0.5 h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200',
+                    'mt-0.5 h-5 w-5 shrink-0 text-accent transition-transform duration-200',
                     openIndex === index && 'rotate-180'
                   )}
                 />

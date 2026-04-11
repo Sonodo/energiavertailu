@@ -245,10 +245,11 @@ function buildRecommendations(
   const sorted = [...forecast].sort((a, b) => a.predictedPrice - b.predictedPrice);
   const recommendations: { hour: number; price: number; label: string }[] = [];
 
-  // Find cheapest 3-hour window (for laundry, dishwasher)
-  let bestWindowStart = 0;
+  // Find cheapest 3-hour window for laundry/dishwasher
+  // Restricted to practical hours: start 07–19 (window ends by 22 at latest)
+  let bestWindowStart = 7;
   let bestWindowAvg = Infinity;
-  for (let start = 0; start <= 21; start++) {
+  for (let start = 7; start <= 19; start++) {
     const windowPrices = forecast
       .filter((f) => f.hour >= start && f.hour < start + 3)
       .map((f) => f.predictedPrice);
@@ -267,14 +268,18 @@ function buildRecommendations(
     label: `Pyykinpesu / astianpesu: klo ${String(bestWindowStart).padStart(2, '0')}–${String(bestWindowStart + 3).padStart(2, '0')}`,
   });
 
-  // Single cheapest hour (for EV charging start, water heater)
+  // Single cheapest hour within practical range (07–22) for quick appliances
+  const practicalSorted = [...forecast]
+    .filter((f) => f.hour >= 7 && f.hour <= 22)
+    .sort((a, b) => a.predictedPrice - b.predictedPrice);
+  const cheapestPractical = practicalSorted[0] || sorted[0];
   recommendations.push({
-    hour: sorted[0].hour,
-    price: sorted[0].predictedPrice,
-    label: `Halvin tunti: klo ${String(sorted[0].hour).padStart(2, '0')}–${String(sorted[0].hour + 1).padStart(2, '0')}`,
+    hour: cheapestPractical.hour,
+    price: cheapestPractical.predictedPrice,
+    label: `Halvin tunti: klo ${String(cheapestPractical.hour).padStart(2, '0')}–${String(cheapestPractical.hour + 1).padStart(2, '0')}`,
   });
 
-  // Find cheapest 6-hour window (for EV charging, overnight heating)
+  // Find cheapest 6-hour window for EV charging (any hour — can be scheduled/timed)
   let bestLongStart = 0;
   let bestLongAvg = Infinity;
   for (let start = 0; start <= 18; start++) {
@@ -290,10 +295,11 @@ function buildRecommendations(
     }
   }
 
+  const evIsNight = bestLongStart >= 22 || bestLongStart <= 5;
   recommendations.push({
     hour: bestLongStart,
     price: Math.round(bestLongAvg * 100) / 100,
-    label: `Auton lataus: klo ${String(bestLongStart).padStart(2, '0')}–${String(bestLongStart + 6).padStart(2, '0')}`,
+    label: `Auton lataus${evIsNight ? ' (ajasta yölle)' : ''}: klo ${String(bestLongStart).padStart(2, '0')}–${String(bestLongStart + 6).padStart(2, '0')}`,
   });
 
   // Most expensive hour to avoid

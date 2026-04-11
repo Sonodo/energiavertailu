@@ -19,13 +19,13 @@ const providers = [
 
 export default function ProviderLogos() {
   return (
-    <section className="border-b border-slate-200 bg-slate-50 py-16 sm:py-20">
+    <section className="bg-accent-50/30 py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <h2 className="section-title">
             Vertailussa mukana
           </h2>
-          <p className="mt-4 text-lg text-slate-600">
+          <p className="section-subtitle">
             {TOTAL_PROVIDERS} sähköyhtiötä — kaikki merkittävät toimijat Suomen markkinoilta.
           </p>
         </div>

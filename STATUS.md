@@ -16,7 +16,7 @@ Finland's most comprehensive electricity price comparison site. Compare contract
 - **Custom domain**: valitsesahko.fi (Valitse brand)
 - **GA4**: G-JT1SCYMPW2 active (hardcoded fallback)
 - **GSC**: Verification tag added
-- **Cross-links**: Links to other Valitse sites (valitselaina.fi, valitsevakuutus.fi, valitsepuhelin.fi)
+- **Cross-links**: Links to other Valitse sites (valitselaina.fi, valitsevakuutus.fi, valitseliittyma.fi)
 - **Homepage**: Hero, live spot price banner, quick comparison, how it works, features grid, provider logos, FAQ, CTA
 - **Spot Price Dashboard** (/porssisahko): Real-time prices from spot-hinta.fi API, hourly charts, price history, best hours
 - **Comparison Calculator** (/vertailu): 3-step flow, contracts from 37 providers, housing type presets, filtering, sorting

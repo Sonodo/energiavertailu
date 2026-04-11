@@ -57,48 +57,46 @@ function getSeasonalBase(month: number): { base: number; volatility: number } {
 
 /**
  * Generate realistic daily price history for the last N days.
- * Uses deterministic seeded random so data is consistent across renders.
+ * Each day uses a unique seed derived from its date so prices genuinely vary.
  */
 export function generateDailyHistory(days: number): DailyPriceHistory[] {
   const results: DailyPriceHistory[] = [];
   const now = new Date();
-  // Use a fixed seed based on a reference date so data only changes daily
-  const referenceSeed = Math.floor(now.getTime() / (24 * 60 * 60 * 1000));
-  const rand = seededRandom(referenceSeed);
-
-  // Track a "trend" variable for multi-day weather patterns
-  let weatherTrend = 0; // positive = windy/mild (cheap), negative = cold/calm (expensive)
 
   for (let i = days - 1; i >= 0; i--) {
     const date = new Date(now);
     date.setDate(date.getDate() - i);
     const dateStr = date.toISOString().split('T')[0];
     const month = date.getMonth();
+    const dayOfWeek = date.getDay();
     const dayOfYear = Math.floor(
       (date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) / (24 * 60 * 60 * 1000)
     );
 
+    // Unique seed per day — ensures each day gets different random values
+    const dateSeed = Math.floor(date.getTime() / (24 * 60 * 60 * 1000));
+    const rand = seededRandom(dateSeed);
+
     const { base, volatility } = getSeasonalBase(month);
 
-    // Weather trend evolves slowly (autocorrelated)
-    weatherTrend = weatherTrend * 0.85 + (rand() - 0.5) * 2;
+    // Multi-frequency weather-like variation (deterministic per day-of-year)
+    const weatherEffect =
+      Math.sin(dayOfYear * 0.15) * 1.5 +
+      Math.sin(dayOfYear * 0.4 + 2.1) * 0.8 +
+      Math.cos(dayOfYear * 0.7 + 0.5) * 0.5;
 
     // Occasional spikes (cold wave / wind drop) — ~5% chance
     const spikeChance = rand();
     let spike = 0;
     if (spikeChance > 0.97) {
-      // Extreme price spike (cold snap, no wind)
       spike = 5 + rand() * 15;
     } else if (spikeChance > 0.93) {
-      // Moderate spike
       spike = 2 + rand() * 5;
     } else if (spikeChance < 0.03) {
-      // Negative price dip (excess wind/solar)
       spike = -(1 + rand() * 3);
     }
 
     // Weekend effect: slightly lower prices
-    const dayOfWeek = date.getDay();
     const weekendDiscount = (dayOfWeek === 0 || dayOfWeek === 6) ? -0.8 : 0;
 
     // Holiday/special period effects
@@ -106,39 +104,33 @@ export function generateDailyHistory(days: number): DailyPriceHistory[] {
     const isMidsummer = month === 5 && date.getDate() >= 19 && date.getDate() <= 22;
     const holidayEffect = isChristmas ? 3 : isMidsummer ? -1.5 : 0;
 
-    // Daily noise
+    // Daily noise from the per-day PRNG
     const dailyNoise = (rand() - 0.5) * volatility;
 
     // Compute average price
-    let avgPrice = base + weatherTrend + dailyNoise + spike + weekendDiscount + holidayEffect;
-    avgPrice = Math.max(0.1, avgPrice); // Floor at 0.1 c/kWh (rarely negative in Finland)
+    let avgPrice = base + weatherEffect + dailyNoise + spike + weekendDiscount + holidayEffect;
+    avgPrice = Math.max(0.1, avgPrice);
 
-    // Min is typically 40-70% of avg (night hours)
+    // Min is typically 30-60% of avg (night hours)
     const minRatio = 0.3 + rand() * 0.3;
     let minPrice = avgPrice * minRatio;
-    minPrice = Math.max(-0.5, minPrice); // Can go slightly negative
+    minPrice = Math.max(-0.5, minPrice);
 
     // Max is typically 150-300% of avg (peak hours)
     const maxRatio = 1.5 + rand() * 1.5;
     let maxPrice = avgPrice * maxRatio;
 
-    // During spikes, max can be much higher
     if (spike > 5) {
       maxPrice = avgPrice + spike * 2;
     }
 
-    // Add a subtle yearly trend (prices were higher a year ago)
+    // Subtle yearly trend (prices were higher a year ago)
     const yearlyTrend = i > 200 ? 1.5 : i > 100 ? 0.5 : 0;
     avgPrice += yearlyTrend;
     minPrice += yearlyTrend * 0.5;
     maxPrice += yearlyTrend * 1.5;
 
-    // Compute no-tax price
     const avgPriceNoTax = avgPrice / 1.255;
-
-    // Use day of year as additional variation seed
-    const _ = dayOfYear; // referenced for clarity
-    void _;
 
     results.push({
       date: dateStr,

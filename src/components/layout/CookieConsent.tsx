@@ -18,7 +18,7 @@ function updateClarityConsent(granted: boolean) {
 }
 
 export default function CookieConsent() {
-  const [consent, setConsent] = useState<ConsentState>('accepted'); // default to hide banner
+  const [consent, setConsent] = useState<ConsentState>('accepted');
 
   useEffect(() => {
     const stored = localStorage.getItem(CONSENT_KEY);
@@ -33,7 +33,6 @@ export default function CookieConsent() {
     localStorage.setItem(CONSENT_KEY, 'accepted');
     localStorage.setItem(ANALYTICS_CONSENT_KEY, 'granted');
     setConsent('accepted');
-    // Update GA4 consent when user accepts cookies
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
       window.gtag('consent', 'update', {
         analytics_storage: 'granted',
@@ -53,9 +52,10 @@ export default function CookieConsent() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white p-4 shadow-lg sm:p-6"
+      className="fixed bottom-0 left-0 right-0 z-50 border-t border-slate-200 bg-white/95 p-4 shadow-lg backdrop-blur-md sm:p-6"
       role="dialog"
       aria-label="Evästeasetukset"
+      style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
     >
       <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex-1">
@@ -67,7 +67,7 @@ export default function CookieConsent() {
             (Google Analytics) palvelun kehittämiseksi suostumuksellasi.{' '}
             <Link
               href="/evasteet"
-              className="font-medium text-[#0066FF] hover:text-[#0052CC]"
+              className="font-medium text-accent-600 hover:text-accent-700"
             >
               Lue lisää
             </Link>
@@ -76,13 +76,13 @@ export default function CookieConsent() {
         <div className="flex flex-shrink-0 gap-3">
           <button
             onClick={handleReject}
-            className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
+            className="min-h-[44px] rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
           >
             Hylkää
           </button>
           <button
             onClick={handleAccept}
-            className="rounded-lg bg-[#0066FF] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#0052CC]"
+            className="min-h-[44px] rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-accent-600"
           >
             Hyväksy
           </button>

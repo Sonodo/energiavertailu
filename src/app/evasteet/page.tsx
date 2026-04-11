@@ -189,12 +189,11 @@ export default function EvasteetPage() {
           <p>
             <strong>Sonodo — Henri Linnainmaa</strong>
             <br />
-            Sähköposti:{' '}
             <a
-              href="mailto:info@valitsesahko.fi"
+              href="/yhteystiedot"
               className="text-[#0066FF] hover:underline"
             >
-              info@valitsesahko.fi
+              Ota yhteyttä
             </a>
           </p>
           <p>

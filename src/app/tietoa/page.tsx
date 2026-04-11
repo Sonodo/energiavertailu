@@ -5,11 +5,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Tietoa palvelusta',
   description:
-    'Valitse Sähkö on Suomen monipuolinen ja puolueeton sähkövertailupalvelu. Lue lisää palvelustamme, menetelmistämme ja tavoitteistamme.',
+    'Valitse Sähkö on Suomen monipuolinen ja kattava sähkövertailupalvelu. Lue lisää palvelustamme, menetelmistämme ja tavoitteistamme.',
   openGraph: {
     title: `Tietoa palvelusta | ${SITE_NAME}`,
     description:
-      'Valitse Sähkö on Suomen monipuolinen ja puolueeton sähkövertailupalvelu. Lue lisää palvelustamme.',
+      'Valitse Sähkö on Suomen monipuolinen ja kattava sähkövertailupalvelu. Lue lisää palvelustamme.',
     url: `${SITE_URL}/tietoa`,
   },
   alternates: {
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 const values = [
   {
     icon: BarChart3,
-    title: 'Puolueettomuus',
+    title: 'Läpinäkyvyys',
     description:
-      'Vertailumme perustuu aina objektiivisiin hintatietoihin. Yhteistyökumppanuudet eivät vaikuta vertailutuloksiin.',
+      'Vertailumme perustuu aina avoimiin hintatietoihin. Yhteistyökumppanuudet eivät vaikuta vertailutuloksiin.',
   },
   {
     icon: Shield,
@@ -60,7 +60,7 @@ export default function TietoaPage() {
             Tietoa Valitse Sähköstä
           </h1>
           <p className="mt-4 text-lg text-slate-600">
-            Valitse Sähkö on suomalainen, riippumaton verkkopalvelu, joka auttaa kuluttajia
+            Valitse Sähkö on suomalainen verkkopalvelu, joka auttaa kuluttajia
             vertailemaan sähkösopimuksia ja tekemään tietoon perustuvia päätöksiä
             sähkömarkkinoilla.
           </p>
@@ -76,7 +76,7 @@ export default function TietoaPage() {
             Sähkömarkkinoiden vapauttaminen on antanut kuluttajille mahdollisuuden valita
             sähkösopimuksensa vapaasti — mutta valinnanvapaus edellyttää vertailukelpoista
             tietoa. Valitse Sähkö syntyi tarpeesta tarjota suomalaisille selkeä,
-            puolueeton ja helposti ymmärrettävä tapa vertailla sähkösopimuksia.
+            selkeä ja helposti ymmärrettävä tapa vertailla sähkösopimuksia.
           </p>
           <p>
             Tavoitteenamme on, että jokainen suomalainen kotitalous löytää itselleen
@@ -118,7 +118,7 @@ export default function TietoaPage() {
           <p>
             Keräämme sähkösopimusten tiedot suoraan sähköyhtiöiltä ja julkisista
             lähteistä. Päivitämme tiedot säännöllisesti varmistaaksemme niiden
-            ajantasaisuuden. Vertailumme perustuu objektiivisiin kriteereihin, kuten
+            ajantasaisuuden. Vertailumme perustuu avoimiin kriteereihin, kuten
             sähkön hintaan, sopimusehtoihin, energialähteiden jakaumaan ja
             asiakaspalveluun.
           </p>

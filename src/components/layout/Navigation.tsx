@@ -20,8 +20,8 @@ export default function Navigation() {
             className={cn(
               'rounded-lg px-3 py-2 text-sm font-medium transition-colors',
               isActive
-                ? 'bg-blue-50 text-[#0066FF]'
-                : 'text-slate-700 hover:bg-slate-100 hover:text-[#0066FF]'
+                ? 'bg-accent/10 text-accent'
+                : 'text-slate-700 hover:bg-slate-100 hover:text-accent'
             )}
           >
             {item.label}

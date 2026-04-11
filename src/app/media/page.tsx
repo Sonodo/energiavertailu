@@ -16,13 +16,13 @@ import {
 import { SITE_URL, SITE_NAME } from '@/lib/constants';
 
 export const metadata: Metadata = {
-  title: 'Medialle \u2014 Lehdist\u00f6materiaali ja yhteydenotot',
+  title: 'Medialle — Lehdistömateriaali ja yhteydenotot',
   description:
-    'Valitse Sähkön mediasivut: br\u00e4nditiedot, avainluvut, k\u00e4ytt\u00f6ohjeet medialle ja lehdist\u00f6yhteydenotot.',
+    'Valitse Sähkön mediasivut: bränditiedot, avainluvut, käyttöohjeet medialle ja lehdistöyhteydenotot.',
   openGraph: {
     title: `Medialle | ${SITE_NAME}`,
     description:
-      'Valitse Sähkön mediasivut: br\u00e4nditiedot, avainluvut ja yhteydenotot.',
+      'Valitse Sähkön mediasivut: bränditiedot, avainluvut ja yhteydenotot.',
     url: `${SITE_URL}/media`,
   },
   alternates: {
@@ -39,7 +39,7 @@ const brandColors = [
 ];
 
 const keyStats = [
-  { icon: Building2, value: '37', label: 'S\u00e4hk\u00f6yhti\u00f6t\u00e4' },
+  { icon: Building2, value: '37', label: 'Sähköyhtiötä' },
   { icon: Zap, value: '92', label: 'Sopimusta' },
   { icon: MapPin, value: '19', label: 'Aluetta' },
   { icon: Users, value: 'Ilmainen', label: 'Palvelu kuluttajille' },
@@ -65,16 +65,16 @@ export default function MediaPage() {
               <Newspaper className="h-5 w-5 text-white" />
             </div>
             <span className="text-sm font-medium text-[#0066FF]">
-              Lehdist\u00f6 ja media
+              Lehdistö ja media
             </span>
           </div>
           <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
             Medialle
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-white/70">
-            T\u00e4lt\u00e4 sivulta l\u00f6yd\u00e4t Valitse S\u00e4hk\u00f6n br\u00e4nditiedot,
-            avainluvut sek\u00e4 ohjeet medialle. Jos tarvitset lis\u00e4tietoja tai haluat
-            haastatella asiantuntijoitamme, ota yhteytt\u00e4.
+            Tältä sivulta löydät Valitse Sähkön bränditiedot,
+            avainluvut sekä ohjeet medialle. Jos tarvitset lisätietoja tai haluat
+            haastatella asiantuntijoitamme, ota yhteyttä.
           </p>
         </div>
       </div>
@@ -109,25 +109,25 @@ export default function MediaPage() {
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0066FF]/10">
                 <Info className="h-5 w-5 text-[#0066FF]" />
               </div>
-              Tietoa Valitse S\u00e4hk\u00f6st\u00e4
+              Tietoa Valitse Sähköstä
             </h2>
             <div className="prose prose-slate max-w-none prose-p:text-slate-600">
               <p>
-                Valitse S\u00e4hk\u00f6 on Suomen monipuolinen ilmainen s\u00e4hk\u00f6sopimusten
-                vertailupalvelu. Autamme suomalaisia kuluttajia l\u00f6yt\u00e4m\u00e4\u00e4n
-                edullisen ja luotettavan s\u00e4hk\u00f6sopimuksen vertailemalla
-                92 sopimusta 37 s\u00e4hk\u00f6yhti\u00f6lt\u00e4 kaikissa 19 alueessa.
+                Valitse Sähkö on Suomen monipuolinen ilmainen sähkösopimusten
+                vertailupalvelu. Autamme suomalaisia kuluttajia löytämään
+                edullisen ja luotettavan sähkösopimuksen vertailemalla
+                92 sopimusta 37 sähköyhtiöltä kaikissa 19 alueessa.
               </p>
               <p>
-                Palvelumme on t\u00e4ysin puolueeton: vertailutulokset perustuvat objektiivisiin
-                laskelmiin, eiv\u00e4t kaupallisiin sopimuksiin. Teht\u00e4v\u00e4mme on
-                lis\u00e4t\u00e4 l\u00e4pin\u00e4kyvyytt\u00e4 s\u00e4hk\u00f6markkinoilla
-                ja auttaa kuluttajia tekemään tietoon perustuvia p\u00e4\u00e4t\u00f6ksi\u00e4.
+                Palvelumme on täysin läpinäkyvä: vertailutulokset perustuvat avoimiin
+                laskelmiin, eivät kaupallisiin sopimuksiin. Tehtävämme on
+                lisätä läpinäkyvyyttä sähkömarkkinoilla
+                ja auttaa kuluttajia tekemään tietoon perustuvia päätöksiä.
               </p>
               <p>
-                Tarjoamme my\u00f6s reaaliaikaista p\u00f6rssisähk\u00f6n seurantaa,
-                aluekohtaisia hintavertailuja, s\u00e4hk\u00f6nkulutuslaskureita sek\u00e4 oppaita
-                s\u00e4hk\u00f6markkinoista.
+                Tarjoamme myös reaaliaikaista pörssisähkön seurantaa,
+                aluekohtaisia hintavertailuja, sähkönkulutuslaskureita sekä oppaita
+                sähkömarkkinoista.
               </p>
             </div>
           </section>
@@ -138,7 +138,7 @@ export default function MediaPage() {
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0066FF]/10">
                 <Palette className="h-5 w-5 text-[#0066FF]" />
               </div>
-              Br\u00e4ndi
+              Brändi
             </h2>
 
             <div className="space-y-6">
@@ -146,15 +146,15 @@ export default function MediaPage() {
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-3">
                   Nimi ja slogan
                 </h3>
-                <p className="text-2xl font-bold text-slate-900">Valitse S\u00e4hk\u00f6</p>
+                <p className="text-2xl font-bold text-slate-900">Valitse Sähkö</p>
                 <p className="mt-1 text-lg text-slate-500">
-                  Suomen monipuolinen s\u00e4hk\u00f6vertailu
+                  Suomen monipuolinen sähkövertailu
                 </p>
               </div>
 
               <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-slate-400 mb-4">
-                  Br\u00e4ndiv\u00e4rit
+                  Brändivärit
                 </h3>
                 <div className="grid gap-3 sm:grid-cols-5">
                   {brandColors.map((color) => (
@@ -179,29 +179,29 @@ export default function MediaPage() {
               <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0066FF]/10">
                 <BookOpen className="h-5 w-5 text-[#0066FF]" />
               </div>
-              K\u00e4ytt\u00f6ohjeet medialle
+              Käyttöohjeet medialle
             </h2>
             <div className="prose prose-slate max-w-none prose-p:text-slate-600 prose-li:text-slate-600">
               <ul>
                 <li>
-                  K\u00e4yt\u00e4 nime\u00e4 <strong>&ldquo;Valitse S\u00e4hk\u00f6&rdquo;</strong> kahtena
+                  Käytä nimeä <strong>&ldquo;Valitse Sähkö&rdquo;</strong> kahtena
                   sanana, isolla alkukirjaimella.
                 </li>
                 <li>
-                  Viittaa palveluun seuraavasti: &ldquo;Valitse S\u00e4hk\u00f6, Suomen monipuolinen
-                  s\u00e4hk\u00f6vertailu&rdquo; tai &ldquo;s\u00e4hk\u00f6sopimusten
-                  vertailupalvelu Valitse S\u00e4hk\u00f6&rdquo;.
+                  Viittaa palveluun seuraavasti: &ldquo;Valitse Sähkö, Suomen monipuolinen
+                  sähkövertailu&rdquo; tai &ldquo;sähkösopimusten
+                  vertailupalvelu Valitse Sähkö&rdquo;.
                 </li>
                 <li>
                   Sivustolinkki: <strong>valitsesahko.fi</strong>
                 </li>
                 <li>
-                  Kun viitataan vertailudataan, mainitse l\u00e4hteeksi &ldquo;Valitse S\u00e4hk\u00f6
+                  Kun viitataan vertailudataan, mainitse lähteeksi &ldquo;Valitse Sähkö
                   (valitsesahko.fi)&rdquo;.
                 </li>
                 <li>
-                  Logoa ja nime\u00e4 ei saa k\u00e4ytt\u00e4\u00e4 tavalla, joka antaa
-                  ymmärtää palvelun suosittelevan tiettyä s\u00e4hk\u00f6yhti\u00f6t\u00e4 tai
+                  Logoa ja nimeä ei saa käyttää tavalla, joka antaa
+                  ymmärtää palvelun suosittelevan tiettyä sähköyhtiötä tai
                   sopimusta.
                 </li>
               </ul>
@@ -218,14 +218,14 @@ export default function MediaPage() {
             </h2>
             <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
               <p className="text-sm text-slate-600">
-                Lehdist\u00f6kyselyt ja haastattelupyynn\u00f6t:
+                Lehdistökyselyt ja haastattelupyynnöt:
               </p>
               <a
-                href="mailto:media@valitsesahko.fi"
+                href="/yhteystiedot"
                 className="mt-2 inline-flex items-center gap-2 text-lg font-semibold text-[#0066FF] hover:underline"
               >
                 <Mail className="h-5 w-5" />
-                media@valitsesahko.fi
+                Ota yhteyttä
               </a>
               <p className="mt-4 text-xs text-slate-500">
                 Pyrimme vastaamaan kaikkiin mediayhteydenottoihin saman työpäivän aikana.
