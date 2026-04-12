@@ -3,52 +3,74 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const CONSENT_KEY = 'valitsesahko-cookie-consent';
-const ANALYTICS_CONSENT_KEY = 'analytics_consent';
+const CONSENT_KEY = 'cookie_consent';
 
-type ConsentState = 'pending' | 'accepted' | 'rejected';
+type ConsentState = 'pending' | 'granted' | 'denied';
 
-function updateClarityConsent(granted: boolean) {
-  const w = window as unknown as { clarity?: (...args: unknown[]) => void };
-  if (!w.clarity) return;
-  w.clarity('consentv2', {
+function getStoredConsent(): ConsentState {
+  if (typeof window === 'undefined') return 'pending';
+  const stored = localStorage.getItem(CONSENT_KEY);
+  if (stored === 'granted' || stored === 'denied') return stored;
+  return 'pending';
+}
+
+function updateGtagConsent(granted: boolean) {
+  const gtag = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+  if (!gtag) return;
+  const state = granted ? 'granted' : 'denied';
+  gtag('consent', 'update', {
+    analytics_storage: state,
+    ad_storage: state,
+    ad_user_data: state,
+    ad_personalization: state,
+  });
+}
+
+function updateClarityConsent(granted: boolean, retries = 5) {
+  const clarity = (window as unknown as { clarity?: (...args: unknown[]) => void }).clarity;
+  if (!clarity) {
+    if (retries > 0) setTimeout(() => updateClarityConsent(granted, retries - 1), 200);
+    return;
+  }
+  clarity('consentv2', {
     analytics_storage: granted ? 'granted' : 'denied',
     ad_storage: 'denied',
   });
 }
 
 export default function CookieConsent() {
-  const [consent, setConsent] = useState<ConsentState>('accepted');
+  const [consent, setConsent] = useState<ConsentState>('pending');
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem(CONSENT_KEY);
-    if (!stored) {
-      setConsent('pending');
-    } else {
-      setConsent(stored as ConsentState);
+    setMounted(true);
+    const stored = getStoredConsent();
+    setConsent(stored);
+
+    if (stored === 'granted') {
+      updateGtagConsent(true);
+      updateClarityConsent(true);
+    } else if (stored === 'denied') {
+      updateGtagConsent(false);
+      updateClarityConsent(false);
     }
   }, []);
 
-  function handleAccept() {
-    localStorage.setItem(CONSENT_KEY, 'accepted');
-    localStorage.setItem(ANALYTICS_CONSENT_KEY, 'granted');
-    setConsent('accepted');
-    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag('consent', 'update', {
-        analytics_storage: 'granted',
-      });
-    }
+  const handleAccept = () => {
+    localStorage.setItem(CONSENT_KEY, 'granted');
+    setConsent('granted');
+    updateGtagConsent(true);
     updateClarityConsent(true);
-  }
+  };
 
-  function handleReject() {
-    localStorage.setItem(CONSENT_KEY, 'rejected');
-    localStorage.setItem(ANALYTICS_CONSENT_KEY, 'denied');
-    setConsent('rejected');
+  const handleReject = () => {
+    localStorage.setItem(CONSENT_KEY, 'denied');
+    setConsent('denied');
+    updateGtagConsent(false);
     updateClarityConsent(false);
-  }
+  };
 
-  if (consent !== 'pending') return null;
+  if (!mounted || consent !== 'pending') return null;
 
   return (
     <div

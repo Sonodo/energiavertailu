@@ -9,32 +9,15 @@ export default function GoogleAnalytics() {
 
   return (
     <>
+      <Script id="consent-defaults" strategy="beforeInteractive">
+        {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});`}
+      </Script>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
         strategy="afterInteractive"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied'
-          });
-          // Only grant analytics if user previously accepted
-          try {
-            var storedConsent = localStorage.getItem('analytics_consent');
-            if (storedConsent === 'granted') {
-              gtag('consent', 'update', {
-                'analytics_storage': 'granted'
-              });
-            }
-          } catch(e) {}
-          gtag('config', '${GA_ID}');
-        `}
+      <Script id="ga4-init" strategy="afterInteractive">
+        {`gtag('js',new Date());gtag('config','${GA_ID}');`}
       </Script>
     </>
   )
