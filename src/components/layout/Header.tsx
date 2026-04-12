@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect, useCallback } from 'react';
-import { Menu, X, Zap, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import { NAVIGATION } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { UserMenu } from '@/components/auth/UserMenu';
@@ -57,15 +58,17 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 transition-opacity hover:opacity-80"
+            className="flex items-center transition-opacity hover:opacity-80"
             aria-label="Valitse Sähkö — Etusivu"
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent-400 to-accent-600 shadow-lg shadow-accent/25">
-              <Zap className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-xl font-bold text-white">
-              Valitse<span className="text-accent-400"> Sähkö</span>
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Valitse Sähkö"
+              width={609}
+              height={192}
+              priority
+              className="h-9 w-auto"
+            />
           </Link>
 
           {/* Desktop navigation */}
@@ -153,16 +156,17 @@ export default function Header() {
         <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
           <Link
             href="/"
-            className="flex items-center gap-2"
+            className="flex items-center"
             onClick={closeMobileMenu}
             aria-label="Valitse Sähkö — Etusivu"
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-accent-400 to-accent-600">
-              <Zap className="h-5 w-5 text-white" />
-            </div>
-            <span className="text-lg font-bold text-white">
-              Valitse<span className="text-accent-400"> Sähkö</span>
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Valitse Sähkö"
+              width={609}
+              height={192}
+              className="h-8 w-auto"
+            />
           </Link>
           <button
             type="button"
