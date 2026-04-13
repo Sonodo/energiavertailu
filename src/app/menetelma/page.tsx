@@ -436,8 +436,8 @@ export default function MenetelmaPage() {
                     tietolähteet ovat avoimesti dokumentoitu tällä sivulla.
                   </li>
                   <li>
-                    <strong>Avoimuus:</strong> Vertailutulokset perustuvat avoimiin
-                    kriteereihin. Kaupalliset yhteistyöt eivät vaikuta järjestykseen.
+                    <strong>Avoimuus:</strong> Vertailutulokset perustuvat objektiivisiin
+                    kriteereihin. Sama menetelmä koskee jokaista sopimusta.
                   </li>
                   <li>
                     <strong>Kuluttajansuoja:</strong> Tarjoamme selkeän tiedon riskeistä,

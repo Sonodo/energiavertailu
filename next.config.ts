@@ -44,7 +44,7 @@ const nextConfig: NextConfig = {
     if (process.env.NODE_ENV === 'production') {
       securityHeaders.push({ key: 'Content-Security-Policy', value: cspPolicy });
     }
-    return [{ source: '/(.*)', headers: securityHeaders }];
+    return [{ source: '/((?!sitemap\\.xml|robots\\.txt).*)', headers: securityHeaders }];
   },
 };
 

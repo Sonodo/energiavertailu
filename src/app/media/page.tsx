@@ -119,9 +119,8 @@ export default function MediaPage() {
                 92 sopimusta 37 sähköyhtiöltä kaikissa 19 alueessa.
               </p>
               <p>
-                Palvelumme on täysin läpinäkyvä: vertailutulokset perustuvat avoimiin
-                laskelmiin, eivät kaupallisiin sopimuksiin. Tehtävämme on
-                lisätä läpinäkyvyyttä sähkömarkkinoilla
+                Vertailutulokset perustuvat avoimiin laskelmiin ja objektiivisiin
+                kriteereihin. Tehtävämme on lisätä läpinäkyvyyttä sähkömarkkinoilla
                 ja auttaa kuluttajia tekemään tietoon perustuvia päätöksiä.
               </p>
               <p>

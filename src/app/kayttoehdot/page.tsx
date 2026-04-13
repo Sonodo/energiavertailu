@@ -5,11 +5,11 @@ import { SITE_URL, SITE_NAME } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Käyttöehdot',
   description:
-    'Valitse Sähkön käyttöehdot. Lue palvelun käyttöä koskevat ehdot, vastuunrajoitukset ja tietoa affiliate-yhteistyöstä.',
+    'Valitse Sähkön käyttöehdot. Palvelun käyttöä koskevat ehdot, vastuunrajoitukset ja sovellettava laki.',
   openGraph: {
     title: `Käyttöehdot | ${SITE_NAME}`,
     description:
-      'Valitse Sähkön käyttöehdot. Lue palvelun käyttöä koskevat ehdot ja vastuunrajoitukset.',
+      'Valitse Sähkön käyttöehdot. Palvelun käyttöä koskevat ehdot ja vastuunrajoitukset.',
     url: `${SITE_URL}/kayttoehdot`,
   },
   alternates: {
@@ -68,7 +68,8 @@ export default function KayttoehdotPage() {
           <h2>2. Palvelun käyttö</h2>
           <p>
             Palvelun käyttö on ilmaista eikä edellytä rekisteröitymistä. Käyttämällä
-            palvelua sitoudut noudattamaan näitä käyttöehtoja.
+            palvelua sitoudut noudattamaan näitä käyttöehtoja. Palveluntarjoaja voi
+            saada korvausta palveluntarjoajilta, joiden tuotteita palvelussa esitellään.
           </p>
           <p>Palvelun käyttäjänä sitoudut siihen, että:</p>
           <ul>
@@ -120,38 +121,8 @@ export default function KayttoehdotPage() {
             sähköyhtiöltä ennen sopimuksen tekemistä.
           </p>
 
-          {/* 4. Affiliate-linkit ja yhteistyökumppanit */}
-          <h2>4. Affiliate-linkit ja yhteistyökumppanit</h2>
-          <p>
-            Läpinäkyvyys on meille tärkeää. Haluamme kertoa avoimesti, miten palvelumme
-            rahoitetaan:
-          </p>
-          <ul>
-            <li>
-              Palvelu voi sisältää <strong>affiliate-linkkejä</strong>, joiden kautta saamme
-              pienen palkkion, mikäli käyttäjä tekee sähkösopimuksen yhteistyökumppanimme
-              kautta. Tämä ei vaikuta käyttäjän maksamaan hintaan.
-            </li>
-            <li>
-              Affiliate-yhteistyö <strong>ei vaikuta vertailutuloksiin</strong>. Vertailumme
-              perustuu aina avoimiin hintatietoihin ja ominaisuuksiin.
-            </li>
-            <li>
-              Yhteistyökumppaneiden kanssa tehdyt kaupalliset järjestelyt merkitään
-              selkeästi palvelussa.
-            </li>
-            <li>
-              Voimme myös esittää mainoksia palvelussa. Mainokset on aina merkitty
-              selkeästi erottuakseen toimituksellisesta sisällöstä.
-            </li>
-          </ul>
-          <p>
-            Affiliate-tulot mahdollistavat palvelun tarjoamisen käyttäjille ilmaiseksi
-            ja laadukkaana.
-          </p>
-
-          {/* 5. Kolmannen osapuolen palvelut */}
-          <h2>5. Kolmannen osapuolen palvelut</h2>
+          {/* 4. Kolmannen osapuolen palvelut */}
+          <h2>4. Kolmannen osapuolen palvelut</h2>
           <p>
             Palvelumme voi sisältää linkkejä kolmansien osapuolien verkkosivuille ja
             palveluihin. Emme ole vastuussa näiden ulkoisten sivustojen sisällöstä,
@@ -170,8 +141,8 @@ export default function KayttoehdotPage() {
             </li>
           </ul>
 
-          {/* 6. Immateriaalioikeudet */}
-          <h2>6. Immateriaalioikeudet</h2>
+          {/* 5. Immateriaalioikeudet */}
+          <h2>5. Immateriaalioikeudet</h2>
           <p>
             Valitse Sähkön palvelussa oleva sisältö, mukaan lukien tekstit, kuvat,
             grafiikat, logot, ohjelmistokoodi ja muu materiaali, on suojattu
@@ -191,8 +162,8 @@ export default function KayttoehdotPage() {
             </li>
           </ul>
 
-          {/* 7. Palvelun saatavuus */}
-          <h2>7. Palvelun saatavuus</h2>
+          {/* 6. Palvelun saatavuus */}
+          <h2>6. Palvelun saatavuus</h2>
           <p>
             Pyrimme pitämään palvelun käytettävissä jatkuvasti, mutta emme takaa
             keskeytyksetöntä toimintaa. Palvelu voi olla tilapäisesti poissa käytöstä
@@ -203,8 +174,8 @@ export default function KayttoehdotPage() {
             osan tarjoamisen milloin tahansa ilman erillistä ilmoitusta.
           </p>
 
-          {/* 8. Muutokset käyttöehtoihin */}
-          <h2>8. Muutokset käyttöehtoihin</h2>
+          {/* 7. Muutokset käyttöehtoihin */}
+          <h2>7. Muutokset käyttöehtoihin</h2>
           <p>
             Pidätämme oikeuden päivittää näitä käyttöehtoja tarvittaessa. Muutokset
             astuvat voimaan, kun päivitetyt ehdot julkaistaan palvelussa. Merkittävistä
@@ -215,8 +186,8 @@ export default function KayttoehdotPage() {
             hyväksyy päivitetyt ehdot.
           </p>
 
-          {/* 9. Sovellettava laki ja riitojen ratkaisu */}
-          <h2>9. Sovellettava laki ja riitojen ratkaisu</h2>
+          {/* 8. Sovellettava laki ja riitojen ratkaisu */}
+          <h2>8. Sovellettava laki ja riitojen ratkaisu</h2>
           <p>
             Näihin käyttöehtoihin sovelletaan Suomen lakia. Mahdolliset erimielisyydet
             pyritään ensisijaisesti ratkaisemaan neuvottelemalla.
@@ -249,8 +220,8 @@ export default function KayttoehdotPage() {
             käräjäoikeus, ellei laista muuta johdu.
           </p>
 
-          {/* 10. Yhteydenotto */}
-          <h2>10. Yhteydenotto</h2>
+          {/* 9. Yhteydenotto */}
+          <h2>9. Yhteydenotto</h2>
           <p>
             Jos sinulla on kysyttävää näistä käyttöehdoista, ota meihin yhteyttä:
           </p>

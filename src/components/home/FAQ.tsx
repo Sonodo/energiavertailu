@@ -23,7 +23,7 @@ const faqs = [
   {
     question: 'Onko vertailu ilmaista?',
     answer:
-      'Kyllä, palvelumme on täysin ilmainen kuluttajille. Emme peri mitään maksuja vertailun tekemisestä tai sopimuksen vaihtamisesta. Tuotamme tuloja, kun kuluttajat solmivat uuden sähkösopimuksen palvelumme kautta.',
+      'Kyllä. Valitse Sähkö on täysin ilmainen käyttää — ei maksuja, ei rekisteröitymistä, ei sitoumusta.',
   },
   {
     question: 'Kuinka nopeasti sähköyhtiön vaihto tapahtuu?',

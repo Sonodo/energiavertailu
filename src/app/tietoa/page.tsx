@@ -20,15 +20,15 @@ export const metadata: Metadata = {
 const values = [
   {
     icon: BarChart3,
-    title: 'Läpinäkyvyys',
+    title: 'Puolueeton vertailu',
     description:
-      'Vertailumme perustuu aina avoimiin hintatietoihin. Yhteistyökumppanuudet eivät vaikuta vertailutuloksiin.',
+      'Järjestys perustuu hintaan ja ominaisuuksiin. Sama menetelmä koskee jokaista sopimusta — ei suosikkeja, ei piilotettuja tuloksia.',
   },
   {
     icon: Shield,
-    title: 'Läpinäkyvyys',
+    title: 'Riippumattomuus',
     description:
-      'Kerromme avoimesti, miten palvelumme toimii ja miten se rahoitetaan. Kaupalliset yhteistyöt merkitään selkeästi.',
+      'Toimimme käyttäjän ehdoilla. Objektiiviset kriteerit ratkaisevat sopimusten järjestyksen, ei mikään muu.',
   },
   {
     icon: Zap,
@@ -38,9 +38,9 @@ const values = [
   },
   {
     icon: Users,
-    title: 'Kuluttajan puolella',
+    title: 'Käyttäjä ensin',
     description:
-      'Palvelumme on aina ilmainen kuluttajille. Tavoitteenamme on auttaa suomalaisia löytämään edullisin sähkösopimus.',
+      'Palvelumme on aina ilmainen käyttää. Tavoitteenamme on auttaa suomalaisia löytämään sopivin sähkösopimus.',
   },
 ];
 
@@ -130,27 +130,6 @@ export default function TietoaPage() {
             .
           </p>
 
-          {/* Revenue model */}
-          <h2>Rahoitusmalli</h2>
-          <p>
-            Valitse Sähkö on käyttäjille täysin ilmainen. Palvelun toiminta
-            rahoitetaan pääasiassa kahdella tavalla:
-          </p>
-          <ul>
-            <li>
-              <strong>Affiliate-yhteistyö</strong> — Saamme pienen palkkion, kun
-              käyttäjä tekee sähkösopimuksen yhteistyökumppanimme kautta. Tämä ei
-              vaikuta käyttäjän maksamaan hintaan eikä vertailutuloksiin.
-            </li>
-            <li>
-              <strong>Mainonta</strong> — Palvelussa voi esiintyä mainoksia, jotka
-              on aina selkeästi merkitty.
-            </li>
-          </ul>
-          <p>
-            Avoimuus rahoituksestamme on meille tärkeää. Kaupallinen yhteistyö ei
-            koskaan vaikuta vertailutuloksiimme tai suosituksiimme.
-          </p>
         </div>
 
         {/* Values grid */}
