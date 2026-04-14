@@ -31,9 +31,9 @@ function parseHousingType(value: string | null): HousingType {
 }
 
 function parseConsumption(value: string | null): number {
-  if (!value) return 2000;
+  if (!value) return 5000;
   const num = parseInt(value, 10);
-  if (isNaN(num) || num < 0 || num > 100000) return 2000;
+  if (isNaN(num) || num < 0 || num > 100000) return 5000;
   return num;
 }
 
@@ -152,7 +152,7 @@ export default function ComparisonCalculator() {
   const handleReset = () => {
     setStep(1);
     setHousingType('kerrostalo');
-    setConsumption(2000);
+    setConsumption(5000);
     setRegion('uusimaa');
     setContractType('all');
     setSelectedDurations(['all']);
@@ -176,7 +176,7 @@ export default function ComparisonCalculator() {
                 className={cn(
                   'flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition-all',
                   s.id === step
-                    ? 'bg-[#0066FF] text-white shadow-md shadow-blue-200'
+                    ? 'bg-accent text-white shadow-md shadow-blue-200'
                     : s.id < step
                       ? 'bg-emerald-100 text-emerald-700 hover:bg-emerald-200'
                       : 'bg-slate-100 text-slate-400'

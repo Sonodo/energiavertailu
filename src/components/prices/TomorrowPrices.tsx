@@ -249,7 +249,7 @@ export default function TomorrowPrices({
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
                       <span className="w-12 text-xs text-slate-400">Huomenna</span>
-                      <div className="h-3 rounded-full bg-[#0066FF]/80" style={{ width: `${barWidth}%` }} />
+                      <div className="h-3 rounded-full bg-accent/80" style={{ width: `${barWidth}%` }} />
                     </div>
                     {todayBarWidth > 0 && (
                       <div className="flex items-center gap-2">
@@ -307,7 +307,7 @@ export default function TomorrowPrices({
           <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
             <div className="flex items-center gap-2.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100">
-                <Car className="h-5 w-5 text-[#0066FF]" />
+                <Car className="h-5 w-5 text-accent" />
               </div>
               <div>
                 <h4 className="text-sm font-semibold text-slate-900">
@@ -317,7 +317,7 @@ export default function TomorrowPrices({
               </div>
             </div>
             <div className="mt-3 rounded-lg bg-blue-50 px-3 py-2.5">
-              <p className="text-sm font-medium text-[#0066FF]">
+              <p className="text-sm font-medium text-accent">
                 klo {String(evBlock.startHour).padStart(2, '0')}:00–
                 {String(evBlock.endHour).padStart(2, '0')}:00
               </p>

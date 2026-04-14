@@ -292,7 +292,7 @@ export default function SolarCalculator() {
       {/* Header */}
       <div className="mb-8">
         <nav className="mb-4 text-sm text-slate-500">
-          <Link href="/tyokalut" className="hover:text-[#0066FF]">Työkalut</Link>
+          <Link href="/tyokalut" className="hover:text-accent">Työkalut</Link>
           <span className="mx-2">/</span>
           <span className="text-slate-900">Aurinkopaneelilaskuri</span>
         </nav>
@@ -318,7 +318,7 @@ export default function SolarCalculator() {
             <select
               value={form.city}
               onChange={(e) => update('city', e.target.value as CityKey)}
-              className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm font-medium text-slate-700 focus:border-[#0066FF] focus:outline-none focus:ring-1 focus:ring-[#0066FF]"
+              className="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-sm font-medium text-slate-700 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
             >
               {CITIES.map((c) => (
                 <option key={c.value} value={c.value}>
@@ -337,7 +337,7 @@ export default function SolarCalculator() {
               step={5}
               value={form.roofArea}
               onChange={(e) => update('roofArea', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>10 m²</span>
@@ -354,7 +354,7 @@ export default function SolarCalculator() {
                   onClick={() => update('orientation', o.value)}
                   className={`rounded-lg border px-2 py-2.5 text-xs font-medium transition-all ${
                     form.orientation === o.value
-                      ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                      ? 'border-accent bg-accent/5 text-accent'
                       : 'border-slate-200 text-slate-700 hover:border-slate-300'
                   }`}
                 >
@@ -373,7 +373,7 @@ export default function SolarCalculator() {
               step={5}
               value={form.roofAngle}
               onChange={(e) => update('roofAngle', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>0° (tasainen)</span>
@@ -390,7 +390,7 @@ export default function SolarCalculator() {
               step={500}
               value={form.annualConsumption}
               onChange={(e) => update('annualConsumption', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>2 000 kWh</span>
@@ -407,7 +407,7 @@ export default function SolarCalculator() {
               step={0.5}
               value={form.electricityPrice}
               onChange={(e) => update('electricityPrice', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>4 c/kWh</span>
@@ -424,7 +424,7 @@ export default function SolarCalculator() {
               step={0.5}
               value={form.feedInPrice}
               onChange={(e) => update('feedInPrice', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>0 c/kWh</span>
@@ -440,7 +440,7 @@ export default function SolarCalculator() {
                   onClick={() => update('batteryEnabled', false)}
                   className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
                     !form.batteryEnabled
-                      ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                      ? 'border-accent bg-accent/5 text-accent'
                       : 'border-slate-200 text-slate-700 hover:border-slate-300'
                   }`}
                 >
@@ -450,7 +450,7 @@ export default function SolarCalculator() {
                   onClick={() => update('batteryEnabled', true)}
                   className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
                     form.batteryEnabled
-                      ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                      ? 'border-accent bg-accent/5 text-accent'
                       : 'border-slate-200 text-slate-700 hover:border-slate-300'
                   }`}
                 >
@@ -469,7 +469,7 @@ export default function SolarCalculator() {
                         onClick={() => update('batteryCapacity', cap)}
                         className={`rounded-lg border px-2 py-2 text-xs font-medium transition-all ${
                           form.batteryCapacity === cap
-                            ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                            ? 'border-accent bg-accent/5 text-accent'
                             : 'border-slate-200 text-slate-700 hover:border-slate-300'
                         }`}
                       >

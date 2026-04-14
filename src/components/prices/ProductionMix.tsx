@@ -259,7 +259,7 @@ export default function ProductionMix({ initialData }: ProductionMixProps) {
       {/* Header */}
       <div className="mb-1 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Zap className="h-5 w-5 text-[#0066FF]" />
+          <Zap className="h-5 w-5 text-accent" />
           <h3 className="text-lg font-semibold text-slate-900">
             Sähkön tuotantomix — Suomi
           </h3>
@@ -274,9 +274,17 @@ export default function ProductionMix({ initialData }: ProductionMixProps) {
       </div>
 
       {isSample && (
-        <p className="mb-4 text-xs text-amber-600">
-          Esimerkkidata — Fingrid API -avain puuttuu
-        </p>
+        <div className="mb-4 rounded-lg border-2 border-amber-300 bg-amber-50 p-4">
+          <p className="text-sm font-bold uppercase tracking-wide text-amber-800">
+            Huom — esimerkkidataa
+          </p>
+          <p className="mt-1 text-sm leading-5 text-amber-900">
+            Tämä kaavio näyttää <strong>staattista esimerkkidataa</strong>, ei
+            reaaliaikaista tuotantomixiä. Palvelun Fingrid-rajapinnan avain
+            puuttuu tai rajapinta ei vastaa. Luvut eivät vastaa todellista
+            Suomen sähköntuotantoa tällä hetkellä.
+          </p>
+        </div>
       )}
 
       {/* Key stats bar */}

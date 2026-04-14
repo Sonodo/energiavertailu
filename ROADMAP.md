@@ -1,6 +1,6 @@
-# Energiavertailu — Master Roadmap & Architecture
+# Valitse Sähkö — Master Roadmap & Architecture
 
-**Project**: Energiavertailu — Finland's Most Comprehensive Electricity Comparison Platform
+**Project**: Valitse Sähkö (valitsesahko.fi) — Finland's Most Comprehensive Electricity Comparison Platform
 **Created**: 2026-03-26
 **Status**: ACTIVE — Phase 1 MVP Build
 **Target**: #1 Finnish energy comparison site within 12 months
@@ -1144,7 +1144,7 @@ CREATE TABLE content_meta (
 ### 9.4 Project Directory Structure
 
 ```
-energiavertailu/
+valitsesahko/
 ├── src/
 │   ├── app/
 │   │   ├── layout.tsx                    # Root layout (Finnish lang, fonts, metadata)

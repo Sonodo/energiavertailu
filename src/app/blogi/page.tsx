@@ -27,7 +27,7 @@ export default function BlogiPage() {
       <nav className="mb-6 text-sm text-slate-500" aria-label="Breadcrumb">
         <ol className="flex items-center gap-1.5">
           <li>
-            <Link href="/" className="hover:text-[#0066FF]">
+            <Link href="/" className="hover:text-accent">
               Etusivu
             </Link>
           </li>

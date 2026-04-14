@@ -35,7 +35,7 @@ export default function BlogIndexClient({
             onClick={() => setActiveCategory(cat.id)}
             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
               activeCategory === cat.id
-                ? 'bg-[#0066FF] text-white'
+                ? 'bg-accent text-white'
                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
             }`}
           >
@@ -52,17 +52,17 @@ export default function BlogIndexClient({
             className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
           >
             {/* Color accent bar */}
-            <div className="h-1.5 bg-gradient-to-r from-[#0066FF] to-[#00D4AA]" />
+            <div className="h-1.5 bg-gradient-to-r from-accent to-[#00D4AA]" />
 
             <div className="flex flex-1 flex-col p-6">
               {/* Category tag */}
-              <span className="mb-3 inline-block w-fit rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-[#0066FF]">
+              <span className="mb-3 inline-block w-fit rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-accent">
                 {categories.find((c) => c.id === post.category)?.label ||
                   post.category}
               </span>
 
               {/* Title */}
-              <h2 className="mb-2 text-lg font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors">
+              <h2 className="mb-2 text-lg font-bold text-slate-900 group-hover:text-accent transition-colors">
                 <Link href={`/blogi/${post.slug}`} className="hover:underline">
                   {post.title}
                 </Link>

@@ -1680,4 +1680,8 @@ export const providers: ElectricityProvider[] = [
 ];
 
 // Average spot price assumption for cost calculations (c/kWh excl. VAT)
-export const AVERAGE_SPOT_PRICE = 5.5;
+// Rolling 12-month average used as a neutral baseline when live data is
+// not wired in. Update roughly quarterly. Live spot varies daily —
+// always defer to the /porssisahko dashboard for the current day.
+// Last reviewed: 2026-04-14 — reflects ~2025–2026 Finnish spot averages.
+export const AVERAGE_SPOT_PRICE = 11.5;

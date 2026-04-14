@@ -82,8 +82,8 @@ export default function TyokalutPage() {
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       {/* Hero */}
       <div className="mb-12 text-center">
-        <div className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-[#0066FF]/10">
-          <Calculator className="h-7 w-7 text-[#0066FF]" />
+        <div className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10">
+          <Calculator className="h-7 w-7 text-accent" />
         </div>
         <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl lg:text-5xl">
           Sähkötyökalut
@@ -118,7 +118,7 @@ export default function TyokalutPage() {
               </p>
 
               {/* CTA */}
-              <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#0066FF] transition-colors group-hover:text-[#0052CC]">
+              <div className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-accent transition-colors group-hover:text-accent-700">
                 Avaa työkalu
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </div>

@@ -66,7 +66,7 @@ function CustomTooltip({ active, payload }: TooltipProps) {
         {formatPriceFi(data.price)} c/kWh
       </p>
       {data.isCurrent && (
-        <p className="mt-0.5 text-xs font-medium text-[#0066FF]">Nykyinen varttitunti</p>
+        <p className="mt-0.5 text-xs font-medium text-accent">Nykyinen varttitunti</p>
       )}
     </div>
   );
@@ -111,7 +111,7 @@ export default function QuarterHourChart({
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       <div className="mb-4 flex items-center gap-3">
         <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
-        <span className="inline-flex items-center rounded-full bg-[#0066FF]/10 px-2.5 py-0.5 text-xs font-semibold text-[#0066FF]">
+        <span className="inline-flex items-center rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
           96 jaksoa
         </span>
       </div>
@@ -196,7 +196,7 @@ export default function QuarterHourChart({
         </div>
         {highlightCurrentQuarter && (
           <div className="flex items-center gap-1.5">
-            <span className="inline-block h-2.5 w-2.5 rounded-sm border-2 border-[#0066FF] bg-transparent" />
+            <span className="inline-block h-2.5 w-2.5 rounded-sm border-2 border-accent bg-transparent" />
             <span>Nykyinen varttitunti</span>
           </div>
         )}

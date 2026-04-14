@@ -4,7 +4,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { Heart } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const LS_KEY = 'energiavertailu-bookmarks';
+const LS_KEY = 'valitsesahko-bookmarks';
+const LEGACY_LS_KEY = 'energiavertailu-bookmarks';
 
 interface BookmarkButtonProps {
   contractId: string;
@@ -17,6 +18,14 @@ export default function BookmarkButton({ contractId, contractName, className }: 
 
   useEffect(() => {
     try {
+      // One-time migration from legacy key.
+      if (!localStorage.getItem(LS_KEY)) {
+        const legacy = localStorage.getItem(LEGACY_LS_KEY);
+        if (legacy) {
+          localStorage.setItem(LS_KEY, legacy);
+          localStorage.removeItem(LEGACY_LS_KEY);
+        }
+      }
       const stored = localStorage.getItem(LS_KEY);
       if (stored) {
         const ids: string[] = JSON.parse(stored);

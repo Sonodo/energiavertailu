@@ -263,11 +263,11 @@ export default async function ComparisonPairPage({ params }: PageProps) {
 
       {/* Breadcrumb */}
       <nav className="mb-6 flex items-center gap-1.5 text-sm text-slate-500">
-        <Link href="/" className="hover:text-[#0066FF]">
+        <Link href="/" className="hover:text-accent">
           Etusivu
         </Link>
         <ChevronRight className="h-3.5 w-3.5" />
-        <Link href="/vertailu" className="hover:text-[#0066FF]">
+        <Link href="/vertailu" className="hover:text-accent">
           Vertailu
         </Link>
         <ChevronRight className="h-3.5 w-3.5" />
@@ -289,7 +289,7 @@ export default async function ComparisonPairPage({ params }: PageProps) {
 
           {/* VS badge */}
           <div className="flex-shrink-0">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-[#0066FF] text-2xl font-black shadow-lg shadow-blue-500/30 sm:h-20 sm:w-20 sm:text-3xl">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-2xl font-black shadow-lg shadow-blue-500/30 sm:h-20 sm:w-20 sm:text-3xl">
               VS
             </div>
           </div>
@@ -329,7 +329,7 @@ export default async function ComparisonPairPage({ params }: PageProps) {
       {/* === Comparison Table === */}
       <section className="mb-12">
         <h2 className="mb-6 text-2xl font-bold text-slate-900">
-          <Scale className="mr-2 inline h-6 w-6 text-[#0066FF]" />
+          <Scale className="mr-2 inline h-6 w-6 text-accent" />
           Yhtiöiden vertailu
         </h2>
 
@@ -414,7 +414,7 @@ export default async function ComparisonPairPage({ params }: PageProps) {
       {/* === Contract Comparison === */}
       <section className="mb-12">
         <h2 className="mb-6 text-2xl font-bold text-slate-900">
-          <Zap className="mr-2 inline h-6 w-6 text-[#0066FF]" />
+          <Zap className="mr-2 inline h-6 w-6 text-accent" />
           Sopimusvertailu
         </h2>
 
@@ -487,7 +487,7 @@ export default async function ComparisonPairPage({ params }: PageProps) {
 
       {/* === Winner Section === */}
       <section className="mb-12">
-        <div className="rounded-2xl bg-gradient-to-br from-[#0066FF] to-[#0052CC] p-8 text-white sm:p-10">
+        <div className="rounded-2xl bg-gradient-to-br from-accent to-accent-700 p-8 text-white sm:p-10">
           <div className="flex items-start gap-4">
             <Trophy className="mt-1 h-8 w-8 flex-shrink-0 text-yellow-300" />
             <div>
@@ -532,7 +532,7 @@ export default async function ComparisonPairPage({ params }: PageProps) {
               className="group rounded-xl border border-slate-200 bg-white"
               open={i === 0}
             >
-              <summary className="cursor-pointer p-5 text-lg font-semibold text-slate-900 transition-colors hover:text-[#0066FF]">
+              <summary className="cursor-pointer p-5 text-lg font-semibold text-slate-900 transition-colors hover:text-accent">
                 {item.question}
               </summary>
               <div className="border-t border-slate-100 px-5 pb-5 pt-4 text-slate-600">
@@ -553,7 +553,7 @@ export default async function ComparisonPairPage({ params }: PageProps) {
         <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <Link
             href="/vertailu"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#0066FF] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#0052CC]"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-700"
           >
             Vertaa kaikkia sopimuksia
             <ArrowRight className="h-4 w-4" />
@@ -590,7 +590,7 @@ export default async function ComparisonPairPage({ params }: PageProps) {
                 <Link
                   key={c.slugPair}
                   href={`/vertailu/${c.slugPair}`}
-                  className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-[#0066FF] hover:text-[#0066FF]"
+                  className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-accent hover:text-accent"
                 >
                   {cp1.name} vs {cp2.name}
                 </Link>

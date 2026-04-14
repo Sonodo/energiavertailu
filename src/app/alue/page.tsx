@@ -68,15 +68,15 @@ export default function AlueIndexPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-6 text-sm text-white/60">
             <div className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-[#0066FF]" />
+              <MapPin className="h-4 w-4 text-accent" />
               <span>19 maakuntaa</span>
             </div>
             <div className="flex items-center gap-2">
-              <Building2 className="h-4 w-4 text-[#0066FF]" />
+              <Building2 className="h-4 w-4 text-accent" />
               <span>Paikalliset sähköyhtiöt</span>
             </div>
             <div className="flex items-center gap-2">
-              <Zap className="h-4 w-4 text-[#0066FF]" />
+              <Zap className="h-4 w-4 text-accent" />
               <span>Siirtohinnat {sortedRegions[0].transferPrice.toFixed(1)}–{sortedRegions[sortedRegions.length - 1].transferPrice.toFixed(1)} c/kWh</span>
             </div>
           </div>
@@ -110,12 +110,12 @@ export default function AlueIndexPage() {
               <Link
                 key={region.id}
                 href={`/alue/${region.id}`}
-                className="group relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-[#0066FF]/30 hover:shadow-md"
+                className="group relative rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:border-accent/30 hover:shadow-md"
               >
                 <div className="mb-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-[#0066FF]" />
-                    <h2 className="text-lg font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors">
+                    <MapPin className="h-4 w-4 text-accent" />
+                    <h2 className="text-lg font-bold text-slate-900 group-hover:text-accent transition-colors">
                       {region.name}
                     </h2>
                   </div>
@@ -150,7 +150,7 @@ export default function AlueIndexPage() {
                   </div>
                 )}
 
-                <div className="flex items-center gap-1 text-sm font-medium text-[#0066FF] opacity-0 transition-opacity group-hover:opacity-100">
+                <div className="flex items-center gap-1 text-sm font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
                   Katso alueen tiedot
                   <ArrowRight className="h-4 w-4" />
                 </div>
@@ -172,7 +172,7 @@ export default function AlueIndexPage() {
           </p>
           <Link
             href="/vertailu"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#0066FF] px-8 py-3 font-semibold text-white shadow-lg transition-colors hover:bg-[#0052CC]"
+            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-3 font-semibold text-white shadow-lg transition-colors hover:bg-accent-700"
           >
             Vertaa sopimuksia
             <ChevronRight className="h-4 w-4" />

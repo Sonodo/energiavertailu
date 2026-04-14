@@ -34,7 +34,7 @@ export default function Error({
         <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           <button
             onClick={reset}
-            className="inline-flex items-center gap-2 rounded-xl bg-[#0066FF] px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-[#0052CC]"
+            className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-accent-700"
           >
             <RefreshCw className="h-4 w-4" />
             Yritä uudelleen
@@ -55,14 +55,14 @@ export default function Error({
           <div className="mt-3 flex flex-wrap justify-center gap-3">
             <Link
               href="/vertailu"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0066FF] hover:underline"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
             >
               <Zap className="h-3.5 w-3.5" />
               Sähkövertailu
             </Link>
             <Link
               href="/porssisahko"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0066FF] hover:underline"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
             >
               <Zap className="h-3.5 w-3.5" />
               Pörssisähkö

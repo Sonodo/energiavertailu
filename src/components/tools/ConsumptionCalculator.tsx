@@ -373,7 +373,7 @@ export default function ConsumptionCalculator() {
       {/* Header */}
       <div className="mb-8">
         <nav className="mb-4 text-sm text-slate-500">
-          <Link href="/tyokalut" className="hover:text-[#0066FF]">Työkalut</Link>
+          <Link href="/tyokalut" className="hover:text-accent">Työkalut</Link>
           <span className="mx-2">/</span>
           <span className="text-slate-900">Sähkönkulutuslaskuri</span>
         </nav>
@@ -403,7 +403,7 @@ export default function ConsumptionCalculator() {
                   onClick={() => update('housingType', ht.value)}
                   className={`rounded-lg border px-3 py-2.5 text-sm font-medium transition-all ${
                     form.housingType === ht.value
-                      ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                      ? 'border-accent bg-accent/5 text-accent'
                       : 'border-slate-200 text-slate-700 hover:border-slate-300'
                   }`}
                 >
@@ -422,7 +422,7 @@ export default function ConsumptionCalculator() {
               step={5}
               value={form.squareMeters}
               onChange={(e) => update('squareMeters', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>20 m²</span>
@@ -439,7 +439,7 @@ export default function ConsumptionCalculator() {
                   onClick={() => update('residents', n)}
                   className={`flex h-10 w-10 items-center justify-center rounded-lg border text-sm font-medium transition-all ${
                     form.residents === n
-                      ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                      ? 'border-accent bg-accent/5 text-accent'
                       : 'border-slate-200 text-slate-700 hover:border-slate-300'
                   }`}
                 >
@@ -458,7 +458,7 @@ export default function ConsumptionCalculator() {
                   onClick={() => update('heatingType', ht.value)}
                   className={`rounded-lg border px-3 py-2.5 text-left text-sm font-medium transition-all ${
                     form.heatingType === ht.value
-                      ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                      ? 'border-accent bg-accent/5 text-accent'
                       : 'border-slate-200 text-slate-700 hover:border-slate-300'
                   }`}
                 >
@@ -497,7 +497,7 @@ export default function ConsumptionCalculator() {
                   max={7}
                   value={form.saunaFrequency}
                   onChange={(e) => update('saunaFrequency', Number(e.target.value))}
-                  className="mt-1 w-full accent-[#0066FF]"
+                  className="mt-1 w-full accent-accent"
                 />
               </div>
             )}
@@ -523,7 +523,7 @@ export default function ConsumptionCalculator() {
                   step={1000}
                   value={form.evAnnualKm}
                   onChange={(e) => update('evAnnualKm', Number(e.target.value))}
-                  className="mt-1 w-full accent-[#0066FF]"
+                  className="mt-1 w-full accent-accent"
                 />
                 <div className="flex justify-between text-xs text-slate-500">
                   <span>5 000 km</span>
@@ -542,7 +542,7 @@ export default function ConsumptionCalculator() {
                   onClick={() => update('applianceAge', a.value)}
                   className={`rounded-lg border px-3 py-2.5 text-xs font-medium transition-all ${
                     form.applianceAge === a.value
-                      ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                      ? 'border-accent bg-accent/5 text-accent'
                       : 'border-slate-200 text-slate-700 hover:border-slate-300'
                   }`}
                 >
@@ -570,9 +570,9 @@ export default function ConsumptionCalculator() {
             </div>
 
             <div className="mt-5 grid grid-cols-2 gap-4">
-              <div className="rounded-xl bg-[#0066FF]/5 p-4">
+              <div className="rounded-xl bg-accent/5 p-4">
                 <p className="text-sm text-slate-600">Vuosikulutus</p>
-                <p className="mt-1 text-2xl font-bold text-[#0066FF]">
+                <p className="mt-1 text-2xl font-bold text-accent">
                   {formatNumber(totalKwh)} <span className="text-base font-medium">kWh</span>
                 </p>
               </div>
@@ -767,7 +767,7 @@ export default function ConsumptionCalculator() {
           {/* CTA */}
           <Link
             href={`/vertailu?kwh=${totalKwh}`}
-            className="flex items-center justify-center gap-2 rounded-xl bg-[#0066FF] px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-[#0052CC]"
+            className="flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-accent-700"
           >
             Vertaa sopimuksia tällä kulutuksella
             <ArrowRight className="h-5 w-5" />
@@ -797,7 +797,7 @@ export default function ConsumptionCalculator() {
                     <ul className="mt-1 space-y-1">
                       {tips.map((tip) => (
                         <li key={tip} className="flex items-start gap-2 text-sm text-slate-600">
-                          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#0066FF]" />
+                          <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
                           {tip}
                         </li>
                       ))}
@@ -862,7 +862,7 @@ function ToggleButton({
         onClick={() => onToggle(false)}
         className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
           !active
-            ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+            ? 'border-accent bg-accent/5 text-accent'
             : 'border-slate-200 text-slate-700 hover:border-slate-300'
         }`}
       >
@@ -872,7 +872,7 @@ function ToggleButton({
         onClick={() => onToggle(true)}
         className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
           active
-            ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+            ? 'border-accent bg-accent/5 text-accent'
             : 'border-slate-200 text-slate-700 hover:border-slate-300'
         }`}
       >

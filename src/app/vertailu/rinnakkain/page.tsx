@@ -9,7 +9,9 @@ import { cn, formatEuros, formatPrice } from '@/lib/utils';
 import type { ElectricityContract, ElectricityProvider } from '@/types';
 
 // localStorage key shared with ResultCard
-const LS_KEY = 'energiavertailu-rinnakkain';
+const LS_KEY = 'valitsesahko-rinnakkain';
+// Legacy key from the pre-rename days — read once as a migration shim.
+const LEGACY_LS_KEY = 'energiavertailu-rinnakkain';
 
 interface FlatContract {
   contract: ElectricityContract;
@@ -57,11 +59,9 @@ function getTypeBadge(type: string) {
     case 'spot':
       return { label: 'Pörssi', color: 'bg-blue-100 text-blue-700' };
     case 'fixed':
-      return { label: 'Määräaikainen', color: 'bg-purple-100 text-purple-700' };
+      return { label: 'Kiinteä', color: 'bg-purple-100 text-purple-700' };
     case 'open-ended':
       return { label: 'Toistaiseksi', color: 'bg-amber-100 text-amber-700' };
-    case 'hybrid':
-      return { label: 'Hybridi', color: 'bg-teal-100 text-teal-700' };
     default:
       return { label: type, color: 'bg-slate-100 text-slate-700' };
   }
@@ -122,9 +122,9 @@ function ContractSelector({
     <div ref={wrapperRef} className="relative w-full">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-left text-sm shadow-sm transition-colors hover:border-slate-300 focus:border-[#0066FF] focus:outline-none focus:ring-2 focus:ring-blue-100"
+        className="flex w-full items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-3 text-left text-sm shadow-sm transition-colors hover:border-slate-300 focus:border-accent focus:outline-none focus:ring-2 focus:ring-blue-100"
       >
-        <Plus className="h-4 w-4 text-[#0066FF]" />
+        <Plus className="h-4 w-4 text-accent" />
         <span className="text-slate-500">Lisää sopimus vertailuun...</span>
         <ChevronDown className={cn('ml-auto h-4 w-4 text-slate-400 transition-transform', open && 'rotate-180')} />
       </button>
@@ -336,10 +336,18 @@ export default function RinnakkainPage() {
   const [hydrated, setHydrated] = useState(false);
   const allContracts = useMemo(() => flattenContracts(), []);
 
-  // Hydrate from localStorage
+  // Hydrate from localStorage (with one-time migration from legacy key)
   useEffect(() => {
     try {
-      const stored = localStorage.getItem(LS_KEY);
+      let stored = localStorage.getItem(LS_KEY);
+      if (!stored) {
+        const legacy = localStorage.getItem(LEGACY_LS_KEY);
+        if (legacy) {
+          stored = legacy;
+          localStorage.setItem(LS_KEY, legacy);
+          localStorage.removeItem(LEGACY_LS_KEY);
+        }
+      }
       if (stored) {
         const ids: string[] = JSON.parse(stored);
         // Validate that ids actually exist
@@ -461,7 +469,7 @@ export default function RinnakkainPage() {
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <div className="flex h-48 items-center justify-center">
           <div className="text-center">
-            <div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-[#0066FF]" />
+            <div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-accent" />
             <p className="text-sm text-slate-500">Ladataan vertailua...</p>
           </div>
         </div>

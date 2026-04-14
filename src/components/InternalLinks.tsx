@@ -165,7 +165,7 @@ export default function InternalLinks({
             <Link
               key={link.href}
               href={link.href}
-              className="group flex flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-[#0066FF]/30 hover:shadow-md"
+              className="group flex flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-accent/30 hover:shadow-md"
             >
               <div className="mb-3 flex items-center gap-2">
                 <span
@@ -175,13 +175,13 @@ export default function InternalLinks({
                   {TYPE_LABELS[link.type]}
                 </span>
               </div>
-              <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors line-clamp-2">
+              <h3 className="text-sm font-bold text-slate-900 group-hover:text-accent transition-colors line-clamp-2">
                 {link.title}
               </h3>
               <p className="mt-1 flex-1 text-xs text-slate-500 line-clamp-2">
                 {link.description}
               </p>
-              <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-[#0066FF]">
+              <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-accent">
                 Lue lisää
                 <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
               </span>

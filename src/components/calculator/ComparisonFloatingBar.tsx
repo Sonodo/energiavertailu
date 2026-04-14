@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { GitCompareArrows, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const LS_KEY = 'energiavertailu-rinnakkain';
+const LS_KEY = 'valitsesahko-rinnakkain';
 
 export default function ComparisonFloatingBar() {
   const [count, setCount] = useState(0);
@@ -53,7 +53,7 @@ export default function ComparisonFloatingBar() {
           href="/vertailu/rinnakkain"
           className={cn(
             'inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white transition-colors',
-            'bg-[#0066FF] hover:bg-[#0052CC]'
+            'bg-accent hover:bg-accent-700'
           )}
         >
           <GitCompareArrows className="h-4 w-4" />

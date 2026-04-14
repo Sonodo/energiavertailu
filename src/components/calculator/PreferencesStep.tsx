@@ -167,7 +167,7 @@ export default function PreferencesStep({
                 className={cn(
                   'min-h-[44px] rounded-lg border-2 px-4 py-2 text-sm font-medium transition-all',
                   contractType === type.id
-                    ? 'border-[#0066FF] bg-blue-50 text-[#0066FF]'
+                    ? 'border-accent bg-blue-50 text-accent'
                     : 'border-slate-200 text-slate-600 hover:border-slate-300'
                 )}
               >
@@ -198,7 +198,7 @@ export default function PreferencesStep({
                   className={cn(
                     'rounded-lg border-2 px-4 py-2 text-sm font-medium transition-all',
                     isDurationSelected(d.id)
-                      ? 'border-[#0066FF] bg-blue-50 text-[#0066FF]'
+                      ? 'border-accent bg-blue-50 text-accent'
                       : 'border-slate-200 text-slate-600 hover:border-slate-300'
                   )}
                 >
@@ -239,7 +239,7 @@ export default function PreferencesStep({
                 className={cn(
                   'min-h-[44px] rounded-lg border-2 px-4 py-2 text-sm font-medium transition-all',
                   sortBy === option.id
-                    ? 'border-[#0066FF] bg-blue-50 text-[#0066FF]'
+                    ? 'border-accent bg-blue-50 text-accent'
                     : 'border-slate-200 text-slate-600 hover:border-slate-300'
                 )}
               >
@@ -256,13 +256,13 @@ export default function PreferencesStep({
             className={cn(
               'inline-flex items-center gap-2 rounded-lg border-2 px-4 py-2.5 text-sm font-medium transition-all',
               activeFilterCount > 0
-                ? 'border-[#0066FF] bg-blue-50 text-[#0066FF]'
+                ? 'border-accent bg-blue-50 text-accent'
                 : 'border-slate-200 text-slate-600 hover:border-slate-300'
             )}
           >
             Lisäsuodattimet
             {activeFilterCount > 0 && (
-              <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-[#0066FF] px-1.5 text-xs font-bold text-white">
+              <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-accent px-1.5 text-xs font-bold text-white">
                 {activeFilterCount}
               </span>
             )}
@@ -280,7 +280,7 @@ export default function PreferencesStep({
               <div>
                 <label className="mb-2 block text-sm font-medium text-slate-700">
                   Enimmäiskuukausimaksu:{' '}
-                  <span className="font-semibold text-[#0066FF]">
+                  <span className="font-semibold text-accent">
                     {advancedFilters.maxMonthlyFee < 10
                       ? `${advancedFilters.maxMonthlyFee.toFixed(1)} €/kk`
                       : 'Ei rajaa'}
@@ -298,7 +298,7 @@ export default function PreferencesStep({
                       maxMonthlyFee: parseFloat(e.target.value),
                     })
                   }
-                  className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-slate-200 accent-[#0066FF]"
+                  className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-slate-200 accent-accent"
                 />
                 <div className="mt-1 flex justify-between text-xs text-slate-400">
                   <span>0 €/kk</span>
@@ -319,7 +319,7 @@ export default function PreferencesStep({
                       className={cn(
                         'rounded-lg border-2 px-4 py-2 text-sm font-medium transition-all',
                         advancedFilters.providerTypes.includes(opt.id)
-                          ? 'border-[#0066FF] bg-blue-50 text-[#0066FF]'
+                          ? 'border-accent bg-blue-50 text-accent'
                           : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300'
                       )}
                     >
@@ -336,7 +336,7 @@ export default function PreferencesStep({
               <div>
                 <label className="mb-2 block text-sm font-medium text-slate-700">
                   Enimmäisvastapuoliriski:{' '}
-                  <span className="font-semibold text-[#0066FF]">
+                  <span className="font-semibold text-accent">
                     {advancedFilters.maxRisk < 100
                       ? `${advancedFilters.maxRisk}`
                       : 'Ei rajaa'}
@@ -354,7 +354,7 @@ export default function PreferencesStep({
                       maxRisk: parseInt(e.target.value, 10),
                     })
                   }
-                  className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-slate-200 accent-[#0066FF]"
+                  className="h-2 w-full cursor-pointer appearance-none rounded-lg bg-slate-200 accent-accent"
                 />
                 <div className="mt-1 flex justify-between text-xs text-slate-400">
                   <span>0 (ei riskiä)</span>
@@ -387,7 +387,7 @@ export default function PreferencesStep({
         </button>
         <button
           onClick={onNext}
-          className="min-h-[48px] rounded-xl bg-[#0066FF] px-8 py-3 text-base font-semibold text-white shadow-lg shadow-blue-200 transition-all hover:bg-[#0052CC] hover:shadow-xl active:scale-[0.98]"
+          className="min-h-[48px] rounded-xl bg-accent px-8 py-3 text-base font-semibold text-white shadow-lg shadow-blue-200 transition-all hover:bg-accent-700 hover:shadow-xl active:scale-[0.98]"
         >
           Näytä tulokset
         </button>

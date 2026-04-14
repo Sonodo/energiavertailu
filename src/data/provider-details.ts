@@ -10,7 +10,6 @@ export interface ProviderDetails {
   pros: string[];
   cons: string[];
   specialFeatures: string[];
-  satisfactionRating: number;
   faq: { question: string; answer: string }[];
 }
 
@@ -23,7 +22,7 @@ Fortum tarjoaa kotitalouksille monipuolisen valikoiman sähkösopimuksia: pörss
 
 Fortumin vahvuudet ovat sen laaja tuotevalikoima, vahva brändi ja digitaaliset palvelut. Yhtiö investoi voimakkaasti uusiutuvaan energiaan ja tavoittelee hiilineutraaliutta. Suurena toimijana Fortum pystyy tarjoamaan kilpailukykyisiä hintoja erityisesti pörssisähkössä, vaikka pienimmät haastajat saattavat ajoittain alittaa sen hinnat.`,
     type: 'national',
-    revenue: 'n.5,5 mrd € (2025)',
+    revenue: 'n. 5,5 mrd € (2025)',
     customerServicePhone: '0200 19000',
     pros: [
       'Monipuolinen sopimusvalikoima kaikille tarpeille',
@@ -43,11 +42,10 @@ Fortumin vahvuudet ovat sen laaja tuotevalikoima, vahva brändi ja digitaaliset 
       'Mahdollisuus valita 100% tuuli-, aurinko- tai vesivoimaa',
       'Sähköautojen latausratkaisut',
     ],
-    satisfactionRating: 3.9,
     faq: [
       {
         question: 'Kuinka vaihdan Fortumin asiakkaaksi?',
-        answer: 'Voit tehdä sähkösopimuksen Fortumin verkkosivuilla, sovelluksessa tai puhelimitse. Vaihto tapahtuu automaattisesti 2-4 viikossa ilman katkoksia.',
+        answer: 'Voit tehdä sähkösopimuksen Fortumin verkkosivuilla, sovelluksessa tai puhelimitse. Vaihto tapahtuu automaattisesti 2–4 viikossa ilman katkoksia.',
       },
       {
         question: 'Onko Fortumilla pörssisähkön hintakattoa?',
@@ -68,7 +66,7 @@ Helen on kunnostautunut erityisesti kaukolämmössä ja uusiutuvan energian tuot
 
 Helenin digitaaliset palvelut ovat korkealla tasolla. Helen-sovellus tarjoaa selkeän kulutusseurannan, ja yhtiön verkkopalvelut ovat helppokäyttöisiä. Asiakastyytyväisyys on perinteisesti ollut hyvällä tasolla, mikä johtuu osittain kaupungin omistuksen tuomasta palvelualttiudesta ja pitkäjänteisyydestä.`,
     type: 'national',
-    revenue: 'n.1,2 mrd € (2025)',
+    revenue: 'n. 1,2 mrd € (2025)',
     customerServicePhone: '09 617 8080',
     pros: [
       'Erittäin luotettava kaupungin omistama yhtiö',
@@ -88,7 +86,6 @@ Helenin digitaaliset palvelut ovat korkealla tasolla. Helen-sovellus tarjoaa sel
       'Aurinkopaneelien ylijäämäsähkön osto',
       'Kaukolämmön ja sähkön yhdistelmätarjoukset',
     ],
-    satisfactionRating: 4.1,
     faq: [
       {
         question: 'Palveleeko Helen vain helsinkiläisiä?',
@@ -113,7 +110,7 @@ Vattenfall tarjoaa suomalaisille kotitalouksille selkeän valikoiman sähkösopi
 
 Vattenfallilla on vahva tuotantopohja Pohjoismaissa, mikä tekee siitä luotettavan toimittajan myös suurkuluttajille. Yhtiön kansainvälinen kokemus näkyy palveluiden laadussa ja tuotekehityksessä. Vattenfall investoi merkittävästi tuuli- ja aurinkovoimaan sekä sähkön varastointiin osana siirtymää kohti uusiutuvaa energiaa.`,
     type: 'national',
-    revenue: 'n.200 mrd SEK (konserni, 2025)',
+    revenue: 'n. 200 mrd SEK (konserni, 2025)',
     customerServicePhone: '020 770 5800',
     pros: [
       'Euroopan suurimpia energiayhtiöitä — vakaa toimija',
@@ -133,7 +130,6 @@ Vattenfallilla on vahva tuotantopohja Pohjoismaissa, mikä tekee siitä luotetta
       'Sähköautojen latausverkosto InCharge',
       'Energiatehokkuusneuvonta kotitalouksille',
     ],
-    satisfactionRating: 3.8,
     faq: [
       {
         question: 'Onko Vattenfall luotettava sähköyhtiö?',
@@ -158,7 +154,7 @@ Oomin vahvuus on sen laaja asiakaspohja ja kilpailukykyinen hinnoittelu. Yhtiö 
 
 Oomin digitaaliset palvelut ovat kehittyneet nopeasti, ja yhtiö tarjoaa modernin online-palvelun sähkösopimuksen hallintaan. Oomi tunnetaan myös reilusta hinnoittelusta ja selkeistä sopimusehdoista, mikä on kerännyt yhtiölle hyvät asiakasarviot. Suurena toimijana Oomi pystyy neuvottelemaan edullisia tukkuhintoja, ja nämä säästöt siirtyvät myös asiakkaille.`,
     type: 'national',
-    revenue: 'n.800 milj. € (2025)',
+    revenue: 'n. 800 milj. € (2025)',
     customerServicePhone: '08 5584 3300',
     pros: [
       'Suomen suurin sähkönmyyjä — vahva markkinaasema',
@@ -178,7 +174,6 @@ Oomin digitaaliset palvelut ovat kehittyneet nopeasti, ja yhtiö tarjoaa moderni
       'Edulliset pörssisähkön marginaalit',
       'Paikallisen ja valtakunnallisen palvelun yhdistelmä',
     ],
-    satisfactionRating: 4.0,
     faq: [
       {
         question: 'Mikä on Oomi?',
@@ -203,7 +198,7 @@ Väreen kilpailuvaltti on poikkeuksellisen hyvä asiakaskokemus. Yhtiön sovellu
 
 Väre erottautuu kilpailijoistaan erityisesti käyttökokemuksella ja modernilla lähestymistavalla. Yhtiö ei tee pitkiä puhelinjonoja tai monimutkaisia sopimusehtoja, vaan kaikki hoidetaan digitaalisesti ja selkeästi. Vihreän sähkön vaihtoehdot ovat myös saatavilla kilpailukykyiseen hintaan.`,
     type: 'challenger',
-    revenue: 'n.120 milj. € (2025)',
+    revenue: 'n. 120 milj. € (2025)',
     customerServicePhone: '09 4245 0450',
     pros: [
       'Tunnettu hyvästä asiakaskokemuksesta ja sovelluksesta',
@@ -223,7 +218,6 @@ Väre erottautuu kilpailijoistaan erityisesti käyttökokemuksella ja modernilla
       'Nopea ja helppo sopimusten teko verkossa',
       'Aktiivinen asiakasyhteisö ja palautteen kuuntelu',
     ],
-    satisfactionRating: 4.3,
     faq: [
       {
         question: 'Miksi Väre on saanut niin hyviä arvioita?',
@@ -267,7 +261,6 @@ Hehku tarjoaa sekä pörssisähköä että kiinteähintaisia sopimuksia. Hinnoit
       'Henkilökohtaiset energiansäästövinkit',
       'Modernit digitaaliset palvelut',
     ],
-    satisfactionRating: 4.0,
     faq: [
       {
         question: 'Mikä tekee Hehkun sovelluksesta erityisen?',
@@ -292,7 +285,7 @@ Lumme Energia yhdistää valtakunnallisen Oomi-konsernin resurssit paikalliseen 
 
 Paikallisena toimijana Lumme Energia tuntee alueensa asiakkaiden tarpeet ja olosuhteet hyvin. Yhtiö tarjoaa myös energianeuvontaa ja -palveluita, jotka auttavat asiakkaita säästämään sähköä. Oomi-konsernin tuki takaa toiminnan jatkuvuuden ja kehityksen.`,
     type: 'regional',
-    revenue: 'n.150 milj. € (2025)',
+    revenue: 'n. 150 milj. € (2025)',
     customerServicePhone: '020 690 090',
     pros: [
       'Erinomainen paikallinen palvelu Itä-Suomessa',
@@ -312,7 +305,6 @@ Paikallisena toimijana Lumme Energia tuntee alueensa asiakkaiden tarpeet ja olos
       'Paikallinen energianeuvonta',
       'Henkilökohtainen yhteyshenkilö suurille asiakkaille',
     ],
-    satisfactionRating: 4.2,
     faq: [
       {
         question: 'Onko Lumme Energia sama kuin Oomi?',
@@ -337,7 +329,7 @@ Vaasan Sähkö tunnetaan erityisesti luotettavuudestaan ja pitkistä asiakassuht
 
 Vaasan Sähkö panostaa alueensa energiatehokkuuteen ja uusiutuvaan energiaan. Yhtiöllä on omaa tuulivoimatuotantoa ja se investoi aktiivisesti uusiin energiaratkaisuihin. Asiakaspalvelu on perinteisesti hyvällä tasolla ja henkilökohtaista palvelua arvostetaan.`,
     type: 'regional',
-    revenue: 'n.200 milj. € (2025)',
+    revenue: 'n. 200 milj. € (2025)',
     customerServicePhone: '06 324 7111',
     pros: [
       'Yli 130 vuoden kokemus — erittäin luotettava',
@@ -357,7 +349,6 @@ Vaasan Sähkö panostaa alueensa energiatehokkuuteen ja uusiutuvaan energiaan. Y
       'Kaupungin osaomistama — pitkäjänteinen toimija',
       'Alueellinen energianeuvonta',
     ],
-    satisfactionRating: 4.0,
     faq: [
       {
         question: 'Onko Vaasan Sähkö vain Vaasan alueen yhtiö?',
@@ -382,7 +373,7 @@ Turku Energia tunnetaan vahvasta paikallisesta läsnäolostaan ja monipuolisista
 
 Turku Energia on sitoutunut hiilineutraaliuteen ja investoi voimakkaasti uusiutuvaan energiaan. Yhtiö on yksi Suomen edistyksellisimmistä kunnallisista energiayhtiöistä, ja se on saanut tunnustusta ilmasto- ja ympäristötyöstään. Asiakaspalvelu on hyvällä tasolla ja palvelupisteet löytyvät Turun keskustasta.`,
     type: 'regional',
-    revenue: 'n.350 milj. € (2025)',
+    revenue: 'n. 350 milj. € (2025)',
     customerServicePhone: '02 2638 200',
     pros: [
       'Vahva paikallinen läsnäolo Varsinais-Suomessa',
@@ -402,7 +393,6 @@ Turku Energia on sitoutunut hiilineutraaliuteen ja investoi voimakkaasti uusiutu
       'Palvelupiste Turun keskustassa',
       'Aktiivinen ilmastotyö ja uusiutuvan energian kehitys',
     ],
-    satisfactionRating: 4.1,
     faq: [
       {
         question: 'Voiko Turku Energian valita muualta Suomesta?',
@@ -427,7 +417,7 @@ Tampereen Sähkö tarjoaa kattavan valikoiman sähkösopimuksia kotitalouksille 
 
 Pirkanmaan alueella Tampereen Sähkö on ylivoimaisesti tunnetuin energiayhtiö. Yhtiön palvelupisteet, paikallistuntemus ja henkilökohtainen asiakaspalvelu erottavat sen valtakunnallisista kilpailijoista. Tampereen Sähkö investoi voimakkaasti tulevaisuuden energiaratkaisuihin ja puhtaaseen energiantuotantoon.`,
     type: 'regional',
-    revenue: 'n.400 milj. € (2025)',
+    revenue: 'n. 400 milj. € (2025)',
     customerServicePhone: '03 2316 5005',
     pros: [
       'Yli 135 vuoden kokemus — äärimmäinen luotettavuus',
@@ -447,7 +437,6 @@ Pirkanmaan alueella Tampereen Sähkö on ylivoimaisesti tunnetuin energiayhtiö.
       'Palvelupisteet Tampereen keskustassa',
       'Laaja energianeuvonta kotitalouksille',
     ],
-    satisfactionRating: 4.0,
     faq: [
       {
         question: 'Onko Tampereen Sähkö vain Pirkanmaan yhtiö?',
@@ -472,7 +461,7 @@ Kuopion Energia tarjoaa sähkönmyynnin lisäksi kaukolämpöä ja energiapalvel
 
 Kuopion Energian vahvuus on sen syvä paikallistuntemus ja henkilökohtainen palvelu. Yhtiö tuntee alueensa olosuhteet, sähkönkulutuksen kausivaihtelut ja asiakkaiden tarpeet. Kaupungin omistus takaa toiminnan pitkäjänteisyyden ja vakauden.`,
     type: 'regional',
-    revenue: 'n.100 milj. € (2025)',
+    revenue: 'n. 100 milj. € (2025)',
     customerServicePhone: '017 226 100',
     pros: [
       'Henkilökohtainen paikallinen palvelu',
@@ -492,7 +481,6 @@ Kuopion Energian vahvuus on sen syvä paikallistuntemus ja henkilökohtainen pal
       'Henkilökohtainen energianeuvonta',
       'Kaukolämmön ja sähkön yhdistelmäpalvelut',
     ],
-    satisfactionRating: 3.9,
     faq: [
       {
         question: 'Palveleeko Kuopion Energia vain Kuopion aluetta?',
@@ -517,7 +505,7 @@ Jyväskylän Energia tarjoaa kattavan valikoiman sähkösopimuksia: pörssisähk
 
 Paikallisena toimijana Jyväskylän Energia tarjoaa henkilökohtaista palvelua ja energianeuvontaa. Yhtiön sähköiset palvelut ovat kehittyneet viime vuosina, ja asiakkaiden on helppo hallita sopimuksiaan verkossa. Jyväskylän Energia on myös aktiivinen toimija alueensa energiamurroksessa ja investoi puhtaaseen energiantuotantoon.`,
     type: 'regional',
-    revenue: 'n.250 milj. € (2025)',
+    revenue: 'n. 250 milj. € (2025)',
     customerServicePhone: '014 266 1550',
     pros: [
       'Hyvä paikallinen palvelu Keski-Suomessa',
@@ -537,7 +525,6 @@ Paikallisena toimijana Jyväskylän Energia tarjoaa henkilökohtaista palvelua j
       'Vihreän sähkön valikoima mukaan lukien paikallista tuotantoa',
       'Alueellinen energianeuvonta ja -tehokkuuspalvelut',
     ],
-    satisfactionRating: 4.1,
     faq: [
       {
         question: 'Tarjoaako Jyväskylän Energia vihreitä sopimuksia?',
@@ -562,7 +549,7 @@ Oulun Energia tarjoaa monipuolisia sähkösopimuksia: pörssisähköä, kiinteä
 
 Pohjois-Suomen suurimpana energiatoimijana Oulun Energialla on laaja kokemus alueen erityisolosuhteista, kuten kylmistä talvista ja sähkönkulutuksen kausivaihteluista. Yhtiö investoi aktiivisesti uusiutuvaan energiaan ja älykkäisiin energiaratkaisuihin tulevaisuutta varten.`,
     type: 'regional',
-    revenue: 'n.300 milj. € (2025)',
+    revenue: 'n. 300 milj. € (2025)',
     customerServicePhone: '08 558 44 000',
     pros: [
       'Pohjois-Suomen suurin energiatoimija',
@@ -582,7 +569,6 @@ Pohjois-Suomen suurimpana energiatoimijana Oulun Energialla on laaja kokemus alu
       'Palvelupisteet Oulun keskustassa',
       'Laaja energianeuvonta pohjoisiin olosuhteisiin',
     ],
-    satisfactionRating: 4.0,
     faq: [
       {
         question: 'Onko Oulun Energia vain Oulun alueella?',
@@ -607,7 +593,7 @@ Lahti Energia tarjoaa pörssisähköä ja kiinteähintaisia sopimuksia kilpailuk
 
 Lahden kaupunki on valittu Euroopan ympäristöpääkaupungiksi, ja Lahti Energia on ollut keskeisessä roolissa tämän saavutuksen taustalla. Yhtiö jatkaa investointeja puhtaaseen energiantuotantoon ja tarjoaa asiakkailleen energianeuvontaa sekä -tehokkuuspalveluita.`,
     type: 'regional',
-    revenue: 'n.180 milj. € (2025)',
+    revenue: 'n. 180 milj. € (2025)',
     customerServicePhone: '03 823 3600',
     pros: [
       'Innovatiivinen ja ympäristövastuullinen yhtiö',
@@ -627,7 +613,6 @@ Lahden kaupunki on valittu Euroopan ympäristöpääkaupungiksi, ja Lahti Energi
       'Lahden kaupungin omistama — pitkäjänteinen toimija',
       'Paikallinen energianeuvonta Päijät-Hämeessä',
     ],
-    satisfactionRating: 3.9,
     faq: [
       {
         question: 'Mikä tekee Lahti Energiasta ympäristöystävällisen?',
@@ -652,7 +637,7 @@ Savon Voima erottuu monipuolisella sopimusvalikoimallaan, johon kuuluu pörssis�
 
 Yhtiö palvelee laajaa maantieteellistä aluetta Itä-Suomessa, mikä tarkoittaa sekä kaupunki- että maaseutuasiakkaita. Savon Voimalla on pitkä kokemus alueen erityisolosuhteista ja asiakkaiden tarpeista. Hinnoittelu on kohtuullista, joskin syrjäisten alueiden palvelukustannukset näkyvät jossain määrin hinnoissa.`,
     type: 'regional',
-    revenue: 'n.250 milj. € (2025)',
+    revenue: 'n. 250 milj. € (2025)',
     customerServicePhone: '017 224 9111',
     pros: [
       'Laaja palvelualue Itä-Suomessa',
@@ -672,7 +657,6 @@ Yhtiö palvelee laajaa maantieteellistä aluetta Itä-Suomessa, mikä tarkoittaa
       'Paikallinen energianeuvonta maaseudulle ja kaupunkeihin',
       'Pitkä kokemus haja-asutusalueiden energiapalveluista',
     ],
-    satisfactionRating: 3.7,
     faq: [
       {
         question: 'Mikä on toistaiseksi voimassa oleva sopimus?',
@@ -697,7 +681,7 @@ Pori Energia tarjoaa kattavan valikoiman sähkösopimuksia: pörssisähköä, ki
 
 Satakunnan alueella Pori Energia on tunnetuin ja luotetuin energiatoimija. Yhtiön paikallinen läsnäolo, palvelupisteet ja henkilökohtainen asiakaspalvelu tuovat lisäarvoa verrattuna valtakunnallisiin kilpailijoihin. Pori Energia osallistuu aktiivisesti alueensa energiamurrokseen ja tarjoaa energianeuvontaa kotitalouksille.`,
     type: 'regional',
-    revenue: 'n.130 milj. € (2025)',
+    revenue: 'n. 130 milj. € (2025)',
     customerServicePhone: '02 621 3100',
     pros: [
       'Hyvä paikallinen palvelu Satakunnassa',
@@ -717,7 +701,6 @@ Satakunnan alueella Pori Energia on tunnetuin ja luotetuin energiatoimija. Yhti�
       'Vihreän sähkön vaihtoehdot tuulivoimasta',
       'Paikallinen energianeuvonta ja palvelupisteet',
     ],
-    satisfactionRating: 3.8,
     faq: [
       {
         question: 'Tarjoaako Pori Energia vihreää sähköä?',
@@ -742,7 +725,7 @@ Ilmatar erottuu kilpailijoistaan sillä, että kaikki myytävä sähkö tuotetaa
 
 Ilmatar sopii erityisesti ympäristötietoisille kuluttajille, jotka haluavat tukea suomalaista tuulivoimatuotantoa suoraan. Yhtiön hinnoittelu on kilpailukykyistä ottaen huomioon, että kyseessä on aina puhdas tuulienergia. Asiakaspalvelu on henkilökohtaista ja yhtiö on saanut hyvää palautetta selkeydestään ja rehellisyydestään.`,
     type: 'challenger',
-    revenue: 'n.50 milj. € (2025)',
+    revenue: 'n. 50 milj. € (2025)',
     customerServicePhone: '010 524 4500',
     pros: [
       'Kaikki sähkö 100% omasta tuulivoimatuotannosta',
@@ -760,7 +743,6 @@ Ilmatar sopii erityisesti ympäristötietoisille kuluttajille, jotka haluavat tu
       'Täysi läpinäkyvyys: asiakas tietää mistä sähkö tulee',
       'Suomen suurimpia yksityisiä tuulivoimatoimijoita',
     ],
-    satisfactionRating: 4.1,
     faq: [
       {
         question: 'Tuottaako Ilmatar oikeasti itse kaiken myymänsä sähkön?',
@@ -785,7 +767,7 @@ Nivoksen vahvuus on erinomainen paikallinen asiakaspalvelu yhdistettynä moderne
 
 Nivos erottuu monista kunnallisista energiayhtiöistä panostamalla voimakkaasti tuotekehitykseen ja digitalisaatioon. Yhtiö on osoittanut, että paikallinen kunnallinen energiayhtiö voi olla samalla innovatiivinen ja moderni. Asiakastyytyväisyys on erinomainen, mikä kertoo palvelun laadusta ja henkilökohtaisesta otteesta.`,
     type: 'regional',
-    revenue: 'n.80 milj. € (2025)',
+    revenue: 'n. 80 milj. € (2025)',
     customerServicePhone: '020 760 0600',
     pros: [
       'Erinomainen ja henkilökohtainen asiakaspalvelu',
@@ -803,7 +785,6 @@ Nivos erottuu monista kunnallisista energiayhtiöistä panostamalla voimakkaasti
       'Kunnallinen omistus yhdistettynä startup-henkiseen kehitykseen',
       'Paikallista, kasvollista asiakaspalvelua',
     ],
-    satisfactionRating: 4.3,
     faq: [
       {
         question: 'Mikä on Nivos Hub?',
@@ -828,7 +809,7 @@ Vantaan Energian jätevoimala on yksi Suomen suurimmista ja innovatiivisimmista.
 
 Vantaan Energia on vahva ja vakaa toimija, jonka kaupunkiomistus takaa pitkäjänteisen toiminnan. Asiakaspalvelu on laadukasta ja palvelupisteet helposti saavutettavissa. Yhtiö investoi jatkuvasti uusiutuvaan energiaan ja älykkäisiin energiaratkaisuihin, mikä tekee siitä kiinnostavan vaihtoehdon myös tulevaisuuteen katsovalle kuluttajalle.`,
     type: 'regional',
-    revenue: 'n.300 milj. € (2025)',
+    revenue: 'n. 300 milj. € (2025)',
     customerServicePhone: '09 829 01',
     pros: [
       'Yksi Suomen suurimmista kunnallisista energiayhtiöistä',
@@ -846,7 +827,6 @@ Vantaan Energia on vahva ja vakaa toimija, jonka kaupunkiomistus takaa pitkäjä
       'Vantaan kaupungin kokonaan omistama',
       'Kaukolämmön, kaukojäähdytyksen ja sähkön yhdistelmäpalvelut',
     ],
-    satisfactionRating: 4.2,
     faq: [
       {
         question: 'Miten Vantaan Energian jätevoimala toimii?',
@@ -871,7 +851,7 @@ Lappeenrannan kaupunki on kansainvälisesti tunnettu puhtaan energian edelläkä
 
 Asiakaspalvelu on henkilökohtaista ja helposti saavutettavissa. Paikallisena toimijana Lappeenrannan Energia tuntee alueensa olosuhteet ja asiakkaiden tarpeet hyvin. Sähkösopimukset kattavat pörssisähkön ja kiinteähintaiset vaihtoehdot, ja hinnoittelu on alueellisesti kilpailukykyistä.`,
     type: 'regional',
-    revenue: 'n.60 milj. € (2025)',
+    revenue: 'n. 60 milj. € (2025)',
     customerServicePhone: '05 6782 111',
     pros: [
       'Puhtaan energian edelläkävijäkaupungin energiayhtiö',
@@ -889,7 +869,6 @@ Asiakaspalvelu on henkilökohtaista ja helposti saavutettavissa. Paikallisena to
       'Vahva yhteys LUT-yliopiston energiatutkimukseen',
       'Paikallista ja henkilökohtaista asiakaspalvelua',
     ],
-    satisfactionRating: 4.0,
     faq: [
       {
         question: 'Miten Lappeenrannan Energia liittyy kaupungin ilmastotavoitteisiin?',
@@ -910,7 +889,7 @@ Keski-Pohjanmaan alueella Kokkolan Energia on keskeinen energiatoimija, joka tun
 
 Kokkolan Energia investoi uusiutuvaan energiaan ja pyrkii vähentämään toimintansa ympäristövaikutuksia. Kaupungin omistus takaa toiminnan jatkuvuuden ja pitkäjänteisyyden, ja yhtiö on tärkeä osa alueen elinvoimaisuutta.`,
     type: 'regional',
-    revenue: 'n.40 milj. € (2025)',
+    revenue: 'n. 40 milj. € (2025)',
     customerServicePhone: '06 828 9111',
     pros: [
       'Luotettava kunnallinen toimija Keski-Pohjanmaalla',
@@ -928,7 +907,6 @@ Kokkolan Energia investoi uusiutuvaan energiaan ja pyrkii vähentämään toimin
       'Kaukolämmön ja sähkön yhdistelmäpalvelut',
       'Paikallista energianeuvontaa ja asiakaspalvelua',
     ],
-    satisfactionRating: 3.9,
     faq: [
       {
         question: 'Palveleeko Kokkolan Energia vain Kokkolan aluetta?',
@@ -949,7 +927,7 @@ Etelä-Pohjanmaa on maatalous- ja yritystoimintavaltaista aluetta, ja Seinäjoen
 
 Seinäjoen Energia investoi aktiivisesti energiantuotannon uudistamiseen ja pyrkii lisäämään uusiutuvan energian osuutta. Kaupungin omistus takaa pitkäjänteisen ja vakaan toiminnan. Asiakaspalvelu on henkilökohtaista ja paikallista — asiat hoituvat nopeasti ja luotettavasti.`,
     type: 'regional',
-    revenue: 'n.50 milj. € (2025)',
+    revenue: 'n. 50 milj. € (2025)',
     customerServicePhone: '06 421 5111',
     pros: [
       'Etelä-Pohjanmaan alueen vahvin energiatoimija',
@@ -967,7 +945,6 @@ Seinäjoen Energia investoi aktiivisesti energiantuotannon uudistamiseen ja pyrk
       'Kaukolämmön ja sähkön yhdistelmäpalvelut',
       'Vahva paikallistuntemus maatalous- ja yritysalueen tarpeisiin',
     ],
-    satisfactionRating: 3.9,
     faq: [
       {
         question: 'Voiko Seinäjoen Energian valita muualta Suomesta?',
@@ -988,7 +965,7 @@ Kymenlaakson rannikkoseudulla Kotkan Energia on keskeinen toimija, joka tuntee a
 
 Kotkan Energia investoi energiantuotannon uudistamiseen ja puhtaampiin ratkaisuihin. Kaupungin omistus takaa toiminnan vakauden ja pitkäjänteisyyden. Asiakaspalvelu on henkilökohtaista ja paikallista, mikä on yhtiön selkeä vahvuus verrattuna valtakunnallisiin kilpailijoihin.`,
     type: 'regional',
-    revenue: 'n.45 milj. € (2025)',
+    revenue: 'n. 45 milj. € (2025)',
     customerServicePhone: '05 234 5100',
     pros: [
       'Vahva paikallinen toimija Kymenlaakson rannikolla',
@@ -1006,7 +983,6 @@ Kotkan Energia investoi energiantuotannon uudistamiseen ja puhtaampiin ratkaisui
       'Kaukolämmön ja sähkön yhdistelmäpalvelut',
       'Pitkä kokemus teollisuus- ja satamakaupungin energiahuollosta',
     ],
-    satisfactionRating: 3.8,
     faq: [
       {
         question: 'Palveleeko Kotkan Energia vain Kotkaa?',
@@ -1027,7 +1003,7 @@ Rauma on UNESCO:n maailmanperintökaupunki ja merkittävä satama- ja teollisuus
 
 Rauman Energia panostaa energiantuotannon vastuullisuuteen ja investoi uusiutuvan energian ratkaisuihin. Paikallisena toimijana yhtiö tarjoaa henkilökohtaista ja helposti saavutettavaa asiakaspalvelua. Kaupungin omistus takaa toiminnan jatkuvuuden ja pitkäjänteisyyden.`,
     type: 'regional',
-    revenue: 'n.35 milj. € (2025)',
+    revenue: 'n. 35 milj. € (2025)',
     customerServicePhone: '02 834 4511',
     pros: [
       'Luotettava paikallinen toimija Satakunnan rannikolla',
@@ -1045,7 +1021,6 @@ Rauman Energia panostaa energiantuotannon vastuullisuuteen ja investoi uusiutuva
       'Pitkäaikainen kokemus teollisuus- ja satamakaupungin palvelusta',
       'Kaukolämmön ja sähkön yhdistelmäpalvelut',
     ],
-    satisfactionRating: 3.9,
     faq: [
       {
         question: 'Voiko Rauman Energian valita muualta Suomesta?',
@@ -1066,7 +1041,7 @@ Lapin suurimpana energiayhtiönä NEVE ymmärtää arktisen alueen erityishaaste
 
 NEVE palvelee Rovaniemen lisäksi laajasti koko Lapin aluetta. Paikallinen asiakaspalvelu on yhtiön vahvuus, ja energia-asioiden hoitaminen on helppoa. Kaupungin omistus takaa toiminnan jatkuvuuden ja investoinnit tulevaisuuden energiaratkaisuihin myös arktisella alueella.`,
     type: 'regional',
-    revenue: 'n.70 milj. € (2025)',
+    revenue: 'n. 70 milj. € (2025)',
     customerServicePhone: '016 3301',
     pros: [
       'Lapin suurin energiatoimija — vahva paikallinen osaaminen',
@@ -1084,7 +1059,6 @@ NEVE palvelee Rovaniemen lisäksi laajasti koko Lapin aluetta. Paikallinen asiak
       'Energia- ja vesihuoltopalvelut samasta yhtiöstä',
       'Erityisosaaminen ääriolosuhteissa toimimiseen',
     ],
-    satisfactionRating: 3.8,
     faq: [
       {
         question: 'Mikä on NEVE?',
@@ -1109,7 +1083,7 @@ Porvoon Energia palvelee sekä suomen- että ruotsinkielisiä asiakkaita sujuvas
 
 Porvoon Energia investoi uusiutuvaan energiaan ja energiatehokkuuteen. Yhtiö on aktiivinen toimija alueensa energiamurroksessa ja tarjoaa asiakkailleen energianeuvontaa. Kaupungin omistus takaa pitkäjänteisen toiminnan ja investoinnit tulevaisuuteen.`,
     type: 'regional',
-    revenue: 'n.35 milj. € (2025)',
+    revenue: 'n. 35 milj. € (2025)',
     customerServicePhone: '019 661 3311',
     pros: [
       'Kaksikielinen palvelu (suomi/ruotsi) — Itä-Uudenmaan vahvuus',
@@ -1127,7 +1101,6 @@ Porvoon Energia investoi uusiutuvaan energiaan ja energiatehokkuuteen. Yhtiö on
       'Itä-Uudenmaan keskeinen energiatoimija',
       'Paikallista ja henkilökohtaista energianeuvontaa',
     ],
-    satisfactionRating: 4.0,
     faq: [
       {
         question: 'Palveleeko Porvoon Energia myös ruotsiksi?',
@@ -1148,7 +1121,7 @@ Meri-Lapin alueella Tornion Energia on keskeinen energiatoimija, joka palvelee s
 
 Tornion Energia panostaa energiantuotannon luotettavuuteen ja investoi puhtaampiin ratkaisuihin. Kaupungin omistus takaa toiminnan jatkuvuuden. Paikallinen asiakaspalvelu on henkilökohtaista ja helposti saavutettavissa.`,
     type: 'regional',
-    revenue: 'n.25 milj. € (2025)',
+    revenue: 'n. 25 milj. € (2025)',
     customerServicePhone: '016 431 511',
     pros: [
       'Meri-Lapin alueen keskeinen energiatoimija',
@@ -1166,7 +1139,6 @@ Tornion Energia panostaa energiantuotannon luotettavuuteen ja investoi puhtaampi
       'Kokemus teollisuuskaupungin energiahuollosta',
       'Kaukolämmön ja sähkön yhdistelmäpalvelut',
     ],
-    satisfactionRating: 3.8,
     faq: [
       {
         question: 'Voiko Tornion Energian valita muualta Suomesta?',
@@ -1187,7 +1159,7 @@ Nurmijärvi on pääkaupunkiseudun kupeessa sijaitseva kasvukunta, jossa asuu yl
 
 Paikallisena kunnallisena yhtiönä Nurmijärven Sähkö tarjoaa henkilökohtaista asiakaspalvelua. Asiakkaiden on helppo asioida yhtiön kanssa, ja paikallistuntemus näkyy palvelun laadussa. Yhtiö investoi jatkuvasti verkon kehitykseen ja energiapalveluiden parantamiseen kasvavan kunnan tarpeisiin.`,
     type: 'regional',
-    revenue: 'n.30 milj. € (2025)',
+    revenue: 'n. 30 milj. € (2025)',
     customerServicePhone: '09 250 0770',
     pros: [
       'Erinomainen paikallinen palvelu kasvavassa Uudenmaan kunnassa',
@@ -1205,7 +1177,6 @@ Paikallisena kunnallisena yhtiönä Nurmijärven Sähkö tarjoaa henkilökohtais
       'Sähkönmyynti ja sähkönsiirto samalta yhtiöltä',
       'Paikallista energianeuvontaa ja henkilökohtaista palvelua',
     ],
-    satisfactionRating: 4.0,
     faq: [
       {
         question: 'Voiko Nurmijärven Sähkön valita muualta Suomesta?',
@@ -1226,7 +1197,7 @@ Kymenlaakso on perinteistä teollisuusaluetta, ja KSS Energialla on pitkä kokem
 
 KSS Energia investoi sähköverkon uudistamiseen ja uusiutuvan energian ratkaisuihin. Yhtiö panostaa asiakaspalveluun ja pyrkii tarjoamaan henkilökohtaista palvelua alueensa asiakkaille. Paikallisena toimijana KSS Energia on tärkeä osa Kymenlaakson elinvoimaisuutta.`,
     type: 'regional',
-    revenue: 'n.40 milj. € (2025)',
+    revenue: 'n. 40 milj. € (2025)',
     customerServicePhone: '05 743 0200',
     pros: [
       'Vahva paikallinen toimija Kymenlaaksossa',
@@ -1244,7 +1215,6 @@ KSS Energia investoi sähköverkon uudistamiseen ja uusiutuvan energian ratkaisu
       'Sähkönsiirto ja -myynti samasta yhtiöstä',
       'Pitkä kokemus teollisuusalueen energiapalveluista',
     ],
-    satisfactionRating: 3.8,
     faq: [
       {
         question: 'Mitä hyötyä on siitä, että sähkönsiirto ja -myynti ovat samassa yhtiössä?',
@@ -1265,7 +1235,7 @@ Pohjois-Karjala on maantieteellisesti laaja ja vaihteleva alue, ja PKS Sähkönm
 
 PKS panostaa sähköverkon kehittämiseen ja energiapalveluiden modernisointiin Pohjois-Karjalassa. Asiakaspalvelu on paikallista ja henkilökohtaista, mikä on tärkeää laajalla ja harvaan asutulla alueella. Konsernin vahva paikallinen asema takaa pitkäjänteisen palvelun.`,
     type: 'regional',
-    revenue: 'n.35 milj. € (2025)',
+    revenue: 'n. 35 milj. € (2025)',
     customerServicePhone: '013 267 5111',
     pros: [
       'Pohjois-Karjalan alueen vahva paikallinen toimija',
@@ -1283,7 +1253,6 @@ PKS panostaa sähköverkon kehittämiseen ja energiapalveluiden modernisointiin 
       'Osa PKS-konsernia — laaja energiapalvelukokonaisuus',
       'Kokemus haja-asutusalueiden energiapalveluista',
     ],
-    satisfactionRating: 3.7,
     faq: [
       {
         question: 'Mikä ero on PKS Sähkönmyynnillä ja Pohjois-Karjalan Sähköllä?',
@@ -1304,7 +1273,7 @@ Kainuu on yksi Suomen harvimmin asutuista maakunnista, ja Loiste on sopeutunut p
 
 Loiste investoi sähköverkon uudistamiseen ja toimitusvarmuuden parantamiseen Kainuussa. Yhtiö panostaa myös uusiutuvan energian ratkaisuihin ja energiatehokkuuteen. Asiakaspalvelu on henkilökohtaista ja paikallista, mikä on tärkeä arvo harvaan asutulla alueella.`,
     type: 'regional',
-    revenue: 'n.45 milj. € (2025)',
+    revenue: 'n. 45 milj. € (2025)',
     customerServicePhone: '020 764 4800',
     pros: [
       'Kainuun alueen vahvin energiatoimija',
@@ -1322,7 +1291,6 @@ Loiste investoi sähköverkon uudistamiseen ja toimitusvarmuuden parantamiseen K
       'Erikoistunut harvaan asutun alueen energiahuoltoon',
       'Vihreitä vaihtoehtoja alkuperätakuilla',
     ],
-    satisfactionRating: 3.8,
     faq: [
       {
         question: 'Tarjoaako Loiste vihreää sähköä?',
@@ -1343,7 +1311,7 @@ Herrfors tarjoaa sähkönmyynnin lisäksi sähkönsiirtoa Pohjanmaan alueella. S
 
 Herrfors ja Katternö-konserni panostavat uusiutuvan energian kehittämiseen ja investoivat erityisesti tuulivoimaan Pohjanmaan alueella. Paikallisena toimijana Herrfors tuntee alueensa asiakkaiden tarpeet ja tarjoaa henkilökohtaista palvelua. Pitkä historia ja vakaa konsernipohja tekevät Herrforsista luotettavan valinnan.`,
     type: 'regional',
-    revenue: 'n.40 milj. € (2025)',
+    revenue: 'n. 40 milj. € (2025)',
     customerServicePhone: '06 781 9111',
     pros: [
       'Erinomainen kaksikielinen palvelu (suomi/ruotsi)',
@@ -1361,7 +1329,6 @@ Herrfors ja Katternö-konserni panostavat uusiutuvan energian kehittämiseen ja 
       'Osa Katternö-konsernia — investoinnit tuulivoimaan',
       'Pitkäaikainen paikallinen toimija Pohjanmaalla',
     ],
-    satisfactionRating: 4.0,
     faq: [
       {
         question: 'Palveleeko Herrfors ruotsiksi?',
@@ -1386,7 +1353,7 @@ Pirkanmaan ja Satakunnan raja-alue on maantieteellisesti vaihteleva, ja Leppäko
 
 Leppäkosken Sähkö panostaa sähköverkon luotettavuuteen ja uudistamiseen. Myrskyt ja luonnonilmiöt voivat haastaa sähkönjakelua harvaan asutuilla alueilla, ja yhtiö on investoinut verkon maakaapelointiin ja toimitusvarmuuteen. Paikallinen asiakaspalvelu on yhtiön vahvuus.`,
     type: 'regional',
-    revenue: 'n.25 milj. € (2025)',
+    revenue: 'n. 25 milj. € (2025)',
     customerServicePhone: '03 451 3111',
     pros: [
       'Luotettava paikallinen toimija Pirkanmaan ja Satakunnan rajalla',
@@ -1404,7 +1371,6 @@ Leppäkosken Sähkö panostaa sähköverkon luotettavuuteen ja uudistamiseen. My
       'Sähkönsiirto ja -myynti samalta yhtiöltä',
       'Investoinnit verkon maakaapelointiin ja toimitusvarmuuteen',
     ],
-    satisfactionRating: 3.9,
     faq: [
       {
         question: 'Voiko Leppäkosken Sähkön valita muualta Suomesta?',
@@ -1425,7 +1391,7 @@ Järvi-Suomen Energia tarjoaa sähkönmyynnin lisäksi sähkönsiirtoa laajalla 
 
 Yhtiö investoi sähköverkon uudistamiseen ja toimitusvarmuuden parantamiseen. Järvialueen mökkiasutus tuo omat erityispiirteensä energiantarpeeseen, ja Järvi-Suomen Energia palvelee myös vapaa-ajan asuntoja. Paikallinen asiakaspalvelu on tärkeä osa yhtiön toimintaa.`,
     type: 'regional',
-    revenue: 'n.25 milj. € (2025)',
+    revenue: 'n. 25 milj. € (2025)',
     customerServicePhone: '015 7551',
     pros: [
       'Laaja palvelualue järvialueella ja Itä-Suomessa',
@@ -1443,7 +1409,6 @@ Yhtiö investoi sähköverkon uudistamiseen ja toimitusvarmuuden parantamiseen. 
       'Erikoistunut haja-asutusalueiden ja mökkialueiden palveluun',
       'Sähkönsiirto ja -myynti samasta yhtiöstä',
     ],
-    satisfactionRating: 3.7,
     faq: [
       {
         question: 'Palveleeko Järvi-Suomen Energia myös mökkejä?',
@@ -1464,7 +1429,7 @@ Etelä-Savo on viehättävä järvi- ja metsäalue, ja ESE tuntee alueen energia
 
 ESE panostaa paikalliseen energiantuotantoon ja investoi bioenergian sekä muiden uusiutuvien energialähteiden hyödyntämiseen. Asiakaspalvelu on henkilökohtaista ja paikallista. Yhtiö on tärkeä osa Etelä-Savon elinkeinoelämää ja energiainfrastruktuuria.`,
     type: 'regional',
-    revenue: 'n.30 milj. € (2025)',
+    revenue: 'n. 30 milj. € (2025)',
     customerServicePhone: '015 221 9100',
     pros: [
       'Etelä-Savon alueen monipuolinen energiatoimija',
@@ -1482,7 +1447,6 @@ ESE panostaa paikalliseen energiantuotantoon ja investoi bioenergian sekä muide
       'Bioenergiaan perustuva paikallinen tuotanto',
       'Monipuolinen palveluvalikoima: sähkö, kaukolämpö, höyry',
     ],
-    satisfactionRating: 3.8,
     faq: [
       {
         question: 'Mitä tarkoittaa bioenergia ESE:n tuotannossa?',
@@ -1503,7 +1467,7 @@ Kraftkom on erikoistunut yhdistämään energia- ja tiedonsiirtopalvelut kokonai
 
 Paikallisena Pohjanmaan toimijana Kraftkom tuntee alueensa asiakkaat ja heidän tarpeensa. Yhtiö panostaa verkon kehittämiseen ja palvelun laatuun. Katternö-konsernin tuki takaa toiminnan vakauden ja mahdollisuudet investoida tulevaisuuteen.`,
     type: 'regional',
-    revenue: 'n.20 milj. € (2025)',
+    revenue: 'n. 20 milj. € (2025)',
     customerServicePhone: '06 828 8300',
     pros: [
       'Kaksikielinen palvelu (suomi/ruotsi)',
@@ -1521,7 +1485,6 @@ Paikallisena Pohjanmaan toimijana Kraftkom tuntee alueensa asiakkaat ja heidän 
       'Kaksikielinen palvelu suomeksi ja ruotsiksi',
       'Osa Katternö-konsernia',
     ],
-    satisfactionRating: 3.7,
     faq: [
       {
         question: 'Mikä yhteys Kraftkomilla on Herrforsiin?',
@@ -1542,7 +1505,7 @@ Kymenlaakso on monipuolinen maakunta, jossa yhdistyvät rannikkoseudun, teollisu
 
 Kymenlaakson Sähkö investoi sähköverkon uudistamiseen ja toimitusvarmuuden parantamiseen. Maakaapelointi ja verkon modernisointi ovat keskeisiä hankkeita. Asiakaspalvelu on paikallista ja henkilökohtaista, ja yhtiö on tärkeä osa Kymenlaakson infrastruktuuria.`,
     type: 'regional',
-    revenue: 'n.35 milj. € (2025)',
+    revenue: 'n. 35 milj. € (2025)',
     customerServicePhone: '05 230 1111',
     pros: [
       'Kymenlaakson alueen perinteinen ja luotettava toimija',
@@ -1560,7 +1523,6 @@ Kymenlaakson Sähkö investoi sähköverkon uudistamiseen ja toimitusvarmuuden p
       'Sähkönsiirto ja -myynti samasta yhtiöstä',
       'Investoinnit maakaapelointiin ja verkon modernisointiin',
     ],
-    satisfactionRating: 3.8,
     faq: [
       {
         question: 'Voiko Kymenlaakson Sähkön valita muualta Suomesta?',

@@ -155,7 +155,7 @@ export function UserMenu() {
       />
       <button
         onClick={() => setShowGoogleButton(!showGoogleButton)}
-        className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+        className="inline-flex items-center gap-1.5 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-accent-700 transition-colors"
       >
         <LogIn className="w-4 h-4" />
         <span className="hidden sm:inline">Kirjaudu</span>

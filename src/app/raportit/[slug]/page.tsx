@@ -235,7 +235,7 @@ export default async function ReportDetailPage({ params }: PageProps) {
 
               <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
                 Sähkön hinta{' '}
-                <span className="bg-gradient-to-r from-[#0066FF] to-[#3385FF] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-accent to-[#3385FF] bg-clip-text text-transparent">
                   {monthNameInessive} {report.year}
                 </span>
               </h1>
@@ -323,7 +323,7 @@ export default async function ReportDetailPage({ params }: PageProps) {
             {/* Key events */}
             <section className="mb-10">
               <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-slate-900">
-                <Zap className="h-5 w-5 text-[#0066FF]" />
+                <Zap className="h-5 w-5 text-accent" />
                 Kuukauden kohokohdat
               </h2>
               <div className="space-y-3">
@@ -332,7 +332,7 @@ export default async function ReportDetailPage({ params }: PageProps) {
                     key={idx}
                     className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
                   >
-                    <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-[#0066FF]" />
+                    <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                     <p className="text-sm text-slate-700 leading-relaxed">{event}</p>
                   </div>
                 ))}
@@ -342,7 +342,7 @@ export default async function ReportDetailPage({ params }: PageProps) {
             {/* Comparison section */}
             <section className="mb-10">
               <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-slate-900">
-                <Scale className="h-5 w-5 text-[#0066FF]" />
+                <Scale className="h-5 w-5 text-accent" />
                 Miten sopimustyypit pärjäsivät
               </h2>
               <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -444,14 +444,14 @@ export default async function ReportDetailPage({ params }: PageProps) {
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
               {/* CTA */}
-              <div className="rounded-xl bg-gradient-to-br from-[#0066FF] to-[#0052CC] p-6 text-white shadow-lg">
+              <div className="rounded-xl bg-gradient-to-br from-accent to-accent-700 p-6 text-white shadow-lg">
                 <h3 className="text-lg font-bold">Vertaa sopimuksia</h3>
                 <p className="mt-2 text-sm text-white/80">
                   Löydä halvin sähkösopimus ja näe paljonko voit säästää.
                 </p>
                 <Link
                   href="/vertailu"
-                  className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-[#0066FF] transition-colors hover:bg-white/90"
+                  className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-accent transition-colors hover:bg-white/90"
                 >
                   Vertaa sopimuksia
                   <ArrowRight className="h-4 w-4" />
@@ -494,7 +494,7 @@ export default async function ReportDetailPage({ params }: PageProps) {
                 href="/porssisahko"
                 className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50"
               >
-                <Zap className="h-4 w-4 text-[#0066FF]" />
+                <Zap className="h-4 w-4 text-accent" />
                 Pörssisähkön hinta nyt
               </Link>
 

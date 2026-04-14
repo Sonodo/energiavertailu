@@ -4,7 +4,7 @@ import { ConsumptionProfile, NavigationItem } from '@/types';
 export const SITE_NAME = 'Valitse Sähkö';
 export const SITE_URL = 'https://valitsesahko.fi';
 export const SITE_DESCRIPTION =
-  'Vertaa sähkösopimuksia, seuraa pörssisähkön hintaa reaaliajassa ja löydä halvin sähkö. Ilmainen ja kattava sähkövertailu.';
+  'Vertaile sähkösopimuksia, seuraa pörssisähkön hintaa reaaliajassa ja löydä sinulle sopiva sopimus. Ilmainen ja kattava sähkövertailu.';
 export const SITE_TAGLINE = 'Suomen monipuolinen sähkövertailu';
 
 // Colors — emerald energy theme
@@ -45,7 +45,7 @@ export const NAVIGATION: NavigationItem[] = [
   {
     label: 'Vertailu',
     href: '/vertailu',
-    description: 'Vertaa sähkösopimuksia ja löydä halvin',
+    description: 'Vertaile sähkösopimuksia ja löydä sopiva',
   },
   {
     label: 'Sähköyhtiöt',

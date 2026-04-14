@@ -251,7 +251,7 @@ export default function EVChargingCalculator() {
       {/* Header */}
       <div className="mb-8">
         <nav className="mb-4 text-sm text-slate-500">
-          <Link href="/tyokalut" className="hover:text-[#0066FF]">Työkalut</Link>
+          <Link href="/tyokalut" className="hover:text-accent">Työkalut</Link>
           <span className="mx-2">/</span>
           <span className="text-slate-900">Sähköauton latauslaskuri</span>
         </nav>
@@ -281,7 +281,7 @@ export default function EVChargingCalculator() {
                   onClick={() => update('selectedCar', car.id)}
                   className={`rounded-lg border px-3 py-2.5 text-left text-sm font-medium transition-all ${
                     form.selectedCar === car.id
-                      ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                      ? 'border-accent bg-accent/5 text-accent'
                       : 'border-slate-200 text-slate-700 hover:border-slate-300'
                   }`}
                 >
@@ -307,7 +307,7 @@ export default function EVChargingCalculator() {
                   step={1}
                   value={form.customBattery}
                   onChange={(e) => update('customBattery', Number(e.target.value))}
-                  className="w-full accent-[#0066FF]"
+                  className="w-full accent-accent"
                 />
                 <div className="flex justify-between text-xs text-slate-500">
                   <span>20 kWh</span>
@@ -323,7 +323,7 @@ export default function EVChargingCalculator() {
                   step={0.5}
                   value={form.customConsumption}
                   onChange={(e) => update('customConsumption', Number(e.target.value))}
-                  className="w-full accent-[#0066FF]"
+                  className="w-full accent-accent"
                 />
                 <div className="flex justify-between text-xs text-slate-500">
                   <span>10 kWh</span>
@@ -342,7 +342,7 @@ export default function EVChargingCalculator() {
               step={1000}
               value={form.annualKm}
               onChange={(e) => update('annualKm', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>5 000 km</span>
@@ -359,7 +359,7 @@ export default function EVChargingCalculator() {
               step={5}
               value={form.homeChargingPercent}
               onChange={(e) => update('homeChargingPercent', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>0 % (vain julkinen)</span>
@@ -376,7 +376,7 @@ export default function EVChargingCalculator() {
               step={0.5}
               value={form.homeElectricityPrice}
               onChange={(e) => update('homeElectricityPrice', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>4 c/kWh</span>
@@ -393,7 +393,7 @@ export default function EVChargingCalculator() {
               step={1}
               value={form.publicACPrice}
               onChange={(e) => update('publicACPrice', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>15 c/kWh</span>
@@ -410,7 +410,7 @@ export default function EVChargingCalculator() {
               step={1}
               value={form.publicDCPrice}
               onChange={(e) => update('publicDCPrice', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>30 c/kWh</span>
@@ -427,7 +427,7 @@ export default function EVChargingCalculator() {
               step={5}
               value={form.publicChargingSplit}
               onChange={(e) => update('publicChargingSplit', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>0 % (vain AC)</span>
@@ -471,8 +471,8 @@ export default function EVChargingCalculator() {
                 label="Kotilataus"
                 value={formatEuros(result.homeCost, 0)}
                 sub={`${formatNumber(result.homeKwh)} kWh`}
-                color="text-[#0066FF]"
-                bg="bg-[#0066FF]/5"
+                color="text-accent"
+                bg="bg-accent/5"
               />
               <StatCard
                 label="Julkinen lataus (AC+DC)"
@@ -655,7 +655,7 @@ export default function EVChargingCalculator() {
                 'Harkitse pörssisähkösopimusta ja älylatainta automaattiseen optimointiin',
               ].map((tip) => (
                 <li key={tip} className="flex items-start gap-2 text-sm text-slate-600">
-                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-[#0066FF]" />
+                  <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
                   {tip}
                 </li>
               ))}

@@ -116,7 +116,7 @@ export default function SpotDashboard({ initialData, isSampleData }: SpotDashboa
             className={cn(
               'rounded-md px-4 py-2 text-sm font-medium transition-colors',
               resolution === 'hourly'
-                ? 'bg-[#0066FF] text-white shadow-sm'
+                ? 'bg-accent text-white shadow-sm'
                 : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
             )}
           >
@@ -127,7 +127,7 @@ export default function SpotDashboard({ initialData, isSampleData }: SpotDashboa
             className={cn(
               'rounded-md px-4 py-2 text-sm font-medium transition-colors',
               resolution === 'quarter'
-                ? 'bg-[#0066FF] text-white shadow-sm'
+                ? 'bg-accent text-white shadow-sm'
                 : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
             )}
           >
@@ -137,12 +137,12 @@ export default function SpotDashboard({ initialData, isSampleData }: SpotDashboa
 
         {/* Feature banner */}
         {resolution === 'quarter' && (
-          <div className="inline-flex items-center gap-2 rounded-full border border-[#0066FF]/20 bg-[#0066FF]/5 px-4 py-1.5">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/5 px-4 py-1.5">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0066FF] opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-[#0066FF]" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
-            <span className="text-xs font-semibold text-[#0066FF]">
+            <span className="text-xs font-semibold text-accent">
               Uutta: 15 minuutin tarkkuudella!
             </span>
           </div>

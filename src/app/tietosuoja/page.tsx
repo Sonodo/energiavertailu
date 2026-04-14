@@ -24,10 +24,10 @@ export default function TietosuojaPage() {
       <div className="bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0066FF]/10">
-              <Shield className="h-5 w-5 text-[#0066FF]" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
+              <Shield className="h-5 w-5 text-accent" />
             </div>
-            <span className="text-sm font-medium text-[#0066FF]">Yksityisyydensuoja</span>
+            <span className="text-sm font-medium text-accent">Yksityisyydensuoja</span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Tietosuojaseloste
@@ -230,7 +230,7 @@ export default function TietosuojaPage() {
               href="https://tietosuoja.fi"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#0066FF] hover:underline"
+              className="text-accent hover:underline"
             >
               tietosuoja.fi
             </a>
@@ -253,7 +253,7 @@ export default function TietosuojaPage() {
           <p>
             <strong>Sonodo — Henri Linnainmaa</strong>
             <br />
-            <a href="/yhteystiedot" className="text-[#0066FF] hover:underline">Ota yhteyttä</a>
+            <a href="/yhteystiedot" className="text-accent hover:underline">Ota yhteyttä</a>
           </p>
           <p>
             Pyrimme vastaamaan kaikkiin tietosuojaa koskeviin yhteydenottoihin

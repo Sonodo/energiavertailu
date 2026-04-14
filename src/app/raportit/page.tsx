@@ -70,7 +70,7 @@ export default function RaportitPage() {
           </nav>
 
           <div className="flex items-center gap-3 mb-4">
-            <BarChart3 className="h-8 w-8 text-[#0066FF]" />
+            <BarChart3 className="h-8 w-8 text-accent" />
           </div>
 
           <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
@@ -94,10 +94,10 @@ export default function RaportitPage() {
               <Link
                 key={report.slug}
                 href={`/raportit/${report.slug}`}
-                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-[#0066FF]/30 hover:shadow-lg"
+                className="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-accent/30 hover:shadow-lg"
               >
                 {/* Top color bar */}
-                <div className="h-1.5 bg-gradient-to-r from-[#0066FF] to-[#00D4AA]" />
+                <div className="h-1.5 bg-gradient-to-r from-accent to-[#00D4AA]" />
 
                 <div className="flex flex-1 flex-col p-6">
                   {/* Month/Year header */}
@@ -122,7 +122,7 @@ export default function RaportitPage() {
                     </span>
                   </div>
 
-                  <h2 className="text-lg font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors">
+                  <h2 className="text-lg font-bold text-slate-900 group-hover:text-accent transition-colors">
                     Sähkön hinta{' '}
                     {getMonthNameInessiveFi(report.month)} {report.year}
                   </h2>
@@ -157,7 +157,7 @@ export default function RaportitPage() {
                     {report.summary}
                   </p>
 
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-[#0066FF]">
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent">
                     Lue raportti
                     <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                   </span>
@@ -168,7 +168,7 @@ export default function RaportitPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 rounded-2xl bg-gradient-to-r from-[#0066FF] to-[#0052CC] p-8 text-center text-white">
+        <div className="mt-16 rounded-2xl bg-gradient-to-r from-accent to-accent-700 p-8 text-center text-white">
           <h2 className="text-2xl font-bold">Etsitkö edullisinta sähkösopimusta?</h2>
           <p className="mx-auto mt-2 max-w-lg text-blue-100">
             Vertaa 37 sähköyhtiön sopimuksia ja löydä halvin vaihtoehto omalle
@@ -176,7 +176,7 @@ export default function RaportitPage() {
           </p>
           <Link
             href="/vertailu"
-            className="mt-4 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-[#0066FF] transition-colors hover:bg-blue-50"
+            className="mt-4 inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-sm font-semibold text-accent transition-colors hover:bg-blue-50"
           >
             Vertaa sähkösopimuksia
             <ChevronRight className="h-4 w-4" />

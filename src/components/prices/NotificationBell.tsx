@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { Bell, BellOff } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const STORAGE_KEY = 'energiavertailu-notify-tomorrow';
+const STORAGE_KEY = 'valitsesahko-notify-tomorrow';
 
 export default function NotificationBell() {
   const [enabled, setEnabled] = useState(false);
@@ -53,14 +53,14 @@ export default function NotificationBell() {
         className={cn(
           'flex h-9 w-9 items-center justify-center rounded-full border transition-colors',
           enabled
-            ? 'border-[#0066FF]/30 bg-[#0066FF]/10 text-[#0066FF] hover:bg-[#0066FF]/20'
+            ? 'border-accent/30 bg-accent/10 text-accent hover:bg-accent/20'
             : 'border-slate-200 bg-white text-slate-400 hover:bg-slate-50 hover:text-slate-600'
         )}
         aria-label={enabled ? 'Poista hintailmoitukset käytöstä' : 'Ota hintailmoitukset käyttöön'}
       >
         {enabled ? <Bell className="h-4 w-4" /> : <BellOff className="h-4 w-4" />}
         {enabled && (
-          <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-[#0066FF]" />
+          <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-accent" />
         )}
       </button>
 

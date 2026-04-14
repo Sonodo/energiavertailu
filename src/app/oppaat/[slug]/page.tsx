@@ -66,7 +66,7 @@ function renderGuideContent(content: string) {
         <ul key={`list-${elements.length}`} className="mb-6 space-y-2 pl-1">
           {currentList.map((item, idx) => (
             <li key={idx} className="flex items-start gap-2 text-slate-600">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0066FF]" />
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
               <span dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
             </li>
           ))}
@@ -216,7 +216,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
       <div className="flex min-h-[60vh] items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-slate-900">Opasta ei löytynyt</h1>
-          <Link href="/oppaat" className="mt-4 inline-block text-[#0066FF] hover:underline">
+          <Link href="/oppaat" className="mt-4 inline-block text-accent hover:underline">
             Takaisin oppaisiin
           </Link>
         </div>
@@ -311,7 +311,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
                   <a
                     key={item.id}
                     href={`#${item.id}`}
-                    className={`block rounded-md px-3 py-2 text-sm transition-colors hover:bg-slate-100 hover:text-[#0066FF] ${
+                    className={`block rounded-md px-3 py-2 text-sm transition-colors hover:bg-slate-100 hover:text-accent ${
                       item.level === 3 ? 'pl-6 text-slate-400' : 'font-medium text-slate-600'
                     }`}
                   >
@@ -321,7 +321,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
               </nav>
 
               {/* Compare CTA in sidebar */}
-              <div className="mt-8 rounded-xl bg-gradient-to-br from-[#0066FF] to-[#0052CC] p-5 text-white">
+              <div className="mt-8 rounded-xl bg-gradient-to-br from-accent to-accent-700 p-5 text-white">
                 <Zap className="h-6 w-6 mb-2 text-white/80" />
                 <h3 className="text-sm font-bold">Vertaa sopimuksia</h3>
                 <p className="mt-1 text-xs text-white/70">
@@ -329,7 +329,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
                 </p>
                 <Link
                   href="/vertailu"
-                  className="mt-3 inline-flex items-center gap-1 rounded-lg bg-white px-4 py-2 text-xs font-semibold text-[#0066FF]"
+                  className="mt-3 inline-flex items-center gap-1 rounded-lg bg-white px-4 py-2 text-xs font-semibold text-accent"
                 >
                   Vertaile
                   <ArrowRight className="h-3 w-3" />
@@ -390,7 +390,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
                       <Link
                         key={related.slug}
                         href={`/oppaat/${related.slug}`}
-                        className="group flex flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-[#0066FF]/30 hover:shadow-md"
+                        className="group flex flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-accent/30 hover:shadow-md"
                       >
                         <span
                           className={`mb-2 self-start rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide ${
@@ -399,13 +399,13 @@ export default async function GuideDetailPage({ params }: PageProps) {
                         >
                           {related.category}
                         </span>
-                        <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors line-clamp-2">
+                        <h3 className="text-sm font-bold text-slate-900 group-hover:text-accent transition-colors line-clamp-2">
                           {related.title}
                         </h3>
                         <p className="mt-1 flex-1 text-xs text-slate-500 line-clamp-2">
                           {related.description}
                         </p>
-                        <span className="mt-3 flex items-center gap-1 text-xs font-medium text-[#0066FF]">
+                        <span className="mt-3 flex items-center gap-1 text-xs font-medium text-accent">
                           Lue opas
                           <ChevronRight className="h-3 w-3" />
                         </span>
@@ -426,7 +426,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
             {/* Bottom CTA */}
             <section className="mt-12">
               <div className="rounded-2xl bg-gradient-to-r from-[#0A1628] to-[#162540] p-8 text-center">
-                <BookOpen className="mx-auto h-8 w-8 text-[#0066FF]/60 mb-3" />
+                <BookOpen className="mx-auto h-8 w-8 text-accent/60 mb-3" />
                 <h2 className="text-xl font-bold text-white sm:text-2xl">
                   Löydä sopiva sähkösopimus
                 </h2>
@@ -436,7 +436,7 @@ export default async function GuideDetailPage({ params }: PageProps) {
                 <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
                   <Link
                     href="/vertailu"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#0066FF] px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#0052CC]"
+                    className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-accent-700"
                   >
                     Vertaa sopimuksia
                     <ChevronRight className="h-4 w-4" />

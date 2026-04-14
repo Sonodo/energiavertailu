@@ -2,7 +2,7 @@ import { Zap, BarChart3, Users } from 'lucide-react';
 
 const sections = [
   {
-    icon: <Zap className="h-6 w-6 text-[#0066FF]" />,
+    icon: <Zap className="h-6 w-6 text-accent" />,
     title: 'Mikä on pörssisähkö?',
     content: `Pörssisähkö on sähkösopimus, jossa sähkön hinta vaihtelee tunneittain
     Nord Pool -sähköpörssin spot-hinnan mukaan. Hinta määräytyy sähkömarkkinoilla
@@ -11,7 +11,7 @@ const sections = [
     marginaali (tyypillisesti 0,2–0,5 c/kWh) ja kuukausimaksu.`,
   },
   {
-    icon: <BarChart3 className="h-6 w-6 text-[#0066FF]" />,
+    icon: <BarChart3 className="h-6 w-6 text-accent" />,
     title: 'Miten pörssisähkön hinta määräytyy?',
     content: `Sähkön hinta määräytyy pohjoismaisessa sähköpörssissä Nord Poolissa,
     jossa sähköntuottajat ja -ostajat käyvät kauppaa. Hinta vaihtelee vuorokauden
@@ -21,7 +21,7 @@ const sections = [
     lämpötila ja tuontisähkön saatavuus vaikuttavat hintaan merkittävästi.`,
   },
   {
-    icon: <Users className="h-6 w-6 text-[#0066FF]" />,
+    icon: <Users className="h-6 w-6 text-accent" />,
     title: 'Kenelle pörssisähkö sopii?',
     content: `Pörssisähkö sopii erityisesti niille, jotka voivat ajoittaa sähkönkäyttöään
     halvimpiin tunteihin. Sähköauton lataajat, lämpöpumppujen käyttäjät ja

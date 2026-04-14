@@ -44,7 +44,7 @@ export default function PriceStatsCards() {
             label: 'Tämän viikon keskihinta',
             value: formatPriceFi(weekAvg),
             unit: 'c/kWh',
-            icon: <Calendar className="h-5 w-5 text-[#0066FF]" />,
+            icon: <Calendar className="h-5 w-5 text-accent" />,
           });
         }
 
@@ -73,7 +73,7 @@ export default function PriceStatsCards() {
             value: formatPriceFi(monthAvg),
             unit: 'c/kWh',
             change: Math.round(change),
-            icon: <BarChart3 className="h-5 w-5 text-[#0066FF]" />,
+            icon: <BarChart3 className="h-5 w-5 text-accent" />,
           });
 
           // Min and max for the month

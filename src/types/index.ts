@@ -83,7 +83,6 @@ export interface ElectricityProvider {
   pros?: string[];
   cons?: string[];
   specialFeatures?: string[];
-  satisfactionRating?: number; // 1-5 scale
 }
 
 export interface ElectricityContract {

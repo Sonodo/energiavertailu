@@ -88,7 +88,7 @@ const valueProps = [
   {
     icon: Shield,
     title: 'Kattava vertailu',
-    description: 'Emme suosi mitään sähköyhtiötä. Vertailumme perustuu todellisiin hintoihin ja ehtoihin — et mainoksiin.',
+    description: 'Vertailumme näyttää kaikki sähköyhtiöt samalla kaavalla. Jos saamme välityspalkkion, se ei vaikuta järjestykseen.',
   },
   {
     icon: Clock,
@@ -98,7 +98,7 @@ const valueProps = [
   {
     icon: TrendingUp,
     title: 'Säästä sähkölaskussa',
-    description: 'Suomalaiset maksavat usein liikaa sähköstä. Vertailumme auttaa löytämään saman sähkön edullisemmin.',
+    description: 'Suomalaiset maksavat sähköstä usein liikaa. Vertailumme auttaa löytämään saman sähkön edullisemmin.',
   },
   {
     icon: Leaf,
@@ -182,7 +182,7 @@ export default function HomeContent({
 
             {/* Animated heading */}
             <AnimatedHeading
-              text="LÖYDÄ HALVIN SÄHKÖSOPIMUS."
+              text="LÖYDÄ SINULLE SOPIVA SÄHKÖSOPIMUS."
               className="text-4xl font-extrabold uppercase leading-tight tracking-wide text-white sm:text-5xl lg:text-6xl"
             />
             <motion.p
@@ -492,7 +492,7 @@ export default function HomeContent({
                 Näin helppoa se on
               </h2>
               <p className="mt-3 text-slate-500">
-                Löydä halvin sähkösopimus kolmessa askeleessa
+                Vertaile sähkösopimuksia kolmessa askeleessa
               </p>
             </div>
           </ScrollReveal>
@@ -585,7 +585,7 @@ export default function HomeContent({
               Miksi Valitse Sähkö?
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-center text-slate-500">
-              Vertaile eri tapoja löytää halvin sähkösopimus
+              Vertaile eri tapoja löytää sopiva sähkösopimus
             </p>
           </ScrollReveal>
 
@@ -609,7 +609,7 @@ export default function HomeContent({
                 <tbody className="divide-y divide-slate-100 bg-white text-sm">
                   {[
                     { label: 'Kattavuus', a: 'Yhtiö kerrallaan', b: 'Vain omat sopimukset', c: 'Kaikki sähköyhtiöt' },
-                    { label: 'Läpinäkyvyys', a: 'Mainosten vaikutus', b: 'Oma yhtiö edullisimmaksi', c: 'Avoin menetelmä' },
+                    { label: 'Läpinäkyvyys', a: 'Mainosten vaikutus', b: 'Oma yhtiö näyttää edullisimmalta', c: 'Avoin menetelmä' },
                     { label: 'Pörssisähkön hinta', a: 'Etsittävä erikseen', b: 'Voi näkyä', c: 'Reaaliajassa' },
                     { label: 'Ajankäyttö', a: 'Tunteja', b: '30 min / yhtiö', c: 'Muutama minuutti' },
                     { label: 'Hinta', a: 'Ilmainen', b: 'Ilmainen', c: 'Ilmainen' },
@@ -754,7 +754,7 @@ export default function HomeContent({
           <ScrollReveal direction="up">
             <AnimatedHeading
               as="h2"
-              text="Löydä halvin sähkösopimus"
+              text="Vertaile ja valitse fiksusti"
               className="text-3xl font-extrabold text-white sm:text-4xl"
             />
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/70">

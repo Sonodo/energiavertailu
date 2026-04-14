@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 const brandColors = [
-  { name: 'Pääväri', hex: '#0066FF', tw: 'bg-[#0066FF]' },
+  { name: 'Pääväri', hex: '#0066FF', tw: 'bg-accent' },
   { name: 'Tumma', hex: '#0A1628', tw: 'bg-[#0A1628]' },
   { name: 'Korostus', hex: '#00D4AA', tw: 'bg-[#00D4AA]' },
   { name: 'Varoitus', hex: '#FFB800', tw: 'bg-[#FFB800]' },
@@ -64,7 +64,7 @@ export default function MediaPage() {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10">
               <Newspaper className="h-5 w-5 text-white" />
             </div>
-            <span className="text-sm font-medium text-[#0066FF]">
+            <span className="text-sm font-medium text-accent">
               Lehdistö ja media
             </span>
           </div>
@@ -84,8 +84,8 @@ export default function MediaPage() {
           {/* ===== Key Stats ===== */}
           <section>
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-slate-900">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0066FF]/10">
-                <BarChart3 className="h-5 w-5 text-[#0066FF]" />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                <BarChart3 className="h-5 w-5 text-accent" />
               </div>
               Avainluvut
             </h2>
@@ -95,7 +95,7 @@ export default function MediaPage() {
                   key={stat.label}
                   className="rounded-xl border border-slate-200 bg-white p-6 text-center shadow-sm"
                 >
-                  <stat.icon className="mx-auto mb-3 h-8 w-8 text-[#0066FF]" />
+                  <stat.icon className="mx-auto mb-3 h-8 w-8 text-accent" />
                   <p className="text-3xl font-bold text-slate-900">{stat.value}</p>
                   <p className="mt-1 text-sm text-slate-500">{stat.label}</p>
                 </div>
@@ -106,8 +106,8 @@ export default function MediaPage() {
           {/* ===== About ===== */}
           <section>
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-slate-900">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0066FF]/10">
-                <Info className="h-5 w-5 text-[#0066FF]" />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                <Info className="h-5 w-5 text-accent" />
               </div>
               Tietoa Valitse Sähköstä
             </h2>
@@ -134,8 +134,8 @@ export default function MediaPage() {
           {/* ===== Brand ===== */}
           <section>
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-slate-900">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0066FF]/10">
-                <Palette className="h-5 w-5 text-[#0066FF]" />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                <Palette className="h-5 w-5 text-accent" />
               </div>
               Brändi
             </h2>
@@ -175,8 +175,8 @@ export default function MediaPage() {
           {/* ===== Usage Guidelines ===== */}
           <section>
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-slate-900">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0066FF]/10">
-                <BookOpen className="h-5 w-5 text-[#0066FF]" />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                <BookOpen className="h-5 w-5 text-accent" />
               </div>
               Käyttöohjeet medialle
             </h2>
@@ -210,8 +210,8 @@ export default function MediaPage() {
           {/* ===== Contact ===== */}
           <section>
             <h2 className="mb-6 flex items-center gap-3 text-2xl font-bold text-slate-900">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0066FF]/10">
-                <Mail className="h-5 w-5 text-[#0066FF]" />
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+                <Mail className="h-5 w-5 text-accent" />
               </div>
               Yhteydenotot
             </h2>
@@ -221,7 +221,7 @@ export default function MediaPage() {
               </p>
               <a
                 href="/yhteystiedot"
-                className="mt-2 inline-flex items-center gap-2 text-lg font-semibold text-[#0066FF] hover:underline"
+                className="mt-2 inline-flex items-center gap-2 text-lg font-semibold text-accent hover:underline"
               >
                 <Mail className="h-5 w-5" />
                 Ota yhteyttä

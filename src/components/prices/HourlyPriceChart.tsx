@@ -57,7 +57,7 @@ function CustomTooltip({ active, payload }: TooltipProps) {
         {formatPriceFi(data.price)} c/kWh
       </p>
       {data.isCurrent && (
-        <p className="mt-0.5 text-xs font-medium text-[#0066FF]">Nykyinen tunti</p>
+        <p className="mt-0.5 text-xs font-medium text-accent">Nykyinen tunti</p>
       )}
     </div>
   );
@@ -159,7 +159,7 @@ export default function HourlyPriceChart({
         </div>
         {highlightCurrentHour && (
           <div className="flex items-center gap-1.5">
-            <span className="inline-block h-2.5 w-2.5 rounded-sm border-2 border-[#0066FF] bg-transparent" />
+            <span className="inline-block h-2.5 w-2.5 rounded-sm border-2 border-accent bg-transparent" />
             <span>Nykyinen tunti</span>
           </div>
         )}

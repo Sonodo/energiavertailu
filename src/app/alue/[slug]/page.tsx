@@ -144,8 +144,8 @@ export default async function RegionPage({ params }: PageProps) {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             <div className="flex-1">
               <div className="mb-3 flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-[#0066FF]" />
-                <span className="text-sm font-medium text-[#0066FF]">Maakunta</span>
+                <MapPin className="h-5 w-5 text-accent" />
+                <span className="text-sm font-medium text-accent">Maakunta</span>
               </div>
               <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
                 {content.title}
@@ -162,14 +162,14 @@ export default async function RegionPage({ params }: PageProps) {
               </h2>
               <div className="space-y-3 text-sm">
                 <div className="flex items-center gap-3 text-white/80">
-                  <Building2 className="h-4 w-4 shrink-0 text-[#0066FF]" />
+                  <Building2 className="h-4 w-4 shrink-0 text-accent" />
                   <div>
                     <div className="text-xs text-white/50">Siirtoyhtiö</div>
                     <div>{region.gridOperator}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-white/80">
-                  <Zap className="h-4 w-4 shrink-0 text-[#0066FF]" />
+                  <Zap className="h-4 w-4 shrink-0 text-accent" />
                   <div>
                     <div className="text-xs text-white/50">Siirtohinta</div>
                     <div className="flex items-center gap-2">
@@ -192,7 +192,7 @@ export default async function RegionPage({ params }: PageProps) {
                   </div>
                 </div>
                 <div className="flex items-center gap-3 text-white/80">
-                  <MapPin className="h-4 w-4 shrink-0 text-[#0066FF]" />
+                  <MapPin className="h-4 w-4 shrink-0 text-accent" />
                   <div>
                     <div className="text-xs text-white/50">Suurimmat kaupungit</div>
                     <div>{content.majorCities.slice(0, 3).join(', ')}</div>
@@ -211,7 +211,7 @@ export default async function RegionPage({ params }: PageProps) {
             {/* Transfer price section */}
             <section className="mb-12">
               <h2 className="mb-6 flex items-center gap-2 text-2xl font-bold text-slate-900">
-                <BarChart3 className="h-6 w-6 text-[#0066FF]" />
+                <BarChart3 className="h-6 w-6 text-accent" />
                 Sähkön hinta alueella {region.name}
               </h2>
 
@@ -240,7 +240,7 @@ export default async function RegionPage({ params }: PageProps) {
                       <div
                         className={cn(
                           'h-4 rounded-full transition-all',
-                          isBelow ? 'bg-emerald-500' : isAbove ? 'bg-amber-500' : 'bg-[#0066FF]'
+                          isBelow ? 'bg-emerald-500' : isAbove ? 'bg-amber-500' : 'bg-accent'
                         )}
                         style={{ width: `${Math.min((region.transferPrice / 6) * 100, 100)}%` }}
                       />
@@ -296,7 +296,7 @@ export default async function RegionPage({ params }: PageProps) {
             {/* Local providers */}
             <section className="mb-12">
               <h2 className="mb-6 flex items-center gap-2 text-2xl font-bold text-slate-900">
-                <Building2 className="h-6 w-6 text-[#0066FF]" />
+                <Building2 className="h-6 w-6 text-accent" />
                 Alueen sähköyhtiöt
               </h2>
               {localProviderData.length > 0 ? (
@@ -313,9 +313,9 @@ export default async function RegionPage({ params }: PageProps) {
                       <Link
                         key={provider.id}
                         href={`/sahkoyhtiot/${provider.slug}`}
-                        className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-[#0066FF]/30 hover:shadow-md"
+                        className="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition-all hover:border-accent/30 hover:shadow-md"
                       >
-                        <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors">
+                        <h3 className="text-lg font-bold text-slate-900 group-hover:text-accent transition-colors">
                           {provider.name}
                         </h3>
                         <p className="mt-1 text-sm text-slate-500 line-clamp-2">
@@ -333,7 +333,7 @@ export default async function RegionPage({ params }: PageProps) {
                             </span>
                           )}
                         </div>
-                        <div className="mt-3 flex items-center gap-1 text-sm font-medium text-[#0066FF] opacity-0 transition-opacity group-hover:opacity-100">
+                        <div className="mt-3 flex items-center gap-1 text-sm font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
                           Katso sopimukset
                           <ArrowRight className="h-3.5 w-3.5" />
                         </div>
@@ -348,7 +348,7 @@ export default async function RegionPage({ params }: PageProps) {
               )}
               <p className="mt-4 text-sm text-slate-500">
                 Huomaa: sähkönmyyjän voit valita vapaasti riippumatta asuinpaikastasi. Myös kaikki{' '}
-                <Link href="/sahkoyhtiot" className="text-[#0066FF] hover:underline">
+                <Link href="/sahkoyhtiot" className="text-accent hover:underline">
                   valtakunnalliset sähköyhtiöt
                 </Link>{' '}
                 myyvät sähköä {region.name}n alueella.
@@ -358,7 +358,7 @@ export default async function RegionPage({ params }: PageProps) {
             {/* Electricity profile */}
             <section className="mb-12">
               <h2 className="mb-6 flex items-center gap-2 text-2xl font-bold text-slate-900">
-                <Home className="h-6 w-6 text-[#0066FF]" />
+                <Home className="h-6 w-6 text-accent" />
                 Tyypillinen kulutus — {region.name}
               </h2>
               <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -371,7 +371,7 @@ export default async function RegionPage({ params }: PageProps) {
             {/* Spot price note */}
             <section className="mb-12">
               <h2 className="mb-6 flex items-center gap-2 text-2xl font-bold text-slate-900">
-                <Zap className="h-6 w-6 text-[#0066FF]" />
+                <Zap className="h-6 w-6 text-accent" />
                 Pörssisähkö alueella {region.name}
               </h2>
               <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -381,7 +381,7 @@ export default async function RegionPage({ params }: PageProps) {
                 <div className="mt-4">
                   <Link
                     href="/porssisahko"
-                    className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0066FF] hover:underline"
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline"
                   >
                     Seuraa pörssisähkön hintaa reaaliajassa
                     <ArrowRight className="h-3.5 w-3.5" />
@@ -393,7 +393,7 @@ export default async function RegionPage({ params }: PageProps) {
             {/* Saving tips */}
             <section className="mb-12">
               <h2 className="mb-6 flex items-center gap-2 text-2xl font-bold text-slate-900">
-                <Lightbulb className="h-6 w-6 text-[#0066FF]" />
+                <Lightbulb className="h-6 w-6 text-accent" />
                 Säästövinkit — {region.name}
               </h2>
               <div className="space-y-4">
@@ -402,7 +402,7 @@ export default async function RegionPage({ params }: PageProps) {
                     key={idx}
                     className="flex items-start gap-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
                   >
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0066FF]/10 text-sm font-bold text-[#0066FF]">
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10 text-sm font-bold text-accent">
                       {idx + 1}
                     </div>
                     <p className="text-sm text-slate-700 leading-relaxed">{tip}</p>
@@ -414,7 +414,7 @@ export default async function RegionPage({ params }: PageProps) {
             {/* FAQ */}
             <section className="mb-12">
               <h2 className="mb-6 flex items-center gap-2 text-2xl font-bold text-slate-900">
-                <HelpCircle className="h-6 w-6 text-[#0066FF]" />
+                <HelpCircle className="h-6 w-6 text-accent" />
                 Usein kysytyt kysymykset — {region.name}
               </h2>
               <div className="space-y-4">
@@ -435,7 +435,7 @@ export default async function RegionPage({ params }: PageProps) {
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-6">
               {/* CTA */}
-              <div className="rounded-xl bg-gradient-to-br from-[#0066FF] to-[#0052CC] p-6 text-white shadow-lg">
+              <div className="rounded-xl bg-gradient-to-br from-accent to-accent-700 p-6 text-white shadow-lg">
                 <h3 className="text-lg font-bold">Vertaa sähkösopimuksia</h3>
                 <p className="mt-2 text-sm text-white/80">
                   Vertaa sähkösopimuksia {region.name}n alueella ja löydä edullisin vaihtoehto
@@ -443,7 +443,7 @@ export default async function RegionPage({ params }: PageProps) {
                 </p>
                 <Link
                   href={`/vertailu?alue=${slug}`}
-                  className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-[#0066FF] transition-colors hover:bg-white/90"
+                  className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-accent transition-colors hover:bg-white/90"
                 >
                   Vertaa sopimuksia
                   <ChevronRight className="h-4 w-4" />
@@ -475,30 +475,30 @@ export default async function RegionPage({ params }: PageProps) {
                 <div className="space-y-3">
                   <Link
                     href="/porssisahko"
-                    className="flex items-center gap-2 text-sm text-slate-700 hover:text-[#0066FF] transition-colors"
+                    className="flex items-center gap-2 text-sm text-slate-700 hover:text-accent transition-colors"
                   >
-                    <Zap className="h-4 w-4 text-[#0066FF]" />
+                    <Zap className="h-4 w-4 text-accent" />
                     Pörssisähkön hinta nyt
                   </Link>
                   <Link
                     href="/sahkoyhtiot"
-                    className="flex items-center gap-2 text-sm text-slate-700 hover:text-[#0066FF] transition-colors"
+                    className="flex items-center gap-2 text-sm text-slate-700 hover:text-accent transition-colors"
                   >
-                    <Building2 className="h-4 w-4 text-[#0066FF]" />
+                    <Building2 className="h-4 w-4 text-accent" />
                     Kaikki sähköyhtiöt
                   </Link>
                   <Link
                     href="/oppaat"
-                    className="flex items-center gap-2 text-sm text-slate-700 hover:text-[#0066FF] transition-colors"
+                    className="flex items-center gap-2 text-sm text-slate-700 hover:text-accent transition-colors"
                   >
-                    <Lightbulb className="h-4 w-4 text-[#0066FF]" />
+                    <Lightbulb className="h-4 w-4 text-accent" />
                     Oppaat ja vinkit
                   </Link>
                   <Link
                     href="/tyokalut"
-                    className="flex items-center gap-2 text-sm text-slate-700 hover:text-[#0066FF] transition-colors"
+                    className="flex items-center gap-2 text-sm text-slate-700 hover:text-accent transition-colors"
                   >
-                    <BarChart3 className="h-4 w-4 text-[#0066FF]" />
+                    <BarChart3 className="h-4 w-4 text-accent" />
                     Sähkölaskurit
                   </Link>
                 </div>
@@ -517,7 +517,7 @@ export default async function RegionPage({ params }: PageProps) {
                       <Link
                         key={r.id}
                         href={`/alue/${r.id}`}
-                        className="flex items-center justify-between text-sm text-slate-600 hover:text-[#0066FF] transition-colors"
+                        className="flex items-center justify-between text-sm text-slate-600 hover:text-accent transition-colors"
                       >
                         <span>{r.name}</span>
                         <span className="text-xs text-slate-400">{r.transferPrice.toFixed(1)} c/kWh</span>
@@ -526,7 +526,7 @@ export default async function RegionPage({ params }: PageProps) {
                 </div>
                 <Link
                   href="/alue"
-                  className="mt-4 flex items-center gap-1 text-sm font-medium text-[#0066FF] hover:underline"
+                  className="mt-4 flex items-center gap-1 text-sm font-medium text-accent hover:underline"
                 >
                   Kaikki alueet
                   <ArrowRight className="h-3.5 w-3.5" />

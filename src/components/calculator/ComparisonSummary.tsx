@@ -91,7 +91,7 @@ export default function ComparisonSummary({ results, consumption, region, recomm
         <div className="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-4">
           <div className="flex items-start gap-3">
             <div className="rounded-lg bg-blue-50 p-2">
-              <Search className="h-5 w-5 text-[#0066FF]" />
+              <Search className="h-5 w-5 text-accent" />
             </div>
             <div>
               <p className="text-xs font-medium text-slate-500">Sopimuksia</p>

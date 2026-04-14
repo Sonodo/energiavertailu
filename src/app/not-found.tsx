@@ -45,7 +45,7 @@ export default function NotFound() {
         <div className="mt-8">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 rounded-xl bg-[#0066FF] px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:bg-[#0052CC] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0066FF]"
+            className="inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-base font-semibold text-white shadow-sm transition-all hover:bg-accent-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
           >
             <Home className="h-5 w-5" />
             Takaisin etusivulle
@@ -62,16 +62,16 @@ export default function NotFound() {
               <Link
                 key={page.href}
                 href={page.href}
-                className="group flex flex-col items-center rounded-xl border border-slate-200 p-5 transition-all hover:border-[#0066FF]/30 hover:shadow-md"
+                className="group flex flex-col items-center rounded-xl border border-slate-200 p-5 transition-all hover:border-accent/30 hover:shadow-md"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0066FF]/10 transition-colors group-hover:bg-[#0066FF]/20">
-                  <page.icon className="h-5 w-5 text-[#0066FF]" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 transition-colors group-hover:bg-accent/20">
+                  <page.icon className="h-5 w-5 text-accent" />
                 </div>
-                <span className="mt-3 text-sm font-semibold text-slate-900 group-hover:text-[#0066FF]">
+                <span className="mt-3 text-sm font-semibold text-slate-900 group-hover:text-accent">
                   {page.label}
                 </span>
                 <span className="mt-1 text-xs text-slate-500">{page.description}</span>
-                <ArrowRight className="mt-3 h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-[#0066FF]" />
+                <ArrowRight className="mt-3 h-4 w-4 text-slate-400 transition-transform group-hover:translate-x-1 group-hover:text-accent" />
               </Link>
             ))}
           </div>
@@ -82,14 +82,14 @@ export default function NotFound() {
           Etkö löydä etsimääsi?{' '}
           <Link
             href="/vertailu"
-            className="font-medium text-[#0066FF] hover:underline"
+            className="font-medium text-accent hover:underline"
           >
             Kokeile sähkövertailua
           </Link>{' '}
           tai{' '}
           <Link
             href="/blogi"
-            className="font-medium text-[#0066FF] hover:underline"
+            className="font-medium text-accent hover:underline"
           >
             selaa blogiamme
           </Link>

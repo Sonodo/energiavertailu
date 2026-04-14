@@ -113,7 +113,7 @@ function ForecastTooltip({ active, payload }: CustomTooltipProps) {
               className={cn(
                 'inline-block h-1.5 w-3 rounded-full',
                 level <= (data.confidence === 'high' ? 3 : data.confidence === 'medium' ? 2 : 1)
-                  ? 'bg-[#0066FF]'
+                  ? 'bg-accent'
                   : 'bg-slate-200'
               )}
             />
@@ -185,7 +185,7 @@ export default function PriceForecast({
     <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
       {/* Header */}
       <div className="mb-2 flex items-center gap-2">
-        <Clock className="h-5 w-5 text-[#0066FF]" />
+        <Clock className="h-5 w-5 text-accent" />
         <h3 className="text-lg font-semibold text-slate-900">
           Hinta-arvio — Seuraavat 24 tuntia
         </h3>
@@ -287,7 +287,7 @@ export default function PriceForecast({
       {/* Legend */}
       <div className="mt-3 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-slate-600">
         <div className="flex items-center gap-1.5">
-          <span className="inline-block h-2.5 w-2.5 rounded-sm bg-[#0066FF]" />
+          <span className="inline-block h-2.5 w-2.5 rounded-sm bg-accent" />
           <span>Korkea luottamus</span>
         </div>
         <div className="flex items-center gap-1.5">
@@ -309,7 +309,7 @@ export default function PriceForecast({
       {/* Recommended hours */}
       <div className="mt-6">
         <h4 className="mb-3 flex items-center gap-1.5 text-sm font-semibold text-slate-900">
-          <Zap className="h-4 w-4 text-[#0066FF]" />
+          <Zap className="h-4 w-4 text-accent" />
           Suositellut ajat
         </h4>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">

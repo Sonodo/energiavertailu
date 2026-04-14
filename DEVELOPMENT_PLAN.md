@@ -1,4 +1,4 @@
-# Energiavertailu — Development Plan (Persistent Reference)
+# Valitse Sähkö — Development Plan (Persistent Reference)
 
 **Created**: 2026-03-27
 **Status**: IN PROGRESS
@@ -108,7 +108,7 @@ Status: COMPLETE
 - Electricity tax (sähkövero): 2.79372 c/kWh
 - VAT: 25.5% (ELECTRICITY_VAT in constants.ts)
 - Average spot price: 5.5 c/kWh (AVERAGE_SPOT_PRICE in providers.ts)
-- Site URL: energiavertailu.fi
+- Site URL: valitsesahko.fi
 
 ### Risk Score Tiers
 - 0-10: Erittäin vakaa (emerald)

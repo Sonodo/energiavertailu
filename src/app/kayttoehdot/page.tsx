@@ -24,10 +24,10 @@ export default function KayttoehdotPage() {
       <div className="bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0066FF]/10">
-              <FileText className="h-5 w-5 text-[#0066FF]" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
+              <FileText className="h-5 w-5 text-accent" />
             </div>
-            <span className="text-sm font-medium text-[#0066FF]">Ehdot ja sopimukset</span>
+            <span className="text-sm font-medium text-accent">Ehdot ja sopimukset</span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Käyttöehdot
@@ -199,7 +199,7 @@ export default function KayttoehdotPage() {
               href="https://www.kuluttajariita.fi"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#0066FF] hover:underline"
+              className="text-accent hover:underline"
             >
               kuluttajariita.fi
             </a>
@@ -209,7 +209,7 @@ export default function KayttoehdotPage() {
               href="https://www.kkv.fi/kuluttajaneuvonta"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#0066FF] hover:underline"
+              className="text-accent hover:underline"
             >
               kuluttajaneuvontaan
             </a>
@@ -232,7 +232,7 @@ export default function KayttoehdotPage() {
             <br />
             Verkkosivu: valitsesahko.fi
             <br />
-            <a href="/yhteystiedot" className="text-[#0066FF] hover:underline">Ota yhteyttä</a>
+            <a href="/yhteystiedot" className="text-accent hover:underline">Ota yhteyttä</a>
           </p>
         </div>
       </div>

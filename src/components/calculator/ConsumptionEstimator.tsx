@@ -53,7 +53,7 @@ export default function ConsumptionEstimator({ onEstimate, onClose }: Consumptio
         </button>
 
         <div className="mb-6">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-[#0066FF]">
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 text-sm font-medium text-accent">
             <Calculator className="h-4 w-4" />
             Kulutusarvio
           </div>
@@ -77,7 +77,7 @@ export default function ConsumptionEstimator({ onEstimate, onClose }: Consumptio
                 step={5}
                 value={area}
                 onChange={(e) => setArea(Number(e.target.value))}
-                className="h-2 flex-1 cursor-pointer appearance-none rounded-full bg-slate-200 accent-[#0066FF]"
+                className="h-2 flex-1 cursor-pointer appearance-none rounded-full bg-slate-200 accent-accent"
               />
               <span className="w-16 text-right text-sm font-semibold text-slate-900">
                 {area} m²
@@ -98,7 +98,7 @@ export default function ConsumptionEstimator({ onEstimate, onClose }: Consumptio
                   className={cn(
                     'flex h-10 w-10 items-center justify-center rounded-lg border-2 text-sm font-semibold transition-all',
                     people === n
-                      ? 'border-[#0066FF] bg-blue-50 text-[#0066FF]'
+                      ? 'border-accent bg-blue-50 text-accent'
                       : 'border-slate-200 text-slate-600 hover:border-slate-300'
                   )}
                 >
@@ -121,7 +121,7 @@ export default function ConsumptionEstimator({ onEstimate, onClose }: Consumptio
                   className={cn(
                     'rounded-lg border-2 px-3 py-2 text-left text-sm font-medium transition-all',
                     heating === h.id
-                      ? 'border-[#0066FF] bg-blue-50 text-[#0066FF]'
+                      ? 'border-accent bg-blue-50 text-accent'
                       : 'border-slate-200 text-slate-600 hover:border-slate-300'
                   )}
                 >
@@ -138,7 +138,7 @@ export default function ConsumptionEstimator({ onEstimate, onClose }: Consumptio
                 type="checkbox"
                 checked={hasSauna}
                 onChange={(e) => setHasSauna(e.target.checked)}
-                className="h-4 w-4 rounded border-slate-300 text-[#0066FF] accent-[#0066FF]"
+                className="h-4 w-4 rounded border-slate-300 text-accent accent-accent"
               />
               <span className="text-sm text-slate-700">Sähkösauna</span>
             </label>
@@ -147,7 +147,7 @@ export default function ConsumptionEstimator({ onEstimate, onClose }: Consumptio
                 type="checkbox"
                 checked={hasEV}
                 onChange={(e) => setHasEV(e.target.checked)}
-                className="h-4 w-4 rounded border-slate-300 text-[#0066FF] accent-[#0066FF]"
+                className="h-4 w-4 rounded border-slate-300 text-accent accent-accent"
               />
               <span className="text-sm text-slate-700">Sähköauto</span>
             </label>
@@ -166,7 +166,7 @@ export default function ConsumptionEstimator({ onEstimate, onClose }: Consumptio
 
         <button
           onClick={() => onEstimate(estimate)}
-          className="mt-4 w-full rounded-xl bg-[#0066FF] py-3 text-base font-semibold text-white shadow-lg shadow-blue-200 transition-all hover:bg-[#0052CC]"
+          className="mt-4 w-full rounded-xl bg-accent py-3 text-base font-semibold text-white shadow-lg shadow-blue-200 transition-all hover:bg-accent-700"
         >
           Käytä tätä arviota
         </button>

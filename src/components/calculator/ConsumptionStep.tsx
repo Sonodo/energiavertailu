@@ -147,7 +147,7 @@ export default function ConsumptionStep({
                   className={cn(
                     'group relative flex flex-col items-center gap-2 rounded-xl border-2 px-3 py-5 transition-all sm:px-4',
                     isSelected
-                      ? 'border-[#0066FF] bg-blue-50 shadow-md shadow-blue-100'
+                      ? 'border-accent bg-blue-50 shadow-md shadow-blue-100'
                       : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm'
                   )}
                   aria-pressed={isSelected}
@@ -155,13 +155,13 @@ export default function ConsumptionStep({
                   <Icon
                     className={cn(
                       'h-7 w-7 transition-colors',
-                      isSelected ? 'text-[#0066FF]' : 'text-slate-400 group-hover:text-slate-600'
+                      isSelected ? 'text-accent' : 'text-slate-400 group-hover:text-slate-600'
                     )}
                   />
                   <span
                     className={cn(
                       'text-sm font-semibold transition-colors',
-                      isSelected ? 'text-[#0066FF]' : 'text-slate-700'
+                      isSelected ? 'text-accent' : 'text-slate-700'
                     )}
                   >
                     {option.label}
@@ -170,7 +170,7 @@ export default function ConsumptionStep({
                   <span
                     className={cn(
                       'text-xs font-medium',
-                      isSelected ? 'text-[#0066FF]' : 'text-slate-400'
+                      isSelected ? 'text-accent' : 'text-slate-400'
                     )}
                   >
                     ~{formatNumber(option.defaultKwh)} kWh/v
@@ -191,7 +191,7 @@ export default function ConsumptionStep({
                   type="text"
                   value={formatNumber(consumption)}
                   onChange={(e) => handleInputChange(e.target.value)}
-                  className="w-24 rounded-lg border border-slate-300 px-3 py-2 text-right text-sm font-semibold text-slate-900 focus:border-[#0066FF] focus:outline-none focus:ring-1 focus:ring-[#0066FF]"
+                  className="w-24 rounded-lg border border-slate-300 px-3 py-2 text-right text-sm font-semibold text-slate-900 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                   inputMode="numeric"
                 />
                 <span className="text-sm text-slate-500">kWh</span>
@@ -206,7 +206,7 @@ export default function ConsumptionStep({
               step={100}
               value={Math.min(consumption, sliderMax)}
               onChange={(e) => handleSliderChange(Number(e.target.value))}
-              className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-[#0066FF]"
+              className="mt-4 h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 accent-accent"
             />
             <div className="mt-1 flex justify-between text-xs text-slate-400">
               <span>{formatNumber(sliderMin)} kWh</span>
@@ -217,7 +217,7 @@ export default function ConsumptionStep({
           {/* Estimation helper */}
           <button
             onClick={() => setShowEstimator(true)}
-            className="mt-3 inline-flex min-h-[44px] items-center gap-1.5 text-sm font-medium text-[#0066FF] hover:text-[#0052CC]"
+            className="mt-3 inline-flex min-h-[44px] items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-700"
           >
             <HelpCircle className="h-4 w-4" />
             En tiedä kulutustani — auta arvioimaan
@@ -239,7 +239,7 @@ export default function ConsumptionStep({
               value={manualKwh}
               onChange={(e) => handleManualInput(e.target.value)}
               placeholder="esim. 5000"
-              className="w-40 rounded-lg border border-slate-300 px-4 py-2.5 text-lg font-semibold text-slate-900 focus:border-[#0066FF] focus:outline-none focus:ring-1 focus:ring-[#0066FF]"
+              className="w-40 rounded-lg border border-slate-300 px-4 py-2.5 text-lg font-semibold text-slate-900 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
               inputMode="numeric"
             />
             <span className="text-sm font-medium text-slate-500">kWh / vuosi</span>
@@ -264,7 +264,7 @@ export default function ConsumptionStep({
           id="region-select"
           value={region}
           onChange={(e) => onRegionChange(e.target.value)}
-          className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-[#0066FF] focus:outline-none focus:ring-1 focus:ring-[#0066FF] sm:w-auto sm:min-w-[280px]"
+          className="w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent sm:w-auto sm:min-w-[280px]"
         >
           {regions.map((r) => (
             <option key={r.id} value={r.id}>
@@ -283,7 +283,7 @@ export default function ConsumptionStep({
       <div className="mt-8">
         <button
           onClick={onNext}
-          className="w-full rounded-xl bg-[#0066FF] py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-200 transition-all hover:bg-[#0052CC] hover:shadow-xl sm:w-auto sm:px-8"
+          className="w-full rounded-xl bg-accent py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-200 transition-all hover:bg-accent-700 hover:shadow-xl sm:w-auto sm:px-8"
         >
           Seuraava: Valitse mieltymykset
         </button>

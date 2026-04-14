@@ -183,7 +183,7 @@ export default function PriceTrackerTool() {
       {/* Header */}
       <div className="mb-8">
         <nav className="mb-4 text-sm text-slate-500">
-          <Link href="/tyokalut" className="hover:text-[#0066FF]">
+          <Link href="/tyokalut" className="hover:text-accent">
             Työkalut
           </Link>
           <span className="mx-2">/</span>
@@ -209,7 +209,7 @@ export default function PriceTrackerTool() {
           onClick={() => setViewMode('providers')}
           className={`rounded-lg border px-4 py-2.5 text-sm font-medium transition-all ${
             viewMode === 'providers'
-              ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+              ? 'border-accent bg-accent/5 text-accent'
               : 'border-slate-200 text-slate-700 hover:border-slate-300'
           }`}
         >
@@ -219,7 +219,7 @@ export default function PriceTrackerTool() {
           onClick={() => setViewMode('comparison')}
           className={`rounded-lg border px-4 py-2.5 text-sm font-medium transition-all ${
             viewMode === 'comparison'
-              ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+              ? 'border-accent bg-accent/5 text-accent'
               : 'border-slate-200 text-slate-700 hover:border-slate-300'
           }`}
         >
@@ -310,7 +310,7 @@ export default function PriceTrackerTool() {
                   onClick={() => setSelectedProvider(p.slug)}
                   className={`rounded-lg border px-3 py-2 text-sm font-medium transition-all ${
                     selectedProvider === p.slug
-                      ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                      ? 'border-accent bg-accent/5 text-accent'
                       : 'border-slate-200 text-slate-700 hover:border-slate-300'
                   }`}
                 >
@@ -472,7 +472,7 @@ export default function PriceTrackerTool() {
                 step={0.1}
                 value={fixedPrice}
                 onChange={(e) => setFixedPrice(Number(e.target.value))}
-                className="w-full accent-[#0066FF]"
+                className="w-full accent-accent"
               />
               <div className="flex justify-between text-xs text-slate-500">
                 <span>4 c/kWh</span>
@@ -493,7 +493,7 @@ export default function PriceTrackerTool() {
                 step={50}
                 value={monthlyConsumption}
                 onChange={(e) => setMonthlyConsumption(Number(e.target.value))}
-                className="w-full accent-[#0066FF]"
+                className="w-full accent-accent"
               />
               <div className="flex justify-between text-xs text-slate-500">
                 <span>100 kWh</span>
@@ -681,7 +681,7 @@ export default function PriceTrackerTool() {
       <div className="mt-8">
         <Link
           href="/vertailu"
-          className="flex items-center justify-center gap-2 rounded-xl bg-[#0066FF] px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-[#0052CC]"
+          className="flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-accent-700"
         >
           Vertaa nykyisiä sähkösopimuksia
           <ArrowRight className="h-5 w-5" />

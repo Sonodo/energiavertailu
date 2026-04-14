@@ -146,7 +146,7 @@ export default async function BlogPostPage({
         <nav className="mb-6 text-sm text-slate-500" aria-label="Breadcrumb">
           <ol className="flex items-center gap-1.5">
             <li>
-              <Link href="/" className="hover:text-[#0066FF]">
+              <Link href="/" className="hover:text-accent">
                 Etusivu
               </Link>
             </li>
@@ -154,7 +154,7 @@ export default async function BlogPostPage({
               <span className="mx-1">/</span>
             </li>
             <li>
-              <Link href="/blogi" className="hover:text-[#0066FF]">
+              <Link href="/blogi" className="hover:text-accent">
                 Artikkelit
               </Link>
             </li>
@@ -170,7 +170,7 @@ export default async function BlogPostPage({
         {/* Article header */}
         <header className="mb-8">
           <div className="mb-4 flex flex-wrap items-center gap-3">
-            <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-[#0066FF]">
+            <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-accent">
               {post.category}
             </span>
             <span className="text-sm text-slate-400">
@@ -194,7 +194,7 @@ export default async function BlogPostPage({
 
         {/* Article content */}
         <div
-          className="prose prose-slate prose-lg max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-slate-700 prose-p:leading-relaxed prose-li:text-slate-700 prose-a:text-[#0066FF] prose-a:no-underline hover:prose-a:underline prose-strong:text-slate-900"
+          className="prose prose-slate prose-lg max-w-none prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3 prose-p:text-slate-700 prose-p:leading-relaxed prose-li:text-slate-700 prose-a:text-accent prose-a:no-underline hover:prose-a:underline prose-strong:text-slate-900"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
@@ -211,7 +211,7 @@ export default async function BlogPostPage({
         </div>
 
         {/* CTA */}
-        <div className="mt-12 rounded-2xl bg-gradient-to-r from-[#0066FF] to-[#0052CC] p-8 text-white">
+        <div className="mt-12 rounded-2xl bg-gradient-to-r from-accent to-accent-700 p-8 text-white">
           <h2 className="text-2xl font-bold">Vertaa sähkösopimuksia nyt</h2>
           <p className="mt-2 text-blue-100">
             Löydä halvin sähkösopimus omalle kulutuksellesi. Vertailu on
@@ -219,7 +219,7 @@ export default async function BlogPostPage({
           </p>
           <Link
             href="/vertailu"
-            className="mt-4 inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-[#0066FF] shadow-sm transition-colors hover:bg-blue-50"
+            className="mt-4 inline-block rounded-lg bg-white px-6 py-3 text-sm font-semibold text-accent shadow-sm transition-colors hover:bg-blue-50"
           >
             Aloita vertailu
           </Link>
@@ -238,18 +238,18 @@ export default async function BlogPostPage({
                   href={`/blogi/${related.slug}`}
                   className="group flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm transition-shadow hover:shadow-md"
                 >
-                  <div className="h-1 bg-gradient-to-r from-[#0066FF] to-[#00D4AA]" />
+                  <div className="h-1 bg-gradient-to-r from-accent to-[#00D4AA]" />
                   <div className="p-5">
-                    <span className="mb-2 inline-block text-xs font-medium text-[#0066FF]">
+                    <span className="mb-2 inline-block text-xs font-medium text-accent">
                       {related.category}
                     </span>
-                    <h3 className="text-sm font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors line-clamp-2">
+                    <h3 className="text-sm font-bold text-slate-900 group-hover:text-accent transition-colors line-clamp-2">
                       {related.title}
                     </h3>
                     <p className="mt-2 text-xs text-slate-500 line-clamp-2">
                       {related.description}
                     </p>
-                    <span className="mt-3 inline-block text-xs font-medium text-[#0066FF]">
+                    <span className="mt-3 inline-block text-xs font-medium text-accent">
                       Lue lisää &rarr;
                     </span>
                   </div>

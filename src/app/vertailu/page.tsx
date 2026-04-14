@@ -3,13 +3,13 @@ import { Suspense } from 'react';
 import ComparisonCalculator from '@/components/calculator/ComparisonCalculator';
 
 export const metadata: Metadata = {
-  title: 'Vertaa sähkösopimuksia — Löydä halvin sähkö | Valitse Sähkö',
+  title: 'Vertaile sähkösopimuksia — Löydä sinulle sopiva sopimus | Valitse Sähkö',
   description:
-    'Vertaa yli 90 sähkösopimusta 37 sähköyhtiöltä. Syötä kulutuksesi ja löydä halvin sähkösopimus. Ilmainen ja kattava vertailu.',
+    'Vertaile yli 90 sähkösopimusta 37 sähköyhtiöltä. Syötä kulutuksesi ja löydä sinulle sopiva sähkösopimus. Ilmainen ja kattava vertailu.',
   openGraph: {
-    title: 'Vertaa sähkösopimuksia — Löydä halvin sähkö | Valitse Sähkö',
+    title: 'Vertaile sähkösopimuksia — Löydä sinulle sopiva sopimus | Valitse Sähkö',
     description:
-      'Vertaa yli 90 sähkösopimusta 37 sähköyhtiöltä. Syötä kulutuksesi ja löydä halvin sähkösopimus.',
+      'Vertaile yli 90 sähkösopimusta 37 sähköyhtiöltä. Syötä kulutuksesi ja löydä sinulle sopiva sähkösopimus.',
   },
   alternates: {
     canonical: 'https://valitsesahko.fi/vertailu',
@@ -21,7 +21,7 @@ function CalculatorFallback() {
     <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
       <div className="flex h-48 items-center justify-center">
         <div className="text-center">
-          <div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-[#0066FF]" />
+          <div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-accent" />
           <p className="text-sm text-slate-500">Ladataan vertailulaskuria...</p>
         </div>
       </div>

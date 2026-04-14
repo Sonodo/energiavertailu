@@ -48,10 +48,10 @@ export default function YhteystiedotPage() {
       <div className="bg-gradient-to-b from-slate-50 to-white border-b border-slate-100">
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0066FF]/10">
-              <Mail className="h-5 w-5 text-[#0066FF]" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
+              <Mail className="h-5 w-5 text-accent" />
             </div>
-            <span className="text-sm font-medium text-[#0066FF]">Yhteystiedot</span>
+            <span className="text-sm font-medium text-accent">Yhteystiedot</span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Ota yhteyttä
@@ -70,14 +70,14 @@ export default function YhteystiedotPage() {
             <a
               key={channel.title}
               href={channel.href}
-              className="group rounded-xl border border-slate-200 bg-slate-50 p-6 transition-colors hover:border-[#0066FF]/30 hover:bg-[#0066FF]/5"
+              className="group rounded-xl border border-slate-200 bg-slate-50 p-6 transition-colors hover:border-accent/30 hover:bg-accent/5"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0066FF]/10 mb-4">
-                <channel.icon className="h-5 w-5 text-[#0066FF]" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 mb-4">
+                <channel.icon className="h-5 w-5 text-accent" />
               </div>
               <h2 className="text-lg font-semibold text-slate-900">{channel.title}</h2>
               <p className="mt-2 text-sm text-slate-600">{channel.description}</p>
-              <p className="mt-3 text-sm font-medium text-[#0066FF] group-hover:underline">
+              <p className="mt-3 text-sm font-medium text-accent group-hover:underline">
                 {channel.contact}
               </p>
             </a>
@@ -105,7 +105,7 @@ export default function YhteystiedotPage() {
           <h3>Yhteistyö ja medialle</h3>
           <p>
             Sähköyhtiöiden ja median edustajille tarjoamme lisätietoa{' '}
-            <a href="/media" className="text-[#0066FF] hover:underline">
+            <a href="/media" className="text-accent hover:underline">
               Media-sivullamme
             </a>
             .

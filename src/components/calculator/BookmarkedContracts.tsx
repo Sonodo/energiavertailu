@@ -6,7 +6,7 @@ import { cn, formatEuros, formatPrice } from '@/lib/utils';
 import { providers } from '@/data/providers';
 import type { ElectricityContract, ElectricityProvider } from '@/types';
 
-const LS_KEY = 'energiavertailu-bookmarks';
+const LS_KEY = 'valitsesahko-bookmarks';
 
 interface BookmarkInfo {
   contract: ElectricityContract;

@@ -124,7 +124,7 @@ function CustomTooltip({ active, payload }: TooltipProps) {
       <div className="mt-1.5 space-y-1">
         <p className="flex items-center justify-between gap-4 text-sm">
           <span className="text-slate-500">Keskihinta:</span>
-          <span className="font-semibold text-[#0066FF]">{formatPriceFi(data.avgPrice)} c/kWh</span>
+          <span className="font-semibold text-accent">{formatPriceFi(data.avgPrice)} c/kWh</span>
         </p>
         <p className="flex items-center justify-between gap-4 text-sm">
           <span className="text-slate-500">Halvin:</span>
@@ -258,7 +258,7 @@ export default function PriceHistoryChart() {
               className={cn(
                 'rounded-md px-3 py-1.5 text-sm font-medium transition-all',
                 period === p.value
-                  ? 'bg-white text-[#0066FF] shadow-sm'
+                  ? 'bg-white text-accent shadow-sm'
                   : 'text-slate-600 hover:text-slate-900'
               )}
             >
@@ -270,7 +270,7 @@ export default function PriceHistoryChart() {
 
       {loading ? (
         <div className="flex h-72 items-center justify-center">
-          <div className="h-8 w-8 animate-spin rounded-full border-2 border-[#0066FF] border-t-transparent" />
+          <div className="h-8 w-8 animate-spin rounded-full border-2 border-accent border-t-transparent" />
         </div>
       ) : chartData.length === 0 ? (
         <div className="flex h-72 items-center justify-center text-sm text-slate-400">
@@ -330,7 +330,7 @@ export default function PriceHistoryChart() {
           {/* Legend */}
           <div className="mt-3 flex items-center justify-center gap-5 text-xs text-slate-500">
             <div className="flex items-center gap-1.5">
-              <span className="inline-block h-0.5 w-4 rounded bg-[#0066FF]" />
+              <span className="inline-block h-0.5 w-4 rounded bg-accent" />
               <span>{useMonthlyChart ? 'Kuukauden keskihinta' : 'Päivän keskihinta'}</span>
             </div>
             <div className="flex items-center gap-1.5">
@@ -357,7 +357,7 @@ export default function PriceHistoryChart() {
                     {monthly.slice(-6).map((m) => (
                       <tr key={m.month} className="border-b border-slate-50">
                         <td className="py-1.5 pr-4 text-slate-700">{formatMonthFull(m.month)}</td>
-                        <td className="py-1.5 pr-4 text-right font-medium text-[#0066FF]">
+                        <td className="py-1.5 pr-4 text-right font-medium text-accent">
                           {formatPriceFi(m.avgPrice)} c/kWh
                         </td>
                         <td className="py-1.5 pr-4 text-right text-emerald-600">

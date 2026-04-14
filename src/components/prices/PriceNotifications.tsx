@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Bell, BellOff, Check, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-const STORAGE_KEY = 'energiavertailu-notify-tomorrow';
+const STORAGE_KEY = 'valitsesahko-notify-tomorrow';
 
 interface PriceNotificationsProps {
   tomorrowPricesAvailable: boolean;
@@ -113,11 +113,11 @@ export default function PriceNotifications({
           <div
             className={cn(
               'flex h-10 w-10 items-center justify-center rounded-xl',
-              enabled ? 'bg-[#0066FF]/10' : 'bg-slate-100'
+              enabled ? 'bg-accent/10' : 'bg-slate-100'
             )}
           >
             {enabled ? (
-              <Bell className="h-5 w-5 text-[#0066FF]" />
+              <Bell className="h-5 w-5 text-accent" />
             ) : (
               <BellOff className="h-5 w-5 text-slate-400" />
             )}
@@ -134,7 +134,7 @@ export default function PriceNotifications({
           onClick={handleToggle}
           className={cn(
             'relative inline-flex h-7 w-12 shrink-0 cursor-pointer items-center rounded-full transition-colors',
-            enabled ? 'bg-[#0066FF]' : 'bg-slate-200'
+            enabled ? 'bg-accent' : 'bg-slate-200'
           )}
           role="switch"
           aria-checked={enabled}

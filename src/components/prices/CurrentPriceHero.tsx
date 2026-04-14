@@ -89,7 +89,7 @@ export default function CurrentPriceHero({ stats, todayPrices }: CurrentPriceHer
             {/* Left: Current price */}
             <div className="flex-1">
               <div className="flex items-center justify-center gap-2 lg:justify-start">
-                <Zap className="h-5 w-5 text-[#0066FF]" />
+                <Zap className="h-5 w-5 text-accent" />
                 <span className="text-sm font-medium uppercase tracking-wider text-slate-500">
                   Sähkön hinta nyt
                 </span>

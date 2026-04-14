@@ -378,7 +378,7 @@ export default function HeatingCalculator() {
       {/* Header */}
       <div className="mb-8">
         <nav className="mb-4 text-sm text-slate-500">
-          <Link href="/tyokalut" className="hover:text-[#0066FF]">Työkalut</Link>
+          <Link href="/tyokalut" className="hover:text-accent">Työkalut</Link>
           <span className="mx-2">/</span>
           <span className="text-slate-900">Lämmityskustannuslaskuri</span>
         </nav>
@@ -408,7 +408,7 @@ export default function HeatingCalculator() {
               step={10}
               value={form.houseSize}
               onChange={(e) => update('houseSize', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>50 m²</span>
@@ -425,7 +425,7 @@ export default function HeatingCalculator() {
                   onClick={() => update('location', loc.value)}
                   className={`rounded-lg border px-3 py-2.5 text-left text-sm font-medium transition-all ${
                     form.location === loc.value
-                      ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                      ? 'border-accent bg-accent/5 text-accent'
                       : 'border-slate-200 text-slate-700 hover:border-slate-300'
                   }`}
                 >
@@ -445,7 +445,7 @@ export default function HeatingCalculator() {
                   onClick={() => update('insulationLevel', ins.value)}
                   className={`rounded-lg border px-3 py-2.5 text-left text-sm font-medium transition-all ${
                     form.insulationLevel === ins.value
-                      ? 'border-[#0066FF] bg-[#0066FF]/5 text-[#0066FF]'
+                      ? 'border-accent bg-accent/5 text-accent'
                       : 'border-slate-200 text-slate-700 hover:border-slate-300'
                   }`}
                 >
@@ -464,7 +464,7 @@ export default function HeatingCalculator() {
               step={0.5}
               value={form.electricityPrice}
               onChange={(e) => update('electricityPrice', Number(e.target.value))}
-              className="w-full accent-[#0066FF]"
+              className="w-full accent-accent"
             />
             <div className="flex justify-between text-xs text-slate-500">
               <span>4 c/kWh</span>

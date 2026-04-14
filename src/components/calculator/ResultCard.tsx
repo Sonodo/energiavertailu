@@ -9,7 +9,7 @@ import { AVERAGE_SPOT_PRICE } from '@/data/providers';
 import ProviderLogo from '@/components/ui/ProviderLogo';
 import BookmarkButton from './BookmarkButton';
 
-const LS_KEY = 'energiavertailu-rinnakkain';
+const LS_KEY = 'valitsesahko-rinnakkain';
 
 interface ResultCardProps {
   result: ComparisonResult;
@@ -24,11 +24,9 @@ function getTypeBadge(type: string) {
     case 'spot':
       return { label: 'Pörssi', color: 'bg-blue-100 text-blue-700' };
     case 'fixed':
-      return { label: 'Määräaikainen', color: 'bg-purple-100 text-purple-700' };
+      return { label: 'Kiinteä', color: 'bg-purple-100 text-purple-700' };
     case 'open-ended':
       return { label: 'Toistaiseksi', color: 'bg-amber-100 text-amber-700' };
-    case 'hybrid':
-      return { label: 'Hybridi', color: 'bg-teal-100 text-teal-700' };
     default:
       return { label: type, color: 'bg-slate-100 text-slate-700' };
   }
@@ -108,7 +106,7 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
         isRecommended
           ? 'border-2 border-blue-400 shadow-md shadow-blue-100 ring-1 ring-blue-200'
           : rank === 1
-            ? 'border-[#0066FF] shadow-md shadow-blue-100'
+            ? 'border-accent shadow-md shadow-blue-100'
             : isHighRisk
               ? 'border-red-300 shadow-sm shadow-red-50'
               : 'border-slate-200 shadow-sm'
@@ -123,7 +121,7 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
           </span>
         )}
         {rank === 1 && (
-          <span className="rounded-full bg-[#0066FF] px-3 py-0.5 text-xs font-bold text-white">
+          <span className="rounded-full bg-accent px-3 py-0.5 text-xs font-bold text-white">
             Halvin
           </span>
         )}
@@ -136,7 +134,7 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
             <p
               className={cn(
                 'text-2xl font-bold',
-                isRecommended ? 'text-blue-600' : rank === 1 ? 'text-[#0066FF]' : isTop3 ? 'text-emerald-600' : 'text-slate-900'
+                isRecommended ? 'text-blue-600' : rank === 1 ? 'text-accent' : isTop3 ? 'text-emerald-600' : 'text-slate-900'
               )}
             >
               {formatEuros(result.monthlyCost)}/kk
@@ -322,16 +320,16 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
                         + ALV 25,5 %: {formatEuros(vatAmount)}
                       </div>
                       <div className="font-semibold text-slate-800 border-t border-slate-200 pt-1">
-                        = Energiakustannus yhteens&auml;: {formatEuros(energyTotal)}
+                        = Energiakustannus yhteensä: {formatEuros(energyTotal)}
                       </div>
                       <div className="mt-2 text-slate-600">
                         Siirtomaksu: {formatNumber(consumption, 0)} kWh &times; {transferPrice.toFixed(2)} c/kWh = {formatEuros(transmissionCost)}
                       </div>
                       <div className="text-slate-600">
-                        S&auml;hk&ouml;vero: {formatNumber(consumption, 0)} kWh &times; {ELECTRICITY_TAX.toFixed(2)} c/kWh + ALV = {formatEuros(taxTotal)}
+                        Sähkövero: {formatNumber(consumption, 0)} kWh &times; {ELECTRICITY_TAX.toFixed(2)} c/kWh + ALV = {formatEuros(taxTotal)}
                       </div>
-                      <div className="mt-1 border-t border-slate-300 pt-1.5 font-bold text-[#0066FF]">
-                        YHTEENS&Auml;: {formatEuros(grandTotal, 0)}/vuosi
+                      <div className="mt-1 border-t border-slate-300 pt-1.5 font-bold text-accent">
+                        YHTEENSÄ: {formatEuros(grandTotal, 0)}/vuosi
                       </div>
                     </div>
                   );
@@ -347,7 +345,7 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
               <p
                 className={cn(
                   'text-2xl font-bold',
-                  isRecommended ? 'text-blue-600' : rank === 1 ? 'text-[#0066FF]' : isTop3 ? 'text-emerald-600' : 'text-slate-900'
+                  isRecommended ? 'text-blue-600' : rank === 1 ? 'text-accent' : isTop3 ? 'text-emerald-600' : 'text-slate-900'
                 )}
               >
                 {formatEuros(result.annualCost, 0)}

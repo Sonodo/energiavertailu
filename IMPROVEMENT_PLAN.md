@@ -1,4 +1,4 @@
-# Energiavertailu — 0.01% Tier Improvement Plan
+# Valitse Sähkö — 0.01% Tier Improvement Plan
 
 ## Strategic Context
 
@@ -140,7 +140,7 @@
 
 - [ ] **I1. Analytics (GA4 + Plausible)** — Implement dual analytics: GA4 for deep analysis, Plausible for privacy-friendly public stats.
 
-- [ ] **I2. Vercel Deployment + Custom Domain** — Deploy to Vercel, set up energiavertailu.fi domain.
+- [ ] **I2. Vercel Deployment + Custom Domain** — Deploy to Vercel, set up valitsesahko.fi domain.
 
 - [ ] **I3. Supabase for Dynamic Data** — Set up database for: user preferences, price alerts, review storage, price history cache.
 

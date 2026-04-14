@@ -4,13 +4,13 @@ import { blogPosts } from '@/data/blog-posts';
 import HomeContent from './home-content';
 
 export const metadata: Metadata = {
-  title: 'Sähkövertailu — Vertaa sähkösopimuksia ja löydä halvin sähkö | Valitse Sähkö',
+  title: 'Sähkövertailu — Vertaile sähkösopimuksia ja löydä sopiva sopimus | Valitse Sähkö',
   description:
-    'Vertaa 37 sähköyhtiön sopimuksia, seuraa pörssisähkön hintaa reaaliajassa ja säästä sähkölaskussa. Ilmainen ja kattava sähkövertailu Suomessa.',
+    'Vertaile 37 sähköyhtiön sopimuksia, seuraa pörssisähkön hintaa reaaliajassa ja säästä sähkölaskussa. Ilmainen ja kattava sähkövertailu Suomessa.',
   openGraph: {
-    title: 'Sähkövertailu — Vertaa sähkösopimuksia ja löydä halvin sähkö',
+    title: 'Sähkövertailu — Vertaile sähkösopimuksia ja löydä sopiva sopimus',
     description:
-      'Vertaa 37 sähköyhtiön sopimuksia, seuraa pörssisähkön hintaa reaaliajassa ja säästä sähkölaskussa.',
+      'Vertaile 37 sähköyhtiön sopimuksia, seuraa pörssisähkön hintaa reaaliajassa ja säästä sähkölaskussa.',
     url: '/',
     type: 'website',
   },

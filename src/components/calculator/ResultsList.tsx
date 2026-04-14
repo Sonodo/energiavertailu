@@ -79,10 +79,10 @@ function getFilterSuggestions(
 ): string[] {
   const suggestions: string[] = [];
   if (greenOnly) {
-    suggestions.push("Kokeile poistaa \"Vain vihreä sähkö\" -suodatin");
+    suggestions.push('Kokeile poistaa \u201DVain vihreä sähkö\u201D -suodatin');
   }
   if (contractType !== 'all') {
-    suggestions.push("Kokeile valita \"Kaikki\" sopimustyypiksi");
+    suggestions.push('Kokeile valita \u201DKaikki\u201D sopimustyypiksi');
   }
   if (!selectedDurations.includes('all') && selectedDurations.length > 0) {
     suggestions.push("Kokeile laajentaa sopimusajan valintaa");
@@ -98,16 +98,44 @@ function getFilterSuggestions(
   return suggestions;
 }
 
-// Get 3 popular contracts as suggestions
+// Get 3 popular contracts as suggestions.
+// Uses known-good contract IDs from the big three national providers,
+// with a graceful fallback if any ID changes in the future.
 function getPopularContracts(consumption: number, transferPrice: number) {
-  // Pick recognizable providers — first spot, first fixed, first green
-  const popularIds = ['fortum-tarkka', 'helen-kiintea-12', 'vattenfall-sahko-12'];
+  const popularIds = ['fortum-tarkka', 'helen-fixed-12', 'vattenfall-fixed-12'];
   const results: { provider: string; contract: string; monthlyCost: string; type: string; url: string }[] = [];
+  const seenContracts = new Set<string>();
 
+  // First pass: pick the exact known-good IDs.
   for (const provider of providers) {
     for (const contract of provider.contracts) {
-      if (popularIds.includes(contract.id) || results.length < 3) {
-        if (results.some(r => r.contract === contract.name)) continue;
+      if (!popularIds.includes(contract.id)) continue;
+      if (seenContracts.has(contract.id)) continue;
+      const { monthlyCost } = calculateCost(
+        contract.pricePerKwh,
+        contract.monthlyFee,
+        consumption,
+        contract.type,
+        transferPrice
+      );
+      results.push({
+        provider: provider.name,
+        contract: contract.name,
+        monthlyCost: formatEuros(monthlyCost),
+        type: contract.type,
+        url: contract.url,
+      });
+      seenContracts.add(contract.id);
+    }
+  }
+
+  // Fallback: fill up to 3 with the first available contracts from the
+  // national providers if any of the known IDs disappeared.
+  if (results.length < 3) {
+    for (const provider of providers) {
+      if (provider.type !== 'national') continue;
+      for (const contract of provider.contracts) {
+        if (seenContracts.has(contract.id)) continue;
         const { monthlyCost } = calculateCost(
           contract.pricePerKwh,
           contract.monthlyFee,
@@ -122,12 +150,14 @@ function getPopularContracts(consumption: number, transferPrice: number) {
           type: contract.type,
           url: contract.url,
         });
+        seenContracts.add(contract.id);
         if (results.length >= 3) break;
       }
+      if (results.length >= 3) break;
     }
-    if (results.length >= 3) break;
   }
-  return results;
+
+  return results.slice(0, 3);
 }
 
 function EmptyState({
@@ -186,7 +216,7 @@ function EmptyState({
         {/* Reset button */}
         <button
           onClick={onReset}
-          className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#0066FF] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-200 transition-all hover:bg-[#0052CC] hover:shadow-xl"
+          className="mt-6 inline-flex items-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-200 transition-all hover:bg-accent-700 hover:shadow-xl"
         >
           <RotateCcw className="h-4 w-4" />
           Vertaa kaikkia sopimuksia
@@ -206,7 +236,7 @@ function EmptyState({
                 href={pc.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-[#0066FF]/30 hover:shadow-md"
+                className="group flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-accent/30 hover:shadow-md"
               >
                 <div>
                   <p className="text-xs font-medium text-slate-500">{pc.provider}</p>
@@ -216,8 +246,8 @@ function EmptyState({
                   </span>
                 </div>
                 <div className="mt-3 flex items-center justify-between border-t border-slate-100 pt-2">
-                  <span className="text-lg font-bold text-[#0066FF]">{pc.monthlyCost}/kk</span>
-                  <ExternalLink className="h-3.5 w-3.5 text-slate-400 group-hover:text-[#0066FF]" />
+                  <span className="text-lg font-bold text-accent">{pc.monthlyCost}/kk</span>
+                  <ExternalLink className="h-3.5 w-3.5 text-slate-400 group-hover:text-accent" />
                 </div>
               </a>
             ))}
@@ -326,6 +356,8 @@ export default function ResultsList({
 
       let bestScore = -1;
       let bestIndex = 0;
+      let bestCost = Infinity;
+      let bestRisk = Infinity;
 
       for (let i = 0; i < allResults.length; i++) {
         const r = allResults[i];
@@ -342,9 +374,20 @@ export default function ResultsList({
         r.scoreBreakdown = { priceScore, riskScore, ratingScore, totalScore };
         r.isRecommended = false;
 
-        if (totalScore > bestScore) {
+        // Deterministic tie-break: higher score wins; on equal score,
+        // lower annual cost wins; on equal cost, lower counterparty risk wins.
+        const isBetter =
+          totalScore > bestScore ||
+          (totalScore === bestScore && r.annualCost < bestCost) ||
+          (totalScore === bestScore &&
+            r.annualCost === bestCost &&
+            r.provider.counterpartyRisk < bestRisk);
+
+        if (isBetter) {
           bestScore = totalScore;
           bestIndex = i;
+          bestCost = r.annualCost;
+          bestRisk = r.provider.counterpartyRisk;
         }
       }
 

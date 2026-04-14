@@ -74,8 +74,8 @@ export default function OppaatPage() {
             <span className="text-white/80">Oppaat</span>
           </nav>
           <div className="flex items-center gap-3 mb-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0066FF]/20">
-              <BookOpen className="h-5 w-5 text-[#0066FF]" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/20">
+              <BookOpen className="h-5 w-5 text-accent" />
             </div>
             <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
               Sähköoppaat
@@ -87,17 +87,17 @@ export default function OppaatPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-4 text-sm text-white/60">
             <div className="flex items-center gap-2">
-              <BookOpen className="h-4 w-4 text-[#0066FF]" />
+              <BookOpen className="h-4 w-4 text-accent" />
               <span>{guides.length} opasta</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock className="h-4 w-4 text-[#0066FF]" />
+              <Clock className="h-4 w-4 text-accent" />
               <span>
                 Yhteensä {guides.reduce((sum, g) => sum + g.readTime, 0)} min lukuaikaa
               </span>
             </div>
             <div className="flex items-center gap-2">
-              <Tag className="h-4 w-4 text-[#0066FF]" />
+              <Tag className="h-4 w-4 text-accent" />
               <span>{categories.length} kategoriaa</span>
             </div>
           </div>
@@ -110,12 +110,12 @@ export default function OppaatPage() {
         <div className="mb-12">
           <Link
             href={`/oppaat/${guides[0].slug}`}
-            className="group relative block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-[#0066FF]/30 hover:shadow-md"
+            className="group relative block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-accent/30 hover:shadow-md"
           >
             <div className="flex flex-col lg:flex-row">
               <div className="flex-1 p-8 lg:p-10">
                 <div className="mb-3 flex items-center gap-2">
-                  <span className="rounded-full bg-[#0066FF]/10 px-3 py-1 text-xs font-semibold text-[#0066FF]">
+                  <span className="rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
                     Suosittu opas
                   </span>
                   <span
@@ -126,7 +126,7 @@ export default function OppaatPage() {
                     {guides[0].category}
                   </span>
                 </div>
-                <h2 className="text-2xl font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors sm:text-3xl">
+                <h2 className="text-2xl font-bold text-slate-900 group-hover:text-accent transition-colors sm:text-3xl">
                   {guides[0].title}
                 </h2>
                 <p className="mt-3 text-slate-500 leading-relaxed">{guides[0].description}</p>
@@ -140,13 +140,13 @@ export default function OppaatPage() {
                     {new Date(guides[0].updatedAt).toLocaleDateString('fi-FI')}
                   </span>
                 </div>
-                <div className="mt-6 inline-flex items-center gap-2 text-[#0066FF] font-semibold">
+                <div className="mt-6 inline-flex items-center gap-2 text-accent font-semibold">
                   Lue opas
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </div>
-              <div className="hidden lg:flex lg:w-80 lg:items-center lg:justify-center bg-gradient-to-br from-[#0066FF]/5 to-[#0066FF]/10">
-                <Zap className="h-24 w-24 text-[#0066FF]/20" />
+              <div className="hidden lg:flex lg:w-80 lg:items-center lg:justify-center bg-gradient-to-br from-accent/5 to-accent/10">
+                <Zap className="h-24 w-24 text-accent/20" />
               </div>
             </div>
           </Link>
@@ -159,7 +159,7 @@ export default function OppaatPage() {
             <Link
               key={guide.slug}
               href={`/oppaat/${guide.slug}`}
-              className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[#0066FF]/30 hover:shadow-lg"
+              className="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-accent/30 hover:shadow-lg"
             >
               <div className="mb-3 flex items-center gap-2">
                 <span
@@ -170,7 +170,7 @@ export default function OppaatPage() {
                   {guide.category}
                 </span>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#0066FF] transition-colors">
+              <h3 className="text-lg font-bold text-slate-900 group-hover:text-accent transition-colors">
                 {guide.title}
               </h3>
               <p className="mt-2 flex-1 text-sm text-slate-500 line-clamp-3">
@@ -183,7 +183,7 @@ export default function OppaatPage() {
                     {guide.readTime} min
                   </span>
                 </div>
-                <span className="flex items-center gap-1 text-sm font-medium text-[#0066FF] opacity-0 transition-opacity group-hover:opacity-100">
+                <span className="flex items-center gap-1 text-sm font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
                   Lue
                   <ChevronRight className="h-4 w-4" />
                 </span>
@@ -204,7 +204,7 @@ export default function OppaatPage() {
           </p>
           <Link
             href="/vertailu"
-            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#0066FF] px-8 py-3 font-semibold text-white shadow-lg transition-colors hover:bg-[#0052CC]"
+            className="mt-6 inline-flex items-center gap-2 rounded-xl bg-accent px-8 py-3 font-semibold text-white shadow-lg transition-colors hover:bg-accent-700"
           >
             Vertaa sopimuksia
             <ChevronRight className="h-4 w-4" />

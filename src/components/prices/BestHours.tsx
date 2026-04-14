@@ -150,24 +150,24 @@ export default function BestHours({ todayPrices, quarterHourPrices, mode = 'hour
           </div>
 
           {/* Tips */}
-          <div className="rounded-2xl border border-[#0066FF]/20 bg-blue-50/50 p-6 shadow-sm">
+          <div className="rounded-2xl border border-accent/20 bg-blue-50/50 p-6 shadow-sm">
             <div className="flex items-center gap-2.5">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100">
-                <Lightbulb className="h-5 w-5 text-[#0066FF]" />
+                <Lightbulb className="h-5 w-5 text-accent" />
               </div>
               <h3 className="font-semibold text-slate-900">15 min hinnoittelun edut</h3>
             </div>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
               <li className="flex items-start gap-2">
-                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0066FF]" />
+                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                 15 minuutin tarkkuus mahdollistaa entistä tarkemman kulutuksen optimoinnin.
               </li>
               <li className="flex items-start gap-2">
-                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0066FF]" />
+                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                 Lyhyetkin halvat jaksot kannattaa hyödyntää esim. lataukseen.
               </li>
               <li className="flex items-start gap-2">
-                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0066FF]" />
+                <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                 Saman tunnin sisällä hinta voi vaihdella merkittävästi.
               </li>
             </ul>
@@ -293,28 +293,28 @@ export default function BestHours({ todayPrices, quarterHourPrices, mode = 'hour
         </div>
 
         {/* Tips */}
-        <div className="rounded-2xl border border-[#0066FF]/20 bg-blue-50/50 p-6 shadow-sm">
+        <div className="rounded-2xl border border-accent/20 bg-blue-50/50 p-6 shadow-sm">
           <div className="flex items-center gap-2.5">
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100">
-              <Lightbulb className="h-5 w-5 text-[#0066FF]" />
+              <Lightbulb className="h-5 w-5 text-accent" />
             </div>
             <h3 className="font-semibold text-slate-900">Vinkkejä pörssisähkön käyttäjälle</h3>
           </div>
           <ul className="mt-3 space-y-2 text-sm text-slate-600">
             <li className="flex items-start gap-2">
-              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0066FF]" />
+              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
               Ajoita pesukoneen, kuivausrummun ja astianpesukoneen käyttö halvimmille tunneille.
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0066FF]" />
+              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
               Lataa sähköauto yöllä, kun sähkö on yleensä halvimmillaan.
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0066FF]" />
+              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
               Hyödynnä kodin lämpövaraus: lämmitä taloa halvimpina tunteina.
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0066FF]" />
+              <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
               Vältä suurten laitteiden yhtäaikaista käyttöä kalliimpina tunteina.
             </li>
           </ul>

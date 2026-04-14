@@ -39,6 +39,7 @@ const valitseNetwork = [
   { name: 'Valitse Laina', url: 'https://valitselaina.fi', desc: 'Lainojen vertailu' },
   { name: 'Valitse Vakuutus', url: 'https://valitsevakuutus.fi', desc: 'Vakuutusten vertailu' },
   { name: 'Valitse Liittymä', url: 'https://valitseliittyma.fi', desc: 'Liittymien vertailu' },
+  { name: 'Fillioneer', url: 'https://fillioneer.fi', desc: 'Apurahojen haku' },
   { name: 'Asuntomaatti', url: 'https://asuntomaatti.fi', desc: 'Asuntojen vertailu' },
   { name: 'Alennuskartta', url: 'https://alennuskartta.fi', desc: 'Tarjoukset kartalla' },
 ];
@@ -69,9 +70,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-6 text-slate-400">
-              Suomen monipuolinen ja kattava sähkövertailupalvelu. Vertaa
-              sähkösopimuksia, seuraa pörssisähkön hintaa ja löydä edullisin
-              sähkösopimus kotitaloudellesi.
+              Riippumaton sähkövertailupalvelu. Vertaile sähkösopimuksia, seuraa
+              pörssisähkön hintaa ja löydä sopiva sopimus kotitaloudellesi.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-2">
@@ -166,10 +166,28 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Affiliate disclosure */}
+        <div className="mt-12 rounded-xl border border-white/10 bg-white/5 p-5">
+          <p className="text-xs font-semibold uppercase tracking-wider text-accent-400">
+            Mainos — kumppanilinkit
+          </p>
+          <p className="mt-2 text-sm leading-6 text-slate-300">
+            Osa Valitse Sähkön linkeistä sähköyhtiöille on kumppanilinkkejä.
+            Kun teet sopimuksen linkin kautta, saatamme saada välityspalkkion.
+            Palkkio ei vaikuta vertailun järjestykseen eikä sinun maksamaasi
+            hintaan. Kaikki vertailut perustuvat samoihin julkisesti
+            saatavilla oleviin hintatietoihin, ja menetelmämme on kuvattu{' '}
+            <Link href="/menetelma" className="font-medium text-accent-400 underline-offset-4 hover:underline">
+              Menetelmä-sivulla
+            </Link>
+            .
+          </p>
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
           <p className="text-sm text-white/40">
-            &copy; {new Date().getFullYear()} Valitse Sähkö. Kaikki oikeudet pidätetään.
+            &copy; {new Date().getFullYear()} Valitse Sähkö. Kaikki oikeudet pidätetty.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
             {legalLinks.map((link) => (

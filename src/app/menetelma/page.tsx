@@ -62,8 +62,8 @@ function SectionHeading({
       id={id}
       className="mb-6 flex items-center gap-3 text-2xl font-bold text-slate-900 scroll-mt-20"
     >
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#0066FF]/10">
-        <Icon className="h-5 w-5 text-[#0066FF]" />
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent/10">
+        <Icon className="h-5 w-5 text-accent" />
       </div>
       {title}
     </h2>
@@ -84,7 +84,7 @@ export default function MenetelmaPage() {
           <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
             {/* Breadcrumb */}
             <nav className="mb-6 flex items-center gap-2 text-sm text-slate-500">
-              <Link href="/" className="hover:text-[#0066FF] transition-colors">
+              <Link href="/" className="hover:text-accent transition-colors">
                 Etusivu
               </Link>
               <ChevronRight className="h-3.5 w-3.5" />
@@ -92,10 +92,10 @@ export default function MenetelmaPage() {
             </nav>
 
             <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#0066FF]/10">
-                <Calculator className="h-5 w-5 text-[#0066FF]" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
+                <Calculator className="h-5 w-5 text-accent" />
               </div>
-              <span className="text-sm font-medium text-[#0066FF]">
+              <span className="text-sm font-medium text-accent">
                 Läpinäkyvyys ja luotettavuus
               </span>
             </div>
@@ -139,9 +139,11 @@ export default function MenetelmaPage() {
                   × 12) × 1,255
                 </div>
                 <p>
-                  <strong>Pörssisähkösopimukset:</strong> Käytämme toteutunutta
-                  keskimääräistä spot-hintaa (tällä hetkellä 5,5 c/kWh alv 0 %), johon
-                  lisätään yhtiön marginaali. Lopuksi lisätään ALV 25,5 %.
+                  <strong>Pörssisähkösopimukset:</strong> Käytämme viimeaikaisten
+                  kuukausien keskimääräistä spot-hintaa (tällä hetkellä 11,5 c/kWh alv 0 %,
+                  päivitetty viimeksi 14.4.2026), johon lisätään yhtiön marginaali.
+                  Lopuksi lisätään ALV 25,5 %. Todellinen spot-hinta vaihtelee tunneittain —
+                  seuraa päivän tilannetta sivulla <a href="/porssisahko" className="text-accent hover:underline">Pörssisähkön hinta</a>.
                 </p>
                 <div className="my-4 rounded-lg bg-slate-50 px-4 py-3 font-mono text-sm text-slate-700">
                   Energiakustannus = ((spot-keskihinta + marginaali) c/kWh × kulutus / 100 +
@@ -174,7 +176,7 @@ export default function MenetelmaPage() {
                 <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-3">
                   4. Kokonaiskustannus
                 </h3>
-                <div className="my-4 rounded-lg bg-[#0066FF]/5 border border-[#0066FF]/20 px-4 py-3 font-mono text-sm text-slate-700">
+                <div className="my-4 rounded-lg bg-accent/5 border border-accent/20 px-4 py-3 font-mono text-sm text-slate-700">
                   Yhteensä = Energiakustannus + Siirtomaksu + Sähkövero
                 </div>
 
@@ -211,7 +213,7 @@ export default function MenetelmaPage() {
                       </span>
                     </div>
                     <div className="my-2 border-t border-slate-200" />
-                    <div className="flex justify-between text-base font-bold text-[#0066FF]">
+                    <div className="flex justify-between text-base font-bold text-accent">
                       <span>YHTEENSÄ: 789,94 €/vuosi (65,83 €/kk)</span>
                     </div>
                   </div>
@@ -311,23 +313,30 @@ export default function MenetelmaPage() {
               />
               <div className="prose prose-slate max-w-none prose-p:text-slate-600 prose-li:text-slate-600">
                 <p>
-                  &ldquo;Paras valinta&rdquo; -suosituksemme perustuu kolmen tekijän painotettuun
-                  kokonaispisteeseen. Algoritmi on sama kaikille sopimuksille — mikään
+                  &ldquo;Paras valinta&rdquo; -suosituksemme perustuu kahden tekijän
+                  painotettuun kokonaispisteeseen: hintaan ja sähköyhtiön
+                  vastapuoliriskiin. Algoritmi on sama kaikille sopimuksille — mikään
                   yhteistyö ei vaikuta tulokseen.
+                </p>
+                <p>
+                  Emme tällä hetkellä käytä asiakastyytyväisyyttä pisteytyksessä,
+                  koska emme ole löytäneet puolueetonta, jokaiselle 37 yhtiölle
+                  kattavaa tietolähdettä. Kun luotettava lähde (esim. Trustpilot tai
+                  Google-arvostelut täydellä kattavuudella) on saatavilla, tuomme sen
+                  osaksi laskentaa ja päivitämme tämän sivun.
                 </p>
               </div>
 
-              <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {[
-                  { weight: '50 %', label: 'Hintapisteet', desc: 'Edullisempi sopimus saa korkeammat pisteet (0–100).' },
-                  { weight: '30 %', label: 'Luotettavuuspisteet', desc: 'Pienempi vastapuoliriski = korkeammat pisteet.' },
-                  { weight: '20 %', label: 'Asiakastyytyväisyys', desc: 'Arvosana normalisoitu asteikolla 0–100.' },
+                  { weight: '60 %', label: 'Hintapisteet', desc: 'Edullisempi sopimus saa korkeammat pisteet (0–100).' },
+                  { weight: '40 %', label: 'Luotettavuuspisteet', desc: 'Pienempi vastapuoliriski = korkeammat pisteet.' },
                 ].map((item) => (
                   <div
                     key={item.label}
                     className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
                   >
-                    <div className="mb-2 text-2xl font-bold text-[#0066FF]">{item.weight}</div>
+                    <div className="mb-2 text-2xl font-bold text-accent">{item.weight}</div>
                     <h3 className="text-sm font-semibold text-slate-900">{item.label}</h3>
                     <p className="mt-1 text-xs text-slate-500">{item.desc}</p>
                   </div>
@@ -340,22 +349,23 @@ export default function MenetelmaPage() {
                 </h3>
                 <div className="space-y-2 text-sm text-slate-600">
                   <div className="rounded-lg bg-slate-50 px-4 py-2 font-mono">
-                    Hintapisteet = (kallein - oma hinta) / (kallein - halvin) × 100
+                    Hintapisteet = (kallein − oma hinta) / (kallein − halvin) × 100
                   </div>
                   <div className="rounded-lg bg-slate-50 px-4 py-2 font-mono">
-                    Luotettavuuspisteet = 100 - vastapuoliriski
+                    Luotettavuuspisteet = 100 − vastapuoliriski
                   </div>
-                  <div className="rounded-lg bg-slate-50 px-4 py-2 font-mono">
-                    Tyytyväisyyspisteet = (arvosana - 1) / 4 × 100
-                  </div>
-                  <div className="rounded-lg bg-[#0066FF]/5 border border-[#0066FF]/20 px-4 py-2 font-mono">
-                    Kokonaispisteet = hinta × 0,5 + luotettavuus × 0,3 +
-                    tyytyvaisyys × 0,2
+                  <div className="rounded-lg bg-accent/5 border border-accent/20 px-4 py-2 font-mono">
+                    Kokonaispisteet = hintapisteet × 0,6 + luotettavuuspisteet × 0,4
                   </div>
                 </div>
                 <p className="mt-4">
                   Korkein kokonaispiste saa &ldquo;Paras valinta&rdquo; -merkinnän.
                   Pisteytys lasketaan aina uudelleen valittujen suodattimien mukaan.
+                  Tasapelissä halvin sopimus voittaa; jos hinnatkin ovat samat,
+                  matalampi vastapuoliriski ratkaisee.
+                </p>
+                <p className="mt-3 text-xs text-slate-500">
+                  Päivitetty viimeksi 14.4.2026.
                 </p>
               </div>
             </section>
@@ -397,7 +407,7 @@ export default function MenetelmaPage() {
                     key={source.title}
                     className="flex items-start gap-3 rounded-xl border border-slate-200 bg-white p-4 shadow-sm"
                   >
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#0066FF]" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                     <div>
                       <h3 className="text-sm font-semibold text-slate-900">{source.title}</h3>
                       <p className="mt-0.5 text-sm text-slate-600">{source.desc}</p>
@@ -406,7 +416,7 @@ export default function MenetelmaPage() {
                           href={source.link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-[#0066FF] hover:underline"
+                          className="mt-1 inline-flex items-center gap-1 text-xs font-medium text-accent hover:underline"
                         >
                           {source.link.label}
                           <ExternalLink className="h-3 w-3" />
@@ -459,7 +469,7 @@ export default function MenetelmaPage() {
                     href="https://www.kkv.fi/kuluttaja-asiat/kuluttajaoikeus/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#0066FF] hover:underline"
+                    className="text-accent hover:underline"
                   >
                     KKV — Kuluttajaoikeus
                     <ExternalLink className="ml-1 inline h-3 w-3" />
@@ -485,9 +495,9 @@ export default function MenetelmaPage() {
                     key={item.label}
                     className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm text-center"
                   >
-                    <RefreshCw className="mx-auto mb-2 h-6 w-6 text-[#0066FF]" />
+                    <RefreshCw className="mx-auto mb-2 h-6 w-6 text-accent" />
                     <h3 className="text-sm font-semibold text-slate-900">{item.label}</h3>
-                    <p className="mt-1 text-lg font-bold text-[#0066FF]">{item.freq}</p>
+                    <p className="mt-1 text-lg font-bold text-accent">{item.freq}</p>
                     <p className="mt-1 text-xs text-slate-500">{item.note}</p>
                   </div>
                 ))}
@@ -496,14 +506,14 @@ export default function MenetelmaPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 rounded-2xl bg-gradient-to-r from-[#0066FF] to-[#0052CC] p-8 text-center text-white sm:p-12">
+          <div className="mt-16 rounded-2xl bg-gradient-to-r from-accent to-accent-700 p-8 text-center text-white sm:p-12">
             <h2 className="text-2xl font-bold sm:text-3xl">Valmis vertailemaan?</h2>
             <p className="mx-auto mt-3 max-w-lg text-white/80">
               Nyt kun tiedät miten laskelmat toimivat, kokeile vertailua itse — se on ilmaista.
             </p>
             <Link
               href="/vertailu"
-              className="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3 text-sm font-semibold text-[#0066FF] shadow-lg transition-colors hover:bg-white/90"
+              className="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3 text-sm font-semibold text-accent shadow-lg transition-colors hover:bg-white/90"
             >
               Vertaa sähkösopimuksia
               <ChevronRight className="h-4 w-4" />

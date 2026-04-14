@@ -240,7 +240,7 @@ export default async function SahkonHintaTanaanPage() {
 
       {/* Breadcrumb */}
       <nav className="mb-6 flex items-center gap-1.5 text-sm text-slate-500">
-        <Link href="/" className="hover:text-[#0066FF]">
+        <Link href="/" className="hover:text-accent">
           Etusivu
         </Link>
         <ChevronRight className="h-3.5 w-3.5" />
@@ -342,7 +342,7 @@ export default async function SahkonHintaTanaanPage() {
       {/* === Hourly price chart === */}
       <section className="mb-10">
         <h2 className="mb-4 text-2xl font-bold text-slate-900">
-          <Clock className="mr-2 inline h-6 w-6 text-[#0066FF]" />
+          <Clock className="mr-2 inline h-6 w-6 text-accent" />
           Tuntihinnat tänään
         </h2>
 
@@ -404,7 +404,7 @@ export default async function SahkonHintaTanaanPage() {
       {/* === Best/worst hours === */}
       <section className="mb-10">
         <h2 className="mb-4 text-2xl font-bold text-slate-900">
-          <Lightbulb className="mr-2 inline h-6 w-6 text-[#0066FF]" />
+          <Lightbulb className="mr-2 inline h-6 w-6 text-accent" />
           Milloin käyttää sähköä?
         </h2>
 
@@ -482,7 +482,7 @@ export default async function SahkonHintaTanaanPage() {
       {/* === Cost calculator section === */}
       <section className="mb-10">
         <h2 className="mb-4 text-2xl font-bold text-slate-900">
-          <Calculator className="mr-2 inline h-6 w-6 text-[#0066FF]" />
+          <Calculator className="mr-2 inline h-6 w-6 text-accent" />
           Mitä hinta tarkoittaa sinulle?
         </h2>
         <p className="mb-6 text-slate-600">
@@ -540,7 +540,7 @@ export default async function SahkonHintaTanaanPage() {
       {tomorrowPrices && tomorrowPrices.length > 0 && (
         <section className="mb-10">
           <h2 className="mb-4 text-2xl font-bold text-slate-900">
-            <Sun className="mr-2 inline h-6 w-6 text-[#0066FF]" />
+            <Sun className="mr-2 inline h-6 w-6 text-accent" />
             Huomisen hinnat
           </h2>
           <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -570,7 +570,7 @@ export default async function SahkonHintaTanaanPage() {
             <div className="mt-4 text-center">
               <Link
                 href="/porssisahko"
-                className="text-sm font-medium text-[#0066FF] hover:underline"
+                className="text-sm font-medium text-accent hover:underline"
               >
                 Katso huomisen tuntihinnat kokonaan &rarr;
               </Link>
@@ -582,7 +582,7 @@ export default async function SahkonHintaTanaanPage() {
       {/* === Energy saving tips === */}
       <section className="mb-10">
         <h2 className="mb-4 text-2xl font-bold text-slate-900">
-          <Lightbulb className="mr-2 inline h-6 w-6 text-[#0066FF]" />
+          <Lightbulb className="mr-2 inline h-6 w-6 text-accent" />
           Vinkit sähkön säästämiseen tänään
         </h2>
 
@@ -608,7 +608,7 @@ export default async function SahkonHintaTanaanPage() {
       {/* === FAQ === */}
       <section className="mb-10">
         <h2 className="mb-6 text-2xl font-bold text-slate-900">
-          <HelpCircle className="mr-2 inline h-6 w-6 text-[#0066FF]" />
+          <HelpCircle className="mr-2 inline h-6 w-6 text-accent" />
           Usein kysytyt kysymykset
         </h2>
 
@@ -619,7 +619,7 @@ export default async function SahkonHintaTanaanPage() {
               className="group rounded-xl border border-slate-200 bg-white"
               open={i === 0}
             >
-              <summary className="cursor-pointer p-5 text-lg font-semibold text-slate-900 transition-colors hover:text-[#0066FF]">
+              <summary className="cursor-pointer p-5 text-lg font-semibold text-slate-900 transition-colors hover:text-accent">
                 {item.question}
               </summary>
               <div className="border-t border-slate-100 px-5 pb-5 pt-4 text-slate-600 leading-relaxed">
@@ -668,7 +668,7 @@ export default async function SahkonHintaTanaanPage() {
         <div className="mt-6">
           <Link
             href="/vertailu"
-            className="inline-flex items-center gap-2 rounded-lg bg-[#0066FF] px-6 py-3 font-semibold text-white transition-colors hover:bg-[#0052CC]"
+            className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 font-semibold text-white transition-colors hover:bg-accent-700"
           >
             Vertaa sähkösopimuksia
             <ArrowRight className="h-4 w-4" />
@@ -726,7 +726,7 @@ function TipCard({
 }) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-      <div className="mb-3 text-[#0066FF]">{icon}</div>
+      <div className="mb-3 text-accent">{icon}</div>
       <h3 className="font-bold text-slate-900">{title}</h3>
       <p className="mt-1 text-sm text-slate-600">{description}</p>
     </div>
@@ -745,13 +745,13 @@ function InternalLinkCard({
   return (
     <Link
       href={href}
-      className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-colors hover:border-[#0066FF] hover:bg-blue-50/50"
+      className="group flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition-colors hover:border-accent hover:bg-blue-50/50"
     >
       <div className="flex-1">
-        <div className="font-semibold text-slate-900 group-hover:text-[#0066FF]">{title}</div>
+        <div className="font-semibold text-slate-900 group-hover:text-accent">{title}</div>
         <div className="mt-0.5 text-sm text-slate-500">{description}</div>
       </div>
-      <ChevronRight className="h-5 w-5 flex-shrink-0 text-slate-400 group-hover:text-[#0066FF]" />
+      <ChevronRight className="h-5 w-5 flex-shrink-0 text-slate-400 group-hover:text-accent" />
     </Link>
   );
 }
