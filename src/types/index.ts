@@ -83,6 +83,9 @@ export interface ElectricityProvider {
   pros?: string[];
   cons?: string[];
   specialFeatures?: string[];
+  // Affiliate / partnership tracking
+  affiliateUrl?: string; // Tracking URL (e.g. Adtraction) used for apply CTAs when present
+  isAffiliate?: boolean; // True when provider has an active affiliate partnership
 }
 
 export interface ElectricityContract {
