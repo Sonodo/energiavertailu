@@ -48,6 +48,7 @@ const legalLinks = [
   { label: 'Tietosuoja', href: '/tietosuoja' },
   { label: 'Käyttöehdot', href: '/kayttoehdot' },
   { label: 'Evästeet', href: '/evasteet' },
+  { label: 'Sivuston ansainta', href: '/sivuston-ansainta' },
 ];
 
 export default function Footer() {

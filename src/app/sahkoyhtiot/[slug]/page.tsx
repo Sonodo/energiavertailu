@@ -25,6 +25,7 @@ import ProviderSchema from '@/components/seo/ProviderSchema';
 import InternalLinks from '@/components/InternalLinks';
 import ProviderLogo from '@/components/ui/ProviderLogo';
 import UpdateTimestamp from '@/components/ui/UpdateTimestamp';
+import DisclosureBanner from '@/components/ui/DisclosureBanner';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -214,7 +215,11 @@ export default async function ProviderDetailPage({ params }: PageProps) {
                   <a
                     href={provider.website}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel={
+                      provider.isAffiliate === true
+                        ? 'noopener noreferrer nofollow sponsored'
+                        : 'noopener noreferrer nofollow'
+                    }
                     className="hover:text-white underline underline-offset-2"
                   >
                     {provider.website.replace('https://', '').replace('www.', '')}
@@ -265,6 +270,7 @@ export default async function ProviderDetailPage({ params }: PageProps) {
                 </h2>
                 <UpdateTimestamp label="Sopimustiedot päivitetty" />
               </div>
+              <DisclosureBanner className="mb-4" />
               <div className="space-y-4">
                 {provider.contracts.map((contract) => (
                   <div
@@ -323,7 +329,11 @@ export default async function ProviderDetailPage({ params }: PageProps) {
                         <a
                           href={contract.url}
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel={
+                            provider.isAffiliate === true
+                              ? 'noopener noreferrer nofollow sponsored'
+                              : 'noopener noreferrer nofollow'
+                          }
                           className="mt-2 inline-flex min-h-[44px] items-center gap-1 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-700 transition-colors"
                         >
                           Katso tarjous
@@ -481,7 +491,11 @@ export default async function ProviderDetailPage({ params }: PageProps) {
               <a
                 href={provider.website}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel={
+                  provider.isAffiliate === true
+                    ? 'noopener noreferrer nofollow sponsored'
+                    : 'noopener noreferrer nofollow'
+                }
                 className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50"
               >
                 <Globe className="h-4 w-4" />
