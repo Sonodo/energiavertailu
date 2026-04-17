@@ -396,11 +396,7 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
             <a
               href={contract.url}
               target="_blank"
-              rel={
-                provider.isAffiliate === true
-                  ? 'noopener noreferrer nofollow sponsored'
-                  : 'noopener noreferrer nofollow'
-              }
+              rel="noopener noreferrer"
               className={cn(
                 'inline-flex min-h-[44px] items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold transition-colors',
                 isRecommended

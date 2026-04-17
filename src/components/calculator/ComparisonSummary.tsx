@@ -75,11 +75,7 @@ export default function ComparisonSummary({ results, consumption, region, recomm
               <a
                 href={recommendedResult.contract.url}
                 target="_blank"
-                rel={
-                  recommendedResult.provider.isAffiliate === true
-                    ? 'noopener noreferrer nofollow sponsored'
-                    : 'noopener noreferrer nofollow'
-                }
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-md transition-all hover:from-blue-700 hover:to-indigo-700 hover:shadow-lg"
               >
                 Siirry tarjoukseen

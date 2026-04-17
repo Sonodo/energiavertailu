@@ -1,4 +1,4 @@
-# Energiavertailu — Dev Guide
+# Valitse Sähkö (valitsesahko.fi) — Dev Guide
 
 ## Stack
 - Next.js 16 (App Router) + React 19 + TypeScript + Tailwind CSS v4

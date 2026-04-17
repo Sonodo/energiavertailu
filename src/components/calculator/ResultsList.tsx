@@ -15,7 +15,6 @@ import ComparisonFloatingBar from './ComparisonFloatingBar';
 import ShareButton from '@/components/ui/ShareButton';
 import BookmarkedContracts from './BookmarkedContracts';
 import UpdateTimestamp from '@/components/ui/UpdateTimestamp';
-import DisclosureBanner from '@/components/ui/DisclosureBanner';
 
 interface ResultsListProps {
   consumption: number;
@@ -104,7 +103,7 @@ function getFilterSuggestions(
 // with a graceful fallback if any ID changes in the future.
 function getPopularContracts(consumption: number, transferPrice: number) {
   const popularIds = ['fortum-tarkka', 'helen-fixed-12', 'vattenfall-fixed-12'];
-  const results: { provider: string; contract: string; monthlyCost: string; type: string; url: string; isAffiliate: boolean }[] = [];
+  const results: { provider: string; contract: string; monthlyCost: string; type: string; url: string }[] = [];
   const seenContracts = new Set<string>();
 
   // First pass: pick the exact known-good IDs.
@@ -125,7 +124,6 @@ function getPopularContracts(consumption: number, transferPrice: number) {
         monthlyCost: formatEuros(monthlyCost),
         type: contract.type,
         url: contract.url,
-        isAffiliate: provider.isAffiliate === true,
       });
       seenContracts.add(contract.id);
     }
@@ -151,7 +149,6 @@ function getPopularContracts(consumption: number, transferPrice: number) {
           monthlyCost: formatEuros(monthlyCost),
           type: contract.type,
           url: contract.url,
-          isAffiliate: provider.isAffiliate === true,
         });
         seenContracts.add(contract.id);
         if (results.length >= 3) break;
@@ -238,7 +235,7 @@ function EmptyState({
                 key={i}
                 href={pc.url}
                 target="_blank"
-                rel={pc.isAffiliate ? 'noopener noreferrer nofollow sponsored' : 'noopener noreferrer nofollow'}
+                rel="noopener noreferrer"
                 className="group flex flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-accent/30 hover:shadow-md"
               >
                 <div>
@@ -454,9 +451,6 @@ export default function ResultsList({
 
       {/* Bookmarked contracts */}
       <BookmarkedContracts />
-
-      {/* Affiliate disclosure — placed directly above the result list */}
-      <DisclosureBanner className="mt-6" />
 
       {/* Results list */}
       {results.length > 0 ? (

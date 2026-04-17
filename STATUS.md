@@ -1,6 +1,6 @@
-# Energiavertailu — Status
+# Valitse Sähkö (valitsesahko.fi) — Status
 
-**Project**: Energiavertailu — Finnish Electricity Price Comparison
+**Project**: Valitse Sähkö — Finnish Electricity Price Comparison
 **Status**: LIVE at valitsesahko.fi
 **Health**: GREEN
 **Domain**: valitsesahko.fi (custom domain)
