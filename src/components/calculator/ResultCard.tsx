@@ -8,6 +8,7 @@ import { ELECTRICITY_VAT, ELECTRICITY_TAX } from '@/lib/constants';
 import { AVERAGE_SPOT_PRICE } from '@/data/providers';
 import ProviderLogo from '@/components/ui/ProviderLogo';
 import BookmarkButton from './BookmarkButton';
+import { trackAffiliateClick } from '@/lib/analytics';
 
 const LS_KEY = 'valitsesahko-rinnakkain';
 
@@ -126,6 +127,16 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
           </span>
         )}
       </div>
+
+      {/* Mainos-badge (KKV disclosure) */}
+      {provider.isAffiliate && (
+        <span
+          className="absolute -top-2 right-3 rounded-full bg-slate-600 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm"
+          title="Tämä kortti sisältää kumppanilinkin — saamme pienen palkkion, jos teet sopimuksen linkin kautta."
+        >
+          Mainos
+        </span>
+      )}
 
       <div className="p-4 sm:p-6">
         {/* Mobile: show cost prominently at top */}
@@ -394,9 +405,16 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
               {isInComparison ? 'Vertailussa' : 'Vertaile'}
             </button>
             <a
-              href={contract.url}
+              href={provider.isAffiliate && provider.affiliateUrl ? provider.affiliateUrl : contract.url}
               target="_blank"
-              rel="noopener noreferrer"
+              rel={provider.isAffiliate ? 'sponsored noopener noreferrer nofollow' : 'noopener noreferrer'}
+              onClick={() => {
+                trackAffiliateClick(provider.name, contract.type, {
+                  contract_id: contract.id,
+                  rank,
+                  is_affiliate: provider.isAffiliate === true,
+                });
+              }}
               className={cn(
                 'inline-flex min-h-[44px] items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold transition-colors',
                 isRecommended

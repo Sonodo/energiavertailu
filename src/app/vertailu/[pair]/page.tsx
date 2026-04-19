@@ -186,15 +186,14 @@ export default async function ComparisonPairPage({ params }: PageProps) {
   const risk1 = getRiskLabel(p1.counterpartyRisk);
   const risk2 = getRiskLabel(p2.counterpartyRisk);
 
-  // Determine overall winner (weighted: price 50%, risk 30%, variety 20%)
+  // Determine overall winner using same methodology as /menetelma:
+  // price 60%, counterparty risk 40%. See src/app/menetelma/page.tsx.
   const score1 =
-    (cost2 / cost1) * 50 +
-    ((100 - p1.counterpartyRisk) / 100) * 30 +
-    (p1.contracts.length / 10) * 20;
+    (cost2 / cost1) * 60 +
+    ((100 - p1.counterpartyRisk) / 100) * 40;
   const score2 =
-    (cost1 / cost2) * 50 +
-    ((100 - p2.counterpartyRisk) / 100) * 30 +
-    (p2.contracts.length / 10) * 20;
+    (cost1 / cost2) * 60 +
+    ((100 - p2.counterpartyRisk) / 100) * 40;
 
   const winner = score1 >= score2 ? p1 : p2;
   const loser = winner === p1 ? p2 : p1;
@@ -317,8 +316,12 @@ export default async function ComparisonPairPage({ params }: PageProps) {
               Suosituksemme: {winner.name}
             </h3>
             <p className="mt-1 text-green-800">
-              Kokonaisvertailussa {winner.name} on parempi valinta huomioiden hinnan, luotettavuuden,
-              asiakastyytyväisyyden ja sopimusvalikoiman. Ero on kuitenkin{' '}
+              Kokonaisvertailussa {winner.name} on parempi valinta huomioiden
+              hinnan ja vastapuoliriskin (painotus 60/40 — sama menetelmä kuin{' '}
+              <Link href="/menetelma" className="underline hover:no-underline">
+                menetelmäsivullamme
+              </Link>
+              ). Ero on kuitenkin{' '}
               {Math.abs(score1 - score2) < 3 ? 'hyvin pieni' : 'selkeä'}, ja{' '}
               {loser.name} voi olla parempi valinta tietyissä tilanteissa.
             </p>

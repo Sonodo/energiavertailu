@@ -83,6 +83,8 @@ export interface ElectricityProvider {
   pros?: string[];
   cons?: string[];
   specialFeatures?: string[];
+  isAffiliate?: boolean;
+  affiliateUrl?: string;
 }
 
 export interface ElectricityContract {

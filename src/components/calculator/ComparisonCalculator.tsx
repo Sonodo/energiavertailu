@@ -16,6 +16,7 @@ import PreferencesStep, {
 } from './PreferencesStep';
 import ResultsList from './ResultsList';
 import ErrorBoundary from '@/components/ErrorBoundary';
+import { trackBeginCompare } from '@/lib/analytics';
 
 const steps = [
   { id: 1, label: 'Kulutus' },
@@ -230,7 +231,16 @@ export default function ComparisonCalculator() {
             onSortByChange={setSortBy}
             onAdvancedFiltersChange={setAdvancedFilters}
             onBack={() => setStep(1)}
-            onNext={() => setStep(3)}
+            onNext={() => {
+              trackBeginCompare({
+                housing_type: housingType,
+                consumption,
+                region,
+                contract_type: contractType,
+                sort_by: sortBy,
+              });
+              setStep(3);
+            }}
           />
         )}
         {step === 3 && (

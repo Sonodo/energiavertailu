@@ -68,6 +68,8 @@ export const providers: ElectricityProvider[] = [
     customerCount: '500 000+',
     greenOptions: true,
     counterpartyRisk: 3,
+    isAffiliate: true,
+    affiliateUrl: 'https://ion.fortum.com/t/t?a=1874973852&as=2066469821&t=2&tk=1',
   },
   {
     id: 'helen',
@@ -184,6 +186,8 @@ export const providers: ElectricityProvider[] = [
     customerCount: '200 000+',
     greenOptions: true,
     counterpartyRisk: 3,
+    isAffiliate: true,
+    affiliateUrl: 'https://go.adt267.com/t/t?a=1884560810&as=2066469821&t=2&tk=1',
   },
   {
     id: 'oomi',
@@ -287,6 +291,8 @@ export const providers: ElectricityProvider[] = [
     customerCount: '150 000+',
     greenOptions: true,
     counterpartyRisk: 18,
+    isAffiliate: true,
+    affiliateUrl: 'https://go.adt253.net/t/t?a=1867103627&as=2066469821&t=2&tk=1',
   },
   {
     id: 'hehku',
@@ -326,6 +332,8 @@ export const providers: ElectricityProvider[] = [
     customerCount: '60 000+',
     greenOptions: false,
     counterpartyRisk: 22,
+    isAffiliate: true,
+    affiliateUrl: 'https://go.adt246.net/t/t?a=1893918387&as=2066469821&t=2&tk=1',
   },
   {
     id: 'ilmatar',
