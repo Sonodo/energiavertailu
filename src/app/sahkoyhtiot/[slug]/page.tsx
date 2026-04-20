@@ -15,6 +15,7 @@ import {
   CheckCircle2,
   Building2,
   Shield,
+  TrendingDown,
 } from 'lucide-react';
 import { providers } from '@/data/providers';
 import { providerDetails } from '@/data/provider-details';
@@ -22,13 +23,30 @@ import { SITE_URL } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import FAQSchema from '@/components/seo/FAQSchema';
 import ProviderSchema from '@/components/seo/ProviderSchema';
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import ContractProductSchema from '@/components/seo/ContractProductSchema';
 import InternalLinks from '@/components/InternalLinks';
 import ProviderLogo from '@/components/ui/ProviderLogo';
 import UpdateTimestamp from '@/components/ui/UpdateTimestamp';
+import type { ElectricityProvider, ElectricityContract } from '@/types';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
+
+// ISR: regenerate static provider pages every 24h so stale static prices
+// are refreshed when data/providers.ts is redeployed. Prices shown are
+// always accompanied by a "Hinnat päivitetty ..." disclaimer.
+export const revalidate = 86400;
+
+// Build-time date used as the authoritative "prices last updated" marker,
+// rendered into the static HTML (server) so crawlers see it too.
+const PRICES_UPDATED_AT = new Date();
+const PRICES_UPDATED_LABEL = PRICES_UPDATED_AT.toLocaleDateString('fi-FI', {
+  day: 'numeric',
+  month: 'numeric',
+  year: 'numeric',
+});
 
 export async function generateStaticParams() {
   return providers.map((p) => ({ slug: p.slug }));
@@ -41,24 +59,34 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return { title: 'Sähköyhtiö ei löytynyt' };
   }
 
-  const title = `${provider.name} — Sopimukset ja hinnat`;
+  const title = `${provider.name} sähkösopimukset 2026 – hinnat, sopimukset ja arvostelu | Valitse Sähkö`;
   // Keep meta description under ~160 chars for SERP snippets.
-  const rawDescription = `${provider.name}: ${provider.contracts.length} sopimusta. ${provider.description}`;
+  const rawDescription = `${provider.name}: ${provider.contracts.length} sopimusta, hinnat ja arvostelu. ${provider.description}`;
   const description =
     rawDescription.length > 155
       ? `${rawDescription.slice(0, 152).trimEnd()}...`
       : rawDescription;
 
+  const canonical = `${SITE_URL}/sahkoyhtiot/${slug}`;
+
   return {
     title,
     description,
     openGraph: {
-      title: `${title} | Valitse Sähkö`,
+      title: `${provider.name} sähkösopimukset 2026 – hinnat ja arvostelu`,
       description,
-      url: `${SITE_URL}/sahkoyhtiot/${slug}`,
+      url: canonical,
+      siteName: 'Valitse Sähkö',
+      locale: 'fi_FI',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${provider.name} sähkösopimukset 2026`,
+      description,
     },
     alternates: {
-      canonical: `${SITE_URL}/sahkoyhtiot/${slug}`,
+      canonical,
     },
   };
 }
@@ -121,9 +149,63 @@ export default async function ProviderDetailPage({ params }: PageProps) {
   const details = providerDetails[provider.id];
   const pType = details?.type ?? 'national';
 
+  // Dominant contract type — used to rank alternatives fairly:
+  // whichever type this provider has most of (fallback: 'spot').
+  const typeCounts: Record<string, number> = {};
+  provider.contracts.forEach((c) => {
+    typeCounts[c.type] = (typeCounts[c.type] ?? 0) + 1;
+  });
+  const dominantType =
+    (Object.entries(typeCounts).sort((a, b) => b[1] - a[1])[0]?.[0] as
+      | 'fixed'
+      | 'spot'
+      | 'hybrid'
+      | 'open-ended'
+      | undefined) ?? 'spot';
+
+  // Top 3 cheapest alternative providers, ranked by the cheapest matching
+  // contract of the dominant type. Transparent criterion disclosed in the UI.
+  type Alternative = {
+    provider: ElectricityProvider;
+    contract: ElectricityContract;
+  };
+  const alternatives: Alternative[] = providers
+    .filter((p) => p.id !== provider.id)
+    .map((p) => {
+      const matching = p.contracts.filter((c) => c.type === dominantType);
+      if (matching.length === 0) return null;
+      const cheapest = matching.reduce((min, c) =>
+        c.pricePerKwh < min.pricePerKwh ? c : min
+      );
+      return { provider: p, contract: cheapest } as Alternative;
+    })
+    .filter((a): a is Alternative => a !== null)
+    .sort((a, b) => a.contract.pricePerKwh - b.contract.pricePerKwh)
+    .slice(0, 3);
+
+  const dominantTypeLabel =
+    dominantType === 'fixed'
+      ? 'kiinteähintainen'
+      : dominantType === 'spot'
+        ? 'pörssisähkö'
+        : dominantType === 'hybrid'
+          ? 'yhdistelmä'
+          : 'toistaiseksi voimassa oleva';
+
   return (
     <>
       <ProviderSchema provider={provider} details={details} />
+      <ContractProductSchema provider={provider} contracts={provider.contracts} />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Etusivu', url: SITE_URL },
+          { name: 'Sähköyhtiöt', url: `${SITE_URL}/sahkoyhtiot` },
+          {
+            name: provider.name,
+            url: `${SITE_URL}/sahkoyhtiot/${provider.slug}`,
+          },
+        ]}
+      />
       {details?.faq && details.faq.length > 0 && <FAQSchema faqs={details.faq} />}
 
       {/* Hero */}
@@ -163,7 +245,7 @@ export default async function ProviderDetailPage({ params }: PageProps) {
               </div>
 
               <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl">
-                {provider.name}
+                {provider.name} – sähkösopimukset ja arvostelu
               </h1>
               <p className="mt-3 max-w-2xl text-lg text-white/70">{provider.description}</p>
 
@@ -212,9 +294,17 @@ export default async function ProviderDetailPage({ params }: PageProps) {
                 <div className="flex items-center gap-3 text-white/80">
                   <Globe className="h-4 w-4 text-accent" />
                   <a
-                    href={provider.website}
+                    href={
+                      provider.isAffiliate && provider.affiliateUrl
+                        ? provider.affiliateUrl
+                        : provider.website
+                    }
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel={
+                      provider.isAffiliate
+                        ? 'sponsored nofollow noopener noreferrer'
+                        : 'noopener noreferrer'
+                    }
                     className="hover:text-white underline underline-offset-2"
                   >
                     {provider.website.replace('https://', '').replace('www.', '')}
@@ -259,11 +349,28 @@ export default async function ProviderDetailPage({ params }: PageProps) {
 
             {/* Contracts */}
             <section className="mb-12">
-              <div className="mb-6 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mb-4 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                 <h2 className="text-2xl font-bold text-slate-900">
                   Sähkösopimukset ({provider.contracts.length})
                 </h2>
                 <UpdateTimestamp label="Sopimustiedot päivitetty" />
+              </div>
+              {/* Server-rendered "prices updated on" disclaimer — crawler-visible,
+                  mitigates stale-price risk on statically generated contract data. */}
+              <div
+                className="mb-6 flex flex-col gap-1 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 sm:flex-row sm:items-center sm:justify-between"
+                role="note"
+              >
+                <span>
+                  <strong className="font-semibold">Hinnat päivitetty {PRICES_UPDATED_LABEL}.</strong>{' '}
+                  Sopimusten kuukausimaksut ja energiahinnat vahvistetaan aina sähköyhtiön sivuilta.
+                </span>
+                <Link
+                  href="/menetelma"
+                  className="text-xs font-medium text-amber-900 underline underline-offset-2 hover:text-amber-950"
+                >
+                  Menetelmä
+                </Link>
               </div>
               <div className="space-y-4">
                 {provider.contracts.map((contract) => (
@@ -321,12 +428,20 @@ export default async function ProviderDetailPage({ params }: PageProps) {
                           </div>
                         )}
                         <a
-                          href={contract.url}
+                          href={
+                            provider.isAffiliate && provider.affiliateUrl
+                              ? provider.affiliateUrl
+                              : contract.url
+                          }
                           target="_blank"
-                          rel="noopener noreferrer"
+                          rel={
+                            provider.isAffiliate
+                              ? 'sponsored nofollow noopener noreferrer'
+                              : 'noopener noreferrer'
+                          }
                           className="mt-2 inline-flex min-h-[44px] items-center gap-1 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-700 transition-colors"
                         >
-                          Katso tarjous
+                          Tutustu sopimukseen
                           <ExternalLink className="h-3.5 w-3.5" />
                         </a>
                       </div>
@@ -395,6 +510,86 @@ export default async function ProviderDetailPage({ params }: PageProps) {
               </section>
             )}
 
+            {/* Alternatives — top 3 cheapest providers for the dominant contract type */}
+            {alternatives.length > 0 && (
+              <section className="mb-12">
+                <h2 className="mb-2 text-2xl font-bold text-slate-900">
+                  Vertaile {provider.name} muihin sähköyhtiöihin
+                </h2>
+                <p className="mb-6 text-sm text-slate-500">
+                  Kolme halvinta vaihtoehtoa {dominantTypeLabel}-sopimuksille hintavertailussa.
+                  Listaus perustuu tietokantamme{' '}
+                  {dominantType === 'spot' ? 'marginaaliin' : 'energiahintaan'} (c/kWh, alv 0 %)
+                  {' '}— kaikki toimijat näkyvät samoilla säännöillä.
+                </p>
+                <div className="space-y-3">
+                  {alternatives.map((alt, idx) => {
+                    const isCheaper =
+                      alt.contract.pricePerKwh <
+                      Math.min(
+                        ...provider.contracts
+                          .filter((c) => c.type === dominantType)
+                          .map((c) => c.pricePerKwh)
+                      );
+                    return (
+                      <Link
+                        key={alt.provider.id}
+                        href={`/sahkoyhtiot/${alt.provider.slug}`}
+                        className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-colors hover:border-accent/50 hover:bg-slate-50"
+                      >
+                        <div className="flex items-center gap-4 min-w-0">
+                          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10 text-sm font-bold text-accent">
+                            {idx + 1}
+                          </div>
+                          <div className="min-w-0">
+                            <div className="truncate text-base font-semibold text-slate-900">
+                              {alt.provider.name}
+                            </div>
+                            <div className="truncate text-xs text-slate-500">
+                              {alt.contract.name}
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-col items-end shrink-0">
+                          <div
+                            className={cn(
+                              'text-lg font-bold',
+                              isCheaper ? 'text-emerald-600' : 'text-slate-900'
+                            )}
+                          >
+                            {alt.contract.pricePerKwh.toFixed(2)} c/kWh
+                          </div>
+                          <div className="flex items-center gap-1 text-xs text-slate-400">
+                            {isCheaper && (
+                              <TrendingDown className="h-3 w-3 text-emerald-500" />
+                            )}
+                            + {alt.contract.monthlyFee.toFixed(2)} €/kk
+                          </div>
+                        </div>
+                        <ChevronRight className="h-4 w-4 shrink-0 text-slate-400" />
+                      </Link>
+                    );
+                  })}
+                </div>
+                <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                  <Link
+                    href={`/vertailu?provider=${provider.slug}`}
+                    className="inline-flex items-center gap-1 font-medium text-accent hover:underline"
+                  >
+                    Tee täydellinen vertailu
+                    <ChevronRight className="h-4 w-4" />
+                  </Link>
+                  <Link
+                    href="/oppaat/sahkosopimustyypit"
+                    className="inline-flex items-center gap-1 font-medium text-slate-600 hover:underline"
+                  >
+                    Opas: spot vs. kiinteä
+                    <ChevronRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </section>
+            )}
+
             {/* FAQ */}
             {details?.faq && details.faq.length > 0 && (
               <section className="mb-12">
@@ -428,7 +623,7 @@ export default async function ProviderDetailPage({ params }: PageProps) {
                   vaihtoehto.
                 </p>
                 <Link
-                  href="/vertailu"
+                  href={`/vertailu?provider=${provider.slug}`}
                   className="mt-4 inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-accent transition-colors hover:bg-white/90"
                 >
                   Vertaa sopimuksia
@@ -479,9 +674,17 @@ export default async function ProviderDetailPage({ params }: PageProps) {
 
               {/* Visit website */}
               <a
-                href={provider.website}
+                href={
+                  provider.isAffiliate && provider.affiliateUrl
+                    ? provider.affiliateUrl
+                    : provider.website
+                }
                 target="_blank"
-                rel="noopener noreferrer"
+                rel={
+                  provider.isAffiliate
+                    ? 'sponsored nofollow noopener noreferrer'
+                    : 'noopener noreferrer'
+                }
                 className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-medium text-slate-700 shadow-sm transition-colors hover:bg-slate-50"
               >
                 <Globe className="h-4 w-4" />
