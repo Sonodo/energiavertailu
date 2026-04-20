@@ -9,8 +9,6 @@ import { NAVIGATION } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import { UserMenu } from '@/components/auth/UserMenu';
 
-const AUTH_ENABLED = process.env.NEXT_PUBLIC_AUTH_ENABLED === '1';
-
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -103,12 +101,12 @@ export default function Header() {
             >
               Vertaa sähkösopimuksia
             </Link>
-            {AUTH_ENABLED && <UserMenu />}
+            <UserMenu />
           </div>
 
           {/* Mobile: UserMenu + menu button */}
           <div className="flex items-center gap-2 lg:hidden">
-            {AUTH_ENABLED && <UserMenu />}
+            <UserMenu />
             <button
               type="button"
               className="relative min-h-[44px] min-w-[44px] rounded-lg p-2 text-white/70 transition-colors hover:bg-white/10 hover:text-white"

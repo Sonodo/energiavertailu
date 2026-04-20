@@ -156,7 +156,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${SITE_URL}/sahkoyhtiot/${provider.slug}`,
     lastModified: BUILD_DATE,
     changeFrequency: 'weekly' as const,
-    priority: 0.7,
+    priority: 0.6,
   }));
 
   // Guide pages
