@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { Leaf, ExternalLink, TrendingDown, Shield, GitCompareArrows, Check, Award, ChevronDown, Calculator } from 'lucide-react';
+import { Leaf, ExternalLink, TrendingDown, Shield, GitCompareArrows, Check, Award, ChevronDown, Calculator, Info } from 'lucide-react';
 import { cn, formatEuros, formatPrice, formatNumber } from '@/lib/utils';
 import { ComparisonResult } from '@/types';
 import { ELECTRICITY_VAT, ELECTRICITY_TAX } from '@/lib/constants';
@@ -60,6 +60,32 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
   const [justAdded, setJustAdded] = useState(false);
   const [showScoreBreakdown, setShowScoreBreakdown] = useState(false);
   const [showCalculation, setShowCalculation] = useState(false);
+  const [showSeasonalNote, setShowSeasonalNote] = useState(false);
+
+  /* Seasonal-pricing disclosure — Finnish electricity prices are heavily
+   * seasonal (winter 2–4x summer). Short fixed terms (6 kk) or odd-length
+   * terms (18 kk) can look nominally cheaper than they are on a full-year
+   * basis because they may cover disproportionately many summer months.
+   * We flag these with an honest, expandable info note — no paternalism,
+   * user decides. */
+  const seasonalNote: { title: string; body: string } | null = (() => {
+    if (contract.type !== 'fixed' || !contract.contractLength) return null;
+    if (contract.contractLength === 6) {
+      return {
+        title: 'Lyhyt sopimuskausi — mieti vuosikustannus',
+        body:
+          '6 kk sopimus kattaa vain puolet vuodesta. Jos kausi osuu pääosin kesään, nimellinen hinta näyttää edullisemmalta kuin se koko vuoden tasolla on. Talvikuukaudet tulevat vastaan uudella sopimuksella tai pörssihintaan. Suosittelemme vertailemaan vuoden kokonaishintaa.',
+      };
+    }
+    if (contract.contractLength === 18) {
+      return {
+        title: '18 kk sopimuskausi sisältää ylimääräisen kesän',
+        body:
+          'Sopimus kattaa 1,5 vuotta, jolloin siinä on 2 kesää ja 1 talvi. Nimellinen hinta voi siksi näyttää matalammalta kuin 12 kk sopimuksessa. Suosittelemme vertailemaan vuoden kokonaishintaa.',
+      };
+    }
+    return null;
+  })();
 
   // Check localStorage on mount
   useEffect(() => {
@@ -237,6 +263,27 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
                 {provider.counterpartyRisk >= 76
                   ? 'Korkea vastapuoliriski — sopimuksen toteutuminen epävarmaa'
                   : 'Kohonnut vastapuoliriski — huomioi yhtiön vakaus'}
+              </div>
+            )}
+
+            {/* Seasonal-pricing disclosure (6 kk / 18 kk) — honest note, not a warning */}
+            {seasonalNote && (
+              <div className="mt-2">
+                <button
+                  type="button"
+                  onClick={() => setShowSeasonalNote(!showSeasonalNote)}
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-amber-50 px-2.5 py-1 text-xs font-medium text-amber-800 hover:bg-amber-100 transition-colors"
+                  aria-expanded={showSeasonalNote}
+                >
+                  <Info className="h-3.5 w-3.5" />
+                  {seasonalNote.title}
+                  <ChevronDown className={cn('h-3 w-3 transition-transform', showSeasonalNote && 'rotate-180')} />
+                </button>
+                {showSeasonalNote && (
+                  <p className="mt-1.5 rounded-lg bg-amber-50/70 border border-amber-100 px-3 py-2 text-xs leading-relaxed text-amber-900">
+                    {seasonalNote.body}
+                  </p>
+                )}
               </div>
             )}
 

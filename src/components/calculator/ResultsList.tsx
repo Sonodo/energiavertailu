@@ -15,6 +15,7 @@ import ComparisonFloatingBar from './ComparisonFloatingBar';
 import ShareButton from '@/components/ui/ShareButton';
 import BookmarkedContracts from './BookmarkedContracts';
 import UpdateTimestamp from '@/components/ui/UpdateTimestamp';
+import SaveComparisonButton from './SaveComparisonButton';
 
 interface ResultsListProps {
   consumption: number;
@@ -442,6 +443,16 @@ export default function ResultsList({
           <ShareButton
             title="Valitse Sähkö — Sähkösopimuksien vertailu"
             text="Katso sähkösopimuksien vertailutulokset"
+          />
+          <SaveComparisonButton
+            results={results}
+            consumption={consumption}
+            region={region}
+            transferPrice={selectedRegion.transferPrice}
+            contractType={contractType}
+            selectedDurations={selectedDurations}
+            greenOnly={greenOnly}
+            sortBy={sortBy}
           />
         </div>
       </div>

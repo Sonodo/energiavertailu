@@ -1534,4 +1534,57 @@ Kymenlaakson Sähkö investoi sähköverkon uudistamiseen ja toimitusvarmuuden p
       },
     ],
   },
+
+  'cheap-energy': {
+    id: 'cheap-energy',
+    longDescription: `Cheap Energy on edullisiin sähkösopimuksiin keskittynyt haastaja Suomen sähkömarkkinoilla. Yhtiö on osa ruotsalaista Elify Energy Group AB -konsernia, ja Suomen toimipiste sijaitsee Helsingissä. Cheap Energyn liiketoimintamalli on yksinkertainen: matala marginaali, läpinäkyvä hinnoittelu ja selkeä sopimusvalikoima.
+
+Kotitalouksille on tarjolla sekä määräaikaisia kiinteähintaisia sopimuksia (6, 24 ja 36 kuukautta) että pörssisähköä pienellä marginaalilla (noin 0,39 snt/kWh). 36 kuukauden kiinteähintainen sopimus on tämänhetkisen tiedon mukaan Suomen markkinoiden pisin kuluttajille tarjottava määräaikainen sähkösopimus — se tarjoaa vakaan hinnan kolmeksi vuodeksi eteenpäin. Uusille asiakkaille on tarjolla perusmaksuton aloitusjakso (1–6 kk sopimustyypistä riippuen).
+
+Cheap Energy on nuorempi toimija kuin perinteiset suomalaiset sähköyhtiöt, ja brändituntemus on vasta rakentumassa. Pisimmän määräaikaisen sopimuksen tarjoajana yhtiö on kuitenkin profiloitunut selkeästi hintaturvaa hakevien kuluttajien vaihtoehdoksi. Asiakaspalvelu tavoittaa sekä puhelimitse että sähköpostilla.`,
+    type: 'challenger',
+    customerServicePhone: '030 660 6490',
+    pros: [
+      'Pisin kiinteähintainen määräaikainen sopimus Suomessa (36 kk) — pitkä hintaturva',
+      'Läpinäkyvä hinnoittelu — snt/kWh ja perusmaksu näkyvillä selvästi',
+      'Perusmaksuton aloitusjakso useissa sopimuksissa (1–6 kk nollalla perusmaksulla)',
+      'Tarjoaa sekä kiinteitä määräaikaisia että pörssisähköä — monipuolinen valikoima',
+      'Pörssisähkön marginaali kilpailukykyinen (noin 0,39 snt/kWh)',
+    ],
+    cons: [
+      'Ei suomalaisomistuksessa — emoyhtiö Elify Energy Group AB sijaitsee Ruotsissa',
+      'Tuntemattomampi brändi kuin Fortum, Helen tai Vattenfall',
+      'Ei uusiutuvaa sähköä vakiona — ekologinen vaihtoehto erillisenä lisäpalveluna',
+      '36 kk sopimus sitoo pitkäksi aikaa — irtautuminen kesken kauden voi olla hankalaa',
+      'Nuorempi toimija suomalaisessa sähkömarkkinassa, lyhyempi historia asiakaskokemuksena',
+    ],
+    specialFeatures: [
+      '36 kk kiinteä sopimus — tämänhetkisen tiedon mukaan markkinoiden pisin määräaikainen',
+      '0 € perusmaksu -kampanjat uusille asiakkaille',
+      'Pörssisähkö pienellä marginaalilla — ei sitoutumisaikaa',
+      'Ekologinen lisäpalvelu uusiutuvaa sähköä hakeville',
+    ],
+    faq: [
+      {
+        question: 'Onko Cheap Energy suomalainen yhtiö?',
+        answer: 'Cheap Energy toimii Suomessa, toimipiste on Helsingissä. Emoyhtiö on kuitenkin ruotsalainen Elify Energy Group AB, joten omistus on ruotsalaisissa käsissä.',
+      },
+      {
+        question: 'Mitä Cheap Energy tarjoaa verrattuna suurempiin sähköyhtiöihin?',
+        answer: 'Suurin ero on sopimusvalikoimassa: Cheap Energyllä on markkinoiden pisin kiinteähintainen määräaikainen sopimus (36 kk). Lisäksi pörssisähkön marginaali on kilpailukykyinen ja aloitusjakso usein perusmaksuton.',
+      },
+      {
+        question: 'Kannattaako 36 kk kiinteä sopimus?',
+        answer: 'Riippuu näkemyksestäsi markkinahinnan suunnasta. 36 kk kiinteähintainen antaa pisimmän hintaturvan ja suojaa talvipiikkejä vastaan, mutta sitoo hinnan kolmeksi vuodeksi. Jos uskot hintojen laskevan, pörssisähkö voi olla kannattavampi.',
+      },
+      {
+        question: 'Miten irtisanominen toimii 36 kk kiinteässä sopimuksessa?',
+        answer: 'Määräaikainen sopimus sitoo koko sopimuskauden. Poikkeustilanteissa (esim. muutto kiinteistöön, jossa sähkönmyyjää ei voi itse valita) sopimusehdot voivat antaa mahdollisuuden irtautua — tarkista aina voimassa olevat sopimusehdot.',
+      },
+      {
+        question: 'Onko Cheap Energyn sähkö uusiutuvaa?',
+        answer: 'Perussopimus ei ole erityisesti uusiutuvaa sähköä. Yhtiö tarjoaa ekologisen lisäpalvelun erillisenä vaihtoehtona niille asiakkaille, jotka haluavat uusiutuvalla energialla tuotettua sähköä. Tarkista hinta ja ehdot cheapenergy.fi-sivulta.',
+      },
+    ],
+  },
 };

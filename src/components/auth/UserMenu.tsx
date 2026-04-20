@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Script from 'next/script';
-import { LogIn, LogOut, User, ChevronDown } from 'lucide-react';
+import Link from 'next/link';
+import { LogIn, LogOut, User, ChevronDown, Bookmark } from 'lucide-react';
 
 interface UserInfo {
   id: string;
@@ -133,6 +134,14 @@ export function UserMenu() {
               <p className="text-sm font-medium text-slate-900 truncate">{user.name}</p>
               <p className="text-xs text-slate-500 truncate">{user.email}</p>
             </div>
+            <Link
+              href="/vertailut"
+              onClick={() => setDropdownOpen(false)}
+              className="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-accent transition-colors"
+            >
+              <Bookmark className="w-4 h-4" />
+              Tallennetut vertailut
+            </Link>
             <button
               onClick={handleLogout}
               className="w-full flex items-center gap-2 px-4 py-2.5 text-sm text-slate-600 hover:bg-slate-50 hover:text-red-600 transition-colors"

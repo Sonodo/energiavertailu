@@ -215,7 +215,7 @@ export default function HomeContent({
               className="mt-10 flex flex-wrap justify-center gap-4"
             >
               <Link
-                href="/vertailu"
+                href="/vertailu?kulutus=5000&alue=uusimaa"
                 className="group inline-flex items-center justify-center border-2 border-accent bg-accent px-6 py-3 sm:px-8 sm:py-4 text-sm font-bold uppercase tracking-widest text-white transition-all duration-300 hover:bg-transparent hover:text-white"
               >
                 Vertaa sähkösopimuksia
@@ -239,21 +239,21 @@ export default function HomeContent({
             >
               <span className="text-xs text-white/40">Pikavertailu:</span>
               <Link
-                href="/vertailu?kulutus=2000&tyyppi=kerrostalo"
+                href="/vertailu?kulutus=2000&alue=uusimaa"
                 className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/70 backdrop-blur-sm transition-all hover:border-accent/30 hover:bg-accent/5 hover:text-white active:scale-[0.98]"
               >
                 <Building2 className="h-3 w-3" />
                 Kerrostalo
               </Link>
               <Link
-                href="/vertailu?kulutus=5000&tyyppi=rivitalo"
+                href="/vertailu?kulutus=5000&alue=uusimaa"
                 className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/70 backdrop-blur-sm transition-all hover:border-accent/30 hover:bg-accent/5 hover:text-white active:scale-[0.98]"
               >
                 <Home className="h-3 w-3" />
                 Rivitalo
               </Link>
               <Link
-                href="/vertailu?kulutus=18000&tyyppi=omakotitalo"
+                href="/vertailu?kulutus=18000&alue=uusimaa"
                 className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/70 backdrop-blur-sm transition-all hover:border-accent/30 hover:bg-accent/5 hover:text-white active:scale-[0.98]"
               >
                 <ThermometerSun className="h-3 w-3" />
@@ -326,9 +326,9 @@ export default function HomeContent({
 
           <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-[1fr_auto_1fr_auto_1fr] md:items-center md:gap-3">
             {[
-              { icon: Lock, title: 'Kiinteähintainen', desc: 'Vakaa kuukausihinta', href: '/vertailu?tyyppi=kiintea', bg: 'bg-accent-100', text: 'text-accent-900', iconColor: 'text-accent-600' },
+              { icon: Lock, title: 'Kiinteähintainen', desc: 'Vakaa kuukausihinta', href: '/vertailu?sopimus=fixed', bg: 'bg-accent-100', text: 'text-accent-900', iconColor: 'text-accent-600' },
               { icon: TrendingUp, title: 'Pörssisähkö', desc: 'Tuntihinnoittelu', href: '/porssisahko', bg: 'bg-accent-300', text: 'text-white', iconColor: 'text-white/80' },
-              { icon: Layers, title: 'Yhdistelmä', desc: 'Kiinteä + pörssi', href: '/vertailu?tyyppi=yhdistelma', bg: 'bg-accent', text: 'text-white', iconColor: 'text-white/80' },
+              { icon: Layers, title: 'Yhdistelmä', desc: 'Kiinteä + pörssi', href: '/vertailu?sopimus=all', bg: 'bg-accent', text: 'text-white', iconColor: 'text-white/80' },
             ].flatMap((item, i, arr) => {
               const elements = [
                 <ScrollReveal key={`cat-${i}`} delay={i * 0.12} direction="up">
