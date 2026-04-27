@@ -6,43 +6,16 @@ import { SITE_NAME, SITE_URL } from '@/lib/constants';
 export const metadata: Metadata = {
   title: 'Toimituksen periaatteet — Valitse Sähkö',
   description:
-    'Valitse Sähkön toimituksen periaatteet, vastaava päätoimittaja, ranking-menetelmä, datalähteet (Fingrid, ENTSO-E, Energiavirasto), kumppanuudet ja päivitystiheys.',
+    'Valitse Sähkön toimituksen periaatteet, ranking-menetelmä, datalähteet (Fingrid, ENTSO-E, Energiavirasto), kumppanuudet ja päivitystiheys.',
   openGraph: {
     title: `Toimituksen periaatteet | ${SITE_NAME}`,
     description:
-      'Vastaava päätoimittaja, ranking-menetelmä, datalähteet ja kumppanuusperiaatteet.',
+      'Toimituksen periaatteet, ranking-menetelmä, datalähteet ja kumppanuusperiaatteet.',
     url: `${SITE_URL}/toimituksen-periaatteet`,
   },
   alternates: {
     canonical: `${SITE_URL}/toimituksen-periaatteet`,
   },
-};
-
-const personSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': `${SITE_URL}/toimituksen-periaatteet#henri-linnainmaa`,
-  name: 'Henri Linnainmaa',
-  honorificSuffix: 'KTM',
-  jobTitle: 'Vastaava päätoimittaja',
-  alumniOf: {
-    '@type': 'CollegeOrUniversity',
-    name: 'Aalto-yliopisto',
-    sameAs: 'https://www.aalto.fi/',
-  },
-  worksFor: {
-    '@type': 'Organization',
-    '@id': `${SITE_URL}#organization`,
-    name: 'Sonodo',
-  },
-  knowsAbout: [
-    'Sähkömarkkinat',
-    'Sähkövertailu',
-    'Pörssisähkö',
-    'Tekoäly liiketoiminnassa',
-    'Data-analytiikka',
-  ],
-  knowsLanguage: ['fi', 'en'],
 };
 
 const organizationSchema = {
@@ -53,20 +26,17 @@ const organizationSchema = {
   legalName: 'Sonodo (toiminimi)',
   taxID: '2887416-4',
   vatID: 'FI28874164',
+  identifier: {
+    '@type': 'PropertyValue',
+    propertyID: 'FI Y-tunnus',
+    value: '2887416-4',
+  },
   url: SITE_URL,
   brand: {
     '@type': 'Brand',
     name: 'Valitse Sähkö',
   },
   publishingPrinciples: `${SITE_URL}/toimituksen-periaatteet`,
-  founder: {
-    '@id': `${SITE_URL}/toimituksen-periaatteet#henri-linnainmaa`,
-  },
-  employee: [
-    {
-      '@id': `${SITE_URL}/toimituksen-periaatteet#henri-linnainmaa`,
-    },
-  ],
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'FI',
@@ -105,10 +75,6 @@ export default function ToimituksenPeriaatteetPage() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
-      <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
 
@@ -137,49 +103,41 @@ export default function ToimituksenPeriaatteetPage() {
             </h1>
             <p className="mt-4 text-lg text-slate-600">
               Valitse Sähkö on Sonodo-toiminimen ylläpitämä riippumaton sähkövertailupalvelu.
-              Tällä sivulla kuvaamme avoimesti, kuka palvelusta vastaa, miten ranking
-              syntyy, mistä data tulee ja miten kumppanuudet on järjestetty.
+              Tällä sivulla kuvaamme avoimesti, miten ranking syntyy, mistä data
+              tulee ja miten kumppanuudet on järjestetty.
             </p>
           </div>
         </div>
 
         {/* Content */}
         <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8 space-y-16">
-          {/* Päätoimittaja */}
+          {/* Toimitus */}
           <section>
             <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
                 <FileCheck className="h-5 w-5 text-accent" />
               </div>
-              Vastaava päätoimittaja
+              Toimitus
             </h2>
             <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-slate-900">Henri Linnainmaa, KTM</h3>
-              <p className="text-sm text-accent font-medium mt-1">
-                Aalto-yliopisto · Vastaava päätoimittaja
-              </p>
-              <div className="mt-4 space-y-4 text-slate-700 leading-relaxed">
+              <div className="space-y-4 text-slate-700 leading-relaxed">
                 <p>
-                  Henri Linnainmaa on kauppatieteiden maisteri Aalto-yliopistosta.
-                  Hän on urallaan konsultoinut yrityksiä tekoälyn soveltamisessa
-                  liiketoimintaan ja rakentanut kymmeniä tekoälytyökaluja ja
-                  automaatioratkaisuja yrityskäyttöön muun muassa raportointiin,
-                  analytiikkaan ja markkinointiin liittyen.
+                  Valitse Sähkön toimituksesta vastaa Sonodo. Toimituksen tehtävä
+                  on varmistaa, että hintatieto, sopimusehdot ja yhtiöprofiilit
+                  pitävät paikkansa, että ranking-menetelmä on dokumentoitu ja
+                  että käyttäjä saa rehellisen kuvan myös pörssisähkön riskeistä
+                  ja sähkölaskun rakenteesta.
                 </p>
                 <p>
-                  Valitse Sähkössä Henrin vastuulla on toimituksen sisältö: että
-                  hintatieto, sopimusehdot ja yhtiöprofiilit pitävät paikkansa,
-                  että ranking-menetelmä on dokumentoitu ja että käyttäjä saa
-                  rehellisen kuvan myös pörssisähkön riskeistä ja sähkölaskun
-                  rakenteesta. Henrin lähestymistapa yhdistää huolellisen
-                  arkkitehtuurisuunnittelun, laajan testauskattavuuden ja
-                  data-analyyttisen työtavan: poikkeamat tunnistetaan datasta ja
-                  kehityspäätökset perustuvat todennettuihin havaintoihin.
+                  Lähestymistapamme yhdistää huolellisen arkkitehtuurisuunnittelun,
+                  laajan testauskattavuuden ja data-analyyttisen työtavan:
+                  poikkeamat tunnistetaan datasta ja kehityspäätökset perustuvat
+                  todennettuihin havaintoihin.
                 </p>
                 <p>
                   Toimituksellinen periaate: jokaisella oppaalla, blogiartikkelilla
-                  ja yhtiöprofiililla on viimeisin tarkistuspäivä, ja sisältö on
-                  toimituksen tarkistama ennen julkaisua.
+                  ja yhtiöprofiililla on viimeisin tarkistuspäivä, ja sisältö
+                  käydään läpi ennen julkaisua.
                 </p>
               </div>
             </div>
@@ -349,8 +307,8 @@ export default function ToimituksenPeriaatteetPage() {
               Yhteystiedot
             </h2>
             <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
-              <p className="font-semibold text-slate-900">Sonodo</p>
-              <p className="mt-1 text-sm text-slate-600">Toiminimi · Y-tunnus 2887416-4</p>
+              <p className="font-semibold text-slate-900">Sonodo (toiminimi)</p>
+              <p className="mt-1 text-sm text-slate-600">Y-tunnus 2887416-4</p>
               <p className="mt-1 text-sm text-slate-600">Brändi: Valitse Sähkö</p>
               <div className="mt-4 flex flex-col gap-2 text-sm text-slate-700">
                 <div className="flex items-center gap-2">

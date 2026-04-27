@@ -188,16 +188,6 @@ export default async function BlogPostPage({
             <span>{post.author}</span>
             <span className="hidden sm:inline text-slate-300">·</span>
             <span>
-              Toimituksen tarkistama —{' '}
-              <Link
-                href="/toimituksen-periaatteet"
-                className="text-accent hover:underline"
-              >
-                Vastaava päätoimittaja: Henri Linnainmaa, KTM
-              </Link>
-            </span>
-            <span className="hidden sm:inline text-slate-300">·</span>
-            <span>
               Päivitetty{' '}
               {new Date(post.updatedAt).toLocaleDateString('fi-FI', {
                 year: 'numeric',

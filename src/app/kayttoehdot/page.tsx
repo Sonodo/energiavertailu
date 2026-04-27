@@ -226,7 +226,7 @@ export default function KayttoehdotPage() {
             Jos sinulla on kysyttävää näistä käyttöehdoista, ota meihin yhteyttä:
           </p>
           <p>
-            <strong>Sonodo — Henri Linnainmaa</strong>
+            <strong>Sonodo (toiminimi)</strong>
             <br />
             Helsinki, Suomi
             <br />

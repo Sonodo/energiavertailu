@@ -83,7 +83,7 @@ const terms: Term[] = [
   {
     term: 'Sähkövero',
     definition:
-      'Valtion perimä energiaverotuksen muoto, joka peritään kulutetusta sähköstä. Vuonna 2026 kotitalouksien sähkövero on 2,253 c/kWh (alv 0 %). Vero peritään siirtolaskun yhteydessä. Veroluokat: I = kotitaloudet ja palvelut, II = teollisuus (alennettu vero).',
+      'Kotitalouksilta perittävä valmistevero. Energiaveron osuus 2,24 c/kWh (alv 0 %) + huoltovarmuusmaksu 0,085 c/kWh (alv 0 %). Yhteensä 2,917875 c/kWh sisältäen alv 25,5 % (1.4.2026 alkaen). Luokka II (mm. teollisuus, datakeskukset 1.7.2026 asti) 0,169425 c/kWh. Vero peritään siirtolaskun yhteydessä.',
     source: 'Verohallinto',
     related: ['Siirtomaksu', 'c/kWh (snt/kWh)'],
   },
@@ -258,7 +258,7 @@ export default function SanastoPage() {
                 month: 'long',
                 day: 'numeric',
               })}
-              . Toimituksen tarkistama — Vastaava päätoimittaja: Henri Linnainmaa, KTM.
+              .
             </p>
           </div>
         </div>

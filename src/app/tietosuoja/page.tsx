@@ -48,7 +48,7 @@ export default function TietosuojaPage() {
           {/* 1. Rekisterinpitäjä */}
           <h2>1. Rekisterinpitäjä</h2>
           <p>
-            <strong>Sonodo — Henri Linnainmaa</strong>
+            <strong>Sonodo (toiminimi)</strong>
             <br />
             Helsinki, Suomi
             <br />
@@ -251,7 +251,7 @@ export default function TietosuojaPage() {
             rekisteröidyn oikeuksiasi, ota yhteyttä:
           </p>
           <p>
-            <strong>Sonodo — Henri Linnainmaa</strong>
+            <strong>Sonodo (toiminimi)</strong>
             <br />
             <a href="/yhteystiedot" className="text-accent hover:underline">Ota yhteyttä</a>
           </p>

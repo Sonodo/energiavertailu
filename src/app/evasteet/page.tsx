@@ -187,7 +187,7 @@ export default function EvasteetPage() {
             Jos sinulla on kysyttävää evästekäytännöstämme, ota yhteyttä:
           </p>
           <p>
-            <strong>Sonodo — Henri Linnainmaa</strong>
+            <strong>Sonodo (toiminimi)</strong>
             <br />
             <a
               href="/yhteystiedot"

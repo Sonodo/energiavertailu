@@ -501,9 +501,9 @@ export default async function SahkonHintaTanaanPage() {
             const hourlyUsage = level.kwh / 8760;
             // Full cost per kWh including transfer + tax + VAT
             const fullCurrentPrice =
-              stats.currentPrice + 4.5 + 2.79372 * (1 + ELECTRICITY_VAT);
+              stats.currentPrice + 4.5 + 2.325 * (1 + ELECTRICITY_VAT);
             const fullAvgPrice =
-              stats.avgPrice + 4.5 + 2.79372 * (1 + ELECTRICITY_VAT);
+              stats.avgPrice + 4.5 + 2.325 * (1 + ELECTRICITY_VAT);
             // Monthly cost estimate
             const monthlyCurrentEst = (fullCurrentPrice / 100) * (level.kwh / 12);
             const monthlyAvgEst = (fullAvgPrice / 100) * (level.kwh / 12);

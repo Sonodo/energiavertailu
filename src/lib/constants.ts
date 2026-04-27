@@ -32,8 +32,10 @@ export const ELECTRICITY_VAT = 0.255; // 25.5%
 // Average transfer price (siirtohinta) in Finland c/kWh (incl. tax)
 export const AVG_TRANSFER_PRICE = 4.5;
 
-// Average electricity tax c/kWh
-export const ELECTRICITY_TAX = 2.79372;
+// Electricity tax (sähkövero) c/kWh, excl. VAT — verified Verohallinto figure
+// effective 1.4.2026: energy tax 2,24 c/kWh + huoltovarmuusmaksu 0,085 c/kWh = 2,325 c/kWh.
+// With VAT 25,5 % the incl.-VAT figure is 2,917875 c/kWh.
+export const ELECTRICITY_TAX = 2.325;
 
 // Navigation
 export const NAVIGATION: NavigationItem[] = [

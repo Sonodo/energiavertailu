@@ -695,7 +695,7 @@ Sähkön kokonaishinta muodostuu kolmesta pääkomponentista:
 | Energian perusmaksu | 3,50 €/kk | 42 € |
 | Sähkönsiirto | 4,50 c/kWh | 810 € |
 | Siirron perusmaksu | 8,00 €/kk | 96 € |
-| Sähkövero | 2,79 c/kWh | 503 € |
+| Sähkövero | 2,325 c/kWh | 419 € |
 | ALV 25,5% | (kaikesta) | 737 € |
 | **YHTEENSÄ** | | **3 628 €** |
 
@@ -741,9 +741,9 @@ Energiavirasto valvoo jakeluverkkoyhtiöiden hinnoittelua ja varmistaa, etteivä
 ## Verot ja veroluonteiset maksut {#verot}
 
 ### Sähkövero
-Sähkövero on valtionvero, joka peritään kaikilta sähkönkäyttäjiltä. Vuonna 2026 sähkövero on:
-- **Veroluokka I** (kotitaloudet, palvelut): 2,79372 c/kWh (sis. huoltovarmuusmaksu)
-- **Veroluokka II** (teollisuus, kasvihuoneet, konesalit): 0,05 c/kWh
+Sähkövero on valtionvero, joka peritään kaikilta sähkönkäyttäjiltä. 1.4.2026 alkaen:
+- **Veroluokka I** (kotitaloudet, palvelut): 2,325 c/kWh ennen alv:tä (energiavero 2,24 c/kWh + huoltovarmuusmaksu 0,085 c/kWh) — alv 25,5 % mukaan lukien **2,917875 c/kWh**
+- **Veroluokka II** (teollisuus, kasvihuoneet, konesalit 1.7.2026 asti): 0,135 c/kWh ennen alv:tä — alv 25,5 % mukaan lukien 0,169425 c/kWh
 
 ### Arvonlisävero (ALV)
 ALV 25,5% lisätään **kaikkiin** sähkölaskun komponentteihin: energiamaksuun, siirtomaksuun ja sähköveroon. Vuonna 2025 ALV laski tilapäisesti 10%:iin sähkön osalta, mutta palautui sittemmin normaalitasolle.

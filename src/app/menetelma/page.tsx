@@ -165,12 +165,15 @@ export default function MenetelmaPage() {
                   3. Sähkövero
                 </h3>
                 <p>
-                  Sähkövero on valtion asettama vero sähkön kulutukselle.
-                  Nykyinen verokanta on 2,79372 c/kWh (alv 0 %), johon lisätään ALV
-                  25,5 %.
+                  Sähkövero kotitalouksille (luokka I) on{' '}
+                  <strong>2,917875 c/kWh</strong> (sis. alv 25,5 % ja
+                  huoltovarmuusmaksu 0,085 c/kWh) 1.4.2026 alkaen. Pohjana on
+                  energiaveron osuus 2,24 c/kWh ja huoltovarmuusmaksu 0,085
+                  c/kWh — yhteensä 2,325 c/kWh ennen alv:tä, jolle lisätään alv
+                  25,5 %. Lähde: Verohallinto.
                 </p>
                 <div className="my-4 rounded-lg bg-slate-50 px-4 py-3 font-mono text-sm text-slate-700">
-                  Sähkövero = 2,79372 c/kWh × 1,255 × kulutus kWh / 100
+                  Sähkövero = 2,325 c/kWh × 1,255 × kulutus kWh / 100
                 </div>
 
                 <h3 className="text-lg font-semibold text-slate-900 mt-8 mb-3">
@@ -208,13 +211,13 @@ export default function MenetelmaPage() {
                     </div>
                     <div className="flex justify-between">
                       <span>
-                        Sähkövero: 5 000 × 2,79372 / 100 × 1,255 = 175,33
+                        Sähkövero: 5 000 × 2,325 / 100 × 1,255 = 145,89
                         €
                       </span>
                     </div>
                     <div className="my-2 border-t border-slate-200" />
                     <div className="flex justify-between text-base font-bold text-accent">
-                      <span>YHTEENSÄ: 789,94 €/vuosi (65,83 €/kk)</span>
+                      <span>YHTEENSÄ: 760,50 €/vuosi (63,38 €/kk)</span>
                     </div>
                   </div>
                 </div>

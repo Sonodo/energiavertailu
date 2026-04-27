@@ -1226,7 +1226,7 @@ export const blogPosts: BlogPost[] = [
 <p>Sähkölaskun kokonaissumma sisältää myös osia, joihin sähkösopimuksen valinta ei vaikuta:</p>
 
 <ul>
-<li><strong>Sähkövero:</strong> Valtio perii sähköveroa 2,79372 c/kWh (vuonna 2026). Tämä on kaikille sama.</li>
+<li><strong>Sähkövero:</strong> Valtio perii kotitalouksilta sähköveroa 2,917875 c/kWh sis. alv 25,5 % (1.4.2026 alkaen). Tämä on kaikille sama.</li>
 <li><strong>Siirtomaksu:</strong> Paikallinen verkkoyhtiö perii siirtomaksua, joka on tyypillisesti 3–6 c/kWh + kuukausimaksu. Tähän ei voi vaikuttaa sähkönmyyjää vaihtamalla.</li>
 </ul>
 
