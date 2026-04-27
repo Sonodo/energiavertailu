@@ -22,6 +22,7 @@ import { SITE_URL } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import FAQSchema from '@/components/seo/FAQSchema';
 import ProviderSchema from '@/components/seo/ProviderSchema';
+import ContractProductSchema from '@/components/seo/ContractProductSchema';
 import InternalLinks from '@/components/InternalLinks';
 import ProviderLogo from '@/components/ui/ProviderLogo';
 import UpdateTimestamp from '@/components/ui/UpdateTimestamp';
@@ -124,6 +125,7 @@ export default async function ProviderDetailPage({ params }: PageProps) {
   return (
     <>
       <ProviderSchema provider={provider} details={details} />
+      <ContractProductSchema provider={provider} contracts={provider.contracts} />
       {details?.faq && details.faq.length > 0 && <FAQSchema faqs={details.faq} />}
 
       {/* Hero */}

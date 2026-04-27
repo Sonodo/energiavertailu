@@ -127,6 +127,15 @@ export default function TietoaPage() {
             <a href="/menetelma" className="text-accent hover:underline">
               Menetelmä-sivulta
             </a>
+            . Toimituksen periaatteet, vastaava päätoimittaja ja
+            datalähteet on koottu{' '}
+            <a href="/toimituksen-periaatteet" className="text-accent hover:underline">
+              Toimituksen periaatteet -sivulle
+            </a>
+            . Sähköalan termit selitetään{' '}
+            <a href="/sanasto" className="text-accent hover:underline">
+              sanastossa
+            </a>
             .
           </p>
 

@@ -112,6 +112,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.4,
     },
     {
+      url: `${SITE_URL}/sanasto`,
+      lastModified: BUILD_DATE,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${SITE_URL}/toimituksen-periaatteet`,
+      lastModified: BUILD_DATE,
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
       url: `${SITE_URL}/tyokalut/kulutus`,
       lastModified: BUILD_DATE,
       changeFrequency: 'monthly',

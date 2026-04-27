@@ -294,6 +294,16 @@ export default async function GuideDetailPage({ params }: PageProps) {
               <Calendar className="h-4 w-4" />
               Päivitetty {new Date(guide.updatedAt).toLocaleDateString('fi-FI')}
             </span>
+            <span className="text-white/40">·</span>
+            <span>
+              Toimituksen tarkistama —{' '}
+              <Link
+                href="/toimituksen-periaatteet"
+                className="text-accent-400 hover:underline"
+              >
+                Vastaava päätoimittaja: Henri Linnainmaa, KTM
+              </Link>
+            </span>
           </div>
         </div>
       </section>
