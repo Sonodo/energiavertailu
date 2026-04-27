@@ -248,6 +248,7 @@ export default function ComparisonCalculator() {
             <ResultsList
               consumption={consumption}
               region={region}
+              housingType={housingType}
               contractType={contractType}
               selectedDurations={selectedDurations}
               greenOnly={greenOnly}

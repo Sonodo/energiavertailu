@@ -142,5 +142,16 @@ export const FINNISH_REGIONS = [
   { id: 'satakunta', name: 'Satakunta', gridOperator: 'Pori Energia Sähköverkot', transferPrice: 4.3 },
 ] as const;
 
+// Map calculator HousingType -> Fingrid Datahub Dataset 360 user group code.
+// BE01 = apartment buildings, BE02 = small houses w/ electric heating,
+// BE03 = small houses w/o electric heating. Rivitalo + omakotitalo without
+// electric heating both map to BE03 (Datahub doesn't separate them).
+export const HOUSING_TO_DATAHUB_GROUP = {
+  kerrostalo: 'BE01',
+  rivitalo: 'BE03',
+  omakotitalo: 'BE03',
+  'omakotitalo-sahko': 'BE02',
+} as const;
+
 // Default consumption for calculations
 export const DEFAULT_ANNUAL_KWH = 5000;

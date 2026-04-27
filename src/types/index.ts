@@ -186,3 +186,12 @@ export interface TableOfContentsItem {
   title: string;
   level: number; // 2 or 3
 }
+
+// Fingrid Datahub household consumption benchmark
+export interface HouseholdBenchmark {
+  averageKwhPerYear: number;
+  sampleGroup: string;
+  sampleSize: number;
+  dataAsOf: string;
+  degraded?: boolean;
+}

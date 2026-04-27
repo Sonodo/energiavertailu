@@ -15,10 +15,13 @@ import ComparisonFloatingBar from './ComparisonFloatingBar';
 import ShareButton from '@/components/ui/ShareButton';
 import BookmarkedContracts from './BookmarkedContracts';
 import UpdateTimestamp from '@/components/ui/UpdateTimestamp';
+import HouseholdBenchmark from './HouseholdBenchmark';
+import type { HousingType } from './ConsumptionStep';
 
 interface ResultsListProps {
   consumption: number;
   region: string;
+  housingType: HousingType;
   contractType: ContractTypeFilter;
   selectedDurations: DurationOption[];
   greenOnly: boolean;
@@ -261,6 +264,7 @@ function EmptyState({
 export default function ResultsList({
   consumption,
   region,
+  housingType,
   contractType,
   selectedDurations,
   greenOnly,
@@ -448,6 +452,9 @@ export default function ResultsList({
 
       {/* Summary */}
       <ComparisonSummary results={results} consumption={consumption} region={selectedRegion} recommendedResult={recommendedResult} />
+
+      {/* Household benchmark — Fingrid Datahub */}
+      <HouseholdBenchmark userKwhPerYear={consumption} housingType={housingType} />
 
       {/* Bookmarked contracts */}
       <BookmarkedContracts />
