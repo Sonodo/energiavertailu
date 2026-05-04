@@ -38,6 +38,35 @@ function degraded(reason: string): NextResponse {
   return NextResponse.json({ success: false, data: payload, reason }, { status: 200 });
 }
 
+/**
+ * 503 Service Unavailable — used when the underlying API call fails because
+ * an env key is missing or auth fails. ISR will NOT cache 503 responses,
+ * so the widget recovers automatically once keys are fixed (vs. degraded
+ * 200 responses which get cached for the revalidate window).
+ */
+function unavailable(reason: string): NextResponse {
+  return NextResponse.json(
+    { success: false, error: 'Tietolähde tilapäisesti pois käytöstä.', reason },
+    { status: 503 }
+  );
+}
+
+function isAuthOrKeyError(err: unknown): boolean {
+  if (!(err instanceof Error)) return false;
+  const msg = err.message.toLowerCase();
+  return (
+    msg.includes('api_key') ||
+    msg.includes('api key') ||
+    msg.includes('fingrid_api_key') ||
+    msg.includes('entsoe_api_key') ||
+    msg.includes('missing') ||
+    msg.includes('authentication failed') ||
+    msg.includes('unauthorized') ||
+    msg.includes('401') ||
+    msg.includes('403')
+  );
+}
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const housingType = searchParams.get('housingType');
@@ -60,6 +89,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ success: true, data: payload });
   } catch (error) {
     console.error('household-benchmark fetch failed:', error);
+    // Missing key / auth failure → 503 (uncached). Other failures → 200 degraded
+    // (cached for revalidate window) so transient blips don't slam upstream.
+    if (isAuthOrKeyError(error)) {
+      return unavailable(error instanceof Error ? error.message : 'unknown error');
+    }
     return degraded(error instanceof Error ? error.message : 'unknown error');
   }
 }

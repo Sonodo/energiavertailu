@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import ComparisonCalculator from '@/components/calculator/ComparisonCalculator';
+import LoadingTimeout from '@/components/ui/LoadingTimeout';
 import { SiteDisclosureBar } from '@/components/disclosure';
 
 export const metadata: Metadata = {
@@ -17,19 +18,6 @@ export const metadata: Metadata = {
   },
 };
 
-function CalculatorFallback() {
-  return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-      <div className="flex h-48 items-center justify-center">
-        <div className="text-center">
-          <div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-4 border-slate-200 border-t-accent" />
-          <p className="text-sm text-slate-500">Ladataan vertailulaskuria...</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function VertailuPage() {
   return (
     <>
@@ -45,7 +33,7 @@ export default function VertailuPage() {
         </p>
       </div>
 
-      <Suspense fallback={<CalculatorFallback />}>
+      <Suspense fallback={<LoadingTimeout fallbackHref="/sahkoyhtiot" fallbackLabel="Selaa sähköyhtiöitä" />}>
         <ComparisonCalculator />
       </Suspense>
     </div>

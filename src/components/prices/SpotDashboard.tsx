@@ -38,7 +38,11 @@ export default function SpotDashboard({ initialData, isSampleData }: SpotDashboa
 
   const fetchData = useCallback(async () => {
     try {
-      const response = await fetch('/api/prices/spot?period=today');
+      // 60s client-side timeout — if the upstream (ENTSO-E / Fingrid) hangs,
+      // we abort instead of leaving the spinner stuck indefinitely.
+      const response = await fetch('/api/prices/spot?period=today', {
+        signal: AbortSignal.timeout(60_000),
+      });
       const result: SpotPriceResponse = await response.json();
       if (result.success && result.data) {
         setData(result.data);

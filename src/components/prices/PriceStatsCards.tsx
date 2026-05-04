@@ -23,10 +23,10 @@ export default function PriceStatsCards() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        // Fetch week and month data
+        // Fetch week and month data with 60s client-side timeout.
         const [weekRes, monthRes] = await Promise.all([
-          fetch('/api/prices/spot?period=week'),
-          fetch('/api/prices/spot?period=month'),
+          fetch('/api/prices/spot?period=week', { signal: AbortSignal.timeout(60_000) }),
+          fetch('/api/prices/spot?period=month', { signal: AbortSignal.timeout(60_000) }),
         ]);
 
         const weekData = await weekRes.json();

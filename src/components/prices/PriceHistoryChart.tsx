@@ -179,7 +179,9 @@ export default function PriceHistoryChart() {
     const fetchHistory = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`/api/prices/history?period=${period}`);
+        const response = await fetch(`/api/prices/history?period=${period}`, {
+          signal: AbortSignal.timeout(60_000),
+        });
         const result = await response.json();
         if (result.success && result.data) {
           setData(result.data.daily || []);

@@ -51,12 +51,26 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('Failed to fetch spot prices:', error);
 
+    // Missing key / auth failure → 503 (uncached) so the widget recovers
+    // automatically once keys are fixed instead of being stuck on a cached
+    // error response for the revalidate window.
+    const msg = error instanceof Error ? error.message.toLowerCase() : '';
+    const isAuthOrKey =
+      msg.includes('api_key') ||
+      msg.includes('api key') ||
+      msg.includes('entsoe_api_key') ||
+      msg.includes('fingrid_api_key') ||
+      msg.includes('authentication failed') ||
+      msg.includes('unauthorized') ||
+      msg.includes('401') ||
+      msg.includes('403');
+
     return NextResponse.json(
       {
         success: false,
         error: 'Pörssisähkön hintojen haku epäonnistui. Yritä hetken kuluttua uudelleen.',
       },
-      { status: 500 }
+      { status: isAuthOrKey ? 503 : 500 }
     );
   }
 }

@@ -174,7 +174,10 @@ export default function ProductionMix({ initialData }: ProductionMixProps) {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('/api/energy/production');
+      // 60s client-side timeout to avoid stuck spinners when Fingrid is slow.
+      const response = await fetch('/api/energy/production', {
+        signal: AbortSignal.timeout(60_000),
+      });
       const result = await response.json();
       if (result.success && result.data) {
         setData(result.data);
