@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import ComparisonCalculator from '@/components/calculator/ComparisonCalculator';
 import LoadingTimeout from '@/components/ui/LoadingTimeout';
-import { SiteDisclosureBar } from '@/components/disclosure';
 
 export const metadata: Metadata = {
   title: 'Vertaile sähkösopimuksia — Löydä sinulle sopiva sopimus | Valitse Sähkö',
@@ -21,7 +20,6 @@ export const metadata: Metadata = {
 export default function VertailuPage() {
   return (
     <>
-    <SiteDisclosureBar />
     <div className="mx-auto max-w-4xl px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
       <div className="mb-8 text-center">
         <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl">

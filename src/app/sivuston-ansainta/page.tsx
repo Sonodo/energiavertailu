@@ -5,13 +5,13 @@ import { SITE_CONFIG } from '@/components/disclosure';
 const SITE_NAME = SITE_CONFIG.siteName;
 
 export const metadata: Metadata = {
-  title: 'Luotettavuus ja rahoitus — näin ansaitsemme rahaa',
+  title: 'Sivuston ansainta — näin ansaitsemme rahaa',
   description: `Miten ${SITE_NAME} valitsee sähköyhtiöt, järjestää tarjoukset ja ansaitsee rahaa. Avoin selvitys palkkioista, järjestysalgoritmista ja siitä mitä emme tee.`,
-  alternates: { canonical: 'https://valitsesahko.fi/luotettavuus' },
+  alternates: { canonical: 'https://valitsesahko.fi/sivuston-ansainta' },
   robots: { index: true, follow: true },
 };
 
-export default function LuotettavuusPage() {
+export default function SivustonAnsaintaPage() {
   return (
     <div className="py-12 sm:py-16">
       <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -20,7 +20,7 @@ export default function LuotettavuusPage() {
             Toimituksen periaatteet
           </p>
           <h1 className="mt-2 text-3xl font-extrabold text-slate-900 sm:text-4xl">
-            Luotettavuus ja rahoitus
+            Sivuston ansainta
           </h1>
           <p className="mt-4 text-lg leading-relaxed text-slate-600">
             Tämä sivu kertoo avoimesti, miten {SITE_NAME} hankkii tietonsa,
@@ -35,8 +35,9 @@ export default function LuotettavuusPage() {
           <p className="mt-3 text-slate-700 leading-relaxed">
             Keräämme sähköyhtiöiden tarjoukset suoraan heidän julkisilta
             sivuiltaan. Lisäksi käytämme rajatun joukon kumppaneita, joiden
-            kanssa meillä on suora affiliate-sopimus — heidän hintatietonsa
-            päivittyvät kumppanin omasta järjestelmästä.
+            kanssa meillä on suora affiliate-sopimus Adtraction-verkoston
+            kautta — heidän hintatietonsa päivittyvät kumppanin omasta
+            järjestelmästä.
           </p>
           <p className="mt-3 text-slate-700 leading-relaxed">
             Sisällytämme listalle <strong>kaikki Suomessa toimivat
@@ -58,15 +59,14 @@ export default function LuotettavuusPage() {
             voi vaihtaa järjestysperusteen vapaasti.
           </p>
           <p className="mt-3 text-slate-700 leading-relaxed">
-            Kumppanitarjoukset on merkitty selkeästi pillillä{' '}
-            <span className="rounded-full bg-[#E8EEF6] px-2 py-0.5 text-[11px] font-semibold text-[#3B5266]">
-              Kumppanitarjous
-            </span>
-            . Muut tarjoukset kantavat merkintää{' '}
-            <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-semibold text-slate-500">
-              Markkinahinta
-            </span>
-            .
+            Kumppani- ja ei-kumppanitarjoukset näkyvät vertailussa{' '}
+            <strong>identtisellä tavalla</strong> — sama ulkoasu, sama
+            järjestyslogiikka. Kumppanilinkkeihin lisätään tekninen{' '}
+            <code className="rounded bg-slate-100 px-1 py-0.5 text-xs">
+              rel=&quot;sponsored&quot;
+            </code>
+            -merkintä hakukoneita varten, mutta käyttäjälle näkyvä korttien
+            ulkoasu ei poikkea.
           </p>
         </section>
 

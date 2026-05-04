@@ -9,7 +9,7 @@ import { AVERAGE_SPOT_PRICE } from '@/data/providers';
 import ProviderLogo from '@/components/ui/ProviderLogo';
 import BookmarkButton from './BookmarkButton';
 import { trackAffiliateClick } from '@/lib/analytics';
-import { PartnerBadge, DISCLOSURE_COPY } from '@/components/disclosure';
+import { DISCLOSURE_COPY } from '@/components/disclosure';
 
 const LS_KEY = 'valitsesahko-rinnakkain';
 
@@ -128,12 +128,6 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
           </span>
         )}
       </div>
-
-      {/* Disclosure pill (KKV / DSA Art. 26) */}
-      <PartnerBadge
-        variant={provider.isAffiliate ? 'kumppani' : 'markkinahinta'}
-        className="absolute -top-2 right-3 z-10"
-      />
 
       <div className="p-4 sm:p-6">
         {/* Mobile: show cost prominently at top */}
@@ -420,7 +414,7 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               )}
             >
-              {provider.isAffiliate ? DISCLOSURE_COPY.ctaPartner : DISCLOSURE_COPY.ctaMarket}
+              {DISCLOSURE_COPY.cta}
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </div>
