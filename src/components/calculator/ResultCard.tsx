@@ -9,6 +9,7 @@ import { AVERAGE_SPOT_PRICE } from '@/data/providers';
 import ProviderLogo from '@/components/ui/ProviderLogo';
 import BookmarkButton from './BookmarkButton';
 import { trackAffiliateClick } from '@/lib/analytics';
+import { PartnerBadge, DISCLOSURE_COPY } from '@/components/disclosure';
 
 const LS_KEY = 'valitsesahko-rinnakkain';
 
@@ -128,15 +129,11 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
         )}
       </div>
 
-      {/* Mainos-badge (KKV disclosure) */}
-      {provider.isAffiliate && (
-        <span
-          className="absolute -top-2 right-3 rounded-full bg-slate-600 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm"
-          title="Tämä kortti sisältää kumppanilinkin — saamme pienen palkkion, jos teet sopimuksen linkin kautta."
-        >
-          Mainos
-        </span>
-      )}
+      {/* Disclosure pill (KKV / DSA Art. 26) */}
+      <PartnerBadge
+        variant={provider.isAffiliate ? 'kumppani' : 'markkinahinta'}
+        className="absolute -top-2 right-3 z-10"
+      />
 
       <div className="p-4 sm:p-6">
         {/* Mobile: show cost prominently at top */}
@@ -412,6 +409,7 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
                 trackAffiliateClick(provider.name, contract.type, {
                   contract_id: contract.id,
                   rank,
+                  partner: provider.isAffiliate === true,
                   is_affiliate: provider.isAffiliate === true,
                 });
               }}
@@ -422,7 +420,7 @@ export default function ResultCard({ result, rank, savingsVsMostExpensive, consu
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               )}
             >
-              {isRecommended ? 'Siirry tarjoukseen' : 'Lue lisää'}
+              {provider.isAffiliate ? DISCLOSURE_COPY.ctaPartner : DISCLOSURE_COPY.ctaMarket}
               <ExternalLink className="h-3.5 w-3.5" />
             </a>
           </div>
